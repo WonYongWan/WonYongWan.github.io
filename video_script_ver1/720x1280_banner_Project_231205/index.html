@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Giants-Bold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    /* reset */
+    * {padding: 0; margin: 0 auto; }
+    body {
+      background: #000;
+      font-family: 'Black Han Sans', sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    li {list-style: none;}
+
+    .wrap {
+      width: 720px;
+      height: 1280px;
+      background: #BA7C79;
+      overflow: hidden;
+      position: relative;
+    }
+    .bg_img {
+      z-index: 0;
+      position: absolute;
+      opacity: .5;
+      width: 5000px;
+      height: 1280px;
+      background: url("./img/pattern.png") repeat center / 31%;
+      transform: translateX(0px);
+      animation-name: bg_slider;
+      animation-timing-function: linear;
+      animation-duration: 70s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes bg_slider {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-5000px);
+      }
+    }
+
+    .text_type1 {
+      width: 100%;
+      top: 110px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      position: absolute;
+      font-size: 47px;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -6.5px;
+      animation-name: text_type1_effect;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type1_effect {
+      from {
+        transform: translateX(-48%);
+      }
+      to {
+        transform: translateX(-52%);
+      }
+    }
+    .text_type1 p {
+      display: inline-block;
+      margin-left: 15px;
+    }
+    .text_type1 p:first-child {margin-left: 0;}
+    .text_type1 p > span {
+      display: inline-block;
+      transform: translateY(-200px);
+    }
+    .text_type1 p > span.on {
+      animation-name: text_type1_span_effect;
+      animation-duration: .5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+
+    }
+    .text_type1 p > span.on.size {
+      animation-name: text_type2_span_size_effect;
+      animation-duration: 2.5s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type1_span_effect {
+      0% {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+      90% {
+        transform: translateY(15px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes text_type2_span_size_effect {
+      0% {
+        transform: translateY(0) scale(1.3);
+      }
+      12% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .text_type2 {
+      position: absolute;
+      top: 170px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      font-weight: 900;
+      color: #FFE506;
+      animation-name: text_type2_effect;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type2_effect {
+      from {
+        transform: translateX(-55%);
+      }
+      to {
+        transform: translateX(-45%);
+      }
+    }
+    .text_type2 > span {
+      display: inline-block;
+      font-size: 77px;
+      letter-spacing: -3px;
+      transition: .7s ease;
+      transform: scale(0);
+    }
+    .text_type2 > span.on {
+      font-size: 77px;
+      transform: scale(1);
+    }
+    .text_type2 > span.on.size {
+      animation-name: text_type2_span_effect;
+      animation-duration: 2.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type2_span_effect {
+      0% {
+        transform: scale(1.5);
+      }
+      15% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .text_type3 {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      top: 1110px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      font-size: 40px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 10px;
+      transition: 1.4s ease;
+      opacity: 0;
+      animation-name: text_type3_effect;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type3_effect {
+      from {
+        top: 1102px;
+      }
+      to {
+        top: 1118px;
+      }
+    }
+    .text_type3.on {
+      letter-spacing: -5px;
+      opacity: 1;
+    }
+    .text_type3 p {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .text_type3 p:first-child {margin-left: 0;}
+    .text_type3 p > span {
+      position: relative;
+      display: inline-block;
+    }
+    .text_type3 p > span.down {
+      animation-name: text_type3_span_down_effect;
+      animation-duration: 2.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type3_span_down_effect {
+      0% {
+        top: 10px;
+      }
+      4% {
+        top: 0;
+      }
+      8% {
+        top: 10px;
+      }
+      12% {
+        top: 0;
+      }
+      100% {
+        top: 0;
+      }
+    }
+    .text_type3 p > span.up {
+      animation-name: text_type3_span_up_effect;
+      animation-duration: 2.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes text_type3_span_up_effect {
+      0% {
+        top: -10px;
+      }
+      4% {
+        top: 0;
+      }
+      8% {
+        top: -10px;
+      }
+      12% {
+        top: 0;
+      }
+      100% {
+        top: 0;
+      }
+    }
+
+    .img_wrap {
+      width: 2880px;
+      transform: translateX(-2160px);
+      display: flex;
+      flex-wrap: wrap;
+      transition: .7s;
+      padding-top: 300px;
+    }
+    .img_wrap li {
+      background: #fff;
+      overflow: hidden;
+      margin: 0 85px;
+      width: 550px;
+      height: 750px;
+      border-radius: 50px;
+      transform: scale(.78);
+      box-shadow: 26px 51px 55px 6px rgba(0,0,0,0.5);
+      transition: .7s;
+    }
+    .img_wrap li.on {
+      transform: scale(1);
+    }
+
+    .img_wrap li > div {width: 100%;}
+    .img_wrap li div:first-child {height: 83%;}
+    .img_wrap li div:last-child {height: 17%;}
+
+    .img_wrap li:nth-child(1) .img_box {background: url("./img/img1.jpg") no-repeat center / cover;}
+    .img_wrap li:nth-child(2) .img_box {background: url("./img/img2.jpg") no-repeat center / cover;}
+    .img_wrap li:nth-child(3) .img_box {background: url("./img/img3.jpg") no-repeat center / cover;}
+
+    .img_text_box {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .img_text_box p:nth-child(1) {
+      position: relative;
+      overflow: hidden;
+      font-size: 30px;
+      font-weight: 900;
+      color: #242424;
+      padding-right: 45px;
+    }
+    .img_text_box p:nth-child(1) > span {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) scale(0);
+      display: block;
+      width: 38px;
+      height: 38px;
+      background: url("./img/check.png") no-repeat center / cover;
+    }
+    .img_wrap li.on .img_text_box p:nth-child(1) > span {
+      animation-name: img_text_box_p_span_effect;
+      animation-duration: .3s;
+      animation-timing-function: linear;
+      animation-delay: .3s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes img_text_box_p_span_effect {
+      0% {
+        transform: translateY(-50%) scale(0);
+      }
+      100% {
+        transform: translateY(-50%) scale(1);
+      }
+    }
+    .img_text_box p:nth-child(1)::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      box-shadow: -200px 0px 40px 40px rgba(255, 255, 255, .9);
+      transition: 1s ease;
+    }
+    .img_wrap li.on .img_text_box p:nth-child(1)::before {
+      transform: translate(150%, -50%);
+    }
+    .img_text_box p:nth-child(2) {
+      overflow: hidden;
+      position: relative;
+      font-size: 20px;
+      font-weight: 700;
+      color: rgba(150, 0, 255, .5);
+    }
+    .img_text_box p:nth-child(2)::before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      box-shadow: 10px 0px 40px 40px rgba(255, 255, 255, .9);
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      transition: 1s ease;
+    }
+    .img_wrap li.on .img_text_box p:nth-child(2)::before {
+      animation-name: img_text_box_p_effect;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-delay: .3s;
+      animation-fill-mode: forwards;
+    }
+    .img_text_box p:nth-child(2)::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 110%;
+      height: 1px;
+      background: #9600FF;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: .5s;
+    }
+    .img_wrap li.on .img_text_box p:nth-child(2)::after {opacity: 1;}
+    .img_text_box p:nth-child(3) {
+      position: relative;
+      font-family: 'Giants-Bold';
+      overflow: hidden;
+      font-size: 35px;
+      font-weight: 900;
+      color: #9600FF;
+    }
+    .img_text_box p:nth-child(3)::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      box-shadow: -100px 0px 40px 40px rgba(255, 255, 255, .9);
+      transition: 1s ease;
+    }
+    .img_wrap li.on .img_text_box p:nth-child(3)::before {
+      animation-name: img_text_box_p_effect;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-delay: .5s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes img_text_box_p_effect {
+      0% {
+        transform: translate(0, -50%);
+      }
+      100% {
+        transform: translate(200%, -50%);
+      }
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bg_img"></div>
+    <div class="text_type1">
+      <p>
+        <span>그</span>
+        <span>녀</span>
+        <span>들</span>
+        <span>을</span>
+      </p>
+      <p>
+        <span>위</span>
+        <span>한</span>
+      </p>
+      <p>
+        <span>스</span>
+        <span>타</span>
+        <span>일</span>
+        <span>링</span>
+      </p>
+      <p>
+        <span>셀</span>
+        <span>렉</span>
+        <span>샵</span>
+      </p>
+    </div>
+    <p class="text_type2">
+      <span>그</span>
+      <span>녀</span>
+      <span>희</span>
+      <span>제</span>
+    </p>
+    <ul class="img_wrap">
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p>텐스 체크 겉기모 와이드 팬츠<span></span></p>
+          <p>43,200</p>
+          <p>38,880원</p>
+        </div>
+      </li>
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p>텐스 체크 겉기모 와이드 팬츠<span></span></p>
+          <p>43,200</p>
+          <p>38,800원</p>
+        </div>
+      </li>
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p>블루밍 플라워 코튼 원피스<span></span></p>
+          <p>39,000</p>
+          <p>37,100원</p>
+        </div>
+      </li>
+    </ul>
+    <div class="text_type3">
+      <p>
+        <span>★</span>
+        <span>판</span>
+        <span>매</span>
+      </p>
+      <p>
+        <span>베</span>
+        <span>스</span>
+        <span>트</span>
+      </p>
+      <p>
+        <span>1</span>
+        <span>~</span>
+        <span>3</span>
+        <span>위</span>
+        <span>★</span>
+      </p>
+    </p>
+  </div>
+
+  <script>
+    const $imgWrap = document.querySelector('.img_wrap');
+    const $imgLists = document.querySelectorAll('.img_wrap li');
+
+    // text_type1 Event===============================================
+    const $textType1 = document.querySelector('.text_type1');
+    const $textType1P = document.querySelectorAll('.text_type1 > p');
+    const $textType1Spans = document.querySelectorAll('.text_type1 > p > span');
+    const textType1Arr1 = [], textType1Arr2 = [];
+    let textType1Count = $textType1Spans.length;
+    let textType1Interval1;
+    let textType1Interval2;
+
+    $textType1P.forEach(elm => {
+      textType1Arr1.push([...elm.children]);
+    });
+    $textType1Spans.forEach(elm => {
+      textType1Arr2.push(elm)
+    })
+
+    function textType1Ani1() {
+      textType1Arr1.forEach(elm => {
+        if(elm[0]) {
+          elm[0].classList.add('on');
+          elm.shift();
+          textType1Count--;
+        }
+        if(textType1Count === 0) clearInterval(textType1Interval1);
+      })
+    }
+
+    function textType1Ani2() {
+      textType1Arr2[0].classList.add('size');
+      textType1Arr2.shift();
+      if(textType1Arr2.length === 0) clearInterval(textType1Interval2);
+    }
+
+    // text_type1 Event===============================================
+
+    // text_type2 Event===============================================
+    const $textType2 = document.querySelector('.text_type2');
+    const $textType2Spans = document.querySelectorAll('.text_type2 > span');
+    const textType2Arr1 = [], textType2Arr2 = [];
+    $textType2Spans.forEach(elm => {
+      textType2Arr1.push(elm); 
+      textType2Arr2.push(elm);
+    });
+
+    let textType2Interval1;
+    let textType2Interval2;
+    // text_type2 초기 셋팅
+    function textType2Ani1() {
+      textType2Arr1[0].classList.add('on');
+      textType2Arr1.shift();
+      if(textType2Arr1.length === 0) clearInterval(textType2Interval1);
+    }
+
+    function textType2Ani2() {
+      textType2Arr2[0].classList.add('size');
+      textType2Arr2.shift();
+      if(textType2Arr2.length === 0) clearInterval(textType2Interval2);
+    }
+    // text_type2 Event================================================
+
+    // text_type3 Event================================================
+    const $textType3 = document.querySelector('.text_type3');
+    const $textType3Spans = document.querySelectorAll('.text_type3 p > span');
+    // text_type3 Event================================================
+
+    setTimeout(() => {
+      textType1Interval1 = setInterval(textType1Ani1, 200);
+    }, 100);
+
+    setTimeout(() => {
+      $imgWrap.style.transform = "translateX(-1440px)";
+      // img scale up
+      setTimeout(() => {
+        $imgLists[2].classList.add('on');
+      }, 500);
+    }, 500);
+
+    setTimeout(() => {
+      textType2Interval1 = setInterval(textType2Ani1, 200);
+    }, 700);
+
+    setTimeout(() => {
+      textType1Interval2 = setInterval(textType1Ani2, 200);
+    }, 600);
+
+    setTimeout(() => {
+      $textType3.classList.add('on');
+    }, 1200)
+
+    setTimeout(() => {
+      $textType3Spans.forEach((elm, idx) => {
+        if(idx === 0 || idx % 2 === 0) {
+          elm.classList.add('down');
+        } else {
+          elm.classList.add('up');
+        }
+      });
+    }, 1500);
+
+    setTimeout(() => {
+      textType2Interval2 = setInterval(textType2Ani2, 200);
+    }, 1600);
+
+    setTimeout(() => {
+      $imgWrap.style.transform = "translateX(-720px)";
+
+      // img scale up
+      setTimeout(() => {
+        $imgLists[1].classList.add('on');
+      }, 500);
+    }, 5000);
+
+    setTimeout(() => {
+      $imgWrap.style.transform = "translateX(0px)";
+
+      // img scale up
+      setTimeout(() => {
+        $imgLists[0].classList.add('on');
+      }, 500);
+    }, 10000);
+  </script>
+</body>
+</html>

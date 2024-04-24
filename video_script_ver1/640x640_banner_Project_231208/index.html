@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'GmarketSansBold';
+      src: url('./fonts/GmarketSansBold.otf') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'GmarketSansMedium';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* reset */
+    * {padding: 0; margin: 0 auto;}
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      font-family: 'GmarketSansBold';
+    }
+    li {list-style: none;}
+
+    .wrap {
+      width: 640px;
+      height: 640px;
+      background: #BA7C79;
+      overflow: hidden;
+      position: relative;
+    }
+    .bg_img {
+      z-index: 0;
+      position: absolute;
+      opacity: .5;
+      width: 5000px;
+      height: 1280px;
+      background: url("./img/pattern.png") repeat center / 18%;
+      transform: translateX(0px);
+      animation-name: bg_slider;
+      animation-timing-function: linear;
+      animation-duration: 70s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes bg_slider {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-5000px);
+      }
+    }
+
+    .text_type_1 {
+      position: absolute;
+      min-width: 550px;
+      text-align: center;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      font-size: 53px;
+    }
+
+    .text_type_1 > p {
+      color: #FFE506;
+      text-shadow: rgba(0, 0, 0, 0.26) 0px 3px 2px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      animation-name: textAni_1;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      animation-duration: .4s;
+    }
+
+    @keyframes textAni_1 {
+      from {
+        transform: translateY(70px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .text_type_2 {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans KR', sans-serif;
+      letter-spacing: -1px;
+      min-width: 550px;
+      font-size: 45px;
+      height: 100px;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+    }
+    .text_type_2.size > div:last-child {
+      font-size: 40px;
+    }
+    .text_type_2 > div {
+      overflow: hidden;
+    }
+    .text_type_2 > div > p {
+      line-height: 50px;
+      transform: translateY(50px);
+      animation-name: textAni_2;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      animation-duration: .4s;
+    }
+
+    .text_type_2 > div:last-child > p {animation-delay: 1s;}
+    .text_type_2 > div:first-child > p {animation-delay: .5s;}
+
+    @keyframes textAni_2 {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .link_btn {
+      white-space: nowrap;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%);
+      font-size: 35px;
+      letter-spacing: -1px;
+      text-decoration: none;
+      background: #fff;
+      padding: 13px 56px 7px 38px;
+      border-radius: 13px;
+      color: #A1420E;
+      border: 1px solid #A1420E;
+      animation-name: btnAni_1;
+      animation-delay: .7s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: 1.5s;
+    }
+    @keyframes btnAni_1 {
+      10% {
+        transform: translate(-50%) scale(.85);
+      }
+      30% {
+        transform: translate(-50%) scale(1);
+      }
+      100% {
+        transform: translate(-50%) scale(1);
+      }
+    }
+    .link_btn::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      transform: translateY(-45%);
+      width: 40px;
+      height: 40px;
+      background: url("./img/arrow.png") no-repeat center / 100%;
+    }
+
+    .img_wrap {
+      position: absolute;
+      width: 3200px;
+      height: 306px;
+      bottom: 110px;
+      transform: translateX(-3200px);
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0 auto;
+      transition: .7s;
+    }
+    .img_wrap li {
+      font-family: 'Dela Gothic One', sans-serif;
+      background: #fff;
+      overflow: hidden;
+      margin: 0 77.5px;
+      width: 485px;
+      height: 306px;
+      border-radius: 25px;
+      transform: scale(.86);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      transition: .7s ease;
+    }
+    .img_wrap li.on {
+      transform: scale(1);
+    }
+
+    .img_wrap li > div {width: 100%;}
+    .img_wrap li div:first-child {height: 82.5%;}
+    .img_wrap li div:last-child {height: 17.5%;}
+
+    .img_wrap li:nth-child(1) .img_box {background: url("./img/img1.jpg") no-repeat center / cover;}
+    .img_wrap li:nth-child(2) .img_box {background: url("./img/img2.jpg") no-repeat center / cover;}
+    .img_wrap li:nth-child(3) .img_box {background: url("./img/img3.jpg") no-repeat center / cover;}
+    .img_wrap li:nth-child(4) .img_box {background: url("./img/img4.jpg") no-repeat center / cover;}
+    .img_wrap li:nth-child(5) .img_box {background: url("./img/img5.jpg") no-repeat center / cover;}
+
+    .img_text_box {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .box_text_1 {
+      padding: 0 3px;
+      position: relative;
+      letter-spacing: -1px;
+      margin: 0;
+    }
+
+    .box_text_1::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #A21DFC;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: .1s ease-in-out;
+    }
+
+    .box_text_1.on::before {
+      opacity: 1;
+    }
+
+    .box_text_1 span {
+      color: #BA74EE;
+      font-size: 25px;
+      opacity: 0;
+      transition: .3s ease-in-out;
+    }
+
+    .box_text_1 span.on {
+      opacity: 1;
+    }
+
+    .box_text_2 {
+      position: relative;
+      letter-spacing: -1.3px;
+      display: flex;
+      align-items: flex-end;
+      margin: 0;
+      padding-right: 45px;
+    }
+
+    .box_text_2::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 12%;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      background: url("./img/check.png") no-repeat center / 100%;
+      transform: scale(0);
+    }
+
+    .box_text_2.on::after {
+      animation-name: checkAni;
+      animation-duration: .3s;
+      animation-timing-function: linear;
+      animation-delay: .3s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes checkAni {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .box_text_2 span {
+      color: #9500FE;
+      font-size: 34px;
+      opacity: 0;
+      transition: .3s ease-in-out;
+    }
+
+    .box_text_2 span.on {
+      opacity: 1;
+    }
+
+    .box_text_2 span:last-child {
+      font-family: 'GmarketSansBold';
+      font-weight: 900;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bg_img"></div>
+    <div class="text_type_1"></div>
+    <div class="text_type_2"></div>
+    <a class="link_btn" href="javascript:void(0)">구매하러 가기</a>
+    <ul class="img_wrap">
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p class="box_text_1">
+            <span>4</span>
+            <span>,</span>
+            <span>4</span>
+            <span>4</span>
+            <span>3</span>
+            <span>,</span>
+            <span>2</span>
+            <span>0</span>
+            <span>0</span>
+          </p>
+          <p class="box_text_2">
+            <span>4</span>
+            <span>,</span>
+            <span>1</span>
+            <span>1</span>
+            <span>3</span>
+            <span>,</span>
+            <span>8</span>
+            <span>8</span>
+            <span>0</span>
+            <span>원</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p class="box_text_1">
+            <span>4</span>
+            <span>3</span>
+            <span>,</span>
+            <span>2</span>
+            <span>0</span>
+            <span>0</span>
+          </p>
+          <p class="box_text_2">
+            <span>3</span>
+            <span>8</span>
+            <span>,</span>
+            <span>8</span>
+            <span>8</span>
+            <span>0</span>
+            <span>원</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p class="box_text_1">
+            <span>4</span>
+            <span>3</span>
+            <span>,</span>
+            <span>2</span>
+            <span>0</span>
+            <span>0</span>
+          </p>
+          <p class="box_text_2">
+            <span>3</span>
+            <span>8</span>
+            <span>,</span>
+            <span>8</span>
+            <span>8</span>
+            <span>0</span>
+            <span>원</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p class="box_text_1">
+            <span>3</span>
+            <span>4</span>
+            <span>3</span>
+            <span>,</span>
+            <span>2</span>
+            <span>0</span>
+            <span>0</span>
+          </p>
+          <p class="box_text_2">
+            <span>1</span>
+            <span>3</span>
+            <span>8</span>
+            <span>,</span>
+            <span>8</span>
+            <span>8</span>
+            <span>0</span>
+            <span>원</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="img_box"></div>
+        <div class="img_text_box">
+          <p class="box_text_1">
+            <span>4</span>
+            <span>,</span>
+            <span>4</span>
+            <span>3</span>
+            <span>2</span>
+            <span>,</span>
+            <span>2</span>
+            <span>0</span>
+            <span>0</span>
+          </p>
+          <p class="box_text_2">
+            <span>1</span>
+            <span>,</span>
+            <span>1</span>
+            <span>3</span>
+            <span>8</span>
+            <span>,</span>
+            <span>8</span>
+            <span>8</span>
+            <span>0</span>
+            <span>원</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const $textType1 = document.querySelector('.text_type_1');
+    const $textType2 = document.querySelector('.text_type_2');
+    const $imgWrap = document.querySelector('.img_wrap');
+    const $imgList = document.querySelectorAll('.img_wrap > li');
+    const $boxTexts1 = document.querySelectorAll('.box_text_1');
+    const $boxTexts2 = document.querySelectorAll('.box_text_2');
+
+    // 제목
+    const textType1 = '텐스체크겉기모겉겉';
+    const textType2 = '텐스체크겉기모와이드텐스체크겉텐스체크겉기모와텐스체크겉기모와';
+
+    // text_type_1 Effect
+    function textType1Create(item) {
+      const p = document.createElement('p');
+      let text = item;
+      if(text.length > 8) $textType1.style.fontSize = '50px';
+      if(text.length > 10) text = text.split('').splice(0, 10).join("").concat('...');
+      p.append(text);
+      $textType1.append(p);
+    }
+
+    // text_type_2 Effect
+    function textType2Create(item) {
+      let text = item;
+      let textLine1 = null;
+      let textLine2 = null;
+      const textLength = text.length;
+      const divs = [];
+      const ps = [];
+      for(let i = 0; i <= 1; i++) {
+        divs.push(document.createElement('div'));
+        ps.push(document.createElement('p'));
+      }
+
+      if(textLength <= 10) {
+        ps[0].innerText = text;
+        divs[0].appendChild(ps[0]);
+        $textType2.appendChild(divs[0]);
+
+      } else if(textLength > 10) {
+        textLine1 = text.split('').splice(0, 10).join('');
+        if(textLine1.charCodeAt(textLine1.length - 1) === 32) textLine1 = textLine1.split('').splice(0, 9).join('');
+        ps[0].append(textLine1);
+        divs[0].append(ps[0]);
+        $textType2.append(divs[0]);
+
+        textLine2 = text.split('').splice(10).join('');
+        if(textLine2.charCodeAt(0) === 32) textLine2 = textLine2.split('').splice(1).join('');
+        if(textLength > 21) $textType2.classList.add('size');
+        if(textLength > 24) textLine2 = textLine2.split('').splice(0, 13).join('').concat('...');
+        ps[1].append(textLine2);
+        divs[1].append(ps[1]);
+        $textType2.append(divs[1]);
+      }
+    }
+
+    // img_wrap Effect
+    function imgSlider() {
+      const posArr = [];
+      const timeArr = [];
+      const text1Arr = [];
+      const text2Arr = [];
+      for(let i = 0; i < $boxTexts1.length; i++) {
+        text1Arr.push([...$boxTexts1[i].children]);
+      }
+      for(let i = 0; i < $boxTexts2.length; i++) {
+        text2Arr.push([...$boxTexts2[i].children]);
+      }
+      for(let i = -2560; i <= 0; i += 640) {
+        posArr.push(i);
+      }
+      for(let i = 100; i <= 12100; i += 3000) {
+        timeArr.push(i);
+      }
+
+      for(let i = 0; i < timeArr.length; i++) {
+        setTimeout(() => {
+          $imgWrap.style.transform = `translateX(${posArr[i]}px)`;
+          setTimeout(() => {
+            $imgList[i].classList.add('on');
+            $boxTexts1[i].classList.add('on');
+            boxTexts1Ani(text1Arr[i]);
+          }, 700);
+          setTimeout(() => {
+            $boxTexts2[i].classList.add('on');
+            boxTexts1Ani(text2Arr[i]);
+          }, 750)
+        }, timeArr[i]);
+      }
+    }
+
+    function boxTexts1Ani(elm) {
+      const spanArr = elm;
+      let textEffect = setInterval(() => {
+        spanArr[0].classList.add('on');
+        spanArr.shift();
+        if(spanArr.length === 0) clearInterval(textEffect);
+      }, 30);
+    }
+
+    textType1Create(textType1);
+    textType2Create(textType2);
+    imgSlider();
+  </script>
+</body>
+</html>
