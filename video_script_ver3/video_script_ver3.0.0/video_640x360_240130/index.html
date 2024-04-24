@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video_script_ver3.0.0_640x360</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrap {
+      position: relative;
+      width: 640px;
+      height: 360px;
+      background: #fff;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    
+    /* border effect */
+    .line_wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 640px;
+      height: 360px;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 9999;
+    }
+
+    .line_wrap.remove {
+      transition: .5s;
+      opacity: 0;
+    }
+
+    .line_wrap .line {
+      position: relative;
+      width: 128px;
+      height: 60px;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      box-sizing: border-box;
+    }
+
+    .line_wrap .line::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      bottom: -2px;
+      right: -2px;
+      background: #000;
+      border-radius: 100%;
+    }
+
+    .line_wrap .line05,
+    .line_wrap .line10,
+    .line_wrap .line15,
+    .line_wrap .line20,
+    .line_wrap .line25,
+    .line_wrap .line30 {
+      border-right: none;
+    }
+
+    .line_wrap .line26,
+    .line_wrap .line27,
+    .line_wrap .line28,
+    .line_wrap .line29,
+    .line_wrap .line30 {
+      border-bottom: none;
+    }
+
+    .line_wrap .line05::before,
+    .line_wrap .line10::before,
+    .line_wrap .line15::before,
+    .line_wrap .line20::before,
+    .line_wrap .line25::before,
+    .line_wrap .line30::before,
+    .line_wrap .line26::before,
+    .line_wrap .line27::before,
+    .line_wrap .line28::before,
+    .line_wrap .line29::before,
+    .line_wrap .line30::before {
+      display: none;
+    }
+
+    /* flip effect */
+    .flip_box_wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .flip_box {
+      width: 128px;
+      height: 120px;
+      position: relative;
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .back .flip_up {background-image: url(./images/img2.jpg);}
+    .back .flip_down {background-image: url(./images/img2.jpg);}
+    .front .flip_up {background-image: url(./images/img1.jpg);}
+    .front .flip_up .back_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform: rotateX(180deg);
+      background-image: url(./images/img2.jpg);
+      background-size: 640px 360px;
+    }
+    .front .flip_down {background-image: url(./images/img1.jpg);}
+
+    .flip_box01 .back .flip_up, .flip_box01 .front .flip_up {background-position: 0 0;}
+    .flip_box02 .back .flip_up, .flip_box02 .front .flip_up {background-position: -128px 0;}
+    .flip_box03 .back .flip_up, .flip_box03 .front .flip_up {background-position: -256px 0;}
+    .flip_box04 .back .flip_up, .flip_box04 .front .flip_up {background-position: -384px 0;}
+    .flip_box05 .back .flip_up, .flip_box05 .front .flip_up {background-position: -512px 0;}
+
+    .flip_box01 .back .flip_down, .flip_box01 .front .flip_up .back_img, .flip_box01 .front .flip_down {background-position: 0 -60px;}
+    .flip_box02 .back .flip_down, .flip_box02 .front .flip_up .back_img, .flip_box02 .front .flip_down {background-position: -128px -60px;}
+    .flip_box03 .back .flip_down, .flip_box03 .front .flip_up .back_img, .flip_box03 .front .flip_down {background-position: -256px -60px;}
+    .flip_box04 .back .flip_down, .flip_box04 .front .flip_up .back_img, .flip_box04 .front .flip_down {background-position: -384px -60px;}
+    .flip_box05 .back .flip_down, .flip_box05 .front .flip_up .back_img, .flip_box05 .front .flip_down {background-position: -512px -60px;}
+
+    .flip_box06 .back .flip_up, .flip_box06 .front .flip_up {background-position: 0 -120px;}
+    .flip_box07 .back .flip_up, .flip_box07 .front .flip_up {background-position: -128px -120px;}
+    .flip_box08 .back .flip_up, .flip_box08 .front .flip_up {background-position: -256px -120px;}
+    .flip_box09 .back .flip_up, .flip_box09 .front .flip_up {background-position: -384px -120px;}
+    .flip_box10 .back .flip_up, .flip_box10 .front .flip_up {background-position: -512px -120px;}
+
+    .flip_box06 .back .flip_down, .flip_box06 .front .flip_up .back_img, .flip_box06 .front .flip_down {background-position: 0 -180px;}
+    .flip_box07 .back .flip_down, .flip_box07 .front .flip_up .back_img, .flip_box07 .front .flip_down {background-position: -128px -180px;}
+    .flip_box08 .back .flip_down, .flip_box08 .front .flip_up .back_img, .flip_box08 .front .flip_down {background-position: -256px -180px;}
+    .flip_box09 .back .flip_down, .flip_box09 .front .flip_up .back_img, .flip_box09 .front .flip_down {background-position: -384px -180px;}
+    .flip_box10 .back .flip_down, .flip_box10 .front .flip_up .back_img, .flip_box10 .front .flip_down {background-position: -512px -180px;}
+
+    .flip_box11 .back .flip_up, .flip_box11 .front .flip_up {background-position: 0 -240px;}
+    .flip_box12 .back .flip_up, .flip_box12 .front .flip_up {background-position: -128px -240px;}
+    .flip_box13 .back .flip_up, .flip_box13 .front .flip_up {background-position: -256px -240px;}
+    .flip_box14 .back .flip_up, .flip_box14 .front .flip_up {background-position: -384px -240px;}
+    .flip_box15 .back .flip_up, .flip_box15 .front .flip_up {background-position: -512px -240px;}
+
+    .flip_box11 .back .flip_down, .flip_box11 .front .flip_up .back_img, .flip_box11 .front .flip_down {background-position: 0 -300px;}
+    .flip_box12 .back .flip_down, .flip_box12 .front .flip_up .back_img, .flip_box12 .front .flip_down {background-position: -128px -300px;}
+    .flip_box13 .back .flip_down, .flip_box13 .front .flip_up .back_img, .flip_box13 .front .flip_down {background-position: -256px -300px;}
+    .flip_box14 .back .flip_down, .flip_box14 .front .flip_up .back_img, .flip_box14 .front .flip_down {background-position: -384px -300px;}
+    .flip_box15 .back .flip_down, .flip_box15 .front .flip_up .back_img, .flip_box15 .front .flip_down {background-position: -512px -300px;}
+
+    .flip_up, .flip_down {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      transform-style: preserve-3d;
+      background-size: 640px 360px;
+      background-repeat: no-repeat;
+    }
+    .flip_up {
+      transform-origin: 50% 100%;
+    }
+
+    .front .flip_up::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .front.on .flip_up {
+      z-index: 99;
+      transition: 1s;
+      transform: rotateX(180deg);
+    }
+
+    .front.on .flip_up::before {
+      transition: 1s;
+      background: rgba(0, 0, 0, .8);
+    }
+
+    .flip_down {
+      bottom: 0;
+      overflow: hidden;
+    }
+    .front .flip_down .shadow {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      width: 128px;
+      height: 120px;
+      background: rgba(0, 0, 0, .8);
+      filter: blur(5px);
+      transform: translateX(-50%) rotateX(90deg) skew(10deg);
+      transition: 1.5s;
+      backface-visibility: hidden;
+    }
+
+    .front.on .flip_down .shadow {
+      transform: translateX(-50%) rotateX(0deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="line_wrap">
+      <div class="line line01"></div>
+      <div class="line line02"></div>
+      <div class="line line03"></div>
+      <div class="line line04"></div>
+      <div class="line line05"></div>
+      <div class="line line06"></div>
+      <div class="line line07"></div>
+      <div class="line line08"></div>
+      <div class="line line09"></div>
+      <div class="line line10"></div>
+      <div class="line line11"></div>
+      <div class="line line12"></div>
+      <div class="line line13"></div>
+      <div class="line line14"></div>
+      <div class="line line15"></div>
+      <div class="line line16"></div>
+      <div class="line line17"></div>
+      <div class="line line18"></div>
+      <div class="line line19"></div>
+      <div class="line line20"></div>
+      <div class="line line21"></div>
+      <div class="line line22"></div>
+      <div class="line line23"></div>
+      <div class="line line24"></div>
+      <div class="line line25"></div>
+      <div class="line line26"></div>
+      <div class="line line27"></div>
+      <div class="line line28"></div>
+      <div class="line line29"></div>
+      <div class="line line30"></div>
+    </div>
+    <div class="flip_box_wrap">
+      <div class="flip_box flip_box01">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box02">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box03">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box04">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box05">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box06">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box07">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box08">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box09">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box10">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box11">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box12">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box13">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box14">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+      <div class="flip_box flip_box15">
+        <div class="back">
+          <div class="flip_up"></div>
+          <div class="flip_down"></div>
+        </div>
+        <div class="front">
+          <div class="flip_up"><div class="back_img"></div></div>
+          <div class="flip_down"><div class="shadow"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // elements
+    const $lineWrap = document.querySelector('.line_wrap');
+    const $fronts = document.querySelectorAll('.front');
+    const $frontFilpUps = document.querySelectorAll('.front .flip_up');
+    const $frontFilpUpBackImgs = document.querySelectorAll('.front .flip_up .back_img');
+    const $frontFilpDowns = document.querySelectorAll('.front .flip_down');
+    const $frontFilpDownShadows = document.querySelectorAll('.front .flip_down .shadow');
+    const $backs = document.querySelectorAll('.back');
+    const $backFilpUps = document.querySelectorAll('.back .flip_up');
+    const $backFilpDowns = document.querySelectorAll('.back .flip_down');
+    // ---------------------------------------------------------------------------------------------------
+    // imgChange
+    const imgsLength = 4;
+    let ImgNum = 0;
+    function imgChange() {
+      if(ImgNum <= imgsLength - 1) ImgNum += 1;
+      // front img change
+      $fronts.forEach(elm => elm.classList.remove('on'));
+      $frontFilpUps.forEach(elm => {
+        elm.style.transition = '0s';
+        elm.style.backgroundImage = `url(./images/img${ImgNum}.jpg)`;
+        setTimeout(() => {
+          elm.style.transition = '1s';
+        }, 100);
+      });
+      $frontFilpUpBackImgs.forEach(elm => elm.style.backgroundImage = `url(./images/img${ImgNum + 1}.jpg)`);
+      $frontFilpDowns.forEach(elm => elm.style.backgroundImage = `url(./images/img${ImgNum}.jpg)`);
+      $frontFilpDownShadows.forEach(elm => {
+        elm.style.transition = '0s';
+        setTimeout(() => {
+          elm.style.transition = '1.5s';
+        }, 100);
+      });
+      // back img change
+      $backFilpUps.forEach(elm => elm.style.backgroundImage = `url(./images/img${ImgNum + 1}.jpg)`);
+      $backFilpDowns.forEach(elm => elm.style.backgroundImage = `url(./images/img${ImgNum + 1}.jpg)`);
+    }
+    // ---------------------------------------------------------------------------------------------------
+    // flip effect 
+    const flipTimeArray = [
+      [
+        50, 100, 150, 200, 250,
+        300, 400, 300, 500, 450,
+        750, 700, 650, 600, 550, 
+      ],
+      [
+        250, 50, 200, 150, 200,
+        300, 400, 300, 500, 450,
+        750, 700, 650, 600, 750, 
+      ],
+      [
+        50, 100, 150, 100, 250,
+        300, 400, 300, 500, 450,
+        750, 700, 650, 600, 550, 
+      ],
+      [
+        50, 100, 150, 200, 250,
+        300, 400, 300, 950, 450,
+        750, 1400, 650, 600, 550, 
+      ]
+    ]
+    let acc = 0;
+    function flipAni() {
+      for(let i = 0; i < flipTimeArray[acc].length; i++) {
+        setTimeout(() => {
+          $fronts[i].classList.add('on');
+        }, flipTimeArray[acc][i]);
+      }
+      if(acc === flipTimeArray.length - 1) {
+        setTimeout(() => $lineWrap.classList.add('remove'), 1300);
+      }
+      acc += 1;
+    }
+    // ---------------------------------------------------------------------------------------------------
+    for(let time = 2000; time <= 12500; time += 3500) {
+      setTimeout(() => {
+        imgChange();
+        setTimeout(() => flipAni(), 300);
+      }, time);
+    }
+  </script>
+</body>
+</html>
