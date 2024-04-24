@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video_script_ver4.1.0_640x360</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrap {
+      position: relative;
+      width: 640px;
+      height: 360px;
+      background: #fff;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .box, .line {
+      overflow: hidden; 
+      height: 100%;
+    }
+    .line {position: relative;}
+    .item, .img {background-size: cover;}
+
+    /* box01 */
+    .box01 {
+      height: 720px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      transform: translateY(-360px);
+    }
+
+    .box01.moveY {
+      transform: translateY(0);
+      transition: .3s ease;
+    }
+
+    .box01 .line {width: 640px; height: 360px;}
+    .box01 .line01 .item {
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+    .box01 .line01 .item01 {
+      background-image: url(./images/img1.jpg);
+      background-position: center;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .box01 .line01 .item02 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      transform: translate(-50%, -50%) scale(.3) rotate(10deg);
+    }
+    .box01 .line01 .item02 .img_wrap {
+      width: 560px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .box01 .line01 .item02 .img_wrap .img {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(./images/img1.jpg);
+      background-position: center;
+      transform: scale(1.1);
+    }
+
+    .box01 .line01.on .item01 {
+      transition: 3s linear;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .box01 .line01.on .item02 {
+      animation: line01_item02_ani;
+      animation-delay: .1s;
+      animation-duration: .35s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+
+    .box01 .line01.on .item02 .img_wrap .img {
+      animation: line01_item02_img_ani;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    @keyframes line01_item02_ani {
+      0% {
+        transform: translate(-50%, -50%) scale(.3) rotate(10deg);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.05) rotate(0);
+      }
+    }
+
+    @keyframes line01_item02_img_ani {
+      0% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .box01 .line02 {
+      position: relative;
+      background: #000;
+    }
+
+    .box01 .line02::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9;
+      width: 610px;
+      height: 330px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='3' stroke-dasharray='30' stroke-dashoffset='7' stroke-linecap='round'/%3e%3c/svg%3e");
+    }
+
+    .box01 .line02.rotate::before {
+      z-index: -99;
+    }
+
+    .box01 .line02 .item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .box01 .line02 .item01 {
+      width: 640px;
+      height: 360px;
+      overflow: hidden;
+    }
+
+    .box01 .line02.on .item01.rotate {
+      transition: .3s ease-in-out;
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+
+    .box01 .line02 .item01 .img_wrap {
+      position: relative;
+      height: 100%;
+      background: url(./images/img2.jpg) no-repeat center / cover;
+      transform: scale(1.1);
+    }
+
+    .box01 .line02.on .item01 .img_wrap {
+      transition: 3s linear;
+      transform: scale(1);
+    }
+
+    .box01 .line02 .item01 .img_wrap .img_top,
+    .box01 .line02 .item01 .img_wrap .img_bottom {
+      position: relative;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+    }
+
+    .box01 .line02 .item01 .img_wrap .img_top::before,
+    .box01 .line02 .item01 .img_wrap .img_bottom::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      transition: .4s ease-in-out;
+    }
+
+    .box01 .line02.on .item01 .img_wrap .img_top::before {
+      transform: translateY(100%);
+    }
+    .box01 .line02.on .item01 .img_wrap .img_bottom::before {
+      transform: translateY(-100%);
+    }
+
+    /* box02 */
+    .box02 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      z-index: -9;
+      background: #000;
+    }
+
+    .box02.on {z-index: 9;}
+    .box02 .line01.on {
+      transition: .5s ease;
+      transform: translateX(-480px);
+      overflow: visible;
+    }
+
+    .box02 .line01.moveX_1 {
+      transition: 5s linear;
+      transform: translateX(-460px);
+    }
+
+    .box02 .line01.moveX_2 {
+      transition: .5s ease;
+      transform: translateX(-1300px);
+    }
+
+    .box02 .line01 .item01 {
+      position: relative;
+      height: 100%;
+      background: url(./images/img3.jpg) center / cover;
+      transform: scale(1.1);
+    }
+
+    .box02 .line01 .item01::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -640px;
+      width: 100%;
+      height: 100%;
+      background: url(./images/img3.jpg) center / cover;
+    }
+
+    .box02.on .line01 .item01 {
+      transition: 3s linear;
+      transform: scale(1);
+    }
+
+    .box02 .line01 .item02 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 215px;
+      overflow: hidden;
+    }
+
+    .box02 .line01 .item02 .img_wrap {
+      transform: rotate(180deg);
+    }
+
+    .box02 .line01 .item02 .img_wrap .img {
+      width: 640px;
+      height: 360px;
+      background: url(./images/img3.jpg) no-repeat center / cover;
+      transform: scale(1.1);
+    }
+
+    .box02.on .line01 .item02 .img_wrap {
+      transition: .6s ease-in-out;
+      transform: rotate(0);
+    }
+
+    .box02.on .line01 .item02 .img_wrap .img {
+      transition: 3s linear;
+      transform: scale(1);
+    }
+
+    .box02 .line02 {
+      width: 980px;
+      position: absolute;
+      top: 50%;
+      transform: translate(645px , -50%);
+      z-index: 9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .box02 .line02.on {
+      transition: .6s ease-out;
+      transform: translate(-200px , -50%);
+    } 
+
+    .box02 .line02.moveX_1 {
+      transition: 5s linear;
+      transform: translate(-201px , -50%);
+    } 
+
+    .box02 .line02.moveX_2 {
+      transition: .6s ease-out;
+      transform: translate(-1000px , -50%);
+    } 
+
+    .box02 .line02 .item {
+      width: 470px;
+      height: 260px;
+    }
+
+    .box02 .line02 .item01 {
+      background: url(./images/img6.jpg) no-repeat center / cover;
+    }
+
+    .box02 .line02 .item02 {
+      background: url(./images/img6.jpg) no-repeat center / cover;
+    }
+
+    /* box03 */
+    .box03 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      z-index: -99;
+      background: #fff;
+    }
+
+    .box03.on {
+      z-index: 99;
+    }
+    .box03 .line01 {
+      z-index: 999;
+      overflow: hidden;
+      display: flex;
+      transform: scale(1.05);
+    }
+
+    .box03 .line01.on {
+      background: url(./images/img4.jpg) no-repeat center / 640px 360px;
+    }
+
+    .box03.on .line01 {
+      transition: 2s linear;
+      transform: scale(1);
+    }
+
+    .box03.remove .line01 {
+      transition: .7s ease-in-out;
+      transform: scale(0);
+    }
+
+    .box03 .line01 .item {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .box03 .line01 .item.remove {
+      display: none;
+    }
+
+    .box03 .line01 .item01 {width: 195px; transform: translateY(-280px);}
+    .box03 .line01 .item02 {width: 250px; transform: rotate(130deg);}
+    .box03 .line01 .item03 {width: 195px; transform: translateY(340px);}
+
+    .box03.on .line01 .item {transition: .4s ease-in-out;}
+    .box03.on .line01 .item01 {
+      transform: translateY(0);
+    }
+    .box03.on .line01 .item02 {
+      transform: rotate(0);
+    }
+    .box03.on .line01 .item03 {
+      transform: translateY(0);
+    }
+
+    .box03 .line01 .item .img {height: 100%;}
+    .box03 .line01 .item01 .img {background: url(./images/img4.jpg) no-repeat left / 640px 360px;}
+    .box03 .line01 .item02 .img {background: url(./images/img4.jpg) no-repeat center / 640px 360px;}
+    .box03 .line01 .item03 .img {background: url(./images/img4.jpg) no-repeat right / 640px 360px;}
+
+    .box03 .line02 {
+      width: 100%;
+      position: absolute;
+      z-index: 99;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+    }
+
+    .box03 .line02 .item01 {
+      width: 640px;
+      height: 360px;
+      overflow: hidden;
+    }
+
+    .box03 .line02 .item01 .img_wrap {
+      width: 100%;
+      height: 100%;
+      background: url(./images/img5.jpg) no-repeat center / cover;
+      transform: scale(1.1);
+    }
+
+    .box03 .line02 .item01.sizeDown .img_wrap {
+      transform: scale(1);
+      transition: 4s linear;
+    }
+
+    .box03 .line02 .item01 .img_wrap .img_top,
+    .box03 .line02 .item01 .img_wrap .img_bottom {
+      position: relative;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+    }
+
+    .box03 .line02 .item01 .img_wrap .img_top::before,
+    .box03 .line02 .item01 .img_wrap .img_bottom::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      transition: .5s ease-in-out;
+    }
+
+    .box03 .line02.on .item01 .img_wrap .img_top::before {
+      transform: translateY(210px);
+    }
+
+    .box03 .line02.on .item01 .img_wrap .img_bottom::before {
+      transform: translateY(-210px);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box box01">
+      <div class="line line01">
+        <div class="item item01"></div>
+        <div class="item item02"><div class="img_wrap"><div class="img"></div></div></div>
+      </div>
+      <div class="line line02">
+        <div class="item item01">
+          <div class="img_wrap">
+            <div class="img_top"></div>
+            <div class="img_bottom"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box box02">
+      <div class="line line01">
+        <div class="item item01"></div>
+        <div class="item item02">
+          <div class="img_wrap"><div class="img"></div></div>
+        </div>
+      </div>
+      <div class="line line02">
+        <div class="item item01"></div>
+        <div class="item item02"></div>
+      </div>
+    </div>  
+    <div class="box box03">
+      <div class="line line01">
+        <div class="item item01"><div class="img"></div></div>
+        <div class="item item02"><div class="img"></div></div>
+        <div class="item item03"><div class="img"></div></div>
+      </div>
+      <div class="line line02">
+        <div class="item item01">
+          <div class="img_wrap">
+            <div class="img_top"></div>
+            <div class="img_bottom"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const $box01 = document.querySelector('.box01');
+    const $box01_line01 = document.querySelector('.box01 .line01');
+    const $box01_line02 = document.querySelector('.box01 .line02');
+    const $box01_line02_item01 = document.querySelector('.box01 .line02 .item01');
+    const $box02 = document.querySelector('.box02');
+    const $box02_line01 = document.querySelector('.box02 .line01');
+    const $box02_line02 = document.querySelector('.box02 .line02');
+    const $box03 = document.querySelector('.box03');
+    const $box03_line01 = document.querySelector('.box03 .line01');
+    const $box03_line01_items = document.querySelectorAll('.box03 .line01 .item');
+    const $box03_line02 = document.querySelector('.box03 .line02');
+    const $box03_line02_item01 = document.querySelector('.box03 .line02 .item01')
+
+    window.addEventListener('load', () => {
+      $box01_line01.classList.add('on');
+
+      setTimeout(() => {
+        $box01.classList.add('moveY');
+      }, 2500);
+
+      setTimeout(() => {
+        $box01_line02.classList.add('on');
+      }, 2700);
+
+      setTimeout(() => {
+        $box01_line02.classList.add('rotate');
+        $box01_line02_item01.classList.add('rotate');
+      }, 5200);
+
+      setTimeout(() => {
+        $box02.classList.add('on');
+      }, 5350);
+
+      setTimeout(() => {
+        $box02_line01.classList.add('on');
+        $box02_line02.classList.add('on');
+      }, 8000);
+
+      setTimeout(() => {
+        $box02_line01.classList.add('moveX_1');
+        $box02_line02.classList.add('moveX_1');
+      }, 8500);
+
+      setTimeout(() => {
+        $box02_line01.classList.add('moveX_2');
+        $box02_line02.classList.add('moveX_2');
+      }, 10000);
+
+      setTimeout(() => {
+        $box03.classList.add('on');
+      }, 10300);
+
+      setTimeout(() => {
+        $box03_line01_items.forEach(elm => elm.classList.add('remove'));
+        $box03_line01.classList.add('on');
+      }, 10700);
+
+      setTimeout(() => {
+        $box03.classList.add('remove');
+      }, 12000);
+
+      setTimeout(() => {
+        $box03_line02.classList.add('on');
+        $box03_line02_item01.classList.add('sizeDown');
+      }, 12300);
+    })
+  </script>
+</body>
+</html>
