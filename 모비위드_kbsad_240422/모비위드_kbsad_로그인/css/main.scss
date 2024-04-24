@@ -1,0 +1,160 @@
+.wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/login/bg.png) no-repeat center / cover;
+
+  .cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      text-indent: -999999px;
+      font-size: 0;
+      background: url(../images/login/kbsad_logo.png) no-repeat center / contain;
+      background-position-x: center;
+      background-position-y: center;
+      width: 180px;
+      height: 70px;
+      margin-bottom: 12px;
+    }
+
+    > p {
+      font-family: 'NotoSans-Light';
+      margin-bottom: 40px;
+      color: #cccccc;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    .login {
+      width: 700px;
+      height: 492px;
+      padding: 58px 130px 60px 127px;
+      backdrop-filter: blur(15px);
+      background: rgba(0, 0, 0, 0.53);
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 39.5px;
+        
+        li {
+          font-family: 'NotoSans-Regular';
+          position: relative;
+          font-size: 22px;
+          line-height: 33px;
+          a {
+            color: #fff;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 1px;
+            height: 12px;
+            margin-right: 35px;
+            background-color: #ccc;
+          }
+        }
+
+        li:nth-child(1) {
+          &::before {
+            display: none;
+          }
+        }
+
+        li.on {
+          font-family: 'NotoSans-Bold';
+          a {
+            color: #2ca4e9;
+          }
+        }
+      }
+
+      #login_form {
+        > input {
+          font-family: 'NotoSans-Light';
+          width: 100%;
+          background: transparent;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid #ccc;
+          padding: 16.5px 0;
+          color: #fff;
+          font-size: 17px;
+
+          &::placeholder {
+            font-size: 17px;
+            color: rgba(255, 255, 255, .5);
+          }
+        }
+
+        > div {
+          margin-top: 33.5px;
+          input[type=checkbox] {
+            display: none;
+          }
+
+          input[type=checkbox] + label {
+            font-size: 15px;
+            color: #fff;
+            line-height: 1.47;
+            cursor: pointer;
+            position: relative;
+            padding-left: 38px;
+            font-family: 'NotoSans-Regular';
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 23px;
+              height: 23px;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              border: 1px solid #fff;
+              box-sizing: border-box;
+              background-repeat: no-repeat;
+              background-size: 12px 10px;
+              background-position: center;
+            }
+          }
+
+          input[type=checkbox]:checked + label {
+            &::before {
+              background-image: url(../images/login/check.png);
+            }
+          }
+        }
+
+        button {
+          font-family: 'NotoSans-Regular';
+          width: 440px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #2ca4e9;
+          font-size: 26px;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          transition: .3s;
+          margin-top: 42px;
+        }
+
+        button:hover {
+          background: #0778b8;
+        }
+      }
+    }
+  }
+}
