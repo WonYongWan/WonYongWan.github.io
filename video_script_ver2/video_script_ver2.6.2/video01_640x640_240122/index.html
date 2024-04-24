@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video 640x640</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrap {
+      position: relative;
+      width: 640px;
+      height: 640px;
+      background: #fff;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .img1 {background: url(./images/img1.jpg) no-repeat center / cover;}
+    .img2 {background: url(./images/img2.jpg) no-repeat center / cover;}
+    .img3 {background: url(./images/img3.jpg) no-repeat center / cover;}
+    .img4 {background: url(./images/img4.jpg) no-repeat center / cover;}
+    .img5 {background: url(./images/img5.jpg) no-repeat center / cover;}
+
+    .intro {
+      position: relative;
+      height: 640px;
+      display: grid;
+      grid-template-rows: 213.3px 213.3px 213.3px;
+      grid-template-areas:
+        "item1 item2 item3"
+        "item4 center item5"
+        "item6 item7 item8";
+    }
+    
+    .intro .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 209.3px;
+      height: 209.3px;
+    }
+    .intro .center .logo {
+      width: 180px;
+      height: 40px;
+      background: url(./images/logo.png) no-repeat center / contain;
+    } 
+    .intro .center .text {
+      width: 160px;
+      background: #000;
+      box-sizing: border-box;
+      color: #fff;
+      font-weight: 500;
+      padding: 3px 10px;
+      text-align: center;
+      font-size: 21px;
+      line-height: 1.2;
+      border-radius: 5px;
+    }
+    .intro .center .category {
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 500;
+      text-align: center;
+    }
+    .intro .item {opacity: 0;}
+    .intro .item.on {opacity: 1; transition: .2s ease-in;}
+    .intro .img {margin: 2px;}
+
+    .intro .center {grid-area: center}
+    .intro .item1 {grid-area: item1}
+    .intro .item2 {grid-area: item2}
+    .intro .item3 {grid-area: item3}
+    .intro .item4 {grid-area: item4}
+    .intro .item5 {grid-area: item5}
+    .intro .item6 {grid-area: item6}
+    .intro .item7 {grid-area: item7}
+    .intro .item8 {grid-area: item8}
+
+    .fake_video, .fake_img {
+      position: absolute;
+      z-index: 999;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 640px;
+      height: 640px;
+      opacity: 0;
+      transition: opacity .5s ease-in-out, transform 2s linear, width .2s ease-in-out, height .2s ease-in-out;
+    }
+    .fake_video {object-fit: cover;}
+    .fake_img2 {
+      height: 780px; 
+      transform: translate(-50%, -50%) scale(3.5);
+    }
+    .fake_video.on, .fake_img.on {opacity: 1;}
+    .fake_video.none, .fake_img.none {display: none;}
+    .fake_video.size_up, .fake_img.size_up {transform: translate(-50%, -50%) scale(1.1);}
+    .fake_video.size_down, .fake_img.size_down {
+      width: 385px; 
+      height: 385px; 
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0s, width .2s ease, height .2s ease;
+    }
+
+    .move_img_wrap1 {
+      position: absolute;
+      z-index: 99;
+      padding-left: 127.5px;
+      top: 0;
+      left: 0;
+      width: 640px;
+      height: 640px;
+      background: #fff;
+      align-items: center;
+      display: none;
+    }
+    .move_img_wrap1.on {display: flex;}
+
+    .move_img_wrap1 .img {
+      margin-right: 70px;
+      min-width: 385px;
+      height: 385px;
+      object-fit: cover;
+      transition: transform .3s ease-in-out;
+    }
+
+    .move_img_wrap1.move .img {transform: translateX(-2275.5px);}
+    .move_img_wrap1.blur .img {filter: blur(3px);}
+
+    .move_video_wrap2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      display: none;
+    }
+    .move_video_wrap2.on {
+      display: flex;
+    }
+    .move_video_wrap2 .box {
+      position: relative;
+      width: 640px;
+      height: 640px;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .3s ease;
+    }
+    .move_video_wrap2 .box .video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 2s ease;
+    }
+
+    .move_video_wrap2 .box:nth-child(odd) .video {
+      height: 780px;
+    }
+    .move_video_wrap2 .box:nth-child(even) .video {
+      width: 680px;
+    }
+    .move_video_wrap2 .box:first-child .video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.3);
+    }
+    .move_video_wrap2 .box:nth-child(3) .video {
+      position: absolute;
+      bottom: 0;
+      transform: scale(1.3);
+    }
+    .move_video_wrap2 .box:last-child .video {
+      position: absolute;
+      right: 0;
+    }
+
+    .move_video_wrap2 .box .video.move_top {transform: translate(-50%, calc(-50% - 70px)) scale(1);}
+    .move_video_wrap2 .box .video.move_down {transform: translateY(70px) scale(1);}
+    .move_video_wrap2 .box .video.move_left {transform: translateX(-40px);}
+    .move_video_wrap2 .box .video.move_right {transform: translateX(40px);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro">
+      <div class="center">
+        <div class="logo"></div>
+        <p class="text"></p>
+        <div class="category"></div>
+      </div>
+      <div class="item item1 img img1"></div>
+      <div class="item item2 img img2"></div>
+      <div class="item item3 img img3"></div>
+      <div class="item item4 img img5"></div>
+      <div class="item item5 img img2"></div>
+      <div class="item item6 img img4"></div>
+      <div class="item item7 img img1"></div>
+      <div class="item item8 img img4"></div>
+    </div>
+    <video class="fake_video fake_video1" autoplay muted><source src="./videos/video1.mp4"/></video>
+    <div class="move_img_wrap1">
+      <div class="img img1"></div>
+      <div class="img img2"></div>
+      <div class="img img1"></div>
+      <div class="img img2"></div>
+      <div class="img img1"></div>
+      <div class="img img2"></div>
+      <div class="img img3"></div>
+    </div>
+    <div class="fake_img fake_img2 img2 size_down"></div>
+    <div class="move_video_wrap2">
+      <div class="box"><video class="video" src="./videos/video2.mp4" autoplay muted></video></div>
+      <div class="box"><video class="video" src="./videos/video3.mp4" autoplay muted></video></div>
+      <div class="box"><video class="video" src="./videos/video4.mp4" autoplay muted></video></div>
+      <div class="box"><video class="video" src="./videos/video5.mp4" autoplay muted></video></div>
+    </div>
+  </div>
+
+  <script>
+    // elements
+    const $introItems = document.querySelectorAll('.intro .item');
+    const $introText = document.querySelector('.intro .center .text');
+    const $introCategory = document.querySelector('.intro .center .category');
+    const $fakeVideo_1 = document.querySelector('.fake_video1');
+    const $fakeImg_2 = document.querySelector('.fake_img2');
+    const $moveImgWrap_1 = document.querySelector('.move_img_wrap1');
+    const $moveVideoWrap_2 = document.querySelector('.move_video_wrap2');
+    const $moveVideoWrap_2Boxs = document.querySelectorAll('.move_video_wrap2 .box');
+    const $moveVideoWrap_2Videos = document.querySelectorAll('.move_video_wrap2 .box .video');
+
+    // $introText effect
+    let text = '카피문구 최대 15자 입력가능';
+    text = text.split('').splice(0, 16).join('');
+    $introText.innerText = text;
+
+    // $introCategory effect
+    let category = '여성언더웨어/잠옷>언더웨어소품';
+    let categoryFirstText;
+    let categoryLastText;
+    if(category.length >= 12 && category.indexOf('>') !== -1) {
+      categoryFirstText = category.split('').splice(0, category.indexOf('>')).join('');
+      categoryLastText = category.split('').splice(category.indexOf('>')).join('');
+      $introCategory.innerText = categoryFirstText;
+      $introCategory.innerHTML += `<div>${categoryLastText}</div>`;
+    } else {
+      $introCategory.innerText = category;
+    }
+
+    window.addEventListener('load', () => {
+      // $introItems effect
+      const introItemsArray = [...$introItems]
+      const introItemInterval = setInterval(introItemShow, 300);
+      function introItemShow() {
+        introItemsArray[0].classList.add('on');
+        introItemsArray.shift();
+        if(introItemsArray.length === 0) clearInterval(introItemInterval);
+      }
+      
+      // $fakeVideo_1 effect
+      setTimeout(() => {
+        $fakeVideo_1.classList.add('on');
+        $fakeVideo_1.classList.add('size_up');
+        $fakeVideo_1.play();
+        setTimeout(() => {
+          $fakeVideo_1.classList.add('size_down');
+        }, 2200);
+        setTimeout(() => {
+          $fakeVideo_1.classList.add('none');
+        }, 2400);
+      }, 3000);
+
+      // $moveImgWrap_1 effect
+      setTimeout(() => {
+        $moveImgWrap_1.classList.add('on');
+        setTimeout(() => {
+          $moveImgWrap_1.classList.add('move');
+          $moveImgWrap_1.classList.add('blur');
+        }, 1400);
+        setTimeout(() => {
+          $moveImgWrap_1.classList.remove('blur');
+        }, 1700);
+      }, 4100);
+
+      // $fakeImg_2 effect
+      setTimeout(() => {
+        $fakeImg_2.classList.add('on');
+        setTimeout(() => {
+          $fakeImg_2.classList.remove('size_down');
+        }, 200);
+        setTimeout(() => {
+          $fakeImg_2.classList.add('none');
+        }, 400);
+      }, 5900);
+
+      // $moveVideoWrap_2 effect
+      let moveVideoWrapBoxPos = 0;
+      let moveVideoWrapImgIdx = 0;
+      let moveVideoWrapBoxMoveInterval;
+
+      function moveImgWrapBoxMove() {
+        moveVideoWrapBoxPos += 640;
+        moveVideoWrapImgIdx += 1;
+        $moveVideoWrap_2Boxs.forEach(elm => elm.style.transform = `translateX(-${moveVideoWrapBoxPos}px)`);
+        switch(moveVideoWrapImgIdx) {
+          case 1:
+            $moveVideoWrap_2Videos[moveVideoWrapImgIdx].classList.add('move_left');
+            $moveVideoWrap_2Videos[moveVideoWrapImgIdx].play();
+            break;
+          case 2:
+            $moveVideoWrap_2Videos[moveVideoWrapImgIdx].classList.add('move_down');
+            $moveVideoWrap_2Videos[moveVideoWrapImgIdx].play();
+            break;
+          case 3:
+            $moveVideoWrap_2Videos[moveVideoWrapImgIdx].classList.add('move_right');
+            $moveVideoWrap_2Videos[moveVideoWrapImgIdx].play();
+            break;
+          default:
+            break;
+        }
+        if(moveVideoWrapBoxPos === 1920) clearInterval(moveVideoWrapBoxMoveInterval);
+      }
+
+      setTimeout(() => {
+        $moveVideoWrap_2.classList.add('on');
+        moveVideoWrapBoxMoveInterval = setInterval(moveImgWrapBoxMove, 2200);
+        setTimeout(() => {
+          $moveVideoWrap_2Videos[0].classList.add('move_top');
+          $moveVideoWrap_2Videos[0].play();
+        }, 50);
+      }, 6300);
+    });
+  </script>
+</body>
+</html>
