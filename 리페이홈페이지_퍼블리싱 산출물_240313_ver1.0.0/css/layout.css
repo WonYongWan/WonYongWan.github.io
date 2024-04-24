@@ -1,0 +1,15 @@
+.wrap {
+  overflow: hidden;
+  height: 100vh;
+}
+.wrap .pageWrap {
+  transition: transform 1s;
+  will-change: transform;
+}
+.wrap .pageWrap .page {
+  height: 100vh;
+  overflow: hidden;
+}
+.wrap .pageWrap footer {
+  height: unset !important;
+}

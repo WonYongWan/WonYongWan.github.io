@@ -1,0 +1,19 @@
+.wrap {
+  overflow: hidden;
+  height: 100vh;
+
+  .pageWrap {
+    transition: transform 1s;
+    will-change: transform;
+
+    // basic setting
+    .page {
+      height: 100vh;
+      overflow: hidden;
+    }
+  
+    // add setting
+    // .page.cont5 {height: 600px;}
+    footer {height: unset !important;}
+  }
+}
