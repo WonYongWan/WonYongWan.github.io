@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+    <g style="isolation:isolate">
+        <path data-name="사각형 5371" style="fill:transparent" d="M0 0h34v34H0z"/>
+        <g data-name="그룹 7033">
+            <path data-name="패스 173" d="M17.764 21.276a1.233 1.233 0 0 1-1.234-1.234V13.6a1.234 1.234 0 0 1 2.47 0v6.437a1.233 1.233 0 0 1-1.234 1.234" transform="translate(-.844 .589)" style="fill:#4664e6"/>
+            <path data-name="패스 178" d="M16.559 14.143a1.226 1.226 0 0 1-.616-.165l-5.571-3.215a1.234 1.234 0 1 1 1.234-2.137l5.571 3.215a1.233 1.233 0 0 1-.618 2.3" transform="translate(.359 1.284)" style="fill:#4664e6"/>
+            <path data-name="패스 179" d="M17.765 14.143a1.233 1.233 0 0 1-.618-2.3l5.57-3.215a1.234 1.234 0 1 1 1.234 2.137l-5.57 3.215a1.226 1.226 0 0 1-.616.165" transform="translate(-.844 1.284)" style="fill:#4664e6"/>
+        </g>
+        <g data-name="그룹 7034" transform="translate(3.092 .787)">
+            <circle data-name="타원 714" cx="3" cy="3" r="3" transform="translate(-1.092 2.213)" style="fill:#8698e6"/>
+            <circle data-name="타원 715" cx="3" cy="3" r="3" transform="translate(22.908 2.213)" style="fill:#8698e6"/>
+            <circle data-name="타원 716" cx="3" cy="3" r="3" transform="translate(10.908 24.213)" style="fill:#8698e6"/>
+        </g>
+    </g>
+</svg>
