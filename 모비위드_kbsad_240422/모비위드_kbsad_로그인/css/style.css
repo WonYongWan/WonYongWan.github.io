@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "NotoSans-Light";
+  src: url("../font/NotoSansKR-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "NotoSans-Regular";
+  src: url("../font/NotoSansKR-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "NotoSans-Bold";
+  src: url("../font/NotoSansKR-Bold.woff") format("woff");
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/login/bg.png) no-repeat center/cover;
+}
+.wrap .cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap .cont h1 {
+  text-indent: -999999px;
+  font-size: 0;
+  background: url(../images/login/kbsad_logo.png) no-repeat center/contain;
+  background-position-x: center;
+  background-position-y: center;
+  width: 180px;
+  height: 70px;
+  margin-bottom: 12px;
+}
+.wrap .cont > p {
+  font-family: "NotoSans-Light";
+  margin-bottom: 40px;
+  color: #cccccc;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.wrap .cont .login {
+  width: 700px;
+  height: 492px;
+  padding: 58px 130px 60px 127px;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.53);
+}
+.wrap .cont .login ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 39.5px;
+}
+.wrap .cont .login ul li {
+  font-family: "NotoSans-Regular";
+  position: relative;
+  font-size: 22px;
+  line-height: 33px;
+}
+.wrap .cont .login ul li a {
+  color: #fff;
+}
+.wrap .cont .login ul li::before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 12px;
+  margin-right: 35px;
+  background-color: #ccc;
+}
+.wrap .cont .login ul li:nth-child(1)::before {
+  display: none;
+}
+.wrap .cont .login ul li.on {
+  font-family: "NotoSans-Bold";
+}
+.wrap .cont .login ul li.on a {
+  color: #2ca4e9;
+}
+.wrap .cont .login #login_form > input {
+  font-family: "NotoSans-Light";
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  padding: 16.5px 0;
+  color: #fff;
+  font-size: 17px;
+}
+.wrap .cont .login #login_form > input::-moz-placeholder {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.wrap .cont .login #login_form > input::placeholder {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.wrap .cont .login #login_form > div {
+  margin-top: 33.5px;
+}
+.wrap .cont .login #login_form > div input[type=checkbox] {
+  display: none;
+}
+.wrap .cont .login #login_form > div input[type=checkbox] + label {
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.47;
+  cursor: pointer;
+  position: relative;
+  padding-left: 38px;
+  font-family: "NotoSans-Regular";
+}
+.wrap .cont .login #login_form > div input[type=checkbox] + label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: 12px 10px;
+  background-position: center;
+}
+.wrap .cont .login #login_form > div input[type=checkbox]:checked + label::before {
+  background-image: url(../images/login/check.png);
+}
+.wrap .cont .login #login_form button {
+  font-family: "NotoSans-Regular";
+  width: 440px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2ca4e9;
+  font-size: 26px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 42px;
+}
+.wrap .cont .login #login_form button:hover {
+  background: #0778b8;
+}
