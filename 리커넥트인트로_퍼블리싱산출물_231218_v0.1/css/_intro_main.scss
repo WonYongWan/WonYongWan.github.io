@@ -1,0 +1,444 @@
+.cont1 {
+  background: url(../images/intro/sec1_bg.png) no-repeat center / cover;
+  @include flexComp($j: center, $fD: column);
+  
+  &::before {
+    animation: ani_down 3s infinite ease-in-out;
+    @include PseudoElmComp($cnt: "", $w: 25.5rem, $h: 25.5rem, $t: 15rem, $l: 7.88rem, $bg: url(../images/intro/sec1_img02.png) no-repeat center / contain);
+  }
+
+  &::after {
+    animation: ani_up 3s infinite ease-in-out;
+    @include PseudoElmComp($cnt: "", $w: 46.6rem, $h: 46.6rem, $t: unset, $b: 13.4rem, $l: unset, $r: 0, $bg: url(../images/intro/sec1_img03.png) no-repeat center / contain)
+  }
+    
+  h2 {
+    position: relative;
+    z-index: 99;
+    font-size: 8.88rem;
+    line-height: 12.8rem;
+    padding-bottom: 9.2rem;
+    white-space: nowrap;
+
+    &::after {
+      @include PseudoElmComp($t: unset, $b: 0, $l: 50%, $w: 58.8rem, $h: 8.44rem, $bg: url(../images/intro/sec1_img01.png) no-repeat center / 100%);
+      transform: translateX(-50%);
+    }
+  }
+
+  ul {
+    position: relative;
+    z-index: 99;
+    margin-top: 5rem;
+    gap: 3.33rem;
+    @include flexComp($j: space-between);
+
+    li {
+      a, button {
+        transition: .2s;
+        @include btnWhiteComp($w: 22.2rem, $h: 6.66rem, $bR: 1.1rem, $fS: 2.2rem);
+      
+        &:hover {
+          @include btnHoverRedComp()
+        }
+      }
+    }
+  }
+}
+
+.cont2 {
+  background: url(../images/intro/sec2_bg.png) no-repeat center / cover;
+  @include flexComp($j: space-between);
+
+  &::before {
+    animation: ani_down 3s infinite ease-in-out;
+    @include PseudoElmComp($cnt: "", $w: 25.5rem, $h: 25.5rem, $t: 13.11rem, $l: 69.22rem, $bg: url(../images/intro/sec2_img01.png) no-repeat center / contain);
+  }
+
+  li, h3, p {@include font7();}
+
+  div {
+    position: relative;
+    z-index: 99;
+    padding-left: 11vw;
+    flex-basis: 51.5%;
+    @include flexComp($a: flex-start, $fD: column);
+
+    h3 {
+      font-size: 2.7rem;
+      color: $bg_red_b;
+      margin-bottom: 2.22rem;
+    }
+
+    p:nth-child(2) {
+      font-size: 5rem;
+      line-height: 1.44;
+      margin-bottom: 1.66rem;
+    }
+
+    p:nth-child(3) {
+      font-size: 1.88rem;
+      line-height: 1.5;
+      @include mainFont();
+    }
+  }
+
+  .ad_info_list {
+    position: relative;
+    z-index: 99;
+    height: 100%;
+    flex-wrap: wrap;
+    flex-basis: 48.5%;
+    @include flexComp($a: flex-end);
+
+    li {
+      height: 50%;
+      font-size: 3.8rem;
+      line-height: 1.46;
+      flex-basis: 50%;
+      border-left: 1px solid #fff;
+      background-color: rgba(255, 255, 255, .1);
+      background-repeat: no-repeat;
+      background-position: center 17.8rem;
+      background-size: 11.1rem;
+      transition: background-color .3s ease-in-out;
+      user-select: none;
+      @include flexComp($fD: column);
+
+      h4 {position: relative; padding-top: 11.1rem;}
+
+      p {
+        margin-top: 5px;
+        display: none;
+        text-align: center;
+        font-size: 16px;
+        @include mainFont();
+      }
+    }
+
+    li.on {
+      background-color: rgba(159, 20, 54, .3);
+      p {display: block;}
+    }
+
+    li:nth-child(1),
+    li:nth-child(2) {
+      border-bottom: 1px solid #fff;
+    }
+
+    h4::before {
+      transform: translateX(-50%);
+      @include PseudoElmComp($cnt: '', $t: 0,$l: 50%, $w: 11.1rem, $h: 11.1rem);
+    }
+
+    li:nth-child(1) h4::before {background: url(../images/intro/sec2_img02.png) no-repeat center / cover;}
+    li:nth-child(2) h4::before {background: url(../images/intro/sec2_img03.png) no-repeat center / cover;}
+    li:nth-child(3) h4::before {background: url(../images/intro/sec2_img04.png) no-repeat center / cover;}
+    li:nth-child(4) h4::before {background: url(../images/intro/sec2_img05.png) no-repeat center / cover;}
+  }
+
+}
+
+.conts_bg {
+  background: url(../images/intro/sec3_bg.png) no-repeat center / cover;
+  .cont3 {
+    position: relative;
+    padding-top: 6.22rem;
+    @include flexComp($fD: column, $j: flex-start);
+    .tab_menu {
+      gap: 7.7rem;
+      @include flexComp();
+
+      button {
+        position: relative;
+        padding: 0;
+        font-size: 1.88rem;
+        padding-bottom: 1.1rem;
+        @include font2();
+      }
+
+      button.on {
+        font-size: 1.88rem;
+        @include font2();
+
+        &::before {
+          @include PseudoElmComp($w: 100%, $h: 2px, $t: unset, $b: 0, $bg: $bg_red_b);
+        }
+      }
+
+      button.on + .tab_cont {opacity: 1;}
+
+      .tab_cont {
+        padding: 5.55rem 0;
+        width: 79.5vw;
+        height: 650px;
+        background: linear-gradient(90deg, rgba(7,17,33,1) 0%, rgba(10,32,59,1) 50%, rgba(7,17,33,1) 100%);
+        border-radius: 5.55rem;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        @include PositionComp($tX: -35%, $tY: -50%);
+        @include flexComp($j: flex-start, $fD: column);
+
+        li {
+          text-align: center;
+          word-break: keep-all;
+          font-size: 2.22rem;
+          line-height: 1.5;
+          @include mainFont();
+
+          span {
+            color: $bg_red_c;
+            vertical-align: top;
+          }
+        }
+      }
+
+      li:nth-child(1) .tab_cont {
+        img {
+          margin-top: 3.22rem;
+          width: 69vw ;
+        }
+      }
+
+      li:nth-child(2) .tab_cont {
+        img {
+          margin-top: 4.44rem;
+          width: 61vw;
+        }
+      }
+
+      li:nth-child(3) .tab_cont {
+        img {
+          margin-top: 4.44rem;
+          width: 72vw;
+        }
+      }
+
+      li:nth-child(4) .tab_cont {
+        img {
+          margin-top: 2.77rem;
+          width: 61vw;
+        }
+      }
+    }
+  }
+  
+  .cont4 {
+    @include flexComp($fD: column);
+
+    h2 {margin-bottom: 4.44rem;}
+
+    .cube {
+      position: absolute;
+      top: 30%;
+      right: 3%;
+
+      iframe {
+        height: 360px;
+      }
+    }
+  
+    > ul {
+      @include flexComp();
+
+      > li {
+        position: relative;
+        padding-top: 7.33rem;
+        width: 53.33rem;
+        height: 72.22rem;
+        border-radius: 5.55rem;
+        margin-right: 4.44rem;
+        text-align: center;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(7,17,33,1) 0%, rgba(7,18,35,1) 25%, rgba(7,19,36,1) 50%, rgba(10,30,56,1) 75%, rgba(7,17,33,1) 100%);
+
+        &::before {
+          transform: translateX(-50%);
+          @include PseudoElmComp($l: 50%, $w: 9rem, $h: 4.55rem, $bg: url(../images/intro/sec4_img01.png) no-repeat center / cover)
+        }
+
+        p {
+          font-size: 3.33rem;
+          @include font5();
+        }
+      }
+
+      li:last-child {margin-right: 0;}
+
+      > li:nth-child(1) img {margin-top: 5.44rem;}
+      > li:nth-child(2) ul {
+        width: 100%;
+        position: relative;
+        margin-top: 5.77rem;
+        text-align: left;
+        padding: 0 5.11rem;
+      }
+      > li:nth-child(3) img {margin-top: 6.77rem;}
+    }
+  }
+}
+
+.cont5 {
+  background: $bg_black_a;
+  overflow: hidden;
+  @include flexComp($fD: column);
+
+  &::before {
+    animation: rotate 20s infinite linear;
+    @include PseudoElmComp($w: 54.66rem, $h: 66.66rem, $t: -22%, $b: unset, $l: unset, $r: -5%, $bg: url(../images/intro/sec5_img20.png) no-repeat center / contain)
+  }
+
+  p {margin-bottom: 13.33rem;}
+
+  .swiper {
+    height: 11.1rem;
+
+    .swiper-wrapper {
+      position: relative;
+      transition-timing-function: linear;
+      display: flex;
+
+      .swiper-slide {
+        width: 18.8rem;
+        height: 11.1rem;
+        margin: 0 25px;
+        text-indent: -999999px;
+      }
+
+      .swiepr_1 {background: url(../images/intro/sec5_img01.png) no-repeat center / contain;}
+      .swiepr_2 {background: url(../images/intro/sec5_img02.png) no-repeat center / contain;}
+      .swiepr_3 {background: url(../images/intro/sec5_img03.png) no-repeat center / contain;}
+      .swiepr_4 {background: url(../images/intro/sec5_img04.png) no-repeat center / contain;}
+      .swiepr_5 {background: url(../images/intro/sec5_img05.png) no-repeat center / contain;}
+      .swiepr_6 {background: url(../images/intro/sec5_img06.png) no-repeat center / contain;}
+      .swiepr_7 {background: url(../images/intro/sec5_img07.png) no-repeat center / contain;}
+      .swiepr_8 {background: url(../images/intro/sec5_img08.png) no-repeat center / contain;}
+      .swiepr_9 {background: url(../images/intro/sec5_img09.png) no-repeat center / contain;}
+      .swiepr_10 {background: url(../images/intro/sec5_img10.png) no-repeat center / contain;}
+      .swiepr_11 {background: url(../images/intro/sec5_img11.png) no-repeat center / contain;}
+      .swiepr_12 {background: url(../images/intro/sec5_img12.png) no-repeat center / contain;}
+      .swiepr_13 {background: url(../images/intro/sec5_img13.png) no-repeat center / contain;}
+      .swiepr_14 {background: url(../images/intro/sec5_img14.png) no-repeat center / contain;}
+      .swiepr_15 {background: url(../images/intro/sec5_img15.png) no-repeat center / contain;}
+      .swiepr_16 {background: url(../images/intro/sec5_img16.png) no-repeat center / contain;}
+      .swiepr_17 {background: url(../images/intro/sec5_img17.png) no-repeat center / contain;}
+      .swiepr_18 {background: url(../images/intro/sec5_img18.png) no-repeat center / contain;}
+      .swiepr_19 {background: url(../images/intro/sec5_img19.png) no-repeat center / contain;}
+    }
+  }
+}
+
+.cont6 {
+  min-height: 1080px;
+  background: linear-gradient(89deg, #030003 0%, #0a131f 49%);
+  @include flexComp($fD: column);
+
+  > p {margin-bottom: 7.66rem;}
+
+  > ul {
+    margin: 0 auto;
+    width: 119.1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 4.66rem;
+    > li {
+      flex-basis: 57.22rem;
+      margin-bottom: 3.6rem;
+
+      .title {
+        position: relative;
+        display: inline-block;
+        font-size: 1.66rem;
+        line-height: 1.1;
+
+        &::before {
+          border-radius: 100%;
+          @include PseudoElmComp($t: 0, $b: unset, $l: unset, $r: -8px, $w: .55rem, $h: .55rem, $bg: $bg_red_a)
+        }
+      }
+
+      input, select {
+        width: 100%;
+        padding: 1.5rem 0;
+        border: unset;
+        border-bottom: 1px solid $bg_blue_a;
+      }
+
+      input[type="checkbox"] {display: none;}
+
+      input[type="checkbox"] + label {
+        position: relative;
+        font-size: 2.22rem;
+        padding-left: 3.54rem;
+
+        &::before {
+          transform: translateY(-50%);
+          @include PseudoElmComp($t: 50%, $l: 0, $w: 2.44rem, $h: 2.44rem, $bg: url(../images/intro/checkbox_off.png) no-repeat center / cover)
+        }
+
+        strong {
+          @include font5();
+          color: $bg_red_a;
+        }
+
+      }
+
+      input[type="checkbox"]:checked + label {
+        &::before {
+          background: transparent url(../images/intro/checkbox_on.png) no-repeat center / cover;
+        }
+      }
+
+      select {
+        background-image: url(../images/intro/arrow_down.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+
+      textarea {
+        box-sizing: border-box;
+        margin-top: 1.5rem;
+      }
+
+      > ul {
+        display: flex;
+        column-gap: 2.22rem;
+
+        > li {
+          position: relative;
+          flex-basis: 50%;
+
+          > span {
+            font-size: 2.22rem;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+        }
+
+        > li:last-child > input {
+          padding-right: 3rem;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    > li:nth-child(7) {
+      flex-basis: 100%;
+    }
+
+    > li:last-child {
+      display: flex;
+      align-items: center;
+      flex-basis: 100%;
+    }
+  }
+
+  button {
+    font-size: 2.22rem;
+    @include font5();
+    @include btnRedComp($w: 26.33rem, $h: 7.11rem, $bR: 4.33rem);
+  }
+}

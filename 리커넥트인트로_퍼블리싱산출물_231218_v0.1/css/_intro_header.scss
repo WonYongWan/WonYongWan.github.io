@@ -1,0 +1,334 @@
+header {
+	background: rgba(7, 19, 45, 1);
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
+	padding: 0 14.4rem;
+	height: 10rem;
+	@include flexComp($j: space-between, $a: center);
+
+	h1 {
+		a {
+			background-image: url(../images/intro/reconnect_logo.svg);
+			@include logoComp($w: 18.94rem, $h: 2.73rem);
+		}
+	}
+
+	.mo_menu_btn {
+		display: none;
+	}
+	
+	.conts_menu {
+		@include flexComp($j: space-between, $a: center);
+		gap: 4.2rem;
+		
+		button {
+			padding: 0;
+			position: relative;
+			font-size: 1.5rem;
+			color: $txt_white;
+
+			@include fontS4();
+
+			&::before {
+				opacity: 0;
+				transition: .2s ease-in-out;
+				transform: translateX(-50%);
+				@include PseudoElmComp($cnt: '', $t: unset, $b: -5px, $l: 50%, $w: 100%, $h: 2px, $bg: $bg_red_a)
+			}
+		}
+
+		button.on {
+			&::before {opacity: 1;}
+		}
+
+		.login {
+			display: none !important;
+			font-size: 1.5rem;
+			color: $txt_white;
+
+			@include fontS5();
+			@include btnRedComp($w: 10.2rem, $h: 4.33rem ,$bR: 2.22rem);
+		}
+
+		.login.on {
+			display: flex !important;
+		}
+
+		.user_info {
+			display: none;
+		}
+		
+		.user_info.on {
+			display: flex;
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+  header {
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+		height: unset;
+		padding: 6rem 8rem;
+
+		h1 {
+			a {
+				@include logoComp($w: 54rem, $h: 8rem);
+			}
+		}
+
+		.mo_menu_btn {
+			position: relative;
+			z-index: 999;
+			text-indent: -9999px;
+			display: block;
+			width: 8rem;
+			height: 6rem;
+			border-radius: 2px;
+			padding: 0;
+
+			span, &::before, &::after {transition: .3s ease-in-out;}
+
+			span {
+				position: absolute;
+				display: block;
+				background: #fff;
+				width: 100%;
+				height: 2px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 3px;
+			}
+
+			&::before, &::after {
+				transform: translateX(-50%);
+				border-radius: 3px;
+				@include PseudoElmComp($t: 0%, $l: 50%, $w: 100%, $h: 2px, $bg: #fff);
+			}
+
+			&::after {
+				top: calc(100% - 2px);
+			}
+		}
+
+		.mo_menu_btn.on {
+			span {
+				opacity: 0;
+			}
+
+			&::before {top: 50%; transform: translate(-50%, -50%) rotate(45deg);}
+			&::after {top: 50%; transform: translate(-50%, -50%) rotate(-45deg);}
+		}
+		
+		.conts_menu {display: none;}
+
+		.conts_menu.on {
+			position: fixed;
+			display: flex;
+			top: 0;
+			left: 0;
+			background: rgba(158, 20, 55, .8);
+			height: 100vh;
+			flex-direction: column;
+			justify-content: center;
+
+			li {
+				height: 20rem;
+
+				button {
+					&::before {
+						display: none;
+					}
+				}
+				button.on {
+					&::before {display: none;}
+				}
+		
+				button, .login {
+					text-align: left;
+					display: block;
+					height: 100%;
+					background: transparent;
+					padding-left: 18rem;
+					font-size: 6vw;
+					width: 100vw;
+					line-height: 20rem;
+					@include mainFont();
+				}
+
+				.login.on {
+					display: block !important;
+				}
+			}
+
+			.user_info {
+				width: 100%;
+				padding-bottom: 40px;
+				margin-bottom: 10rem;
+				height: unset;
+				justify-content: center;
+				align-items: center;
+				border-bottom: 1px solid #bc3c61;
+
+				.user_img {
+					margin-right: 9px;
+					width: 60px;
+					height: 60px;
+					background: url(../images/intro/user_img.png) no-repeat center / cover;
+				}
+
+				.user_name {
+					font-size: 20px;
+					line-height: 29px;
+				}
+
+				.user_email {
+					font-size: 14px;
+					line-height: 20px;
+					color: #db7c98;
+				}
+
+				.logout {
+					font-size: 14px;
+					line-height: 20px;
+					padding: 10px 17px;
+					border-radius: 20px;
+					border: 1px solid #fff;
+					margin-left: 16px;	
+				}
+
+				> ul {
+					li {height: unset;}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	header {
+		.conts_menu.on {
+			li {
+				height: 30rem;
+
+				button, .btn {
+					font-size: 6vw;
+					line-height: 30rem;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	gap: 10.1rem;
+	padding: 5.5rem 28.8rem;
+	background: #000;
+	@include flexComp($j : flex-start);
+
+	.footer_logo {
+		background: url(../images/intro/reconnect_logo.svg) no-repeat center / cover;
+		min-width: 12.2rem;
+		width: 12.2rem;
+		height: 1.75rem;
+		text-indent: -9999px;
+	}
+
+	div {
+		font-size: 1.66rem;
+		@include font3();
+
+		ul {
+			margin-bottom: 1.1rem;
+			@include flexComp($j : flex-start);
+
+			li {
+				position: relative;
+				padding-right: 1.11rem;
+				margin-right: 1.11rem;
+				white-space: nowrap;
+
+				&::after {
+					transform: translateY(-50%);
+					@include PseudoElmComp($cnt: '', $t: 50%, $l: unset, $r: 0, $w: 1px, $h: 1.22rem
+					, $bg: #fff)
+				}
+			}
+
+			li:last-child {
+				&::after {display: none;}
+			}
+		}
+		p {
+			color: #7e7e7e;
+		}
+	}
+
+	.scroll_top_btn {
+    text-indent: -99999px;
+		transition: .3s ease-in-out;
+		opacity: 0;
+		position: fixed;
+		right: 20px;
+		display: inline-block;
+		width: 84px;
+		height: 84px;
+		background: url(../images/intro/scroll_top.png) no-repeat center / cover;
+	}
+
+	.scroll_top_btn.on {
+		opacity: 1;
+		bottom: 2%;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	footer {
+		padding: 10.5rem 10vw !important;
+		overflow: hidden;
+		flex-direction: column;
+		align-items: flex-start;
+		
+		.footer_logo {
+			min-width: 12.2rem;
+			width: 62.2rem;
+			height: 8.75rem;
+		}
+	
+		div {
+			font-size: 3.66rem;
+	
+			ul {
+				flex-wrap: wrap;
+				margin-bottom: 1.1rem;
+				flex-direction: column;
+				align-items: flex-start;
+	
+				li {
+					padding-right: unset;
+					margin-right: unset;
+					margin-bottom: 2rem;
+	
+					&::after {
+						display: none;
+					}
+				}
+	
+				li:last-child {
+					&::after {display: none;}
+				}
+			}
+			p {
+				font-size: 3rem;
+				color: #7e7e7e;
+			}
+		}
+
+		.scroll_top_btn {
+			width: 13vw;
+			height: 13vw;
+		}
+	}
+}

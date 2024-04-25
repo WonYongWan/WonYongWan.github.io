@@ -1,0 +1,492 @@
+@media only screen and (max-width: 1620px) {
+  .conts_bg {
+    .cont3 {
+      .tab_menu {
+        .tab_cont {
+          height: 600px;
+        }
+      }
+    }
+    
+    .cont4 {
+      padding: 3rem 0;
+      > ul {
+        > li {
+          width: 30vw;
+          border-radius: 3vw;
+          > img {
+            width: 25vw;
+          }
+
+          > ul {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 5.5rem 10vw;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  html {font-size: .7vw;}
+
+  .cont2 {
+    &::before {
+      top: 10%;
+      left: 30%;
+    }
+
+    div {
+      padding-left: 8vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .conts_bg {
+    .cont3 {
+      .tab_menu {
+        .tab_cont {
+          height: 550px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .conts_bg {
+    .cont3 {
+      padding-top: 11.22rem;
+      .tab_menu {
+        .tab_cont {
+          height: 500px;
+        }
+      }
+    }
+
+    .cont4 {
+      .cube {
+        top: 8% !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .conts_bg {
+    .cont3 {
+      padding-top: 18.22rem;
+      .tab_menu {
+        .tab_cont {
+          height: 450px;
+        }
+      }
+    }
+  }
+
+  .cont5 {
+    &::before {
+      top: -18%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .conts_bg {
+    .cont3 {
+      padding-top: 24.22rem;
+      .tab_menu {
+        .tab_cont {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .conts_bg {
+    .cont3 {
+      padding-top: 32.22rem;
+      .tab_menu {
+        .tab_cont {
+          height: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  input, textarea, select {
+    font-size: 6rem;
+  }
+
+  .cont {
+    overflow: hidden;
+    
+    h2 {
+      font-size: 15rem;
+      margin-bottom: 12rem;
+    }
+  }
+
+  .cont1 {
+    &::before {
+      width: 45.5rem;
+      height: 45.5rem;
+      top: 30rem;
+      left: 1.88rem;
+    }
+  
+    &::after {
+      width: 76.6rem;
+      height: 76.6rem;
+      right: -17%;
+    }
+    
+    h2 {
+      font-size: 11.88rem;
+      padding-bottom: 17.2rem;
+
+      &::after {
+        width: 88.8rem;
+        height: 15.44rem;
+      }
+    }
+  
+    ul {
+      gap: 3.33rem;
+      flex-direction: column;
+      
+      li {
+        a, button {
+          width: 87rem;
+          height: 14rem;
+          font-size: 5rem;
+          border-radius: 3rem;
+        }
+      }
+    }
+  }
+
+  .cont2 {
+    height: 100%;
+    padding-top: 32.22rem;
+    flex-direction: column;
+    background-image: url(../images/intro/sec2_m_bg.png);
+  
+    &::before {
+      width: 40rem;
+      height: 40rem;
+      left: 100rem;
+      top: 3%;
+    }
+
+    div, ul {
+      width: 100%;
+      flex-basis: 50% !important;
+    }
+
+    div {
+      h3 {font-size: 7rem;}
+      p:nth-child(2) {font-size: 9.3rem;}
+      p:nth-child(3) {font-size: 6.18rem;}
+    }
+
+    .ad_info_list {
+      margin-top: 32.22rem;
+      border-top: 1px solid #fff;
+
+      li {
+        flex-basis: 100%;
+        font-size: 6.8rem;
+        padding: 7rem 0;
+        border-bottom: 1px solid #fff;
+        border-left: unset;
+
+        h4 {
+          padding-top: 22rem;
+        }
+
+        h4::before {
+          width: 20rem;
+          height: 20rem;
+        }
+      }
+
+      li:nth-child(2n - 1) {
+        border-left: unset;
+      }
+    }
+  }
+
+  .conts_bg {
+    background: url(../images/intro/sec3_bg.png) no-repeat center / cover;
+    .cont3 {
+      padding: 32.22rem 0;
+      height: 100%;
+      @include flexComp($fD: column);
+  
+      .tab_menu {
+        flex-direction: column;
+        gap: 21rem;
+
+        button {
+          &::before {
+            @include PseudoElmComp($w: 100%, $h: 2px, $t: unset, $b: 0, $bg: $bg_red_b);
+          }
+        }
+
+        button, button.on {
+          font-size: 8rem;
+          padding-bottom: 2.5rem;
+          margin-bottom: 9rem;
+        }
+
+        li {
+          text-align: center;
+
+          .tab_cont  li:first-child br {
+            display: none;
+          }
+
+          .tab_cont  li:last-child {
+            width: 100%;
+            padding: 0 4.7rem;
+
+            img {
+              width: 100%;
+              margin-top: 5.44rem;
+            }
+          }
+        }
+        
+        .tab_cont {
+          position: static;
+          width: 100vw;
+          height: 100%;
+          padding: 11.5rem 0;
+          opacity: 1;
+          transform: translate(0, 0); 
+          border-radius: unset;
+          
+          li {
+            font-size: 5.4rem;
+            white-space: wrap;
+          }
+        }
+
+        li:nth-child(1) {
+          .tab_cont  li:first-child {
+            padding: 0 31rem;
+          }
+        }
+
+        li:nth-child(2) {
+          .tab_cont  li:first-child {
+            padding: 0 32rem;
+          }
+        }
+        
+        li:nth-child(3) {
+          .tab_cont  li:first-child {
+            padding: 0 31rem;
+          }
+        }
+
+        li:nth-child(4) {
+          .tab_cont  li:first-child {
+            padding: 0 21rem;
+          }
+        }
+      }
+    }
+    
+    .cont4 {
+      padding: 32.22rem 0;
+      height: 100%;
+      
+      h2 {margin-bottom: 12rem;}
+
+      .cube {
+        top: 8% !important;
+      }
+
+      > ul {
+        width: 100%;
+        flex-direction: column;
+        gap: 15rem;
+
+        > li {
+          padding: 20rem 4.7rem;
+          margin-right: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          
+          &::before {
+            transform: translateX(-50%);
+            @include PseudoElmComp($t: 0, $l: 50%, $w: 20rem, $h: 9.55rem, $bg: url(../images/intro/sec4_img01.png) no-repeat center / cover)
+          }
+  
+          p {
+            font-size: 6.33rem;
+            margin-bottom: 5rem;
+          }
+
+          img {
+            width: 100%;
+          }
+
+          ul {
+            width: 100% !important;
+            margin: unset;
+            padding-top: 5.44rem;
+            li:first-child {
+              text-align: left;
+              img {
+                width: 80%;
+              }
+            }
+          }
+        }
+        li:last-child {margin-right: 0;}
+  
+        > li:nth-child(1) img {margin-top: 5.44rem;}
+        > li:nth-child(2) ul {
+          margin: 0 auto;
+          width: 43rem;
+          margin-top: 5.77rem;
+        }
+        > li:nth-child(3) img {margin-top: 6.77rem;}
+      }
+    }
+  }
+
+  .cont5 {
+  
+    &::before {
+      width: 94.66rem;
+      height: 106.66rem;
+      top: -15%;
+      right: -22%;
+    }
+  
+    p {
+      font-size: 6rem;
+    }
+  
+    .swiper {
+      height: 30rem;
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 46rem;
+          height: 30rem;
+        }
+      }
+    }
+  }
+
+  .cont6 {
+    height: 100%;
+    padding: 20rem 0;
+    min-height: unset;
+  
+    > p {
+      font-size: 6rem;
+      margin-bottom: 19rem;
+    }
+  
+    > ul {
+      
+      > li {
+        flex-basis: 100%;
+        margin-bottom: 10.6rem;
+  
+        .title {
+          font-size: 6.66rem;
+          line-height: 1.1;
+  
+          &::before {
+            border-radius: 100%;
+            width: 3px;
+            height: 3px;
+          }
+        }
+  
+        input, select {
+          padding: 3.5rem 0;
+        }
+  
+  
+        input[type="checkbox"] + label {
+          padding-left: 10rem;
+          font-size: 6rem;
+
+          &::before {
+            width: 7rem;
+            height: 7rem;
+          }
+        }
+        textarea {
+          margin-top: 6.5rem;
+          max-height: 50rem;
+        }
+  
+        > ul {
+          display: flex;
+          column-gap: 5rem;
+  
+          > li {
+            > span {
+              font-size: 6rem;
+            }
+          }
+  
+          > li:last-child > input {
+            padding-right: 8rem;
+          }
+        }
+      }
+
+      > li:nth-child(6) {
+        ul {flex-direction: column;}
+      }
+  
+      > li:last-child {
+        display: flex;
+        align-items: center;
+        flex-basis: 100%;
+      }
+    }
+  
+    button {
+      margin-top: 3rem;
+      font-size: 6rem;
+      width: 70.33rem;
+      height: 15.11rem;
+      border-radius: 10rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .conts_bg {
+    .cont4 {
+      .cube {
+        top: -20% !important;
+        right: -18%;
+        transform: scale(.6);
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+//공통
+$bg_red_a: #bb2649;
+$bg_red_b: #9e1437;
+$bg_red_c: #ff4a78;
+$bg_blue_a: #7c89aa;
+$bg_blue_b: #6e7380;
+$bg_black_a: #050a16;
+$txt_white: #fff;
+$txt_gray: #7e7e7e;
+$border_color :#d8dcec;
+
+@mixin mainFont {
+	font-family: "NotoSansKR-Regular";
+}
+
+@mixin font2 {
+	font-family: "NotoSansKR-Light";
+}
+
+@mixin font3 {
+	font-family: "NotoSansKR-ExtraLight";
+}
+
+@mixin font5 {
+	font-family: "NotoSansKR-Medium";
+}
+
+@mixin font7 {
+	font-family: "NotoSansKR-Bold";
+}
+
+@mixin font9 {
+	font-family: "NotoSansKR-Black";
+}
+
+@mixin fontS4 {
+	font-family: "SCDream4";
+}
+
+@mixin fontS5 {
+	font-family: "SCDream5";
+}
+
+// scrollbar hide
+body{
+	-ms-overflow-style: none;
+}
+	
+body::-webkit-scrollbar {
+	display: none;
+}
+
+
+// common style
+body,input,select,textarea,button,a{
+	color: $txt_white;
+	@include mainFont();
+}
+body{
+	touch-action: pan-x pan-y;
+}
+input, textarea, select{
+	font-size: 2.22rem;
+	line-height: 1.5;
+	background: transparent;
+	color: $bg_blue_b;
+	outline: none;
+}
+
+select {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none
+}
+
+textarea {
+	resize: none;
+	width: 100%;
+	max-height: 18.11rem;
+	padding: 2.11rem 2.66rem;
+	border: none;
+	background: #040307;
+	border: 1px solid #7c89aa;
+	&:focus{
+			outline: none;
+	}
+
+	&::-webkit-scrollbar {
+    width: 10px;  
+	}
+
+	&::-webkit-scrollbar-thumb {
+			background: #7c89aa ;
+	}
+
+	&::-webkit-scrollbar-track {
+			background: #040307;
+	}
+}
+
+// contents common style
+.cont {
+	position: relative;
+	height: 100vh;
+
+	h2 {
+		margin-bottom: 3.33rem;
+		font-size: 5rem;
+		line-height: 1.44;
+		@include font9();
+	}
+
+	> p {
+    font-size: 2.22rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+// independent style
+.hide {
+	display: none !important;
+}
+
+// component
+@mixin flexComp($j : center, $a: center, $fD: row) {
+	display: flex;
+	flex-shrink: 0;
+	justify-content: $j;
+	align-items: $a;
+	flex-direction: $fD;
+}
+
+@mixin logoComp($w, $h) {
+	display: inline-block;
+	width: $w;
+	height: $h;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+@mixin btnRedComp($w, $h, $bR) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: $w;
+	height: $h;
+	border-radius: $bR;
+	background: $bg_red_a;
+}
+
+@mixin btnWhiteComp($w, $h, $bR, $fS) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: $w;
+	height: $h;
+	border-radius: $bR;
+	border: 1px solid $txt_white;
+	font-size: $fS;
+}
+
+@mixin btnHoverRedComp {
+	background: $bg_red_b;
+	border-color: $bg_red_b;
+}
+
+@mixin PositionComp($tY ,$tX) {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate($tY, $tX);
+}
+
+@mixin PseudoElmComp($cnt: '', $t: 0, $b: unset, $l: 0, $r: unset, $w: 0, $h: 0, $bg: transparent) {
+	content: $cnt;
+	position: absolute;
+	top: $t;
+	bottom: $b;
+	left: $l;
+	right: $r;
+	display: block;
+	width: $w;
+	height: $h;
+	background: $bg;
+}
+
+// animation
+@keyframes ani_up {
+	0% {
+			transform: translateY(0%);
+	}
+	50% {
+			transform: translateY(5%);
+	}
+	100% {
+			transform: translateY(0%);
+	}
+}
+
+@keyframes ani_down {
+	0% {
+			transform: translateY(0%);
+	}
+	50% {
+			transform: translateY(-5%);
+	}
+	100% {
+			transform: translateY(0%);
+	}
+}
+
+@keyframes rotate {
+	from {
+			transform: rotate(0deg);
+	}
+	
+	to {
+			transform: rotate(360deg);
+	}
+}
