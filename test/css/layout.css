@@ -1,0 +1,78 @@
+:root {
+  --vh: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrap {
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
+}
+.wrap header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0 160px;
+}
+.wrap header .fp_menu_wrap .fp_menu a {
+  transition: 0.3s;
+}
+.wrap header .fp_menu_wrap .fp_menu.on a {
+  font-family: "Campton-SemiBold";
+  color: #2ca4e9;
+}
+.wrap header .fp_menu_wrap .fp_menu:hover a {
+  font-family: "Campton-SemiBold";
+  color: #2ca4e9;
+}
+.wrap .fp_page_wrap {
+  transition: 0.8s ease-in-out;
+}
+.wrap .fp_page_wrap .fp_page {
+  height: 100vh;
+  background: #1b1b1b;
+}
+.wrap .fp_page_wrap .fp_page:nth-child(3), .wrap .fp_page_wrap .fp_page:nth-child(5) {
+  background: #fff;
+}
+.wrap .fp_page_wrap .fp_page .fp_scroll_box {
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.wrap .fp_page_wrap .fp_page .fp_scroll_box::-webkit-scrollbar {
+  display: none;
+}
+.wrap .fp_page_wrap .fp_page .fp_scroll_box {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.wrap .fp_page_wrap footer.fp_page {
+  height: unset;
+  background: #010101;
+}
+.wrap .fp_top_btn {
+  cursor: pointer;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 64px;
+  height: 64px;
+  transform: scale(1);
+  text-indent: -9999px;
+  transition: 0.5s;
+  border: none;
+  background: #fff url(../images/main/top_btn.png) no-repeat center/28px;
+}
+.wrap .fp_top_btn.white {
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 8px 0px;
+}
+.wrap .fp_top_btn:hover {
+  background: #2ca4e9 url(../images/main/top_btn.png) no-repeat center/28px;
+}
