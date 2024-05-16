@@ -64,7 +64,7 @@
 }
 .wrap .fp_page_wrap footer.fp_page {
   padding-top: 0;
-  height: 100px;
+  height: calc((var(--vh, 1vh) * 100) - (var(--vh, 1vh) * 100 - 100px));
 }
 .wrap .fp_top_btn {
   cursor: pointer;
