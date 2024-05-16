@@ -1,4 +1,6 @@
-
+:root {
+	--vh: 100%;
+}
 .wrap {
   height: 100vh;
   overflow: hidden;
