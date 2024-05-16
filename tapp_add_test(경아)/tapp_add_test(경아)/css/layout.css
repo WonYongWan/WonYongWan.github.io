@@ -4,7 +4,6 @@
 .wrap {
   height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
-  touch-action: none;
 }
 .wrap header {
   display: -webkit-box;
@@ -28,8 +27,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .wrap header .fp_menu_wrap .fp_menu {
   width: 100px;
@@ -44,6 +43,7 @@
   /* a {} */
 }
 .wrap .fp_page_wrap {
+  touch-action: none;
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
 }
