@@ -4,6 +4,7 @@
 .wrap {
   height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
+  touch-action: none;
 }
 .wrap header {
   display: -webkit-box;
