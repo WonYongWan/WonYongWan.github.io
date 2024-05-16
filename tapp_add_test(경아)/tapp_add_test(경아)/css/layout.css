@@ -1,9 +1,7 @@
-:root {
-  --vh: 100%;
-}
 
 .wrap {
-  height: calc(var(--vh, 1vh) * 100);
+  height: auto
+  min-height: 100vh;
   overflow: hidden;
 }
 .wrap header {
@@ -48,7 +46,8 @@
   transition: 0.8s ease-in-out;
 }
 .wrap .fp_page_wrap .fp_page {
-  height: calc(var(--vh, 1vh) * 100);
+  height: auto;
+  min-height: 100vh;
   overflow: hidden;
   overflow-y: auto;
   -webkit-box-sizing: border-box;
@@ -64,9 +63,7 @@
 }
 .wrap .fp_page_wrap footer.fp_page {
   padding-top: 0;
-  height: auto !important;
-  min-height: 100px;
-  overflow: unset;
+  min-height: 100px !important;
 }
 .wrap .fp_top_btn {
   cursor: pointer;
