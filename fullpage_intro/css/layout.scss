@@ -1,0 +1,29 @@
+:root {
+	--vh: 100%;
+}
+
+.wrap {
+	height: calc(var(--vh, 1vh) * 100);
+	overflow: hidden;
+
+	.fp_page_wrap {
+		// transition을 설정 하세요
+		transition: .8s ease-in-out;
+
+		.fp_page {
+			height: calc(var(--vh, 1vh) * 100);
+			overflow: hidden;
+			overflow-y: auto;
+			box-sizing: border-box;
+
+			.fp_scroll_box::-webkit-scrollbar {
+				display: none;
+			}
+
+			.fp_scroll_box {
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+		}
+	}
+}

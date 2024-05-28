@@ -1,0 +1,24 @@
+:root {
+  --vh: 100%;
+}
+
+.wrap {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+.wrap .fp_page_wrap {
+  transition: 0.8s ease-in-out;
+}
+.wrap .fp_page_wrap .fp_page {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.wrap .fp_page_wrap .fp_page .fp_scroll_box::-webkit-scrollbar {
+  display: none;
+}
+.wrap .fp_page_wrap .fp_page .fp_scroll_box {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
