@@ -1,0 +1,178 @@
+.wrap .lang_box {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 99;
+  display: flex;
+  gap: 20px;
+}
+.wrap .lang_box a {
+  font-family: "Pretendard-SemiBold";
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  display: inline-block;
+  padding-left: 35px;
+  position: relative;
+}
+.wrap .lang_box a.on {
+  opacity: 0.5;
+}
+.wrap .lang_box a:first-of-type::before {
+  background: url(../images/korea.svg) no-repeat center/cover;
+}
+.wrap .lang_box a:last-of-type::before {
+  background: url(../images/japan.svg) no-repeat center/cover;
+}
+.wrap .lang_box a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+}
+.wrap .fp_page_wrap .fp_page .scroll_box {
+  height: 100%;
+  min-height: 667px;
+  position: relative;
+  color: #fff;
+  padding: 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.wrap .fp_page_wrap .fp_page .scroll_box h1, .wrap .fp_page_wrap .fp_page .scroll_box h2 {
+  letter-spacing: 10px;
+  font-family: "Pretendard-ExtraBold";
+  font-size: 128px;
+  word-break: keep-all;
+  line-height: 1.2;
+}
+.wrap .fp_page_wrap .fp_page .scroll_box p {
+  font-family: "Pretendard-Light";
+  font-size: 48px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 {
+  background: #FF5F45;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 .scroll_box {
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 .scroll_box .btn_box {
+  display: flex;
+  gap: 15px;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 .scroll_box .btn_box a {
+  font-family: "Pretendard-Light";
+  display: inline-block;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+  color: #ff5f45;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 .scroll_box .btn_box a.down {
+  color: #fff;
+  background: #004f69;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 .scroll_box p:last-of-type {
+  font-size: 24px;
+}
+.wrap .fp_page_wrap .fp_page.fp_page1 .scroll_box p br.mo {
+  display: none;
+}
+.wrap .fp_page_wrap .fp_page.fp_page2 {
+  background: #0798EC;
+}
+.wrap .fp_page_wrap .fp_page.fp_page2 .scroll_box {
+  align-items: flex-start;
+  justify-content: center;
+}
+.wrap .fp_page_wrap .fp_page.fp_page2 .scroll_box::before {
+  content: "";
+  display: block;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  bottom: 100px;
+  right: 250px;
+  background: url(../images/page2.svg) no-repeat center/contain;
+}
+.wrap .fp_page_wrap .fp_page.fp_page3 {
+  background: #FC6C7C;
+}
+.wrap .fp_page_wrap .fp_page.fp_page3 .scroll_box {
+  align-items: flex-start;
+  justify-content: center;
+}
+.wrap .fp_page_wrap .fp_page.fp_page3 .scroll_box::before {
+  content: "";
+  display: block;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  bottom: 0;
+  right: 250px;
+  background: url(../images/page3.svg) no-repeat center/contain;
+}
+.wrap .fp_page_wrap .fp_page.fp_page4 {
+  background: #FEC401;
+}
+.wrap .fp_page_wrap .fp_page.fp_page4 .scroll_box {
+  padding-top: 200px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wrap .fp_page_wrap .fp_page.fp_page4 .scroll_box::before {
+  content: "";
+  display: block;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(../images/page4.svg) no-repeat center/contain;
+}
+.wrap .fp_nav_wrap {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.wrap .fp_nav_wrap .fp_nav {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrap .fp_nav_wrap .fp_nav a {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 100%;
+  transition: 0.1s;
+}
+.wrap .fp_nav_wrap .fp_nav:hover a {
+  width: 10px;
+  height: 10px;
+}
+.wrap .fp_nav_wrap .fp_nav.on a {
+  width: 15px;
+  height: 15px;
+}
