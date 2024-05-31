@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./main.css">
+  <title>Number Baseball</title>
+</head>
+<body>
+  <div class="startPage">
+    <h1></h1>
+    <button class="start none">START</button>
+    <!-- <button class="manual none">MANUAL</button> -->
+  </div>
+  <div class="youWin none">
+    <h1>YOU WIN!</h1>
+    <div class="trophy"></div>
+    <button class="restart">Restart</button>
+    <button class="end">Game Over</button>
+  </div>
+  <div class="gameOver none">
+    <h1>GAME<br/>OVER</h1>
+    <button class="restart">Restart</button>
+    <button class="end">Game Over</button>
+  </div>
+  <div class="baseball"></div>
+  <div class="scoreText"></div>
+  <div id="billBoard">
+    <div id="scoreBoard">
+      <h1>SCORE BOARD</h1>
+      <ul class="score turn">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ul class="score strike">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ul class="score ball">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ul class="resultList">
+        <!-- <li class="choiceNum">1</li>
+        <li class="choiceNum">2</li>
+        <li class="choiceNum">3</li>
+        <li class="choiceNum">4</li> -->
+      </ul>
+    </div>
+    <div id="record">
+      <h1>RECORD</h1>
+      <ul class="scoreWrap">
+        
+      </ul>
+    </div>
+  </div>
+  <button class="submit none">SUBMIT</button>
+  <ul class="numList">
+    <!-- <li class="num normal num-1">1</li>
+    <li class="num normal num-2">2</li>
+    <li class="num normal num-3">3</li>
+    <li class="num normal num-4">4</li>
+    <li class="num normal num-5">5</li>
+    <li class="num normal num-6">6</li>
+    <li class="num normal num-7">7</li>
+    <li class="num normal num-8">8</li>
+    <li class="num normal num-9">9</li> -->
+  </ul>
+  <script src="./main.js"></script>
+</body>
+</html>

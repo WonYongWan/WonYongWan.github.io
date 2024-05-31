@@ -1,0 +1,497 @@
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GongGothicMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+* {font-family: 'S-CoreDream-3Light'; user-select: none;}
+body {
+  position: relative;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  background: url("./images/bg.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  overflow: hidden;
+}
+.startPage {
+  font-family: 'GongGothicMedium';
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("./images/bg.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.startPage.none {display: none;}
+.startPage > h1 {
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  font-size: 180px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 5px 5px 2px rgb(141, 139, 139);
+  text-align: center;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+.startPage > h1.none {display: none;}
+.startPage > .start,
+.startPage > .manual {
+  font-family: 'GongGothicMedium';
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  height: 50px;
+  font-size: 18px;
+  transition: .2s;
+}
+.startPage > .start:hover,
+.startPage > .manual:hover {
+  background: rgb(47, 46, 46);
+  color: #fff;
+}
+.startPage > .start.none,
+.startPage > .manual.none {display: none;}
+.startPage > .start {transform: translateX(-50%) translateY(600px);}
+.startPage > .manual {transform: translateX(-50%) translateY(660px);}
+@keyframes startPageAni {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  25% {
+    transform: translateX(-50%) scale(0);
+  }
+  75% {
+    transform: translateX(-50%) scale(3);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+.startPage > h1 > span {
+  white-space: nowrap;
+  display: inline-block;
+}
+.restart,
+.end {
+  font-family: 'GongGothicMedium';
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  height: 50px;
+  font-size: 18px;
+  transition: .2s;
+}
+.restart:hover,
+.end:hover {
+  background: rgb(47, 46, 46);
+  color: #fff;
+}
+.youWin {
+  font-family: 'GongGothicMedium';
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .8);
+}
+.youWin.none {display: none;}
+.youWin > h1 {
+  position: absolute;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%) translateY(100px) scale(1);
+  font-size: 150px;
+  color: #fff;
+  text-shadow: 5px 5px 2px rgb(141, 139, 139);
+  text-align: center;
+  animation-name: youWinAni;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+.youWin > .trophy {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(300px) rotateY(0deg);
+  width: 200px;
+  height: 250px;
+  background: url("./images/trophy.png") no-repeat center;
+  background-size: cover;
+  animation-name: trophyAni;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+}
+.youWin > .trophy::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  background: url("./images/trophy.png") no-repeat center;
+  background-size: cover;
+  top: 0;
+  left: -10px;
+  transform: rotateY(180deg);
+}
+.youWin > .restart {transform: translateX(-50%) translateY(600px);}
+.youWin > .end {transform: translateX(-50%) translateY(660px);}
+@keyframes youWinAni {
+  0% {
+    transform: translateX(-50%) translateY(100px) scale(.1);
+  }
+  50% {
+    transform: translateX(-50%) translateY(100px) scale(1.2);
+  }
+  100% {
+    transform: translateX(-50%) translateY(100px) scale(1);
+  }
+}
+@keyframes trophyAni {
+  0% {
+    transform: translateX(-50%) translateY(300px) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(300px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(300px) rotateY(0deg);
+  }
+}
+.gameOver {
+  font-family: 'GongGothicMedium';
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .8);
+}
+.gameOver.none {display: none;}
+.gameOver > h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(150px) rotate(0);
+  font-size: 150px;
+  color: #fff;
+  text-shadow: 5px 5px 2px rgb(141, 139, 139);
+  text-align: center;
+  animation-name: gameOverAni;
+  animation-timing-function: ease-in;
+  animation-duration: 1.5s;
+}
+.gameOver > .restart {transform: translateX(-50%) translateY(500px);}
+.gameOver > .end {transform: translateX(-50%) translateY(560px);}
+@keyframes gameOverAni {
+  0% {
+    transform: translateX(-50%) translateY(-300px) rotate(-70deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(100px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-50%) translateY(150px) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(150px) rotate(0);
+  }
+}
+.baseball {
+  position: absolute;
+  z-index: 9999;
+  width: 200px;
+  height: 203px;
+  transform: translate(-600%, 187%) scale(1) rotate(0deg);
+  background: url("./images/baseball.png") no-repeat center;
+  background-size: cover;
+  animation-timing-function: ease-in;
+}
+.baseball.ani1 {
+  animation-name: baseballAni_1;
+  animation-duration: .8s;
+  transform: translate(0%, 213%) scale(0.1) rotate(360deg);
+}
+.baseball.ani2 {
+  animation-name: baseballAni_2;
+  animation-duration: 1.1s;
+}
+@keyframes baseballAni_1 {
+  0% {
+    transform: translate(-600%, 187%) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translate(0%, 213%) scale(0.1) rotate(3600deg);
+  }
+}
+@keyframes baseballAni_2 {
+  0% {
+    transform: translate(-600%, 187%) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(0%, 213%) scale(0.1) rotate(360deg);
+  }
+  100% {
+    transform: translate(205%, -104%) scale(1) rotate(0deg);
+  }
+}
+.scoreText {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'GongGothicMedium';
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  text-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+.scoreText > span {color: rgb(206, 7, 7); font-size: 35px;}
+#billBoard {display: flex; transition: .5s;}
+#billBoard.submit > #scoreBoard {height: unset; margin-right: 0; position: relative;}
+#billBoard.submit > #scoreBoard.submit::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: "";
+  border: 2px solid #76746C;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  animation-name: bgAni;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes bgAni {
+  0% {
+    background: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background: rgba(255, 255, 255, .3);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0);
+  }
+}
+#billBoard.submit > #scoreBoard > .resultList {margin-top: 0;}
+#billBoard.submit > #record {opacity: 0; position: absolute;}
+#billBoard.submit > #scoreBoard > h1,
+#billBoard.submit > #scoreBoard > ul.score {display: none;}
+#scoreBoard,
+#record {
+  height: 434px;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 20px 40px;
+  background: radial-gradient(#0E1F3A 30%,#000 70%);
+  top: 3%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: 2px solid #76746C;
+}
+#scoreBoard {margin-right: 10px;}
+#record {margin-left: 10px; width: 542px;}
+#scoreBoard > h1,
+#record > h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 80px;
+  color: #294066;
+  text-shadow: 0 5px 10px #000;
+  font-weight: 800;
+  white-space: nowrap;
+}
+#record > .scoreWrap {overflow: hidden; overflow-y: scroll;}
+#record > .scoreWrap::-webkit-scrollbar {
+  width: 8px; 
+}
+
+#record > .scoreWrap::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: #294066;
+  
+  border-radius: 10px;
+}
+
+#record > .scoreWrap::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1); 
+}
+#record > .scoreWrap > li {
+  transition: .3s;
+}
+.score {
+  position: relative;
+  display: flex; 
+  justify-content: start;
+  padding-left: 60px;
+  margin-top: 20px;
+}
+.score::before {
+  position: absolute;
+  color: rgb(226, 216, 216);
+  text-shadow: 2px 1px 3px rgb(132, 125, 125);
+  font-weight: 600;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.score.turn::before {
+  content: "Turn";
+}
+.score.strike::before {
+  content: "Strike";
+}
+.score.ball::before {
+  content: "Ball";
+}
+.score > li {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: linear-gradient(#cac9c1, #5a5958);
+  margin-right: 5px;
+}
+.score > li > span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+.score.turn > li > span {
+  background: linear-gradient(#ea2424, #8d0707);
+}
+.score.strike > li > span {
+  background: linear-gradient(#63ea24, #078d29);
+}
+.score.ball > li > span {
+  background: linear-gradient(#eada24, #8d8607);
+}
+.resultList {
+  bottom: 50vh;
+  display: flex;
+  margin: 30px auto 0;
+  border-radius: 10px;
+}
+.resultList > li {
+  cursor: pointer;
+  width: 100px;
+  height: 150px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: .3s;
+  background: linear-gradient(#cac9c1, #5a5958);
+  color: #b9b6b3;
+  text-shadow: 2px 2px 3px #747372;
+  border: 5px solid #747372;
+}
+.resultList > li:nth-child(1) {
+  margin-left: 0;
+}
+#record .resultList > li:last-child {
+  margin-right: 20px;
+}
+button.submit.none {display: none;}
+button.submit {
+  display: block;
+  position: absolute; 
+  bottom: 35%;
+  font-family: 'GongGothicMedium';
+  cursor: pointer;
+  color: #b5b6b7;
+  text-shadow: 1px 1px 2px #6d6d6e;
+  border: unset;
+  width: 100px;
+  height: 103px;
+  font-size: 20px;
+  font-weight: 900;
+  background: url("./images/baseball.png") no-repeat center;
+  background-size: cover;
+  transition: .5s;
+}
+button.submit:hover {
+  transform: rotate(360deg);
+}
+.numList {
+  position: absolute;
+  bottom: 0;
+  display: flex; 
+  overflow: hidden;
+  transition: bottom .3s;
+}
+.numList.hide {
+  bottom: -300px;
+}
+.numList > .num {
+  cursor: pointer;
+  width: 10.1vw;
+  height: 30vh;
+  margin-left: .5vw;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: .3s;
+}
+.numList > .num:nth-child(1) {
+  margin-left: 0;
+}
+.numList > .normal {
+  transform: translateY(20%);
+  background: linear-gradient(#FFEA6F, #C3880D);
+  color: #c38e1b;
+  text-shadow: 2px 2px 3px #9b7012;
+  border: 10px solid #c08a16;
+}
+.numList > .normal:hover {transform: translateY(10%);}
+.numList > .choice {
+  transform: translateY(10%);
+  background: linear-gradient(#cac9c1, #5a5958);
+  color: #b9b6b3;
+  text-shadow: 2px 2px 3px #747372;
+  border: 10px solid #747372;
+  opacity: .8;
+}
+.numList > .choice:hover {transform: translateY(10%);}

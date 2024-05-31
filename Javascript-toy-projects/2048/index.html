@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./main.css">
+  <title>2048</title>
+</head>
+<body>
+  <div id="basic-info">
+    <h1>2048</h1>
+    <div id="score-wrap">
+      <div class="score-box">
+        <h2>SCORE</h2>
+        <p>0</p>
+        <div></div>
+      </div>
+      <div class="best-box">
+        <h2>BEST</h2>
+        <p>0</p>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div id="reset-wrap">
+    <div></div>
+    <button>New Game</button>
+  </div>
+  <div id="game-wrap">
+    <div class="game-message gmae-over none">
+      <p>Game over!</p>
+      <button class="try">Try again</button>
+    </div>
+    <div class="game-message gmae-win none">
+      <p>You win!</p>
+      <button class="try">Try again</button>
+    </div>
+    <div id="grid-container">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+    <div id="tile-container">
+      <!-- <div class="tile tile-8 tile-position-3-1 tile-new">
+        <div class="tile-inner">8</div>
+      </div>
+      <div class="tile tile-8 tile-position-3-2 tile-new">
+        <div class="tile-inner">8</div>
+      </div>
+      <div class="tile tile-16 tile-position-3-3 tile-new">
+        <div class="tile-inner">16</div>
+      </div> -->
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
