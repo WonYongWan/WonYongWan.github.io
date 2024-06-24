@@ -163,6 +163,10 @@ function fPMenu(pageCount) {
 
 // menu item click event
 function menusClickEvent(menu) {
+  // update 24/06/24 =========
+  topDetect = false;
+  bottomDetect = false;
+  // =========================
   if (topBtnFlag || menuFlag || navFlag || specificFlag) return;
   let menuNum = Number(menu.dataset.fpnum);
   if (!menuNum) {
@@ -207,6 +211,10 @@ function fPNavigation(pageCount) {
 
 // navigation item click event
 function navsClickEvent(navNum) {
+  // update 24/06/24 =========
+  topDetect = false;
+  bottomDetect = false;
+  // =========================
   if (topBtnFlag || menuFlag || navFlag || specificFlag) return;
   if (!$navs[navNum].classList.contains('on')) {
     navFlag = true;
@@ -283,7 +291,6 @@ function wheelUp() {
   }
 
   if (bottomDetect) bottomDetect = false;
-
   topBtnOnOff(pageCount, pageLength);
   $pageWrap.style.transform = `translateY(-${pagePos}px)`;
 }
