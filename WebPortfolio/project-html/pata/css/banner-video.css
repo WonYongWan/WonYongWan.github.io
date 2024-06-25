@@ -1,0 +1,28 @@
+.banner-video {
+  min-width: 100%;
+  /* min-height: 100%; */
+  overflow: hidden;
+}
+
+.banner-video > img {
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  z-index: 800;
+}
+
+.banner-video > div {
+  position: absolute;
+  left: 70%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
+}
+
+.banner-video > div > h1 {
+  color: var(--baseFontcolor);
+  font-size: var(--baseFontsize);
+  font-weight: 800;
+  line-height: 5vw;
+}

@@ -1,0 +1,436 @@
+/* 모바일 전용 */
+
+/* header */
+.header {
+  display: none;
+}
+
+/* introduceApp */
+.introduceApp {
+  display: none;
+}
+
+/* introduceProduct */
+.introduceProduct {
+  display: none;
+}
+
+.container {
+  padding: 0 6vw;
+}
+
+/* header-max768px */
+.header-max768px {
+  display: block;
+}
+
+.headerM-logo > a > img {
+  display: block;
+  width: 20vw;
+}
+
+.haederM-fixMenuWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vw 6vw;
+}
+
+.headerM-buttonWrap {
+  cursor: pointer;
+}
+
+.stickA {
+  position: relative;
+}
+
+.stickB {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stickB > div {
+  width: 10vw;
+  height: 2vw;
+  /* background: #333; */
+  border-radius: 10px;
+  margin: 1vw 0;
+  transition: ease-in-out .4s;
+}
+
+.rotateStick {
+  transform: rotate(-45deg);
+}
+
+.rotateStickB {
+  transform: rotate(90deg);
+  background: #333;
+}
+
+.opacityZ {
+  opacity: 0;
+}
+
+.stick {
+  display: block;
+  width: 10vw;
+  height: 2vw;
+  background: #333;
+  border-radius: 10px;
+  margin: 1vw 0;
+  transition: ease-in-out .4s;
+}
+
+.headerM-menuWrap {
+  /* display: none; */
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background: #FFB800;
+  position: absolute;
+  z-index: 1500;
+  /* right: -110%; */
+  transition: ease-in-out .2s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.headerM-list {
+  padding-top: 30vw;
+}
+
+.headerM-list > ul > li > a {
+  padding: 3vw 15vw;
+  text-align: left;
+  font-size: 6vw;
+  color: #fff;
+  line-height: 72px;
+  letter-spacing: -.5px;
+  font-weight: 700;
+}
+
+/* banner-video-max768px */
+.banner-video-max768px {
+  display: block;
+  padding-top: 5vw;
+}
+
+.bannerM-Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vw;
+  background-image: url(../img/bannerM.png);
+  background-repeat: no-repeat;
+  background-size : cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.bannerM-Box > h1 {
+  color: #fff;
+}
+
+/* introduceApp-max768px */
+.introduceApp-max768px {
+  display: block;
+  padding-top: 6vw;
+}
+
+.introduceAppM-box {
+  cursor: pointer;
+  background: #fff;
+}
+
+.introduceAppM-content {
+  height: 30%;
+}
+
+.introduceAppM-content > h1 >span {
+  color: #FFB800;
+}
+
+.introduceAppM-contents {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.introAppM-imgWrap {
+  display: none;
+  text-align: center;
+  margin-left: 12%;
+  color: #565656;
+  font-size: 4vw;
+  font-weight: 800;
+  transition: ease-in-out .5s;
+}
+
+/* introduceApp drag Effect */
+.drag-hand {
+  position: relative;
+  padding: 50%;
+}
+
+.drag {
+  background: rgba(255, 184, 0, .9);
+  background-image: url(../img/appMBg.png);
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.hand {
+  color: #333;
+  font-size: 15vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: drag;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.handText {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 3.5vw;
+  font-weight: 800;
+  animation-name: drag;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes drag {
+  0% {
+    left: 49%;
+  }
+  100% {
+    left: 51%;
+  }
+}
+
+/* introduceApp-max768px */
+.introduceAppM-contents {
+  height: 0vw;
+  transition: ease-in-out .5s;
+}
+
+
+/* introduceProduct-max768px */
+.introduceProduct-max768px {
+  display: block;
+  padding-top: 6vw;
+}
+
+.introduceProductM-box {
+  cursor: pointer;
+}
+
+.introduceProductM-content {
+  height: 30%;
+}
+
+.introduceProductM-buttonBox {
+  border-radius: 20px;
+}
+
+.introduceProductM-box {
+  background: #FFB800;
+  background-image: url(../img/deviceMini.png);
+  background-clip: border-box;
+  background-repeat: repeat;
+}
+
+.introduceProductM-box h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.boxText1 h2 {
+  font-size: 10vw;
+  font-weight: 700;
+  line-height: 13vw;
+  color: #fff;
+  text-align: center;
+}
+
+.boxText2 h2 {
+  font-size: 9vw;
+  font-weight: 700;
+  line-height: 9vw;
+  color: #fff;
+  text-align: center;
+}
+
+/* introduceProduct-max768px */
+.introduceProductM-contents {
+  overflow: hidden;
+  height: 0vw;
+  transition: ease-in-out .5s;
+}
+
+.activeA {
+  height: 140vw;
+  transition: ease-in-out .5s;
+}
+
+.activeP {
+  height: 170vw;
+  transition: ease-in-out .5s;
+}
+
+.icon {
+  transition: ease-in-out .3s;
+  font-size: 30px;
+  color: #111;
+  animation-name: opacity;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes opacity{
+  0% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+/* 재활용 */
+.buttonBox {
+  border-top: 1px solid #c4c4c4;
+  height: 10%;
+  cursor: pointer;
+}
+
+.boxShadow {
+  box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, .25);
+}
+
+.boxWrap {
+  /* width: 100%; */
+  border-radius: 20px;
+}
+
+.boxWrap h1 {
+  font-size: 12vw;
+  font-weight: 900;
+  line-height: 13vw;
+}
+
+.centerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
+}
+
+.rightZero {
+  right: 0;
+  transition: ease-in-out .4s;
+}
+
+.opacity {
+  visibility: visible;
+  opacity: 1;
+  transition: ease-in-out .4s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: ease-in-out .5s;
+}
+
+.visible {
+  display: block;
+}
+
+.bodyColor {
+  background: #333;
+  transition: ease-in-out .5s;
+}
+
+.ctickColor {
+  background: #fff;
+}
+
+.bannerMBlack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vw;
+  background-image: url(../img/bannerMBlack.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: ease-in-out .5s;
+}
+
+
+
+
+
+
+
+
+/* footer */
+.footer {
+  margin-top: 6vw;
+  position: relative;
+  text-align: center;
+  padding: 9vw 6vw; 
+  background: #333;
+}
+
+.footer_Logo {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/footer_Logo.svg); 
+  background-repeat: no-repeat; 
+  background-size: 100%; 
+  width: 27vw; 
+  height: 19vw;
+}
+
+.footer_Address > p {
+  font-family: 'Noto Sans Display'; 
+  font-size: 4vw; 
+  color: rgb(136, 133, 133); 
+  padding-top: 18vw;
+  letter-spacing: -.2vw;
+  line-height: 5vw;
+}
+
+.footer_Email > p {
+  font-family: 'Noto Sans Display'; 
+  font-size: 4.5vw; 
+  color: rgb(136, 133, 133); 
+  padding-top: 6vw;
+}

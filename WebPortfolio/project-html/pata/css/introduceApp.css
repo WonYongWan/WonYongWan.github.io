@@ -1,0 +1,120 @@
+.introduceApp {
+  position: relative;
+  overflow: hidden;
+  height: 160vw;
+  /* height: 230vw; */
+  z-index: 700;
+}
+
+.introduceApp-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.introduceApp-wrap {
+  overflow: hidden;
+  width: 500vw;
+  display: flex;
+}
+
+/* contents-box1 */
+.contents-box1 {
+  width: 40vw; 
+  height: 100vh;  
+  z-index: 1000; 
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,.9));
+}
+
+.contents-box1 > h1 {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--baseFontcolor);
+  font-size: 4vw;
+  font-weight: 800;
+  line-height: 5vw;
+  animation-name: dowmUp;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  z-index: 1200;
+}
+
+.contents-box1 > h1 > span {
+  color: #FFB800;
+}
+
+/* contents-box2 */
+.contents-box2 {
+  position: absolute;
+  width: 240vw; 
+  height: 100vh;
+}
+
+.contents-box2 > div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  width: 200vw;
+  height: 70vh;
+  animation-name: upDowm;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.contents-box2 > div > div {
+  width: 100vw;
+  margin-left: 10vw;
+  display: flex;
+  /* align-items: center; */
+}
+
+.introApp-imgWrap {
+  margin-left: 9vw;
+  text-align: center;
+}
+
+.contents-box2 > div > div:nth-child(1) {
+  margin-left: 4vw;
+}
+
+.introApp-imgWrap > p {
+  color: #333;
+  font-size: 1vw;
+  font-weight: 800;
+  line-height: 1.5vw;
+  animation-name: upDowm;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes upDowm {
+  0% {
+    top: 51%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes dowmUp {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 51%;
+  }
+}

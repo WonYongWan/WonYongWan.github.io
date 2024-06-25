@@ -1,0 +1,45 @@
+/* footer */
+.footer {
+  position: relative;
+  text-align: center;
+  padding: 7vw 7vw; 
+  background: #333;
+}
+
+.footer_Logo {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/footer_Logo.svg); 
+  background-repeat: no-repeat; 
+  background-size: 100%; 
+  width: 9vw; 
+  height: 5vw;
+}
+
+.footer_Address > p {
+  font-family: 'Noto Sans Display'; 
+  font-size: 1.3vw; 
+  color: rgb(136, 133, 133); 
+  padding-top: 3vw;
+  line-height: 1.8vw;
+}
+
+.footer_Email > p {
+  font-family: 'Noto Sans Display'; 
+  font-size: 1.35vw; 
+  color: rgb(136, 133, 133); 
+  padding-top: 2vw;
+  font-weight: 800;
+}
+
+/* .footer_Sns {
+}
+
+.footer_Sns > ul > li > a {
+  margin: 0 auto;
+  display: block;
+  width: 50px;
+  height: 50px;
+} */

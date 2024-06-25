@@ -1,0 +1,15 @@
+.header {
+  --baseBackground: #fff;
+  --baseFontcolor: #fff;
+  --baseEffectcolor: #eee;
+  --baseFontsize: 1vw;
+}
+
+.banner-video {
+  --baseFontcolor: #fff;
+  --baseFontsize: 4vw;
+}
+
+.section-introduce {
+  --baseFontcolor: #000;
+}

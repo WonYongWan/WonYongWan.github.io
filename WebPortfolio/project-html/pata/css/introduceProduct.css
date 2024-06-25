@@ -1,0 +1,107 @@
+.introduceProduct {
+  width: 100%;
+  overflow: hidden;
+  padding: 5vw 0;
+  background: #FFB800;
+  z-index: 1000;
+  text-align: right;
+  background-image: url(../img/Group\ 389.png);
+  background-clip: border-box;
+  background-repeat: repeat;
+}
+
+.introduceProduct-text {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  height: 20vh;
+  padding-top: 30vw;
+}
+
+.introduceProduct-text > h1 {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 15vw;
+  font-weight: 900;
+  line-height: 15vw;
+}
+
+.introduceProduct-text > h1 {
+  animation-name: upDowm;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  text-align: center;
+  z-index: 1000;
+}
+
+@keyframes upDowm {
+  0% {
+    top: 51%;
+  }
+  100% {
+    top: 49%;
+  }
+}
+
+.introduceProduct-container {
+  height: 220vh;
+  position: relative;
+  margin-top: 5vw;
+}
+
+.b1  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
+}
+
+.b2  {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.b3 {
+  z-index: 1000;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.introduceProduct-container > h1 {
+  color: #fff;
+  font-size: 4.9vw;
+  font-weight: 900;
+  line-height: 4vw;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+}
+
+.introduceProduct-container > h2 {
+  color: #fff;
+  font-size: 4.5vw;
+  font-weight: 900;
+  line-height: 4vw;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+}

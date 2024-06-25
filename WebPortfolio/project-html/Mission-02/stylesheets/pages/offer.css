@@ -1,0 +1,93 @@
+/* 오늘의 쇼핑 제안 */
+li {list-style: none;}
+
+/* header */
+header {
+  margin: 0 auto;
+  max-width: 1022px;
+  margin-top: 100px;
+  margin-bottom: 48px;
+}
+header a {display: block; width: 100%;}
+header img {
+  width: 176px;
+  height: 40px;
+}
+
+/* contents */
+#contents {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+#contents h2 {font-size: 24px; font-weight: 500; color: var(--color-back); padding-left: 30px; position: relative; margin-bottom: 24px;}
+#contents h2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  background: url("../../assets/icon/shopping.svg") no-repeat center;
+}
+.item-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.item-list .item {
+  position: relative;
+  min-width: 200px;
+  height: 270px;
+  text-align: center;
+  padding-top: 14px;
+}
+.item-list .item a {display: block; height: 100%;}
+.item-list .item .discount {
+  display: inline-block;
+  width: 53px;
+  height: 30px;
+  background: var(--color-red-500);
+  font-size: 16px;
+  color: var(--color-white);
+  line-height: 30px;
+  border-radius: 0 0 4px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item-list .item p {width: 172px; margin: 12px auto 0;}
+.item-list .item .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-back);
+}
+.item-list .item p.shipping-info {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-gray-700);
+  text-align-last: left;
+}
+.item-list .item p.shipping-info img {display: block; width: 55px; height: 16px;}
+.item-list .item .review {
+  display: flex;
+  align-items: center;
+}
+.item-list .item .review .grade {
+  display: inline-block;
+  width: 68px;
+  height: 12px;
+  background-image: url("../../assets/sprites/rating-stars.png");
+  text-indent: -9999px;
+}
+.item-list .item .review .grade.star4_5 {background-position-y: -126px;}
+.item-list .item .review .grade.star4 {background-position-y: -112px;}
+.item-list .item .review .grade.star5 {background-position-y: -140px;}
+.item-list .item .review .count {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gray-700);
+  padding-left: 4px;
+}
