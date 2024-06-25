@@ -1,0 +1,173 @@
+/* layout */
+body {
+    background-image: url(../img/background.jpg);
+}
+#contents {}
+#section1 {}
+#section2 {}
+#section3 {}
+#section4 {}
+#section5 {}
+
+
+/* sec1 */
+.sec1 {padding: 2vw;}
+.sec1 .header {height: 13vw; border: 6px solid #231F20; width: 0; transform: translateY(-9999px);}
+.sec1 .menu {border: 6px solid #231F20; margin-top: -6px; width: 0; transform: translateY(-9999px);}
+.sec1 .slider {height: 50vw; border: 6px solid #231F20; margin-top: -6px; width: 0; transform: translateY(-9999px);}
+
+.sec1 .header {overflow: hidden; display: flex;}
+.sec1 .header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    flex: 1 1 16.5%; border-right: 6px solid #231F20; transform: translateX(-9999px);
+}
+.sec1 .header .logo svg {
+    overflow: hidden;
+    /* transform: translateX(-9999px); */
+}
+.sec1 .header .logo svg .fish1 {
+    transition: transform 1.25s ease-in-out;
+}
+.sec1 .header .logo svg:hover .fish1 {
+    transform: translate(100%, 0%);
+}
+.sec1 .header .logo svg .fish2 {
+    transition: transform 1.25s ease-in-out;
+}
+.sec1 .header .logo svg:hover .fish2 {
+    transform: translate(-100%, 0%);
+}
+.sec1 .header .tit {
+    flex: 1 1 67%; transform: translateY(-9999px); 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.sec1 .header .tit p {
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 1.2vw;
+    overflow: hidden;
+    margin-top: 1vw;
+    /* transform: translateY(-9999px); */
+    min-width: .6vw;
+    background: transparent;
+}
+.sec1 .header .tit h1 {
+    font-family: 'Poppins';
+    font-weight: 800;
+    letter-spacing: 0.5vw;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 4.8vw;
+    /* transform: translateY(-9999px); */
+    background: transparent;
+}
+.sec1 .header .tit h4 {
+    font-family: 'Poppins';
+    font-weight: 800;
+    word-spacing: 0.5vw;
+    overflow: hidden;
+    font-size: 1.3vw;
+    margin-bottom: 1vw;
+    /* transform: translateY(-9999px); */
+    min-width: .8vw;
+    background: transparent;
+}
+.sec1 .header .me {
+    flex: 1 1 16.5%; border-left: 6px solid #231F20; transform: translateX(9999px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.sec1 .header .me p {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: keep-all;
+    font-size: 2.35vw;
+    font-family: 'Poppins';
+    font-weight: 800;
+    /* transform: translateX(-9999px); */
+    cursor: pointer;
+}
+.sec1 .menu {display: flex; overflow: hidden;}
+.sec1 .menu div {
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 2.2vw;
+    cursor: pointer;
+    width: 25vw;
+    text-align: center;
+}
+.sec1 .menu div:nth-child(1) {
+    border-right: 6px solid #231F20; 
+    transform: translateY(-9999px);
+}
+.sec1 .menu div:nth-child(2) {
+    border-right: 6px solid #231F20; 
+    transform: translateY(-9999px);
+}
+.sec1 .menu div:nth-child(3) {
+    border-right: 6px solid #231F20; 
+    transform: translateY(-9999px);
+}
+.sec1 .menu div:nth-child(4) {
+    transform: translateY(-9999px);
+}
+.sec1 .menu div p:hover {
+    background: #000;
+    color: #fff;
+}
+.sec1 .menu div:nth-child(1) p {
+    /* transform: translateY(-9999px); */
+}
+.sec1 .menu div:nth-child(2) p {
+    /* transform: translateY(-9999px); */
+}
+.sec1 .menu div:nth-child(3) p {
+    /* transform: translateY(-9999px); */
+}
+.sec1 .menu div:nth-child(4) p {
+    /* transform: translateY(-9999px); */
+}
+
+.sec1 .slider {overflow: hidden;}
+.sec1 .slider div:nth-child(1) {overflow: hidden; margin-bottom: 5vw;}
+.sec1 .slider div:nth-child(1) img {
+    overflow: hidden;
+    width: 100%;
+    transform: translateY(-9999px);
+}
+.sec1 .slider div:nth-child(2) {
+    overflow: hidden;
+    margin: 0 auto;
+    font-family: 'S-CoreDream-5Medium';
+    width: 89vw;
+    font-size: 1.03vw;
+    line-height: 2vw;
+}
+.sec1 .slider div:nth-child(2) p {
+    overflow: hidden;
+    min-width: .6vw;
+    background: transparent;
+}
+.sec1 .slider div:nth-child(2) p span {
+    display: inline-block;
+    overflow: hidden;
+    transform: translateY(-9999px);
+}
+
+/* section2 */
+.sec2 .title {
+    height: 53vw; border: 6px solid #231F20; width: 0; transform: translateY(-9999px);
+}
