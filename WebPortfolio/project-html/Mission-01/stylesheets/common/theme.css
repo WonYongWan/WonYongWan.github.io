@@ -1,0 +1,9 @@
+/* Theme 스타일 작성 */
+:root {
+  --color-black: #181818;
+  --color-white: #ffffff;
+  --color-opacity: rgba(0, 0, 0, .2);
+  --color-gray-500: #C4C4C4;
+  --color-gray-600: #AAA9A9;
+  --color-blue-600: #0074E9;
+}
