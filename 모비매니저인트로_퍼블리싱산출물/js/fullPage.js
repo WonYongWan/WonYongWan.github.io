@@ -270,6 +270,7 @@ function scrollBoxDetect(pageCount) {
   if (!$scrollBox) return;
   let scrollPos = Math.round($scrollBox.scrollTop);
   let scrollBottom = $scrollBox.scrollHeight - $scrollBox.clientHeight;
+  if (scrollBottom - scrollPos <= 1) scrollPos = scrollBottom;
 
   if (scrollBottom === 0) {
     return 'null';
