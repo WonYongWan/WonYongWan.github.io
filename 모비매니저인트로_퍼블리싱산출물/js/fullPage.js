@@ -268,7 +268,7 @@ function navsClickEvent(navNum) {
 function scrollBoxDetect(pageCount) {
   const $scrollBox = $pages[pageCount];
   if (!$scrollBox) return;
-  let scrollPos = Math.round($scrollBox.scrollTop);
+  let scrollPos = Math.ceil($scrollBox.scrollTop);
   let scrollBottom = $scrollBox.scrollHeight - $scrollBox.clientHeight;
   if (scrollBottom - scrollPos <= 1) scrollPos = scrollBottom;
 
