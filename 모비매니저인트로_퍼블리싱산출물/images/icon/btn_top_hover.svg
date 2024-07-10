@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <linearGradient id="q8lmvcvs3a" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#04dc49"/>
+            <stop offset="1" stop-color="#00dcf5"/>
+        </linearGradient>
+    </defs>
+    <circle data-name="타원 719" cx="40" cy="40" r="40" transform="rotate(-90 40 40)" style="fill:url(#q8lmvcvs3a)"/>
+    <path data-name="패스 11898" d="m1637.693 7068.465 13.28 13.28-13.28 13.28" transform="rotate(-90 -2679.684 4362.061)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/>
+</svg>
