@@ -1,0 +1,173 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <title>mobon guide</title>
+  <link rel="stylesheet" type="text/css" href="//img.mobon.net/Frtb/common/css/mobon_reset.css?201706292">
+  <script type="text/javascript" src="//img.mobon.net/Frtb/common/script/jquery.js"></script>
+  <script type="text/javascript" src="//img.mobon.net/js/mobonStorage.js"></script>
+  <!--[if lt IE 9]
+  <script type="text/javascript" src="//img.mobon.net/Frtb/common/script/respond.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]
+  <script type="text/javascript" src="//img.mobon.net/Frtb/common/script/html5.js"></script>
+  <script type="text/javascript" src="//img.mobon.net/Frtb/common/script/ie7.js"></script>
+  <link type="text/css" rel="stylesheet" href="//img.mobon.net/Frtb/common/css/ie7.css">
+  <![endif]-->
+  <script type="text/javascript" src="//img.mobon.net/newAd/common/webutil.js"></script>
+  <script type="text/javascript" src="//img.mobon.net/Frtb/js/frame_default_script_S.js"></script>
+  <!-- header END -->
+  <script type="text/javascript" src="//img.mobon.net/js/bounceRate.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+</head>
+<style type="text/css">
+  * {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  #mobon_banner {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid #aaaaaa;
+    margin: 0 auto;
+  }
+
+  .banner_box {
+    background-color: #fff;
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  /* 스크롤바의 폭 너비 */
+  .banner_box::-webkit-scrollbar {
+      width: 10px;
+  }
+
+  .banner_box::-webkit-scrollbar-thumb {
+      background: #BABABA; /* 스크롤바 색상 */
+      border-radius: 10px; /* 스크롤바 둥근 테두리 */
+  }
+
+  .banner_box::-webkit-scrollbar-track {
+      background: #EAE9E7;  /*스크롤바 뒷 배경 색상*/
+  }
+
+  .grid_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .grid {
+    display: grid;
+    height: 240px;
+    gap: 2px;
+  }
+
+  .grid .img1 {grid-area: img1;}
+  .grid .img2 {grid-area: img2;}
+  .grid .img3 {grid-area: img3;}
+  .grid .img4 {grid-area: img4;}
+  .grid .img5 {grid-area: img5;}
+  .grid .img6 {grid-area: img6;}
+
+  .grid1 {
+    grid-template-areas: 
+      "img1 img1 img2"
+      "img1 img1 img3"
+      "img4 img5 img6";
+  }
+
+  .grid2 {
+    grid-template-areas: 
+      "img1 img3 img3"
+      "img2 img3 img3"
+      "img4 img5 img6";
+  }
+
+  .img1 {
+    background-image: url(./images/1.png);
+  }
+  .img2 {
+    background-image: url(./images/2.png);
+  }
+  .img3 {
+    background-image: url(./images/3.png);
+  }
+  .img4 {
+    background-image: url(./images/4.png);
+  }
+  .img5 {
+    background-image: url(./images/5.png);
+  }
+  .img6 {
+    background-image: url(./images/6.png);
+  }
+
+</style>
+<body>
+  <div id="mobon_banner">
+    <div id="mobonLogo" onclick="window.open('//img.mobon.net/ad/linfo.php')"></div>
+    <div class="banner_box">
+      <div class="grid_wrap">
+        <div class="grid grid1">
+          <div class="img img1 obj0_img click0"></div>
+          <div class="img img2 obj1_img click1"></div>
+          <div class="img img3 obj2_img click2"></div>
+          <div class="img img4 obj3_img click3"></div>
+          <div class="img img5 obj4_img click4"></div>
+          <div class="img img6 obj5_img click5"></div>
+        </div>
+        <div class="grid grid2">
+          <div class="img img1 obj6_img click6"></div>
+          <div class="img img2 obj7_img click7"></div>
+          <div class="img img3 obj8_img click8"></div>
+          <div class="img img4 obj9_img click9"></div>
+          <div class="img img5 obj10_img click10"></div>
+          <div class="img img6 obj11_img click11"></div>
+        </div>
+        <div class="grid grid1">
+          <div class="img img1 obj12_img click12"></div>
+          <div class="img img2 obj13_img click13"></div>
+          <div class="img img3 obj14_img click14"></div>
+          <div class="img img4 obj15_img click15"></div>
+          <div class="img img5 obj16_img click16"></div>
+          <div class="img img6 obj17_img click17"></div>
+        </div>
+        <div class="grid grid2">
+          <div class="img img1 obj18_img click18"></div>
+          <div class="img img2 obj19_img click19"></div>
+          <div class="img img3 obj20_img click20"></div>
+          <div class="img img4 obj21_img click21"></div>
+          <div class="img img5 obj22_img click22"></div>
+          <div class="img img6 obj23_img click23"></div>
+        </div>
+        <div class="grid grid1">
+          <div class="img img1 obj24_img click24"></div>
+          <div class="img img2 obj25_img click25"></div>
+          <div class="img img3 obj26_img click26"></div>
+          <div class="img img4 obj27_img click27"></div>
+          <div class="img img5 obj28_img click28"></div>
+          <div class="img img6 obj29_img click29"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
