@@ -23,6 +23,8 @@
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <style type="text/css">
   * {
@@ -31,12 +33,13 @@
     padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     box-sizing: border-box;
   }
 
   #mobon_banner {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 480px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -47,8 +50,8 @@
 
   .banner_box {
     background-color: #fff;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     overflow: hidden;
     overflow-y: auto;
@@ -56,68 +59,68 @@
 
   /* 스크롤바의 폭 너비 */
   .banner_box::-webkit-scrollbar {
-      width: 10px;
-  }
-
-  .banner_box::-webkit-scrollbar-thumb {
-      background: #BABABA; /* 스크롤바 색상 */
-      border-radius: 10px; /* 스크롤바 둥근 테두리 */
-  }
-
-  .banner_box::-webkit-scrollbar-track {
-      background: #EAE9E7;  /*스크롤바 뒷 배경 색상*/
+    display: none;
   }
 
   .grid_wrap {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    transition-timing-function: linear;
   }
 
   .grid {
     display: grid;
-    height: 240px;
+    height: 700px;
     gap: 2px;
   }
 
-  .grid .img1 {grid-area: img1;}
-  .grid .img2 {grid-area: img2;}
-  .grid .img3 {grid-area: img3;}
-  .grid .img4 {grid-area: img4;}
-  .grid .img5 {grid-area: img5;}
-  .grid .img6 {grid-area: img6;}
+  .grid .img_wrap1 {grid-area: img_wrap1;}
+  .grid .img_wrap2 {grid-area: img_wrap2;}
+  .grid .img_wrap3 {grid-area: img_wrap3;}
+  .grid .img_wrap4 {grid-area: img_wrap4;}
+  .grid .img_wrap5 {grid-area: img_wrap5;}
+  .grid .img_wrap6 {grid-area: img_wrap6;}
 
   .grid1 {
     grid-template-areas: 
-      "img1 img1 img2"
-      "img1 img1 img3"
-      "img4 img5 img6";
+      "img_wrap1 img_wrap1"
+      "img_wrap1 img_wrap1"
+      "img_wrap2 img_wrap3"
+      "img_wrap4 img_wrap4"
+      "img_wrap4 img_wrap4"
+      "img_wrap5 img_wrap6";
   }
 
   .grid2 {
     grid-template-areas: 
-      "img1 img3 img3"
-      "img2 img3 img3"
-      "img4 img5 img6";
+      "img_wrap1 img_wrap2"
+      "img_wrap3 img_wrap3"
+      "img_wrap3 img_wrap3"
+      "img_wrap4 img_wrap5"
+      "img_wrap6 img_wrap6"
+      "img_wrap6 img_wrap6";
   }
 
-  .img1 {
-    background-image: url(./images/1.png);
+  .img_wrap {
+    overflow: hidden;
+    position: relative;
   }
-  .img2 {
-    background-image: url(./images/2.png);
+
+  .img_wrap i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    border: 2px solid transparent;
   }
-  .img3 {
-    background-image: url(./images/3.png);
+
+  .img_wrap .img {
+    height: 100%;
   }
-  .img4 {
-    background-image: url(./images/4.png);
-  }
-  .img5 {
-    background-image: url(./images/5.png);
-  }
-  .img6 {
-    background-image: url(./images/6.png);
+
+  .img {
+    background-image: url(../images/1.png);
   }
 
 </style>
@@ -125,49 +128,84 @@
   <div id="mobon_banner">
     <div id="mobonLogo" onclick="window.open('//img.mobon.net/ad/linfo.php')"></div>
     <div class="banner_box">
-      <div class="grid_wrap">
-        <div class="grid grid1">
-          <div class="img img1 obj0_img click0"></div>
-          <div class="img img2 obj1_img click1"></div>
-          <div class="img img3 obj2_img click2"></div>
-          <div class="img img4 obj3_img click3"></div>
-          <div class="img img5 obj4_img click4"></div>
-          <div class="img img6 obj5_img click5"></div>
-        </div>
-        <div class="grid grid2">
-          <div class="img img1 obj6_img click6"></div>
-          <div class="img img2 obj7_img click7"></div>
-          <div class="img img3 obj8_img click8"></div>
-          <div class="img img4 obj9_img click9"></div>
-          <div class="img img5 obj10_img click10"></div>
-          <div class="img img6 obj11_img click11"></div>
-        </div>
-        <div class="grid grid1">
-          <div class="img img1 obj12_img click12"></div>
-          <div class="img img2 obj13_img click13"></div>
-          <div class="img img3 obj14_img click14"></div>
-          <div class="img img4 obj15_img click15"></div>
-          <div class="img img5 obj16_img click16"></div>
-          <div class="img img6 obj17_img click17"></div>
-        </div>
-        <div class="grid grid2">
-          <div class="img img1 obj18_img click18"></div>
-          <div class="img img2 obj19_img click19"></div>
-          <div class="img img3 obj20_img click20"></div>
-          <div class="img img4 obj21_img click21"></div>
-          <div class="img img5 obj22_img click22"></div>
-          <div class="img img6 obj23_img click23"></div>
-        </div>
-        <div class="grid grid1">
-          <div class="img img1 obj24_img click24"></div>
-          <div class="img img2 obj25_img click25"></div>
-          <div class="img img3 obj26_img click26"></div>
-          <div class="img img4 obj27_img click27"></div>
-          <div class="img img5 obj28_img click28"></div>
-          <div class="img img6 obj29_img click29"></div>
+      <div class="swiper">
+        <div class="grid_wrap swiper-wrapper">
+          <div class="grid grid1 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj0_img click0"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj1_img click1"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj2_img click2"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj3_img click3"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj4_img click4"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj5_img click5"></div></div>
+          </div>
+          <div class="grid grid2 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj6_img click6"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj7_img click7"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj8_img click8"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj9_img click9"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj10_img click10"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj11_img click11"></div></div>
+          </div>
+          <div class="grid grid1 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj12_img click12"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj13_img click13"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj14_img click14"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj15_img click15"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj16_img click16"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj17_img click17"></div></div>
+          </div>
+          <div class="grid grid2 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj18_img click18"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj19_img click19"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj20_img click20"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj21_img click21"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj22_img click22"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj23_img click23"></div></div>
+          </div>
+          <div class="grid grid1 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj24_img click24"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj25_img click25"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj26_img click26"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj27_img click27"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj28_img click28"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj29_img click29"></div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    let wp_json = ('{"client":[{"target":"TC","length":1,"logo":"/20231117133009-LU5XFIiwJE-appLogo.png","oslink":"","mobonLogo":"//img.mobon.net/newAd/img/logoImg/mobonLogo02.png","mobonInfo":"//img.mobon.net/ad/linfo.php","site_title":"모비온","data":[{"t1":"","pcode":"57","pnm":"남성구두","img":"https://haetbitkim.cafe24.com/web/product/big/202102/f319894a754912d9a7d2ce1ffd4e9de2.png","purl":"/servlet/drc?no=57&kno=0&kwrdSeq=0&s=17575&adgubun=TC&gb=TC&sc=ced5d1a8db754cffa1392a9adcc90373&mc=17575&userid=hbtest&u=hbtest&product=nor&slink=https%253A%252F%252Fhaetbitkim.cafe24.com%252Fproduct%252F%2525EB%252582%2525A8%2525EC%252584%2525B1%2525EA%2525B5%2525AC%2525EB%252591%252590%252F57%252Fcategory%252F1%252Fdisplay%252F2%252F&pCode=57&rtb_param=WY01E41C01W121_0_1_TC_E_03_0222151635175717575_14_01_N_101&freqLog=3&viewTime=_17575_1708582595392_9789&hId=77&subadgubun=TC&abt=BD95|H45|P80|N86|BI09|K49|AI15|Y68|AL71|AE75|C31|A13|B35|BA83|D36|TB77|AZ066|AX83|AW60|R16|AA08|AC04|AF01|AT038|BJ75|AD02&salePriceYn=N&targetingTime=20240222150606&ergdetail=mob|57|57&ergabt=T&mobImgCode=17&mobon_ad_grp_id_i=101303&ad_grp_tp_code_i=01&mobon_ad_grp_id_c=17480&ad_grp_tp_code_c=02&cp_tp_code=99&frameMatrExposureYN=N","logo":"/20231117133009-LU5XFIiwJE-appLogo.png","logo2":"/20231117133009-OZjdL7z22x-logo.png","img_logo":"//img.mobon.net/ad/imgfile//20231117133009-LU5XFIiwJE-appLogo.png","schon_logo":"//img.mobon.net/ad/imgfile//20231117133009-OZjdL7z22x-logo.png","site_name":"최적의 타겟팅 광고 모비온!","site_title":"모비온","site_url":"https://haetbitkim.cafe24.com/product/%EB%82%A8%EC%84%B1%EA%B5%AC%EB%91%90/57/category/1/display/2/","site_desc":"MOBON","site_desc1":"온라인 최적의 타게팅 광고","site_desc2":"온라인에서도 최적화 광고가 가능한 플랫폼","site_desc3":"디테일한 타겟팅을 기반으로 온라인에서 높은 전환율을 자랑하는 광고 플랫폼","site_desc4":"쇼핑몰부터 병원, 교육까지 다양한 업종 커버 가능! 온라인 광고는 모비온","edge_yn":"1","img_bkg":"","imageSqreYn":"Y","advrtsReplcNm":"","advrtsReplcCode":"01","monetaryUnit":"?","point":0,"cta_text":"앱설치하기","pSlink":"https%253A%252F%252Fhaetbitkim.cafe24.com%252Fproduct%252F%2525EB%252582%2525A8%2525EC%252584%2525B1%2525EA%2525B5%2525AC%2525EB%252591%252590%252F57%252Fcategory%252F1%252Fdisplay%252F2%252F","user_cate":"395","user_cate_nm":"IT시스템/솔루션","remarks":"","userid":"hbtest","homepi":"haetbitkim.cafe24.com","videoAd":"","adGubun":"TC","reviewText1":"이거 진심 귀여워서 입고 나가면 그날 어디서 샀냐 인기만점 됨다.. 색깔 고민 많이 했는데 어디에나 잘 어울립니다.","score1":5,"reviewText2":"정말 좋은 상품이에요. 다음에도 동일한 상품으로 재구매 할 생각입니다.? 사이즈는 넉넉한 편이니, 참고 바랍니다.","score2":5,"reviewText3":"잘받았습니다!!  세일해서 더 득템했네요  원래도 착한 가격인데 거기에 또 세일을 택배가 언제 오는지 매일 기다리는 맛에 살아요~","score3":4,"reviewText4":"좋아요~!  ? ? ?","score4":2,"reviewText5":"핏도 옷감도 길이도 착용감도 하나도 마음에 들지않은게 없어서 다른 색도 몽땅 재구매 해버렸어요. 간단하게 외출할 때 교복처럼 입고 있어요.","score5":5,"reviewText6":"옷이 너무 러블리 해서 귀욤 뿜뿜 여성 스러워요. 잘입고 다니고 있어요. 마음에 들어요.","score6":3,"reviewText7":"너무너무 좋아요 정말 잘 입고 있네요 알바할때 이만한 바지가 없죠! 벌써 6장째 구매중 입니다! 대박나세요!","score7":5,"reviewText8":"너무너무 좋아요 정말 잘 입고 있네요 알바할때 이만한 바지가 없죠! 벌써 6장째 구매중 입니다! 대박나세요!","score8":5,"reviewText9":"이거 진심 귀여워서 입고 나가면 그날 어디서 샀냐 인기만점 됨다.. 색깔 고민 많이 했는데 어디에나 잘 어울립니다.","score9":4,"reviewText10":"핏도 옷감도 길이도 착용감도 하나도 마음에 들지않은게 없어서 다른 색도 몽땅 재구매 해버렸어요. 간단하게 외출할 때 교복처럼 입고 있어요.","score10":5,"cate1Seq":"","imgTpCode":"","martImgPath":"","matrAlgmSeq":"","mobImgCode":"17","mobon_ad_grp_id_i":"101303","ad_grp_tp_code_i":"01","mobon_ad_grp_id_c":"17480","ad_grp_tp_code_c":"02","cp_tp_code":"99","mpoint":0,"cate1":"(대분류) Accessori","dc_rate":"","prdt_prmct":"","price":"130000","click_user_id":"hbtest","ab_type":"A","igb":"74","w":"300","h":"250","script_no":"17575","revwCnt":"3750","revwScoreAvg":"4","revwScore1":"5","revwScore2":"125","revwScore3":"75","revwScore4":"125","revwScore5":"175"}]}]}');
+    let newJ = $.parseJSON(wp_json);
+    default_script_tyep0();
+
+    window.addEventListener('load', () => { dataProcess(newJ.client[0].data[0]);});
+
+    function dataProcess(data) {
+      const colorCode = data.signatureColor ? data.signatureColor : 'gray';
+      const $imgWraps = document.querySelectorAll('.img_wrap i');
+      window.addEventListener('click', (e) => {
+        if(e.target.classList.contains('img') && !e.target.classList.contains('clickCheck')) {
+          e.target.classList.add('clickCheck');
+          e.target.previousSibling.style.zIndex = `9999`;
+          e.target.previousSibling.style.borderColor = `${colorCode}`;
+        }
+      });
+    }
+
+    let swiper = new Swiper('.swiper', {
+      direction: 'vertical',
+      slidesPerView: 1,
+      autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+      },
+      speed: 8000,
+      loop: true,
+      loopAdditionalSlides: 1,
+      slidesPerView: 'auto',
+    });
+  </script>
 </body>
 </html>
