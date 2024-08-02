@@ -22,7 +22,6 @@
   <script type="text/javascript" src="//img.mobon.net/js/bounceRate.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-
 </head>
 <style type="text/css">
   * {
@@ -31,12 +30,13 @@
     padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     box-sizing: border-box;
   }
 
   #mobon_banner {
-    width: 250px;
-    height: 250px;
+    width: 160px;
+    height: 600px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -47,8 +47,8 @@
 
   .banner_box {
     background-color: #fff;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     overflow: hidden;
     overflow-y: auto;
@@ -56,16 +56,16 @@
 
   /* 스크롤바의 폭 너비 */
   .banner_box::-webkit-scrollbar {
-      width: 10px !important;
+    width: 10px;
   }
 
   .banner_box::-webkit-scrollbar-thumb {
-      background: #BABABA !important; /* 스크롤바 색상 */
-      border-radius: 10px !important; /* 스크롤바 둥근 테두리 */
+    background: #BABABA; /* 스크롤바 색상 */
+    border-radius: 10px; /* 스크롤바 둥근 테두리 */
   }
 
   .banner_box::-webkit-scrollbar-track {
-      background: #EAE9E7 !important;  /*스크롤바 뒷 배경 색상*/
+    background: #EAE9E7;  /*스크롤바 뒷 배경 색상*/
   }
 
   .grid_wrap {
@@ -76,62 +76,61 @@
 
   .grid {
     display: grid;
-    height: 240px;
+    height: 480px;
     gap: 2px;
   }
 
-  .grid .img1 {grid-area: img1;}
-  .grid .img2 {grid-area: img2;}
-  .grid .img3 {grid-area: img3;}
-  .grid .img4 {grid-area: img4;}
-  .grid .img5 {grid-area: img5;}
-  .grid .img6 {grid-area: img6;}
+  .grid .img_wrap1 {grid-area: img_wrap1;}
+  .grid .img_wrap2 {grid-area: img_wrap2;}
+  .grid .img_wrap3 {grid-area: img_wrap3;}
+  .grid .img_wrap4 {grid-area: img_wrap4;}
+  .grid .img_wrap5 {grid-area: img_wrap5;}
+  .grid .img_wrap6 {grid-area: img_wrap6;}
 
   .grid1 {
     grid-template-areas: 
-      "img1 img1 img2"
-      "img1 img1 img3"
-      "img4 img5 img6";
+      "img_wrap1 img_wrap1"
+      "img_wrap1 img_wrap1"
+      "img_wrap2 img_wrap3"
+      "img_wrap4 img_wrap4"
+      "img_wrap4 img_wrap4"
+      "img_wrap5 img_wrap6";
   }
 
   .grid2 {
     grid-template-areas: 
-      "img1 img3 img3"
-      "img2 img3 img3"
-      "img4 img5 img6";
+      "img_wrap1 img_wrap2"
+      "img_wrap3 img_wrap3"
+      "img_wrap3 img_wrap3"
+      "img_wrap4 img_wrap5"
+      "img_wrap6 img_wrap6"
+      "img_wrap6 img_wrap6";
   }
 
-  .grid3 {
-    grid-template-areas: 
-      "img1 img2 img3"
-      "img4 img4 img5"
-      "img4 img4 img6";
+  .img_wrap {
+    overflow: hidden;
+    position: relative;
   }
 
-  .grid4 {
-    grid-template-areas: 
-      "img1 img2 img3"
-      "img4 img6 img6"
-      "img5 img6 img6";
+  .img_wrap i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    border: 2px solid transparent;
   }
 
-  .img1 {
-    background-image: url(./images/1.png);
+  .img_wrap .img {
+    height: 100%;
+    transition: .3s;
   }
-  .img2 {
-    background-image: url(./images/2.png);
+
+  .img_wrap:hover .img {
+    transform: scale(1.1);
   }
-  .img3 {
-    background-image: url(./images/3.png);
-  }
-  .img4 {
-    background-image: url(./images/4.png);
-  }
-  .img5 {
-    background-image: url(./images/5.png);
-  }
-  .img6 {
-    background-image: url(./images/6.png);
+
+  .img {
+    background-image: url(../images/1.png);
   }
 
 </style>
@@ -141,47 +140,89 @@
     <div class="banner_box">
       <div class="grid_wrap">
         <div class="grid grid1">
-          <div class="img img1 obj0_img click0"></div>
-          <div class="img img2 obj1_img click1"></div>
-          <div class="img img3 obj2_img click2"></div>
-          <div class="img img4 obj3_img click3"></div>
-          <div class="img img5 obj4_img click4"></div>
-          <div class="img img6 obj5_img click5"></div>
+          <div class="img_wrap img_wrap1"><i class="click0"></i><div class="img obj0_img"></div></div>
+          <div class="img_wrap img_wrap2"><i class="click1"></i><div class="img obj1_img"></div></div>
+          <div class="img_wrap img_wrap3"><i class="click2"></i><div class="img obj2_img"></div></div>
+          <div class="img_wrap img_wrap4"><i class="click3"></i><div class="img obj3_img"></div></div>
+          <div class="img_wrap img_wrap5"><i class="click4"></i><div class="img obj4_img"></div></div>
+          <div class="img_wrap img_wrap6"><i class="click5"></i><div class="img obj5_img"></div></div>
         </div>
         <div class="grid grid2">
-          <div class="img img1 obj6_img click6"></div>
-          <div class="img img2 obj7_img click7"></div>
-          <div class="img img3 obj8_img click8"></div>
-          <div class="img img4 obj9_img click9"></div>
-          <div class="img img5 obj10_img click10"></div>
-          <div class="img img6 obj11_img click11"></div>
-        </div>
-        <div class="grid grid3">
-          <div class="img img1 obj12_img click12"></div>
-          <div class="img img2 obj13_img click13"></div>
-          <div class="img img3 obj14_img click14"></div>
-          <div class="img img4 obj15_img click15"></div>
-          <div class="img img5 obj16_img click16"></div>
-          <div class="img img6 obj17_img click17"></div>
-        </div>
-        <div class="grid grid4">
-          <div class="img img1 obj18_img click18"></div>
-          <div class="img img2 obj19_img click19"></div>
-          <div class="img img3 obj20_img click20"></div>
-          <div class="img img4 obj21_img click21"></div>
-          <div class="img img5 obj22_img click22"></div>
-          <div class="img img6 obj23_img click23"></div>
+          <div class="img_wrap img_wrap1"><i class="click6"></i><div class="img obj6_img"></div></div>
+          <div class="img_wrap img_wrap2"><i class="click7"></i><div class="img obj7_img"></div></div>
+          <div class="img_wrap img_wrap3"><i class="click8"></i><div class="img obj8_img"></div></div>
+          <div class="img_wrap img_wrap4"><i class="click9"></i><div class="img obj9_img"></div></div>
+          <div class="img_wrap img_wrap5"><i class="click10"></i><div class="img obj10_img"></div></div>
+          <div class="img_wrap img_wrap6"><i class="click11"></i><div class="img obj11_img"></div></div>
         </div>
         <div class="grid grid1">
-          <div class="img img1 obj24_img click24"></div>
-          <div class="img img2 obj25_img click25"></div>
-          <div class="img img3 obj26_img click26"></div>
-          <div class="img img4 obj27_img click27"></div>
-          <div class="img img5 obj28_img click28"></div>
-          <div class="img img6 obj29_img click29"></div>
+          <div class="img_wrap img_wrap1"><i class="click12"></i><div class="img obj12_img"></div></div>
+          <div class="img_wrap img_wrap2"><i class="click13"></i><div class="img obj13_img"></div></div>
+          <div class="img_wrap img_wrap3"><i class="click14"></i><div class="img obj14_img"></div></div>
+          <div class="img_wrap img_wrap4"><i class="click15"></i><div class="img obj15_img"></div></div>
+          <div class="img_wrap img_wrap5"><i class="click16"></i><div class="img obj16_img"></div></div>
+          <div class="img_wrap img_wrap6"><i class="click17"></i><div class="img obj17_img"></div></div>
+        </div>
+        <div class="grid grid2">
+          <div class="img_wrap img_wrap1"><i class="click18"></i><div class="img obj18_img"></div></div>
+          <div class="img_wrap img_wrap2"><i class="click19"></i><div class="img obj19_img"></div></div>
+          <div class="img_wrap img_wrap3"><i class="click20"></i><div class="img obj20_img"></div></div>
+          <div class="img_wrap img_wrap4"><i class="click21"></i><div class="img obj21_img"></div></div>
+          <div class="img_wrap img_wrap5"><i class="click22"></i><div class="img obj22_img"></div></div>
+          <div class="img_wrap img_wrap6"><i class="click23"></i><div class="img obj23_img"></div></div>
+        </div>
+        <div class="grid grid1">
+          <div class="img_wrap img_wrap1"><i class="click24"></i><div class="img obj24_img"></div></div>
+          <div class="img_wrap img_wrap2"><i class="click25"></i><div class="img obj25_img"></div></div>
+          <div class="img_wrap img_wrap3"><i class="click26"></i><div class="img obj26_img"></div></div>
+          <div class="img_wrap img_wrap4"><i class="click27"></i><div class="img obj27_img"></div></div>
+          <div class="img_wrap img_wrap5"><i class="click28"></i><div class="img obj28_img"></div></div>
+          <div class="img_wrap img_wrap6"><i class="click29"></i><div class="img obj29_img"></div></div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    let wp_json = ('{"client":[{"logo":1,"data":[{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#0066B2","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#0066b2","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"},{"logo":"bibiesong-1216726537000.png","price":"63000", "prdt_prmct":"60000", "dc_rate":"50", "pnm":"지퍼포인트 라쿤패딩","t0":"","purl":"/servlet/drc?no=1183&kno=0&s=82&adgubun=SR&gb=SR&sc=89c67bfff3c645982ab17fa212af9c8b&mc=82&userid=bibiesong&u=bibiesong&product=nor&slink=http%3A%2F%2Fwww.bibiesong.com%2Fproduct%2Fdetail.html%3Fproduct_no%3D1183%26cate_no%3D27%26display_group%3D1&rtb_param=WY09E07C01W061_0_1_CW_A&freqLog=19&viewTime=_82_1434604974429_383","img":"//img.mobon.net/Frtb/images/preview/img01.jpg","imageSqreYn":"N","signatureColor":"#ff0000","pcode":"1183","site_name":"비비에송","logo2":"bibiesong-1502410438000.png","site_desc1":"사이트설명1","site_desc2":"사이트설명2","site_desc3":"사이트설명3","site_desc4":"사이트설명4", "advrtsReplcNm":"대체텍스트", "monetaryUnit":"$","cta_text":"바로가기"}],"length":1,"target":"UM","site_title":"스타일베리","oslink":""}]} ');
+    let newJ = $.parseJSON(wp_json);
+    default_script_tyep0();
+
+    window.addEventListener('load', () => {dataProcess(newJ.client[0].data[0]);});
+
+    function dataProcess(data) {
+      const colorCode = data.signatureColor ? data.signatureColor : 'gray';
+      const eventList = ['click', 'mouseover'];
+      const $imgWraps = document.querySelectorAll('.img_wrap i');
+      for(let i = 0; i <= 1; i++) {
+        window.addEventListener(eventList[i], (e) => {
+          if(e.target.classList.contains('grid')) return;
+          if(eventList[i] === 'click') {
+            if(e.target.nextSibling !== null && e.target.nextSibling.classList.contains('img') && !e.target.nextSibling.classList.contains('clickCheck')) {
+              e.target.nextSibling.classList.add('clickCheck');
+              e.target.style.zIndex = `9999`;
+              e.target.style.borderColor = `${colorCode}`;
+            }
+
+          } else if(eventList[i] === 'mouseover') {
+            if(e.target.nodeName !== 'I' && !e.target.classList.contains('clickCheck') || 
+              e.target.nodeName === 'I' && e.target.nextSibling.classList.contains('clickCheck')) {
+
+              $imgWraps.forEach(elm => {
+                if(!elm.nextSibling.classList.contains('clickCheck')) {
+                  elm.style.zIndex = `-9999`;
+                  elm.style.borderColor = `transparent`;
+                }
+              });
+              if(e.target.classList.contains('img')) {
+                e.target.previousSibling.style.zIndex = `9999`;
+                e.target.previousSibling.style.borderColor = `${colorCode}`;
+              }
+            }
+          }
+        });
+      }
+    }
+  </script>
 </body>
 </html>
