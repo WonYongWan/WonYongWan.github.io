@@ -66,12 +66,12 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    transition-timing-function: linear;
+    transition-timing-function: cubic-bezier(.41,.8,.16,1.24);
   }
 
   .grid {
     display: grid;
-    height: 700px;
+    height: 480px;
     gap: 2px;
     grid-template-areas: 
       "img_wrap1 img_wrap1"
@@ -190,7 +190,7 @@
           delay: 2000,
           disableOnInteraction: false,
       },
-      speed: 1000,
+      speed: 800,
       loop: true,
       loopAdditionalSlides: 1,
       slidesPerView: 'auto',
