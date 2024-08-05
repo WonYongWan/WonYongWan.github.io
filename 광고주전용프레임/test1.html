@@ -65,7 +65,6 @@
   .grid_wrap {
     display: flex;
     flex-direction: column;
-    gap: 2px;
     transition-timing-function: cubic-bezier(.41,.8,.16,1.24);
   }
 
@@ -186,14 +185,13 @@
     let swiper = new Swiper('.swiper', {
       direction: 'vertical',
       slidesPerView: 1,
+      spaceBetween: 2,
       autoplay: {
           delay: 2000,
           disableOnInteraction: false,
       },
       speed: 800,
       loop: true,
-      loopAdditionalSlides: 1,
-      slidesPerView: 'auto',
     });
   </script>
 </body>
