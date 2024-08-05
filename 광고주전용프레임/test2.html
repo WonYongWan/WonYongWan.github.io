@@ -22,7 +22,7 @@
   <script type="text/javascript" src="//img.mobon.net/js/bounceRate.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
@@ -38,8 +38,8 @@
   }
 
   #mobon_banner {
-    width: 300px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -62,18 +62,56 @@
     display: none;
   }
 
-  .box {
+  .grid_wrap {
     display: flex;
+    flex-direction: column;
     gap: 2px;
     transition-timing-function: linear;
   }
 
+  .grid {
+    display: grid;
+    height: 240px;
+    gap: 2px;
+  }
+
+  .grid .img_wrap1 {grid-area: img_wrap1;}
+  .grid .img_wrap2 {grid-area: img_wrap2;}
+  .grid .img_wrap3 {grid-area: img_wrap3;}
+  .grid .img_wrap4 {grid-area: img_wrap4;}
+  .grid .img_wrap5 {grid-area: img_wrap5;}
+  .grid .img_wrap6 {grid-area: img_wrap6;}
+
+  .grid1 {
+    grid-template-areas: 
+      "img_wrap1 img_wrap1 img_wrap2"
+      "img_wrap1 img_wrap1 img_wrap3"
+      "img_wrap4 img_wrap5 img_wrap6";
+  }
+
+  .grid2 {
+    grid-template-areas: 
+      "img_wrap1 img_wrap3 img_wrap3"
+      "img_wrap2 img_wrap3 img_wrap3"
+      "img_wrap4 img_wrap5 img_wrap6";
+  }
+
   .img_wrap {
-    width: 100px;
     overflow: hidden;
+    position: relative;
+  }
+
+  .img_wrap i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    border: 2px solid transparent;
   }
 
   .img_wrap .img {
+    position: absolute;
+    width: 100%;
     height: 100%;
   }
 
@@ -87,37 +125,47 @@
     <div id="mobonLogo" onclick="window.open('//img.mobon.net/ad/linfo.php')"></div>
     <div class="banner_box">
       <div class="swiper">
-        <div class="box swiper-wrapper">
-          <div class="img_wrap swiper-slide"><div class="img obj0_img click0"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj1_img click1"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj2_img click2"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj3_img click3"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj4_img click4"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj5_img click5"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj6_img click6"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj7_img click7"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj8_img click8"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj9_img click9"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj10_img click10"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj11_img click11"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj12_img click12"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj13_img click13"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj14_img click14"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj15_img click15"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj16_img click16"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj17_img click17"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj18_img click18"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj19_img click19"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj20_img click20"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj21_img click21"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj22_img click22"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj23_img click23"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj24_img click24"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj25_img click25"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj26_img click26"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj27_img click27"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj28_img click28"></div></div>
-          <div class="img_wrap swiper-slide"><div class="img obj29_img click29"></div></div>
+        <div class="grid_wrap swiper-wrapper">
+          <div class="grid grid1 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj0_img click0"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj1_img click1"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj2_img click2"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj3_img click3"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj4_img click4"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj5_img click5"></div></div>
+          </div>
+          <div class="grid grid2 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj6_img click6"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj7_img click7"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj8_img click8"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj9_img click9"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj10_img click10"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj11_img click11"></div></div>
+          </div>
+          <div class="grid grid1 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj12_img click12"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj13_img click13"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj14_img click14"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj15_img click15"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj16_img click16"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj17_img click17"></div></div>
+          </div>
+          <div class="grid grid2 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj18_img click18"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj19_img click19"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj20_img click20"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj21_img click21"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj22_img click22"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj23_img click23"></div></div>
+          </div>
+          <div class="grid grid1 swiper-slide">
+            <div class="img_wrap img_wrap1"><i></i><div class="img obj24_img click24"></div></div>
+            <div class="img_wrap img_wrap2"><i></i><div class="img obj25_img click25"></div></div>
+            <div class="img_wrap img_wrap3"><i></i><div class="img obj26_img click26"></div></div>
+            <div class="img_wrap img_wrap4"><i></i><div class="img obj27_img click27"></div></div>
+            <div class="img_wrap img_wrap5"><i></i><div class="img obj28_img click28"></div></div>
+            <div class="img_wrap img_wrap6"><i></i><div class="img obj29_img click29"></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -136,18 +184,20 @@
       window.addEventListener('click', (e) => {
         if(e.target.classList.contains('img') && !e.target.classList.contains('clickCheck')) {
           e.target.classList.add('clickCheck');
-          e.target.parentNode.style.border = `2px solid ${colorCode}`;
+          e.target.previousSibling.style.zIndex = `9999`;
+          e.target.previousSibling.style.borderColor = `${colorCode}`;
         }
       });
     }
 
     let swiper = new Swiper('.swiper', {
+      direction: 'vertical',
       slidesPerView: 1,
       autoplay: {
           delay: 0,
           disableOnInteraction: false,
       },
-      speed: 2000,
+      speed: 4000,
       loop: true,
       loopAdditionalSlides: 1,
       slidesPerView: 'auto',
