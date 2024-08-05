@@ -32,7 +32,6 @@
     background-repeat: no-repeat;
     background-position: center;
     box-sizing: border-box;
-    background-attachment: scroll;
   }
 
   #mobon_banner {
@@ -132,6 +131,12 @@
 
   .img {
     background-image: url(./images/1.png);
+  }
+
+  @media (pointer:coarse) {
+    .img {
+      background-attachment: scroll;
+    }
   }
 
 </style>
