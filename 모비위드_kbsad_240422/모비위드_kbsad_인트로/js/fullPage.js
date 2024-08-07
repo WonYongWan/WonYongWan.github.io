@@ -5,7 +5,7 @@ const $menus = document.querySelectorAll('.fp_menu');
 const $topBtn = document.querySelector('.fp_top_btn');
 const $navWrap = document.querySelector('.fp_nav_wrap');
 const $navs = document.querySelectorAll('.fp_nav');
-export const pageWrapTime = Number(getComputedStyle($pageWrap).transition.split(" ")[1].replace('s', '') * 1000);
+export const pageWrapTime = Number(getComputedStyle($pageWrap).transition.replace(/([^0-9.])/g, '') * 1000);
 const pageLength = $pages.length;
 
 // setting start page on class
