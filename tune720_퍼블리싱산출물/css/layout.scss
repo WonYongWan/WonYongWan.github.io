@@ -1,0 +1,430 @@
+@import "common";
+
+::selection {
+  background: #978eff;
+  color: #fff;
+}
+
+.menu-two-bg-wrap {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: .3s;
+
+  .menu-two-bg {
+    position: absolute;
+    transform: translateY(-80px);
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+    transition: .3s;
+  }
+
+  &.on {
+    height: 80px;
+    .menu-two-bg {
+      transform: translateY(0);
+    }
+  }
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0 80px;
+  transition: background .2s;
+
+  h1 {
+    a {
+      @include txt_hide();
+      background: url(../images/gnb_logo_w.png) no-repeat center / contain;
+      width: 200px;
+      height: 34px;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 80px;
+    height: 100%;
+
+    li {
+      position: relative;
+
+      a {
+        @include preMedium();
+        position: relative;
+        white-space: nowrap;
+        display: block;
+        height: 100%;
+        line-height: 80px;
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: -.32px;
+      }
+
+      ul {
+        position: absolute;
+        left: 11px;
+        bottom: -80px;
+        gap: 45px;
+        width: 100%;
+        display: none;
+
+        li {
+
+          a {
+            position: relative;
+            color: #555;
+            z-index: -999;
+            font-size: 16px;
+            opacity: 0;
+
+            &:hover {
+              color: #978eff;
+              transition: .2s;
+            }
+          }
+        }
+
+        &.on {
+          display: flex;
+
+          a {
+            z-index: 9;
+            opacity: 1;
+          }
+        }
+      }
+
+      &:last-child {
+        ul {
+          left: -7px;
+        }
+      }
+    }
+  }
+
+  .user {
+    .login {
+      position: relative;
+      width: 100%;
+      left: 0;
+      display: flex;
+      gap: 10px;
+
+      a {
+        @include preRegular();
+        display: inline-block;
+        padding: 7.5px 18px;
+        border: 1px solid rgba(255, 255, 255, .5);
+        border-radius: 15px;
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: -.26px;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+          background: #fff;
+          color: #784dff;
+        }
+      }
+
+      &.after {
+        .user-info {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-right: 10px;
+          .user-img {
+            width: 20px;
+            height: 20px;
+            background: url(../images/ic_gnb_my_w.png) no-repeat center / cover;
+          }
+
+          .user-name {
+            @include preRegular();
+            color: #fff;
+            font-size: 14px;
+            span {
+              @include preBold();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.white {
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+
+    h1 {
+      a {
+        background: url(../images/gnb_logo_w_white.png) no-repeat center / contain;
+      }
+    }
+
+    .menu {
+  
+      > li {
+        > a {
+          color: #333;
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #978eff;
+            transition: .3s;
+          }
+          
+          &:hover,
+          &.on {
+            color: #978eff;
+
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .user {
+      .login {
+        a {
+          border: 1px solid #978eff;
+          color: #978eff;
+
+          &:hover {
+            background: #978eff;
+            color: #fff;
+          }
+        }
+  
+        &.after {
+          .user-info {
+            .user-img {
+              background: url(../images/ic_gnb_my_w_white.png) no-repeat center / cover;
+            }
+  
+            .user-name {
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  .container {
+    height: 100%;
+    @include layout();
+  }
+}
+
+footer {
+  background: #17213e;
+  padding: 65px 20px;
+
+  .container {
+    max-width: 1270px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .box {
+      &.box1 {
+        .footer-logo {
+          @include txt_hide();
+          @include bgSet();
+          width: 180px;
+          height: 31px;
+          background-image: url(../images/img_footer_logo.png);
+          margin-bottom: 30px;
+        }
+      
+        .item {
+          &.item1 {
+            display: flex;
+            margin-bottom: 30px;
+
+            a {
+              @include preRegular();
+              font-size: 16px;
+              color: #fff;
+              padding-right: 17.5px;
+              margin-right: 17.5px;
+              position: relative;
+
+              &::before {
+                @include ba_elm();
+                width: 1px;
+                height: 10px;
+                background: #fff;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+              }
+
+              &:last-of-type {
+                &::before {
+                  display: none;
+                }
+              }
+            }
+          }
+      
+          &.item2 {
+            .line {
+              display: flex;
+              margin-bottom: 13px;
+
+              p {
+                @include preLight();
+                font-size: 14px;
+                color: #999fb1;
+                padding-right: 9px;
+                margin-right: 9px;
+                position: relative;
+
+                &::before {
+                  @include ba_elm();
+                  width: 1px;
+                  height: 12px;
+                  background: #999fb1;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  right: 0;
+                }
+
+                &:last-of-type {
+                  &::before {
+                    display: none;
+                  }
+                }
+              }
+
+              &.line3 {
+                margin-bottom: 0;
+              }
+            }
+          }
+      
+      
+        }
+      }
+
+      &.box2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 20px;
+
+        .site-link-wrap {
+          position: relative;
+          cursor: pointer;
+          width: 210px;
+          height: 45px;
+          padding-left: 15px;
+          border-radius: 5px;
+          background: #000d34;
+
+          &::before {
+            @include ba_elm();
+            @include bgSet();
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            width: 13px;
+            height: 5.5px;
+            background-image: url(../images/icon_footer_arrow_up.png);
+          }
+
+          p {
+            @include preMedium();
+            font-size: 14px;
+            color: #fff;
+            line-height: 45px;
+          }
+          
+
+          ul {
+            position: absolute;
+            li {
+              a {
+                
+              }
+            }
+          }
+        }
+
+        .sns-link-wrap {
+          display: flex;
+          gap: 15px;
+
+          .link {
+            @include txt_hide();
+            @include bgSet();
+            display: inline-block;
+            width: 60px;
+            height: 45px;
+            background-size: contain;
+            border-radius: 5px;
+
+
+            &.link1 {background-image: url(../images/btn_footer_blog.png);}
+            &.link2 {background-image: url(../images/btn_footer_facebook.png);}
+            &.link3 {background-image: url(../images/btn_footer_youyube.png);}
+          }
+        }
+      }
+    }
+  }
+
+  .top-btn {
+    @include txt_hide();
+    z-index: 99;
+    cursor: pointer;
+    display: block;
+    border: none;
+    padding: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background: url(../images/btn_top.png) no-repeat center / cover;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transform: translateY(120px);
+    transition: .5s;
+
+    &.on {
+      transform: translateY(0);
+    }
+  }
+}
