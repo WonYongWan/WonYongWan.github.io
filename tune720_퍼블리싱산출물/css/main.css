@@ -459,10 +459,7 @@
   border-radius: 20px;
   padding: 45px 0;
   text-align: center;
-/*   overflow: hidden; */
-  color: blur;
-  word-wrap: break-word;
-  -webkit-hyphens: none;
+  overflow: hidden;
 }
 .main .content3 .container .bottom p:first-of-type {
   font-family: "Pretendard-Medium";
@@ -481,6 +478,11 @@
   line-height: 1.5;
   opacity: 0;
   transform: translateY(20px);
+
+/*   test */
+  color: blur;
+  word-wrap: break-word;
+  -webkit-hyphens: none;
 }
 .main .content3.on .container .top {
   background: url(../images/img_main_con2_arrow.png) no-repeat center bottom/425px 275px;
