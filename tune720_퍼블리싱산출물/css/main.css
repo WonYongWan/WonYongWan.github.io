@@ -460,6 +460,7 @@
   padding: 45px 0;
   text-align: center;
 /*   overflow: hidden; */
+  color: red;
 }
 .main .content3 .container .bottom p:first-of-type {
   font-family: "Pretendard-Medium";
