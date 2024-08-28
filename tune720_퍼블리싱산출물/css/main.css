@@ -480,7 +480,8 @@
   transform: translateY(20px);
 
 /*   test */
-  color: blur;
+  word-break: break-all;
+  color: blue;
   word-wrap: break-word;
   -webkit-hyphens: none;
 }
