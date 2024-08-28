@@ -460,7 +460,9 @@
   padding: 45px 0;
   text-align: center;
 /*   overflow: hidden; */
-  color: red;
+  color: blur;
+  word-wrap: break-word;
+  -webkit-hyphens: none;
 }
 .main .content3 .container .bottom p:first-of-type {
   font-family: "Pretendard-Medium";
