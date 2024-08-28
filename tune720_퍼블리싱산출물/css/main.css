@@ -459,7 +459,7 @@
   border-radius: 20px;
   padding: 45px 0;
   text-align: center;
-  overflow: hidden;
+/*   overflow: hidden; */
 }
 .main .content3 .container .bottom p:first-of-type {
   font-family: "Pretendard-Medium";
