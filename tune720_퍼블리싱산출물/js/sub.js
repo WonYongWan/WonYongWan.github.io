@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     $subTabMenuTabs.forEach((elm, idx) => {
       if(elm.classList.contains('on')) {
         if(idx > $subTabMenuTabs.length - 3) {
-          $subTabMenuWrap.scrollLeft += getComputedStyle($subTabMenuWrap).width.replace(/[^0-9]/g, "")
+          $subTabMenuWrap.scrollLeft += Number(getComputedStyle($subTabMenuWrap).width.replace(/[^0-9]/g, "") - 20)
         }
       }
     })
