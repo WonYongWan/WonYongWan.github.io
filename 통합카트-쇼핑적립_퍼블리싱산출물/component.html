@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>쇼핑적립</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    body {
+      background: #fafafa;
+    }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+    
+    .line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .input-box-wrap {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .input-box input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap ">
+    <h2>icon</h2>
+    <div class="line">
+      <button class="ico-arrow type1 top" type="button"></button>
+      <button class="ico-arrow type1 right" type="button"></button>
+      <button class="ico-arrow type1 bottom" type="button"></button>
+      <button class="ico-arrow type1 left" type="button"></button>
+      <button class="ico-arrow type2 right" type="button"></button>
+      <button class="ico-arrow type2 bottom" type="button"></button>
+      <button class="ico-close type1" type="button"></button>
+      <button class="ico-close type2" type="button"></button>
+      <button class="ico-home" type="button"></button>
+      <button class="ico-heart" type="button"></button>
+      <button class="ico-heart on" type="button"></button>
+      <button class="ico-check" type="button"></button>
+      <button class="ico-check on" type="button"></button>
+      <button class="ico-question" type="button"></button>
+      <button class="ico-point" type="button"></button>
+      <button class="ico-exclamation" type="button"></button>
+    </div>
+
+    <h2>list type1</h2>
+    <div class="line">
+      <div class="list-wrap type1">
+        <div class="list list1">
+          <p class="title"><span class="logo"></span>테무</p>
+          <p class="percent"><span class="ico-point"></span>3.36%</p> 
+          <a href="javascript:void(0)"></a>
+          <button class="ico-heart" type="button"></button>
+        </div>
+        <div class="list list2">
+          <p class="title"><span class="logo"></span>알리익스프레스</p>
+          <p class="percent"><span class="ico-point"></span>3.36%</p> 
+          <a href="javascript:void(0)"></a>
+          <button class="ico-heart" type="button"></button>
+        </div>
+      </div>
+    </div>
+    
+    <h2>list type2</h2>
+    <div class="line">
+      <div class="list-wrap type2">
+        <div class="list list1 red">
+          <p class="title">쿠팡</p>
+          <div class="text-box">
+            <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="point-box">
+            <div class="text text1">
+              <p>적립예정</p>
+              <div class="tool-tip-box">
+                <button class="ico-question" type="button"></button>
+                <div class="tool-tip">적립예정일: 구매 완료 3개월 이내</div>
+              </div>
+            </div>
+            <p class="text text2">+1,230</p>
+          </div>
+          <p class="date">24.09.03</p>
+        </div>
+        <div class="list list2 blue">
+          <p class="title">쿠팡</p>
+          <div class="text-box">
+            <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="point-box">
+            <div class="text text1">
+              <p>적립확정</p>
+              <div class="tool-tip-box">
+                <button class="ico-question" type="button"></button>
+                <div class="tool-tip">적립예정일: 구매 완료 3개월 이내</div>
+              </div>
+            </div>
+            <p class="text text2">+1,230</p>
+          </div>
+          <p class="date">24.09.03</p>
+        </div>
+        <div class="list list3 green">
+          <p class="title">쿠팡</p>
+          <div class="text-box">
+            <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="point-box">
+            <div class="text text1">
+              <p>적립취소</p>
+            </div>
+            <p class="text text2">+1,230</p>
+          </div>
+          <p class="date">24.09.03</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>list type3</h2>
+    <div class="line">
+      <div class="list-wrap type3">
+        <div class="list list1">
+          <div class="top">
+            <p>쇼핑할 때 어떻게 포인트를 적립할 수 있나요?</p>
+            <div class="ico-arrow type1"></div>
+          </div>
+          <div class="bottom">
+            <div>
+              <div>
+                <p>
+                  쇼핑몰을 클릭 시 하단 버튼으로 해당 페이지로 이동하여 페이지를 이동하지 않은 상태에서 로그인 후 원하는 상품을 구매하시면 내역이 전달되고 포인트 적립예정으로 표시됩니다.<br>
+                  쇼핑몰에서 구매 내역을 확인 하여야 하기 때문에 최대 3개월까지 소요될 수 있는 점 양해바랍니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list list2">
+          <div class="top">
+            <p>쇼핑할 때 어떻게 포인트를</p>
+            <div class="ico-arrow type1"></div>
+          </div>
+          <div class="bottom">
+            <div>
+              <div>
+                <p>
+                  쇼핑몰을 클릭 시 하단 버튼으로 해당 페이지로 이동하여 페이지를 이동하지 않은 상태에서 로그인 후 원하는 상품을 구매하시면 내역이 전달되고 포인트 적립예정으로 표시됩니다.<br>
+                  쇼핑몰에서 구매 내역을 확인 하여야 하기 때문에 최대 3개월까지 소요될 수 있는 점 양해바랍니다.
+                  쇼핑몰에서 구매 내역을 확인 하여야 하기 때문에 최대 3개월까지 소요될 수 있는 점 양해바랍니다.
+                  쇼핑몰에서 구매 내역을 확인 하여야 하기 때문에 최대 3개월까지 소요될 수 있는 점 양해바랍니다.
+                  쇼핑몰에서 구매 내역을 확인 하여야 하기 때문에 최대 3개월까지 소요될 수 있는 점 양해바랍니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>input</h2>
+    <div class="line">
+      <div class="file-box">
+        <div class="file-info">
+          <input type="file" id="file-1" multiple>
+          <label for="file-1">파일선택</label>
+          <p class="size">9.7MB</p>
+        </div>
+        <div class="file-list">
+          <div class="list list1">
+            <p class="name">abcdefg_abcdefg_1234.jpg</p>
+            <button type="button" class="ico-close type2">삭제</button>
+          </div>
+          <div class="list list2">
+            <p class="name">abcdefg_abcdefg_1234.jpg</p>
+            <button type="button" class="ico-close type2">삭제</button>
+          </div>
+          <div class="list list3">
+            <p class="name">abcdefg_abcdefg_1234.jpg</p>
+            <button type="button" class="ico-close type2">삭제</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-box-wrap">
+      <div class="input-box">
+        <input type="text" placeholder="성함을 입력해주세요">
+      </div>
+      <div class="input-box">
+        <input class="error" type="text" placeholder="성함을 입력해주세요">
+        <span>잘못 입력하셨습니다.</span>
+      </div>
+
+      <div id="select-btn1" class="select-btn type1" onclick="selectListOn('#select-btn1', '#select-wrap', '#select-list1')">
+        <p class="value">문의 유형을 선택해주세요</p>
+        <div class="ico-arrow type1"></div>
+      </div>
+
+      <div id="select-btn2" class="select-btn type2" onclick="selectListOn('#select-btn2', '#select-wrap', '#select-list2')">
+        <p class="value">2024년 9월</p>
+        <div class="ico-arrow type2 bottom"></div>
+      </div>
+    </div>
+
+    <div class="tab-box-wrap" style="margin-bottom: 30px;">
+      <div class="tab-box">
+        <div class="tab tab1 on"><a href="javascript:void(0)">인기순</a></div>
+        <div class="tab tab2"><a href="javascript:void(0)">종합몰</a></div>
+        <div class="tab tab3"><a href="javascript:void(0)">패션</a></div>
+        <div class="tab tab4"><a href="javascript:void(0)">뷰티</a></div>
+        <div class="tab tab5"><a href="javascript:void(0)">즐겨찾기</a></div>
+      </div>
+    </div> 
+    <a class="submit-btn" href="javascript:void(0)" style="margin-bottom: 30px;">문의하기</a>
+
+    <a class="submit-btn on" href="javascript:void(0)" style="margin-bottom: 30px;" onclick="popupOn('#popup-wrap', '.popup1')">팝업 오픈</a>
+
+
+    <div id="select-wrap">
+      <div id="select-list1" class="select-list">
+        <div class="select-head">
+          <p>조회 월 선택</p>
+          <button class="ico-close type1" type="button" onclick="selectListClose('#select-btn1', '#select-wrap', '#select-list1')">닫기</button>
+        </div>
+        <ul class="select-cont">
+          <li class="list list1 on">
+            <p class="value">2024년 9월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list2">
+            <p class="value">2024년 8월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list3">
+            <p class="value">2024년 7월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list4">
+            <p class="value">2024년 6월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list5">
+            <p class="value">2024년 5월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list6">
+            <p class="value">2024년 4월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list7">
+            <p class="value">2024년 3월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list8">
+            <p class="value">2024년 2월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list9">
+            <p class="value">2024년 1월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list10">
+            <p class="value">2023년 12월</p>
+            <div class="ico-check on"></div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="select-list2" class="select-list">
+        <div class="select-head">
+          <p>조회 월 선택</p>
+          <button class="ico-close type1" type="button" onclick="selectListClose('#select-btn2', '#select-wrap', '#select-list2')">닫기</button>
+        </div>
+        <ul class="select-cont">
+          <li class="list list1 on">
+            <p class="value">2024년 9월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list2">
+            <p class="value">2024년 8월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list3">
+            <p class="value">2024년 7월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list4">
+            <p class="value">2024년 6월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list5">
+            <p class="value">2024년 5월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list6">
+            <p class="value">2024년 4월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list7">
+            <p class="value">2024년 3월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list8">
+            <p class="value">2024년 2월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list9">
+            <p class="value">2024년 1월</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list10">
+            <p class="value">2023년 12월</p>
+            <div class="ico-check on"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="popup-wrap">
+      <div class="popup popup1">
+        <div class="box">
+          <p>문의사항이<br>접수 되었습니다.</p>
+          <div class="btn-box">
+            <button class="popup-btn" type="button" onclick="popupClose('#popup-wrap', '.popup1')">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/common.js"></script>
+</body>
+</html>
