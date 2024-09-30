@@ -1,0 +1,308 @@
+@mixin preLight() {
+  font-family: 'Pretendard-Light';
+}
+
+@mixin preRegular() {
+  font-family: 'Pretendard-Regular';
+}
+
+@mixin preMedium() {
+  font-family: 'Pretendard-Medium';
+}
+
+@mixin preSemiBold() {
+  font-family: 'Pretendard-SemiBold';
+}
+
+@mixin preBold() {
+  font-family: 'Pretendard-Bold';
+}
+
+@mixin fS15() {
+  font-size: 15px;
+}
+
+@mixin fS18() {
+  font-size: 18px;
+}
+
+@mixin fS20() {
+  font-size: 20px;
+}
+
+@mixin fS23() {
+  font-size: 23px;
+}
+
+@mixin fS25() {
+  font-size: 25px;
+}
+
+@mixin fS30() {
+  font-size: 30px;
+}
+
+@mixin fS35() {
+  font-size: 35px;
+}
+
+@mixin fS40() {
+  font-size: 40px;
+}
+
+@mixin fS75() {
+  font-size: 75px;
+}
+
+@mixin HidepcOnMo() {
+  .pc {
+    display: none;
+  }
+
+  .mo {
+    display: block;
+  }
+}
+
+@mixin txt_hide() {
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin ba_elm() {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+@mixin layout() {
+  max-width: 1270px;
+  margin: 0 auto;
+}
+
+@mixin mainH2() {
+  font-size: 50px;
+  letter-spacing: -1px;
+  color: #000;
+}
+
+@mixin colorGuGuGu() {
+  color: #999;
+}
+
+@mixin bgSet() {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin txt_hide() {
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin linkBtn_type1() {
+  @include preMedium();
+  display: inline-block;
+  background: #fff;
+  transition: .2s;
+  color: #597eff;
+  box-shadow: 0 10px 20px 0 #5e53fb;
+
+  &::before {
+    @include ba_elm();
+    @include bgSet();
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(../images/ic_main_btn_arrow.png);
+  }
+}
+
+@mixin linkBtn_type1_hover() {
+  color: #fff;
+  background: #262f4a;
+
+  &::before {
+    background-image: url(../images/ic_main_btn_arrow_on.png);
+  }
+}
+
+@mixin linkBtn_arrow() {
+  @include preBold();
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  letter-spacing: -.3px;
+  color: #000;
+  padding-right: 14.5px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    @include ba_elm();
+    @include bgSet();
+    right: 0;
+    width: 10px;
+    height: 10px;
+    transition: .3s;
+    background-image: url(../images/ic_main_con4_arrow.png);
+  }
+
+  &::before {
+    transform: translateY(2.5px);
+  }
+
+  &::after {
+    transform: translateY(0);
+  }
+}
+
+// main
+@mixin h2Ani() {
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+@mixin h2AniOn() {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity ,transform;
+}
+
+@mixin aniType1() {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity ,transform;
+}
+
+// slick dots
+@mixin slickDotsPC() {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+
+  li {
+    button {
+      @include txt_hide();
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 10px;
+      height: 10px;
+      background: #cecece;
+      border-radius: 100%;
+      transition: .2s;
+    }
+  }
+
+  li.slick-active {
+    button {
+      width: 23px;
+      border-radius: 5px;
+      background: #978eff;
+    }
+  }
+}
+
+@mixin slickDotsMO() {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 10px;
+
+  li {
+    button {
+      @include txt_hide();
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 8px;
+      height: 8px;
+      background: #cecece;
+      border-radius: 100%;
+      transition: .2s;
+    }
+  }
+
+  li.slick-active {
+    button {
+      width: 23px;
+      border-radius: 5px;
+      background: #978eff;
+    }
+  }
+}
+
+// sub
+@mixin subMaxWidth() {
+  max-width: 1270px;
+  margin: 0 auto;
+}
+
+@mixin textAniPrev() {
+  transform: translateY(30%);
+  opacity: 0;
+}
+
+@mixin textAniNext() {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity ,transform;
+}
+
+// width
+.mw70px {
+  min-width: 70px;
+}
+
+.mw90px {
+  min-width: 90px;
+}
+
+.mw100px {
+  min-width: 100px;
+}
+
+.mw150px {
+  min-width: 150px;
+}
+
+.mw200px {
+  min-width: 200px;
+}
+
+.mw250px {
+  min-width: 250px;
+}
+
+.mw280px {
+  min-width: 280px;
+}
+
+.mw300px {
+  min-width: 300px;
+}
+
+.mw500px {
+  min-width: 500px;
+}
+
+// width 8 line
+.mw108px {
+  min-width: 108px;
+}
+
+.mw158px {
+  min-width: 158px;
+}
