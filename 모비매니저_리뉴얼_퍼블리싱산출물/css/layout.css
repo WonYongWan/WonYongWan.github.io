@@ -1,0 +1,515 @@
+:root {
+  --bg-color1: #131313;
+  --bg-color2: #14181d;
+  --bg-color3: #9df63c;
+  --bg-color4: #232323;
+  --bg-color5: #fff;
+  --text-color1: #fff;
+  --text-color2: #131313;
+  --text-color3: #9df63c;
+  --text-color4: #0d0d0d;
+  --text-color5: #7e7e7e;
+  --text-color6: #666666;
+  --text-color7: #a3c57d;
+  --text-color8: #aaaaaa;
+  --text-color9: #888888;
+  --text-color10: #777777;
+  --border-color1: #9df63c;
+  --border-color2: #444444;
+  --scrollbar-color1: #d8d8d8;
+  --gaugeWrap-color: #444;
+  --gauge-color: #9df63c;
+}
+
+.link.type1 {
+  font-family: "Paperlogy-4Regular";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color1);
+  transition: background 0.3s ease-in-out;
+  min-width: 15rem;
+  min-height: 4.375rem;
+  max-width: 15rem;
+  max-height: 4.375rem;
+}
+.link.type1:hover {
+  font-family: "Paperlogy-6SemiBold";
+  background: var(--bg-color3);
+  color: var(--text-color4);
+}
+
+.scroll-text-wrap {
+  color: var(--text-color1);
+  position: absolute;
+  height: 100vh;
+  left: 12vw;
+  top: 0;
+}
+.scroll-text-wrap.fix {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.scroll-text-wrap.fix .text-box h2 {
+  top: -25.47vh;
+}
+.scroll-text-wrap .text-box {
+  position: relative;
+  top: 41.66vh;
+  display: flex;
+  flex-direction: column;
+}
+.scroll-text-wrap .text-box h2 {
+  font-family: "Paperlogy-7Bold";
+  position: absolute;
+  font-size: 8.75rem;
+  color: var(--text-color1);
+  opacity: 0.03;
+  white-space: nowrap;
+  left: -14vw;
+  top: 4.3vh;
+  transition: 0.3s linear;
+}
+.scroll-text-wrap .text-box .title {
+  font-family: "Pretendard-Light";
+  font-size: 1.75rem;
+}
+.scroll-text-wrap .text-box .title span {
+  font-family: "Pretendard-SemiBold";
+  display: block;
+  color: var(--text-color3);
+  font-size: 3.75rem;
+  margin-top: 0.875rem;
+}
+.scroll-text-wrap .text-box .text {
+  font-family: "Pretendard-Regular";
+  position: relative;
+  font-size: 1.375rem;
+  line-height: 2rem;
+  padding-bottom: 2.788rem;
+}
+.scroll-text-wrap .text-box .text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  width: 2.7rem;
+  height: 1.031rem;
+  background-image: url(../images/main/main-cont2-img1.png);
+}
+
+.scroll-box .scroll-cont {
+  display: flex;
+}
+.scroll-box .scroll-cont .item {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.scroll-box .scroll-cont .item .link-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  height: 74vh;
+  color: var(--text-color1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.scroll-box .scroll-cont .item .link-box .link-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: 0.3s ease-out;
+}
+.scroll-box .scroll-cont .item .link-box .title {
+  font-family: "Pretendard-SemiBold";
+  position: relative;
+  font-size: 2.25rem;
+  transition: 0.1s ease-in-out;
+}
+.scroll-box .scroll-cont .item .link-box .title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #fff;
+}
+.scroll-box .scroll-cont .item .link-box .text {
+  font-family: "Pretendard-ExtraLight";
+  font-size: 1.125rem;
+  line-height: 2;
+  padding-bottom: 6.25rem;
+}
+.scroll-box .scroll-cont .item .link-box .link {
+  z-index: 1;
+}
+.scroll-box .scroll-cont .item .link-box:hover .link-bg {
+  opacity: 0;
+}
+.scroll-box .scroll-cont .item .link-box:hover .title {
+  font-size: 2.5rem;
+}
+.scroll-box .scroll-cont .item .link-box:hover .title::before {
+  width: 2.5rem;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+.scroll-box .scroll-cont .item .link-box:hover .text {
+  font-family: "Pretendard-Medium";
+  font-size: 1.25rem;
+  padding-bottom: 5.563rem;
+  transition: 0.2s ease-in-out;
+}
+.scroll-box .scroll-cont .item .link-box:hover .link {
+  font-family: "Paperlogy-6SemiBold";
+  background: var(--bg-color3);
+  color: var(--text-color4);
+}
+
+@keyframes aniOPRepeat-type1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes aniTrXCenterYRepeat-type1 {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+@keyframes aniRotateInfinity-type1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+html {
+  font-size: 0.8333vw;
+}
+
+body {
+  overflow: hidden;
+  background: var(--bg-color1);
+}
+
+.wrap {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.wrap::-webkit-scrollbar {
+  display: none;
+}
+.wrap.hidden {
+  overflow: hidden;
+}
+.wrap header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6.25rem;
+  padding: 0 2.813rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color1);
+  z-index: 999;
+  color: var(--text-color1);
+  user-select: none;
+}
+.wrap header h1 a {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  display: block;
+  width: 13.5rem;
+  height: 1.375rem;
+  background-image: url(../images/icon/logo.png);
+  background-size: contain;
+}
+.wrap header .title-box p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Pretendard-Medium";
+  font-size: 1.25rem;
+  z-index: -999999;
+  opacity: 0;
+}
+.wrap header .title-box p.on {
+  opacity: 1;
+  z-index: 999999;
+  transition: 0.8s ease-in-out;
+}
+.wrap header .list-box {
+  display: flex;
+  align-items: center;
+  gap: 2.813rem;
+}
+.wrap header .list-box > a {
+  font-family: "Pretendard-Medium";
+  font-size: 1.25rem;
+}
+.wrap header .list-box .menu-wrap {
+  position: relative;
+}
+.wrap header .list-box .menu-wrap > button {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  z-index: 999999;
+}
+.wrap header .list-box .menu-wrap > button i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 0.888rem;
+  height: 0.125rem;
+  background: var(--text-color1);
+}
+.wrap header .list-box .menu-wrap > button::before, .wrap header .list-box .menu-wrap > button::after {
+  width: 100%;
+  height: 0.125rem;
+  background: var(--text-color1);
+  left: 0;
+  transition: 0.3s;
+  content: "";
+  display: block;
+  position: absolute;
+}
+.wrap header .list-box .menu-wrap > button::before {
+  top: 0;
+}
+.wrap header .list-box .menu-wrap > button::after {
+  bottom: 0;
+}
+.wrap header .list-box .menu-wrap > button.on::before, .wrap header .list-box .menu-wrap > button.on::after {
+  top: 50%;
+  left: 50%;
+}
+.wrap header .list-box .menu-wrap > button.on::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.wrap header .list-box .menu-wrap > button.on::after {
+  bottom: unset;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.wrap header .list-box .menu-wrap > button.on i {
+  opacity: 0;
+}
+.wrap header .list-box .menu-wrap .menu-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background: #464b55;
+  z-index: 9999;
+  transition: 0.5s 0.2s;
+  width: 0px;
+  height: 0px;
+}
+.wrap header .list-box .menu-wrap .menu-bg.on {
+  width: 300vw;
+  height: 300vh;
+  background: var(--bg-color2);
+}
+.wrap header .list-box .menu-wrap .menu-box {
+  position: fixed;
+  top: -9999999999px;
+  left: 0;
+  z-index: 99999;
+  transition: 0s 0.7s;
+  width: 100vw;
+  height: 100vh;
+}
+.wrap header .list-box .menu-wrap .menu-box.on {
+  top: 0;
+}
+.wrap header .list-box .menu-wrap .menu-box.on > ul > li > div > a,
+.wrap header .list-box .menu-wrap .menu-box.on > ul > li > div > button {
+  transform: translateY(0);
+  transition: opacity 0.3s ease-in-out, transform 0.7s 0.7s;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul {
+  position: absolute;
+  top: 50%;
+  left: 18.875rem;
+  transform: translateY(-50%);
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > div {
+  overflow: hidden;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > div > a,
+.wrap header .list-box .menu-wrap .menu-box > ul > li > div > button {
+  font-family: "Pretendard-SemiBold";
+  display: block;
+  font-size: 4.688rem;
+  color: var(--text-color7);
+  opacity: 0.12;
+  transition: opacity 0.3s ease-in-out, transform 0.7s;
+  transform: translateY(-100%);
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  margin-left: 28.055rem;
+  padding-left: 34.945rem;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li {
+  margin-bottom: 1.313rem;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li:last-child {
+  margin-bottom: 0;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li > div {
+  position: relative;
+  display: inline-block;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li > div > span {
+  font-family: "Manrope-Medium";
+  position: absolute;
+  top: -9.498rem;
+  left: -10.4rem;
+  font-size: 12.5rem;
+  color: var(--text-color1);
+  transition: 0.1s ease-in-out;
+  opacity: 0;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li > div > a {
+  font-family: "Pretendard-Thin";
+  display: inline-block;
+  font-size: 2.25rem;
+  color: var(--text-color8);
+  white-space: nowrap;
+  opacity: 0.4;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  z-index: 99999;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li > div > a:hover {
+  font-family: "Pretendard-Medium";
+  opacity: 1;
+  color: var(--text-color1);
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li > ul > li > div > a:hover + span {
+  opacity: 0.1;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li:hover > div > a,
+.wrap header .list-box .menu-wrap .menu-box > ul > li:hover > div > button {
+  color: var(--text-color3);
+  opacity: 1;
+}
+.wrap header .list-box .menu-wrap .menu-box > ul > li:hover > ul {
+  display: block;
+}
+.wrap header .gauge-box {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: var(--gaugeWrap-color);
+}
+.wrap header .gauge-box .gauge {
+  width: 0;
+  height: 100%;
+  background: var(--gauge-color);
+  transition: 0.3s;
+}
+.wrap footer {
+  position: relative;
+  height: 11.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color4);
+  user-select: none;
+}
+.wrap footer p, .wrap footer a {
+  font-family: "Pretendard-Light";
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--text-color1);
+  list-style: none;
+  text-decoration: none;
+}
+.wrap footer p::before, .wrap footer a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 0.688rem;
+  background: #d9d9d9;
+  top: 50%;
+  right: -0.969rem;
+  transform: translateY(-50%);
+}
+.wrap footer p:last-of-type::before, .wrap footer a:last-of-type::before {
+  display: none;
+}
+.wrap footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+.wrap footer div:nth-child(2), .wrap footer div:nth-child(3) {
+  margin-bottom: 0.75rem;
+}
+.wrap footer > p {
+  color: var(--text-color5);
+}
