@@ -1,0 +1,750 @@
+:root {
+  --bg-color1: #131313;
+  --bg-color2: #14181d;
+  --bg-color3: #9df63c;
+  --bg-color4: #232323;
+  --bg-color5: #fff;
+  --text-color1: #fff;
+  --text-color2: #131313;
+  --text-color3: #9df63c;
+  --text-color4: #0d0d0d;
+  --text-color5: #7e7e7e;
+  --text-color6: #666666;
+  --text-color7: #a3c57d;
+  --text-color8: #aaaaaa;
+  --text-color9: #888888;
+  --text-color10: #777777;
+  --border-color1: #9df63c;
+  --border-color2: #444444;
+  --scrollbar-color1: #d8d8d8;
+  --gaugeWrap-color: #444;
+  --gauge-color: #9df63c;
+}
+
+.link.type1 {
+  font-family: "Paperlogy-4Regular";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color1);
+  transition: background 0.3s ease-in-out;
+  min-width: 15rem;
+  min-height: 4.375rem;
+  max-width: 15rem;
+  max-height: 4.375rem;
+}
+.link.type1:hover {
+  font-family: "Paperlogy-6SemiBold";
+  background: var(--bg-color3);
+  color: var(--text-color4);
+}
+
+.scroll-text-wrap {
+  color: var(--text-color1);
+  position: absolute;
+  height: 100vh;
+  left: 12vw;
+  top: 0;
+}
+.scroll-text-wrap.fix {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.scroll-text-wrap.fix .text-box h2 {
+  top: -25.47vh;
+}
+.scroll-text-wrap .text-box {
+  position: relative;
+  top: 41.66vh;
+  display: flex;
+  flex-direction: column;
+}
+.scroll-text-wrap .text-box h2 {
+  font-family: "Paperlogy-7Bold";
+  position: absolute;
+  font-size: 8.75rem;
+  color: var(--text-color1);
+  opacity: 0.03;
+  white-space: nowrap;
+  left: -14vw;
+  top: 4.3vh;
+  transition: 0.3s linear;
+}
+.scroll-text-wrap .text-box .title {
+  font-family: "Pretendard-Light";
+  font-size: 1.75rem;
+}
+.scroll-text-wrap .text-box .title span {
+  font-family: "Pretendard-SemiBold";
+  display: block;
+  color: var(--text-color3);
+  font-size: 3.75rem;
+  margin-top: 0.875rem;
+}
+.scroll-text-wrap .text-box .text {
+  font-family: "Pretendard-Regular";
+  position: relative;
+  font-size: 1.375rem;
+  line-height: 2rem;
+  padding-bottom: 2.788rem;
+}
+.scroll-text-wrap .text-box .text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+  width: 2.7rem;
+  height: 1.031rem;
+  background-image: url(../images/main/main-cont2-img1.png);
+}
+
+.scroll-box .scroll-cont {
+  display: flex;
+}
+.scroll-box .scroll-cont .item {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.scroll-box .scroll-cont .item .link-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  height: 74vh;
+  color: var(--text-color1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.scroll-box .scroll-cont .item .link-box .link-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: 0.3s ease-out;
+}
+.scroll-box .scroll-cont .item .link-box .title {
+  font-family: "Pretendard-SemiBold";
+  position: relative;
+  font-size: 2.25rem;
+  transition: 0.1s ease-in-out;
+}
+.scroll-box .scroll-cont .item .link-box .title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #fff;
+}
+.scroll-box .scroll-cont .item .link-box .text {
+  font-family: "Pretendard-ExtraLight";
+  font-size: 1.125rem;
+  line-height: 2;
+  padding-bottom: 6.25rem;
+}
+.scroll-box .scroll-cont .item .link-box .link {
+  z-index: 1;
+}
+.scroll-box .scroll-cont .item .link-box:hover .link-bg {
+  opacity: 0;
+}
+.scroll-box .scroll-cont .item .link-box:hover .title {
+  font-size: 2.5rem;
+}
+.scroll-box .scroll-cont .item .link-box:hover .title::before {
+  width: 2.5rem;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+.scroll-box .scroll-cont .item .link-box:hover .text {
+  font-family: "Pretendard-Medium";
+  font-size: 1.25rem;
+  padding-bottom: 5.563rem;
+  transition: 0.2s ease-in-out;
+}
+.scroll-box .scroll-cont .item .link-box:hover .link {
+  font-family: "Paperlogy-6SemiBold";
+  background: var(--bg-color3);
+  color: var(--text-color4);
+}
+
+@keyframes aniOPRepeat-type1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes aniTrXCenterYRepeat-type1 {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+@keyframes aniRotateInfinity-type1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .link.type1 {
+    font-family: "Paperlogy-4Regular";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.063rem;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color1);
+    transition: background 0.3s ease-in-out;
+    min-width: 14.5rem;
+    min-height: 4.25rem;
+    max-width: 14.5rem;
+    max-height: 4.25rem;
+  }
+  .link.type1:hover {
+    font-family: "Paperlogy-6SemiBold";
+    background: var(--bg-color3);
+    color: var(--text-color4);
+  }
+  .scroll-text-wrap {
+    color: var(--text-color1);
+    position: absolute;
+    height: 100vh;
+    left: 8.3333vw;
+    top: 0;
+  }
+  .scroll-text-wrap.fix {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .scroll-text-wrap.fix .text-box h2 {
+    top: -22.27vh;
+  }
+  .scroll-text-wrap .text-box {
+    position: relative;
+    top: 41.66vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .scroll-text-wrap .text-box h2 {
+    font-family: "Paperlogy-7Bold";
+    position: absolute;
+    font-size: 5.625rem;
+    color: var(--text-color1);
+    opacity: 0.03;
+    white-space: nowrap;
+    left: -10vw;
+    top: 4.3vh;
+    transition: 0.3s linear;
+  }
+  .scroll-text-wrap .text-box .title {
+    font-family: "Pretendard-Light";
+    font-size: 1.5rem;
+  }
+  .scroll-text-wrap .text-box .title span {
+    font-family: "Pretendard-SemiBold";
+    display: block;
+    color: var(--text-color3);
+    font-size: 3.25rem;
+    margin-top: 0.875rem;
+  }
+  .scroll-text-wrap .text-box .text {
+    font-family: "Pretendard-Regular";
+    position: relative;
+    font-size: 1.25rem;
+    padding-bottom: 3.819rem;
+    line-height: 2rem;
+  }
+  .scroll-text-wrap .text-box .text::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: contain;
+    width: 2.644rem;
+    height: 1.031rem;
+    background-image: url(../images/main/main-cont2-img1.png);
+  }
+  .scroll-box .scroll-cont {
+    display: flex;
+  }
+  .scroll-box .scroll-cont .item {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .scroll-box .scroll-cont .item .link-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 74vh;
+    color: var(--text-color1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .link-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: 0.3s ease-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .title {
+    font-family: "Pretendard-SemiBold";
+    position: relative;
+    font-size: 1.875rem;
+    transition: 0.1s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #fff;
+  }
+  .scroll-box .scroll-cont .item .link-box .text {
+    font-family: "Pretendard-ExtraLight";
+    font-size: 1rem;
+    padding-bottom: 6.063rem;
+    line-height: 2;
+  }
+  .scroll-box .scroll-cont .item .link-box .link {
+    z-index: 1;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .link-bg {
+    opacity: 0;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .title {
+    font-size: 2.125rem;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .title::before {
+    width: 2rem;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.1s;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .text {
+    font-family: "Pretendard-Medium";
+    font-size: 1.125rem;
+    padding-bottom: 5.563rem;
+    transition: 0.2s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .link {
+    font-family: "Paperlogy-6SemiBold";
+    background: var(--bg-color3);
+    color: var(--text-color4);
+  }
+}
+@media screen and (max-width: 768px) {
+  .link.type1 {
+    font-family: "Paperlogy-4Regular";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.925rem;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color1);
+    transition: background 0.3s ease-in-out;
+    min-width: 12.125rem;
+    min-height: 3.5rem;
+    max-width: 12.125rem;
+    max-height: 3.5rem;
+  }
+  .link.type1:hover {
+    font-family: "Paperlogy-6SemiBold";
+    background: var(--bg-color3);
+    color: var(--text-color4);
+  }
+  .scroll-text-wrap {
+    color: var(--text-color1);
+    position: relative;
+    height: 100%;
+    left: 30px;
+    top: 0;
+  }
+  .scroll-text-wrap.fix {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .scroll-text-wrap.fix .text-box h2 {
+    top: -22.27vh;
+  }
+  .scroll-text-wrap .text-box {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .scroll-text-wrap .text-box h2 {
+    font-family: "Paperlogy-7Bold";
+    position: absolute;
+    font-size: 4.125rem;
+    top: 5.3vh;
+    color: var(--text-color1);
+    opacity: 0.03;
+    white-space: nowrap;
+    left: -6vw;
+    transition: 0.3s linear;
+  }
+  .scroll-text-wrap .text-box .title {
+    font-family: "Pretendard-Light";
+    font-size: 1.5rem;
+  }
+  .scroll-text-wrap .text-box .title span {
+    font-family: "Pretendard-SemiBold";
+    display: block;
+    color: var(--text-color3);
+    font-size: 2.5rem;
+    margin-top: 0.375rem;
+  }
+  .scroll-text-wrap .text-box .text {
+    font-family: "Pretendard-Regular";
+    position: relative;
+    font-size: 1.275rem;
+    padding-bottom: 4.375rem;
+    line-height: 2rem;
+  }
+  .scroll-text-wrap .text-box .text::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: contain;
+    width: 2.275rem;
+    height: 1.731rem;
+    bottom: -40.625rem;
+    left: unset;
+    right: 60px;
+    background-image: url(../images/main/main-cont2-img1.png);
+  }
+  .scroll-box {
+    overflow: hidden;
+    overflow-x: auto;
+  }
+  .scroll-box .scroll-cont {
+    display: flex;
+    position: relative;
+    height: 100%;
+  }
+  .scroll-box .scroll-cont .item {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .scroll-box .scroll-cont .item .link-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .link-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: 0.3s ease-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .title {
+    font-family: "Pretendard-SemiBold";
+    position: relative;
+    font-size: 1.825rem;
+    transition: 0.1s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #fff;
+  }
+  .scroll-box .scroll-cont .item .link-box .text {
+    font-family: "Pretendard-ExtraLight";
+    font-size: 1.313rem;
+    padding-bottom: 3.25rem;
+    line-height: 1.8;
+  }
+  .scroll-box .scroll-cont .item .link-box .link {
+    z-index: 1;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .link-bg {
+    opacity: 0;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .title {
+    font-size: 1.95rem;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .title::before {
+    width: 2.325rem;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.1s;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .text {
+    font-family: "Pretendard-Medium";
+    font-size: 1.413rem;
+    padding-bottom: 2.625rem;
+    transition: 0.2s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .link {
+    font-family: "Paperlogy-6SemiBold";
+    background: var(--bg-color3);
+    color: var(--text-color4);
+  }
+}
+@media screen and (max-width: 480px) {
+  .link.type1 {
+    font-family: "Paperlogy-4Regular";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color1);
+    transition: background 0.3s ease-in-out;
+    min-width: 8.125rem;
+    min-height: 2.5rem;
+    max-width: 8.125rem;
+    max-height: 2.5rem;
+  }
+  .link.type1:hover {
+    font-family: "Paperlogy-6SemiBold";
+    background: var(--bg-color3);
+    color: var(--text-color4);
+  }
+  .scroll-text-wrap {
+    color: var(--text-color1);
+    position: relative;
+    height: 100%;
+    left: 30px;
+    top: 0;
+  }
+  .scroll-text-wrap.fix {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .scroll-text-wrap.fix .text-box h2 {
+    top: -22.27vh;
+  }
+  .scroll-text-wrap .text-box {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .scroll-text-wrap .text-box h2 {
+    font-family: "Paperlogy-7Bold";
+    position: absolute;
+    font-size: 3.125rem;
+    top: 5.3vh;
+    color: var(--text-color1);
+    opacity: 0.03;
+    white-space: nowrap;
+    left: -10vw;
+    transition: 0.3s linear;
+  }
+  .scroll-text-wrap .text-box .title {
+    font-family: "Pretendard-Light";
+    font-size: 1rem;
+  }
+  .scroll-text-wrap .text-box .title span {
+    font-family: "Pretendard-SemiBold";
+    display: block;
+    color: var(--text-color3);
+    font-size: 2rem;
+    margin-top: 0.375rem;
+  }
+  .scroll-text-wrap .text-box .text {
+    font-family: "Pretendard-Regular";
+    position: relative;
+    font-size: 0.875rem;
+    padding-bottom: 4.375rem;
+    line-height: 1.25rem;
+  }
+  .scroll-text-wrap .text-box .text::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: contain;
+    width: 1.875rem;
+    height: 0.731rem;
+    bottom: -20.625rem;
+    left: unset;
+    right: 60px;
+    background-image: url(../images/main/main-cont2-img1.png);
+  }
+  .scroll-box {
+    overflow: hidden;
+    overflow-x: auto;
+  }
+  .scroll-box .scroll-cont {
+    display: flex;
+    position: relative;
+    height: 100%;
+  }
+  .scroll-box .scroll-cont .item {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .scroll-box .scroll-cont .item .link-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .link-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: 0.3s ease-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .title {
+    font-family: "Pretendard-SemiBold";
+    position: relative;
+    font-size: 1.125rem;
+    transition: 0.1s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box .title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #fff;
+  }
+  .scroll-box .scroll-cont .item .link-box .text {
+    font-family: "Pretendard-ExtraLight";
+    font-size: 0.613rem;
+    padding-bottom: 3.25rem;
+    line-height: 1.8;
+  }
+  .scroll-box .scroll-cont .item .link-box .link {
+    z-index: 1;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .link-bg {
+    opacity: 0;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .title {
+    font-size: 1.25rem;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .title::before {
+    width: 1.625rem;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.1s;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .text {
+    font-family: "Pretendard-Medium";
+    font-size: 0.713rem;
+    padding-bottom: 2.625rem;
+    transition: 0.2s ease-in-out;
+  }
+  .scroll-box .scroll-cont .item .link-box:hover .link {
+    font-family: "Paperlogy-6SemiBold";
+    background: var(--bg-color3);
+    color: var(--text-color4);
+  }
+}
