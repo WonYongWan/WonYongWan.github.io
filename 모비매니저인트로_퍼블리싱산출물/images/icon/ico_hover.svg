@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+    <defs>
+        <clipPath id="n58creklba">
+            <path data-name="사각형 5374" transform="translate(608 2050)" style="fill:#fff;stroke:#707070" d="M0 0h33v33H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="ico_hover" transform="translate(-608 -2050)" style="clip-path:url(#n58creklba)">
+        <g data-name="그룹 7016">
+            <path data-name="패스 11893" d="M610.623 2049.647h24.755v24.384" transform="translate(1.822 4.153)" style="stroke-linejoin:round;fill:none;stroke:#fff;stroke-linecap:round;stroke-width:4px"/>
+            <path data-name="패스 11894" d="m636.74 2049.647-26.4 26.4" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-width:4px" transform="translate(.46 4.153)"/>
+        </g>
+    </g>
+</svg>
