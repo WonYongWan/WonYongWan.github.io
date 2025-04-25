@@ -1,6 +1,5 @@
 // common function
 function classToggle(elm) {
-  console.log(elm)
   const $item = document.querySelector(elm);
 
   if(!$item.classList.contains('on')) {
