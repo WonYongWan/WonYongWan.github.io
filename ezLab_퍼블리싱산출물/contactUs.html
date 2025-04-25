@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Contact Us</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <!-- <link rel="stylesheet" href="./css/style.css"> -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <div class="wrap en">
+    <!-- header -->
+    <header>
+      <div class="container">
+        <h1><a href="./index.html">EZLAB</a></h1>
+        <div class="content-box">
+          <div id="hd-menu-wrap">
+            <div>
+              <ul id="hd-menu" class="menu">
+                <li><a href="./ezcapture.html">ezcapture</a></li>
+                <li><a href="./ezzip.html">ezzip</a></li>
+                <li id="hd-list3">
+                  <button id="hd-menu-btn" type="button" onclick="classToggle('#hd-menu-btn'), classToggle('#hd-depth1')">Customer service</button>
+                  <ul id="hd-depth1">
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contactUs.html">Contact Us</a></li>
+                    <li><a href="./userReview.html">User Review</a></li>
+                    <li><a href="./notice.html">Notice</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div>
+                <div class="lang">
+                  <div id="lang-btn" class="item" onclick="classToggle('#lang-btn'), classToggle('#lang-list')">
+                    <i class="icon icon1"></i>
+                    <p id="lang-text">ENG</p>
+                    <i class="icon icon2"></i>
+                  </div>
+                  <ul id="lang-list" class="list">
+                    <li><button type="button" class="on" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">ENG</button></li>
+                    <li><button type="button" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">KOR</button></li>
+                    <li><button type="button" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">JPN</button></li>
+                    <li><button type="button" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">CHN</button></li>
+                  </ul>
+                </div>
+                <!-- 로그인 후 on 클래스 추가시 노출 -->
+                <div class="my-etc">
+                  <div id="my-etc-btn" class="item" onclick="classToggle('#my-etc-btn'), classToggle('#my-etc-list')">
+                    <p>Mr.Hong</p>
+                    <i class="icon"></i>
+                  </div>
+                  <ul id="my-etc-list" class="list">
+                    <li><a href="javascript:void(0)">Point</a></li>
+                    <li><a href="./setting.html">Setting</a></li>
+                    <li><a href="javascript:void(0)">Logout</a></li>
+                  </ul>
+                </div>
+                <!-- 로그인 전 on 클래스 추가시 노출 -->
+                <button class="login on" type="button" onclick="popupOn('#popup-wrap', '#popup-login')">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="hd-toggle" class="toggle" onclick="headerMenuToggle('#hd-toggle', '#hd-menu-wrap')">메뉴 열기/닫기<i></i></button>
+      </div>
+    </header>
+    <!-- contactUs -->
+    <div class="contactUs">
+      <!-- content1 -->
+      <div class="content content1">
+        <div class="s-react">
+          <div class="common-banner type1">
+            <div class="content-box">
+              <div class="container type3">
+                <div class="text-box">
+                  <p class="title">Contact Us</p>
+                  <p class="text">Let us know if you have any questions, and <br class="en mo">we will send you a response.<br>To ensure fast and accurate consultation, please select <br class="en mo">the subject and category of your inquiry.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content2 -->
+      <div class="content content2">
+        <div class="container type3">
+          <div class="content-box s-react">
+            <div class="line">
+              <div class="text-box">
+                <p class="title">Inquiry Subject <span>*</span></p>
+                <div class="select-wrap">
+                  <div id="select-box1" class="select-box">
+                    <button id="select-btn1" class="select-btn" onclick="classToggle('#select-box1')">Please select the subject of your inquiry.</button>
+                    <div class="bottom">
+                      <ul class="option-box">
+                        <li class="option"><button class="btn" type="button" onclick="classToggle('#select-box1'), classAdd('#select-btn1'), textChange('#select-btn1', this), classChange('#select-box1 .option button', this)">Contact ezCapture</button></li>
+                        <li class="option"><button class="btn" type="button" onclick="classToggle('#select-box1'), classAdd('#select-btn1'), textChange('#select-btn1', this), classChange('#select-box1 .option button', this)">Contact ezzip</button></li>
+                        <li class="option"><button class="btn" type="button" onclick="classToggle('#select-box1'), classAdd('#select-btn1'), textChange('#select-btn1', this), classChange('#select-box1 .option button', this)">A partnership</button></li>
+                        <li class="option"><button class="btn" type="button" onclick="classToggle('#select-box1'), classAdd('#select-btn1'), textChange('#select-btn1', this), classChange('#select-box1 .option button', this)">Other inquiries</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-box">
+                <p class="title">Name <span>*</span></p>
+                <input type="text" placeholder="Please enter your name.">
+              </div>
+              <div class="text-box">
+                <p class="title">E-mail <span>*</span></p>
+                <input type="text" placeholder="Please enter your email.">
+              </div>
+            </div>
+            <div class="text-box">
+              <p class="title">Title <span>*</span></p>
+              <input type="text" placeholder="Please enter your Title.">
+            </div>
+            <div class="text-box">
+              <p class="title">Content <span>*</span></p>
+              <textarea placeholder="Please enter the Contents."></textarea>
+            </div>
+            <div class="text-box">
+              <p class="title">Attach File</p>
+              <div class="file-box">
+                <input type="file" id="file-1">
+                <label class="common-input file type1" for="file-1"><span></span>Select and upload a file or drag and drop the file you want to attach. (under 10MB, such as hwpx, docx, txt, pdf, jpg, png, gif, etc.)</label>
+              </div>
+            </div>
+            <div class="text-box">
+              <p class="title">Agreement to Collect and Use Personal Information <span>*</span></p>
+              <div class="common-info-box">
+                <div>
+                  <p class="text">개인정보 수집 및 이용 동의</p>
+                  <p class="text">정보통신망법 규정에 따라 모비소프트에 일반문의를 신청하시는 분들께 처리하는 개인정보의 목적 및 처리하는 개인정보의 항목, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.</p>
+                  <p class="text">1. 개인정보의 처리 목적<br>모비소프트는 개인정보를 다음의 목적을 위해 처리합니다. 처리되는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경될 시에는 사전 동의를 구할 예정입니다.</p>
+                  <p class="text">처리목적: 고객센터 상담 문의<br>2. 처리하는 개인정보의 항목 및 수집방법<br>모비소프트는 서비스 제공을 위해 필요한 최소한의 범위 내에서 다음과 같은 개인정보를 처리하고 있습니다. 처리하는 개인정보의 항목 중 ‘선택항목’은 회원에게 더 나은 서비스를 제공하기 위해 추가로 수집하는 정보입니다. 회원이 원하지 않을 경우 해당 추가정보는 수집하지 않으며, 이로 인한 서비스 이용 상의 제한은 없습니다.</p>
+                  <p class="text">필수항목: 이름, 이메일 주소<br>수집방법: 일반문의 페이지<br>3. 개인정보의 보유 및 이용 기간<br>회원의 개인정보는 원칙적으로 개인정보의 처리 목적이 달성되거나 해당 서비스가 폐지되면 지체 없이 파기합니다.</p>
+                  <p class="text">보유기간: 소비자의 불만 또는 분쟁처리에 관한 기록: 3년<br>4. 동의를 거부할 권리가 있다는 사실과 동의 거부에 따른 불이익 내용<br>이용자 및 법정대리인은 위와 같은 개인정보 수집·이용에 대해 동의를 거부 및 철회할 권리가 있습니다. 단, ‘필수항목’에 대한 동의 거부 시에는 상담 업무가 제한될 수 있습니다.</p>
+                  <p class="text">상기 내용 외의 개인정보 처리에 관한 자세한 사항은 홈페이지(🔗 [홈페이지 주소 입력])에 공개하고 있는 '개인정보 처리방침'을 참고하여 주시기 바랍니다.</p>
+                </div>
+              </div>
+              <p class="title">By submitting an online inquiry, you consent to the collection and use of personal information.</p>
+            </div>
+            <a class="link" href="javascript:void(0)">Submit Inquiry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <p class="footer-logo">MOBSOFT</p>
+        <div class="text-box text-box1">
+          <div class="line">
+            <p class="text">Mobsoft</p>
+            <p class="text">CEO : Jaeyeon kim</p>
+            <p class="text">BRN : 430-87-02743</p>
+            <p class="text">Address : 5th Floor, Unit 518, 272 Digital-ro, Guro-gu, Seoul, Republic of Korea</p>
+          </div>
+          <div class="line">
+            <p class="text">E-commerce Business Registration : 2023-Seoul-Guro-0243</p>
+            <p class="text">FAX : 02-865-6845</p>
+            <p class="text">E-Mail : tappstore@tappstore.com</p>
+          </div>
+          <div class="line">
+            <p class="text">Copyright © mobsoft. All Right Reserved.</p>
+          </div>
+        </div>
+        <div class="text-box text-box2">
+          <a href="javascript:void(0)">Company introduction</a>
+          <a href="javascript:void(0)">Terms of Use</a>
+          <a href="javascript:void(0)">Privacy Policy</a>
+        </div>
+      </div>
+      <button type="button" id="top-btn">move top</button>
+    </footer>
+    <!-- popup -->
+    <div id="popup-wrap">
+      <div class="popup" id="popup-login">
+        <button class="close" type="button" onclick="popupClose('#popup-wrap', '#popup-login')">close</button>
+        <div class="popup-content">
+          <div class="content-box content-box1">
+            <p class="title">welcome! ezLab</p>
+          </div>
+          <div class="content-box content-box2">
+            <p class="title">Login</p>
+            <div class="line line1">
+              <!-- input-box에 on 클래스 추가시 경고 문구 노출 -->
+              <div class="input-box on">
+                <input type="text" placeholder="ID">
+                <p class="text">Please enter your ID</p>
+              </div>
+              <!-- input-box에 on 클래스 추가시 경고 문구 노출 -->
+              <div class="input-box">
+                <input type="password" placeholder="Password">
+                <p class="text">Please enter your Password</p>
+              </div>
+              <div class="list-box">
+                <div class="check-box">
+                  <input type="checkbox" id="check_1">
+                  <label for="check_1"><i></i>Stay logged in</label>
+                </div>
+                <div class="link-box">
+                  <a href="./findAcount.html">Find the ID/Password</a>
+                  <a href="./signUp.html">Signup</a>
+                </div>
+              </div>
+              <!-- warning-text에 on 클래스 추가시 경고 문구 노출 -->
+              <p class="warning-text on">Invalid ID or password entered</p>
+              <a class="link" href="javascript:void(0)">Login</a>
+            </div>
+            <div class="line line2">
+              <p class="text text1">or</p>
+              <div class="link-box link-box1">
+                <a class="kakao" href="./signUp-1.html">kakao</a>
+                <a class="naver" href="./signUp-1.html">naver</a>
+                <a class="google" href="./signUp-1.html">google</a>
+              </div>
+              <div class="link-box link-box2">
+                <a href="javascript:void(0)">Company introduction</a>
+                <a href="javascript:void(0)">Terms of Use</a>
+                <a href="javascript:void(0)">Privacy Policy</a>
+              </div>
+              <p class="text text2">Copyright © mobsoft. All Right Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/common.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
