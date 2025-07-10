@@ -820,12 +820,14 @@
       $(window).on('touchcancel touchmove', function() {
         if(responsiveFlag) {
           stopAndStartPage2PC();
+
         } else {
-          stopAndStartPage2MO();
           $('.page2 .slider1').slick('slickPlay');
           $('.page2 .slider2').slick('slickPlay');
           $('.page2 .slider3').slick('slickPlay');
           $('.page3 .slider').slick('slickPlay');
+          stopAndStartPage2MO();
+          
         }
         stopAndStartPage3();
       });
