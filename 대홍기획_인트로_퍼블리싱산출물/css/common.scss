@@ -1,0 +1,128 @@
+@mixin preThin() {
+  font-family: 'Pretendard-Thin';
+}
+
+@mixin preLight() {
+  font-family: 'Pretendard-Light';
+}
+
+@mixin preRegular() {
+  font-family: 'Pretendard-Regular';
+}
+
+@mixin preMedium() {
+  font-family: 'Pretendard-Medium';
+}
+
+@mixin preSemiBold() {
+  font-family: 'Pretendard-SemiBold';
+}
+
+@mixin preBold() {
+  font-family: 'Pretendard-Bold';
+}
+
+@mixin montExtraLight() {
+  font-family: 'Montserrat-ExtraLight';
+}
+
+@mixin montRegular() {
+  font-family: 'Montserrat-Regular';
+}
+
+@mixin montMedium() {
+  font-family: 'Montserrat-Medium';
+}
+
+@mixin montSemiBold() {
+  font-family: 'Montserrat-SemiBold';
+}
+
+@mixin montBold() {
+  font-family: 'Montserrat-Bold';
+}
+
+// common
+@mixin layout-set() {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@mixin layout-remove() {
+  max-width: unset;
+  margin: unset;
+}
+
+@mixin image-set() {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+
+@mixin pos-center() {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin pos-y-center() {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin pos-x-center() {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+@mixin text-hide() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+@mixin elm-create() {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+@mixin link-set() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin text-cut-one() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin transitionType1 {
+  transition: 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin transitionType2 {
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin transitionType3 {
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin transitionType4 {
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
