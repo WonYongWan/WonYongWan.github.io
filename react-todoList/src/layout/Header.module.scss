@@ -1,0 +1,30 @@
+@use '../assets/styles/index' as *;
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+
+  .title {
+    @include preBold();
+    font-size: 21px;
+    color: #222;
+  }
+
+  .box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}

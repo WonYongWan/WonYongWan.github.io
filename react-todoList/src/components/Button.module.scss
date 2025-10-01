@@ -1,0 +1,16 @@
+@use '../assets/styles/index' as *;
+
+.button {
+  @include preRegular();
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background: #ececec;
+  border-radius: 5px;
+  font-size: 14px;
+
+  &.green {
+    background: #64c964;
+    color: #fff;
+  }
+}

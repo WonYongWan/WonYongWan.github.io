@@ -1,0 +1,19 @@
+@mixin preLight() {
+  font-family: 'Pretendard-Light';
+}
+
+@mixin preRegular() {
+  font-family: 'Pretendard-Regular';
+}
+
+@mixin preMedium() {
+  font-family: 'Pretendard-Medium';
+}
+
+@mixin preSemiBold() {
+  font-family: 'Pretendard-SemiBold';
+}
+
+@mixin preBold() {
+  font-family: 'Pretendard-Bold';
+}

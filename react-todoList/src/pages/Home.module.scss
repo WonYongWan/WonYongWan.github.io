@@ -1,0 +1,17 @@
+@use '../assets/styles/index' as *;
+
+.home {
+  .menu-bar {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+
+    select {
+      background: #ececec;
+      border-radius: 5px;
+    }
+  }
+
+  .item_list {
+  }
+}
