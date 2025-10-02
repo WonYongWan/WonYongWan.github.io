@@ -1,0 +1,51 @@
+// fonts
+@mixin preLight() {
+  font-family: 'Pretendard-Light';
+}
+
+@mixin preRegular() {
+  font-family: 'Pretendard-Regular';
+}
+
+@mixin preMedium() {
+  font-family: 'Pretendard-Medium';
+}
+
+@mixin preBold() {
+  font-family: 'Pretendard-Bold';
+}
+
+// common
+@mixin maxWidth($mw: 1376px) {
+  max-width: $mw;
+  margin: 0 auto;
+}
+
+@mixin flex-pos($fd: row, $jc: start, $ai: stretch, $g: normal, $fw: nowrap) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+  flex-wrap: $fw;
+}
+
+@mixin image-set($bs: cover, $bp: center) {
+  background-size: $bs;
+  background-repeat: no-repeat;
+  background-position: $bp;
+  background-color: transparent;
+}
+
+@mixin text-hide() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+@mixin text-cut-one() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

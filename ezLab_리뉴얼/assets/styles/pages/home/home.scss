@@ -1,0 +1,8 @@
+@use '../../common' as *;
+@import '../../components/header';
+@import '../../components/footer';
+
+.test {
+  @include preBold();
+  font-size: 80px;
+}
