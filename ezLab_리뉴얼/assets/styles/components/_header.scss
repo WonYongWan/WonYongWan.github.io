@@ -1,0 +1,396 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: #fff;
+  height: 116px;
+
+  .container {
+    @include max-width();
+    @include flex-pos($jc: space-between, $ai: center);
+    padding-top: 42px;
+    padding-bottom: 35px;
+  }
+
+  .logo {
+    a {
+      @include image-set($bs: contain);
+      @include text-hide();
+      display: block;
+      width: 85px;
+      height: 39px;
+      background-image: url(../../../images/components/header/logo.png);
+    }
+  }
+
+  .nav {
+    @include flex-pos($ai: center, $g: 153px);
+
+    .menu {
+      @include flex-pos($ai: center, $g: 50px);
+
+      .menu-item {
+        position: relative;
+
+        .menu-btn {
+          @include preMedium();
+          font-size: 18px;
+          line-height: 21px;
+          color: $color-text-black;
+
+          &.arrow {
+            @include flex-pos($ai: center, $g: 12px);
+
+            i {
+              @include image-set($bs: contain);
+              transition: $transition-fast;
+              width: 12px;
+              height: 6px;
+              background-image: url(../../../images/components/header/arrow.png);
+            }
+          }
+        }
+
+        &.download {
+          .sub-menu-wrap {
+            top: calc(100% + 20px);
+            left: -29px;
+            min-width: 640px;
+            padding: 30px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+            display: none;
+
+            .sub-menu {
+              display: grid;
+              grid-template-areas:
+                'item1 item2'
+                'item3 item4'
+                'item5 item5';
+              grid-template-columns: 1fr 1fr;
+              gap: 30px;
+              margin-bottom: 40px;
+
+              .item {
+                display: inline-flex;
+
+                &.item1 {
+                  grid-area: item1;
+                }
+                &.item2 {
+                  grid-area: item2;
+                }
+                &.item3 {
+                  grid-area: item3;
+                }
+                &.item4 {
+                  grid-area: item4;
+                }
+                &.item5 {
+                  grid-area: item5;
+                }
+
+                > a {
+                  @include flex-pos($g: 14px);
+
+                  .cont {
+                    .title {
+                      @include preBold();
+                      font-size: 16px;
+                      line-height: 19px;
+                      letter-spacing: -0.16px;
+                      color: $color-text-black;
+                    }
+
+                    .desc {
+                      @include preRegular();
+                      font-size: 14px;
+                      line-height: 16px;
+                      letter-spacing: -0.14px;
+                      color: $color-text-gray;
+                      display: block;
+                      margin-top: 2px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .notice {
+              background: #f61821;
+              border-radius: 4px;
+              padding: 22px 22px 24px;
+              text-align: center;
+
+              .title {
+                @include preRegular();
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: -0.16px;
+                color: $color-text-white;
+                text-decoration: underline;
+                margin-bottom: 11px;
+              }
+
+              .desc {
+                @include preRegular();
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: -0.16px;
+                color: $color-text-white;
+
+                strong {
+                  @include preBold();
+                  font-size: 18px;
+                  line-height: 21px;
+                  letter-spacing: -0.18px;
+                  display: block;
+                  margin-bottom: 4px;
+                }
+              }
+            }
+          }
+        }
+
+        &.customerservice {
+          .sub-menu-wrap {
+            @include pos-x-center();
+            top: calc(100% + 20px);
+            min-width: 204px;
+            padding: 17px 20px 21px;
+            background: #fff;
+            box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+
+            .sub-menu {
+              @include flex-pos($fd: column, $g: 10px);
+
+              .item {
+                > a {
+                  @include preRegular();
+                  font-size: 15px;
+                  line-height: 18px;
+                  letter-spacing: -0.15px;
+                  color: $color-text-black;
+
+                  &:hover {
+                    @include preMedium();
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .sub-menu-wrap {
+          position: absolute;
+        }
+
+        // on
+        &.on {
+          .menu-btn {
+            &.arrow {
+              color: $color-text-red;
+
+              i {
+                background-image: url(../../../images/components/header/arrow-red.png);
+                transform: rotate(-180deg);
+              }
+            }
+          }
+
+          .sub-menu-wrap {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .utils {
+      @include flex-pos($g: 6px);
+
+      .lang {
+        position: relative;
+        height: 100%;
+
+        .lang-info {
+          @include flex-pos($ai: center);
+          position: relative;
+          padding: 9px 8px;
+          min-width: 84px;
+          max-width: 84px;
+          height: 36px;
+          border: solid 1px $color-border-primary;
+          border-radius: 6px;
+          cursor: pointer;
+
+          .title {
+            @include preMedium();
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: -0.15px;
+            color: $color-text-black;
+          }
+
+          .icon {
+            &.left {
+              @include image-set();
+              width: 14px;
+              height: 14px;
+              margin-right: 6px;
+              background-image: url(../../../images/components/header/lang.png);
+            }
+
+            &.right {
+              @include image-set();
+              transition: $transition-fast;
+              position: absolute;
+              right: 8px;
+              width: 10px;
+              height: 5px;
+              background-image: url(../../../images/components/header/arrow-lang.png);
+            }
+          }
+        }
+
+        .lang-menu {
+          @include pos-x-center();
+          @include flex-pos($ai: center, $fd: column, $g: 10px);
+          top: calc(100% + 2px);
+          width: 100%;
+          border-radius: 6px;
+          padding: 12px;
+          background: #fff;
+          border: 1px solid $color-border-primary;
+          display: none;
+
+          .item {
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: -0.15px;
+            color: $color-text-black;
+
+            .btn {
+              @include preRegular();
+
+              &:hover {
+                @include preMedium();
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        &.on {
+          .lang-info {
+            .icon {
+              &.right {
+                transform: rotate(-180deg);
+              }
+            }
+          }
+
+          .lang-menu {
+            display: flex;
+          }
+        }
+      }
+
+      .acc {
+        position: relative;
+        height: 100%;
+
+        .acc-info {
+          @include flex-pos($ai: center);
+          position: relative;
+          width: 100px;
+          height: 36px;
+          background: $color-button-primary;
+          border-radius: 6px;
+          padding: 9px 12px;
+          cursor: pointer;
+
+          .title {
+            @include preMedium();
+            @include text-cut-one();
+            max-width: 58px;
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: -0.15px;
+            color: $color-text-white;
+          }
+
+          .icon {
+            @include image-set();
+            transition: $transition-fast;
+            position: absolute;
+            right: 10px;
+            width: 10px;
+            height: 5px;
+            background-image: url(../../../images/components/header/arrow-acc.png);
+          }
+        }
+
+        .acc-menu {
+          @include pos-x-center();
+          @include flex-pos($fd: column, $g: 10px);
+          top: calc(100% + 2px);
+          width: 100%;
+          border-radius: 6px;
+          padding: 12px;
+          background: $color-bg-red;
+          display: none;
+
+          .item {
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: -0.15px;
+            color: $color-text-white;
+
+            .btn {
+              @include preRegular();
+
+              &:hover {
+                @include preMedium();
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        &.on {
+          .acc-info {
+            .icon {
+              transform: rotate(-180deg);
+            }
+          }
+
+          .acc-menu {
+            display: flex;
+          }
+        }
+      }
+
+      .login-btn {
+        @include preMedium();
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -0.15px;
+        color: $color-text-white;
+        width: 100px;
+        height: 36px;
+        background: $color-button-primary;
+        border-radius: 6px;
+      }
+    }
+
+    .toggle-btn {
+      display: none; // 임시
+    }
+  }
+}
