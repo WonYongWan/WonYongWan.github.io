@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezLab</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/faviconn.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/userreview/userreview3.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo"><a href="./index.html">ezLab</a></h1>
+          <nav class="nav">
+            <ul class="menu">
+              <li class="menu-item download">
+                <button class="menu-btn arrow" type="button" onclick="classChangeAndToggle('.header .menu-item', '.menu-item.download')">Download<i></i></button>
+                <div class="sub-menu-wrap">
+                  <ul class="sub-menu">
+                    <li class="item item1">
+                      <a href="./ezcapture.html">
+                        <i class="ez-icon small ezcapture"></i>
+                        <div class="cont">
+                          <strong class="title">ezCapture</strong>
+                          <span class="desc">Easy and Fast Screen Capture</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item2">
+                      <a href="./ezzip.html">
+                        <i class="ez-icon small ezzip"></i>
+                        <div class="cont">
+                          <strong class="title">ezZip</strong>
+                          <span class="desc">Fast and Strong Compression Tool</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item3">
+                      <a href="./ezfinder.html">
+                        <i class="ez-icon small ezfinder"></i>
+                        <div class="cont">
+                          <strong class="title">ezFinder</strong>
+                          <span class="desc">Easy-to-Find Search Tool</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item4">
+                      <a href="./ezmemo.html">
+                        <i class="ez-icon small ezmemo"></i>
+                        <div class="cont">
+                          <strong class="title">ezMemo</strong>
+                          <span class="desc">Light and Fast Notepad</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item5">
+                      <a href="./ezreader.html">
+                        <i class="ez-icon small ezreader"></i>
+                        <div class="cont">
+                          <strong class="title">ezReader</strong>
+                          <span class="desc">Read and Edit PDF Reader</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="notice">
+                    <p class="title">Coming Soon</p>
+                    <p class="desc">
+                      <strong>Easy and Powerful Windows Screen Recording Program</strong>
+                      Scheduled for release in December
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="menu-item notice">
+                <a class="menu-btn" href="./notice.html">Notice</a>
+              </li>
+              <li class="menu-item blog">
+                <a class="menu-btn" href="./blog.html">Blog</a>
+              </li>
+              <li class="menu-item userreview">
+                <a class="menu-btn" href="./userreview.html">User Review</a>
+              </li>
+              <li class="menu-item customerservice">
+                <button class="menu-btn arrow" type="button" onclick="classChangeAndToggle('.header .menu-item', '.menu-item.customerservice')">Customer Service<i></i></button>
+                <div class="sub-menu-wrap">
+                  <ul class="sub-menu">
+                    <li class="item">
+                      <a href="./faq.html">FAQ</a>
+                    </li>
+                    <li class="item">
+                      <a href="./contactus.html">Contact Us</a>
+                    </li>
+                    <li class="item">
+                      <a href="./userreview.html">User Review</a>
+                    </li>
+                    <li class="item">
+                      <a href="./notice.html">Notice</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="utils">
+              <!-- 언어 선택 -->
+              <div class="lang">
+                <div class="lang-info" onclick="classToggle('.header .lang')">
+                  <i class="icon left"></i>
+                  <span id="lang-title" class="title">ENG</span>
+                  <i class="icon right"></i>
+                </div>
+                <ul class="lang-menu">
+                  <li class="item"><button class="btn" type="button" onclick="textChange('#lang-title', this), classToggle('.header .lang')">ENG</button></li>
+                  <li class="item"><button class="btn" type="button" onclick="textChange('#lang-title', this), classToggle('.header .lang')">KOR</button></li>
+                  <li class="item"><button class="btn" type="button" onclick="textChange('#lang-title', this), classToggle('.header .lang')">JPN</button></li>
+                  <li class="item"><button class="btn" type="button" onclick="textChange('#lang-title', this), classToggle('.header .lang')">CHN</button></li>
+                </ul>
+              </div>
+              <!-- 로그인 후 -->
+              <div class="acc">
+                <div class="acc-info" onclick="classToggle('.header .acc')">
+                  <p class="title">Mr.Hong</p>
+                  <i class="icon"></i>
+                </div>
+                <ul class="acc-menu">
+                  <li class="item"><a class="btn" href="javascript:void(0)">Point</a></li>
+                  <li class="item"><a class="btn" href="javascript:void(0)">Setting</a></li>
+                  <li class="item"><a class="btn" href="javascript:void(0)">Logout</a></li>
+                </ul>
+              </div>
+              <!-- 로그인 전 -->
+              <button class="login-btn" type="button" style="display: none">Login</button>
+            </div>
+            <button class="toggle-btn" type="button">menu on/off<i></i></button>
+          </nav>
+        </div>
+      </header>
+      <!-- main -->
+      <div class="feedback">
+        <div class="section">
+          <div class="container">
+            <div class="scroll-trigger scroll-trigger--1">
+              <p class="section-title bold">User review</p>
+            </div>
+            <div class="scroll-trigger scroll-trigger--2">
+              <p class="section-desc">
+                Please let me know what you liked and what you were disappointed about using it.<br />
+                The reviews you left will be of great help to other users.
+              </p>
+            </div>
+            <div class="scroll-trigger scroll-trigger--3">
+              <div class="write-wrap">
+                <div class="item">
+                  <div class="input-wrap radio type2">
+                    <input type="radio" name="radio1" id="radio1" checked />
+                    <label class="type2" for="radio1"><i class="icon type2 ezcapture"></i>ezCapture</label>
+                    <input type="radio" name="radio1" id="radio2" />
+                    <label class="type2" for="radio2"><i class="icon type2 ezreader"></i>ezReader</label>
+                    <input type="radio" name="radio1" id="radio3" />
+                    <label class="type2" for="radio3"><i class="icon type2 ezfinder"></i>ezFinder</label>
+                    <input type="radio" name="radio1" id="radio4" />
+                    <label class="type2" for="radio4"><i class="icon type2 ezzip"></i>ezZip</label>
+                    <input type="radio" name="radio1" id="radio5" />
+                    <label class="type2" for="radio5"><i class="icon type2 ezmemo"></i>ezMemo</label>
+                  </div>
+                </div>
+                <div class="item">
+                  <p class="title">Score <span>*</span></p>
+                  <div class="dropdown-wrap-list">
+                    <div id="dropdown1" class="dropdown-wrap type1 mw310">
+                      <div class="dropdown-box">
+                        <button class="dropdown-toggle" type="button" onclick="classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                          <span class="dropdown-score">
+                            <i class="review-star score5"></i>
+                            <span class="num"><b class="bold">5</b> /5</span>
+                          </span>
+                          <i class="arrow type2"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                          <div class="dropdown-list">
+                            <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown1 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                              <i class="review-star score5"></i>
+                              <span class="num"><b class="bold">5</b> /5</span>
+                            </button>
+                            <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown1 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                              <i class="review-star score4"></i>
+                              <span class="num"><b class="bold">4</b> /5</span>
+                            </button>
+                            <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown1 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                              <i class="review-star score3"></i>
+                              <span class="num"><b class="bold">3</b> /5</span>
+                            </button>
+                            <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown1 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                              <i class="review-star score2"></i>
+                              <span class="num"><b class="bold">2</b> /5</span>
+                            </button>
+                            <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown1 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                              <i class="review-star score1"></i>
+                              <span class="num"><b class="bold">1</b> /5</span>
+                            </button>
+                            <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown1 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">
+                              <i class="review-star score0"></i>
+                              <span class="num"><b class="bold">0</b> /5</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <p class="title">Title <span>*</span></p>
+                  <div class="input-wrap">
+                    <input type="text" name="input1" placeholder="Please enter your Title." />
+                  </div>
+                </div>
+                <div class="item">
+                  <p class="title">Content <span>*</span></p>
+                  <div class="textarea-wrap">
+                    <textarea name="textarea1" placeholder="Please enter the Contents."></textarea>
+                  </div>
+                </div>
+                <div class="item">
+                  <p class="title">Name <span>*</span></p>
+                  <div class="input-wrap">
+                    <input type="text" name="input2" placeholder="Please enter your name." />
+                  </div>
+                </div>
+                <div class="item">
+                  <p class="title">E-mail <span>*</span></p>
+                  <div class="input-wrap">
+                    <input type="text" name="input3" placeholder="Please enter your email." />
+                  </div>
+                </div>
+                <div class="item">
+                  <p class="title">Agreement to Collect and Use Personal Information <span>*</span></p>
+                  <div class="info-wrap">
+                    <div class="cont">
+                      <p class="text">In accordance with the Information and Communications Network Act of South Korea, we provide the details regarding the collection and use of personal information when submitting general inquiries to Mobisoft. Please read the information carefully and provide your consent.<br />1. Purpose of Processing Personal Information<br />Mobisoft processes personal information for the following reasons. The collected information will not be used for any purposes other than those stated below. If the purpose of use changes, we will obtain consent from you prior to the change.<br />Purpose of Processing: Handling customer service inquiries<br /><br />2. Items of Personal Information Collected and Method of Collection<br />Mobisoft collects only the minimum necessary personal information required to provide its services. Some items are optional and collected to offer enhanced services. These optional items are not mandatory, and users who choose not to provide them will still be able to use the service without any limitations.<br />Required Items: Name, Email Address<br />Method of Collection: General Inquiry Page<br /><br /><br />3. Retention and Use Period of Personal Information<br />In principle, personal information will be promptly deleted once the purpose of collection has been fulfilled or the relevant service is discontinued.<br />Retention Period: Records related to customer complaints or dispute – 3 years<br /><br /><br />4. Right to Refuse Consent and Possible Disadvantages<br />Users and legal representatives have the right to refuse or withdraw consent to the collection and use of personal information. However, refusal to provide required items may result in limitations when using the service.<br />For more details regarding the processing of personal information, please refer to our full Privacy Policy available on our website. (ezlab.im).<br /><br /></p>
+                    </div>
+                  </div>
+                  <p class="desc">By submitting an online inquiry, you consent to the collection and use of personal information.</p>
+                </div>
+                <button class="basic-btn small" type="button">Submit Inquiry</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
+  </body>
+</html>

@@ -7,19 +7,691 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <!-- style -->
     <link rel="stylesheet" href="./assets/styles/global.css" />
-    <link rel="stylesheet" href="./assets/styles/pages/home/home.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/components/components.css" />
   </head>
   <body>
-    <div class="page-wrapper">
-      <header>
-        <div class="header__container"></div>
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo"><a href="./index.html">ezLab</a></h1>
+          <nav class="nav">
+            <ul class="menu">
+              <li class="menu-item download">
+                <button class="menu-btn arrow" type="button" onclick="classChangeAndToggle('.menu-item', '.menu-item.download')">Download<i></i></button>
+                <div class="sub-menu-wrap">
+                  <ul class="sub-menu">
+                    <li class="item item1">
+                      <a href="./ezcapture.html">
+                        <i class="ez-icon small ezcapture"></i>
+                        <div class="cont">
+                          <strong class="title">ezCapture</strong>
+                          <span class="desc">Easy and Fast Screen Capture</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item2">
+                      <a href="./ezzip.html">
+                        <i class="ez-icon small ezzip"></i>
+                        <div class="cont">
+                          <strong class="title">ezZip</strong>
+                          <span class="desc">Fast and Strong Compression Tool</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item3">
+                      <a href="./ezfinder.html">
+                        <i class="ez-icon small ezfinder"></i>
+                        <div class="cont">
+                          <strong class="title">ezFinder</strong>
+                          <span class="desc">Easy-to-Find Search Tool</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item4">
+                      <a href="./ezmemo.html">
+                        <i class="ez-icon small ezmemo"></i>
+                        <div class="cont">
+                          <strong class="title">ezMemo</strong>
+                          <span class="desc">Light and Fast Notepad</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="item item5">
+                      <a href="./ezreader.html">
+                        <i class="ez-icon small ezreader"></i>
+                        <div class="cont">
+                          <strong class="title">ezReader</strong>
+                          <span class="desc">Read and Edit PDF Reader</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="notice">
+                    <p class="title">Coming Soon</p>
+                    <p class="desc">
+                      <strong>Easy and Powerful Windows Screen Recording Program</strong>
+                      Scheduled for release in December
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="menu-item notice">
+                <a class="menu-btn" href="./notice.html">Notice</a>
+              </li>
+              <li class="menu-item blog">
+                <a class="menu-btn" href="./blog.html">Blog</a>
+              </li>
+              <li class="menu-item userreview">
+                <a class="menu-btn" href="./userreview.html">User Review</a>
+              </li>
+              <li class="menu-item customerservice">
+                <button class="menu-btn arrow" type="button" onclick="classChangeAndToggle('.menu-item', '.menu-item.customerservice')">Customer Service<i></i></button>
+                <div class="sub-menu-wrap">
+                  <ul class="sub-menu">
+                    <li class="item">
+                      <a href="./faq.html">FAQ</a>
+                    </li>
+                    <li class="item">
+                      <a href="./contactus.html">Contact Us</a>
+                    </li>
+                    <li class="item">
+                      <a href="./userreview.html">User Review</a>
+                    </li>
+                    <li class="item">
+                      <a href="./notice.html">Notice</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="utils">
+              <!-- 언어 선택 -->
+              <div class="lang">
+                <div class="lang-info" onclick="classToggle('.header .lang')">
+                  <i class="icon left"></i>
+                  <span class="title">ENG</span>
+                  <i class="icon right"></i>
+                </div>
+                <ul class="lang-menu">
+                  <li class="item"><button class="btn" type="button">ENG</button></li>
+                  <li class="item"><button class="btn" type="button">KOR</button></li>
+                  <li class="item"><button class="btn" type="button">JPN</button></li>
+                  <li class="item"><button class="btn" type="button">CHN</button></li>
+                </ul>
+              </div>
+              <!-- 로그인 후 -->
+              <div class="acc">
+                <div class="acc-info" onclick="classToggle('.header .acc')">
+                  <p class="title">Mr.Hong</p>
+                  <i class="icon"></i>
+                </div>
+                <ul class="acc-menu">
+                  <li class="item"><a class="btn" href="javascript:void(0)">Point</a></li>
+                  <li class="item"><a class="btn" href="javascript:void(0)">Setting</a></li>
+                  <li class="item"><a class="btn" href="javascript:void(0)">Logout</a></li>
+                </ul>
+              </div>
+              <!-- 로그인 전 -->
+              <button class="login-btn" type="button" style="display: none">Login</button>
+            </div>
+            <button class="toggle-btn" type="button">menu on/off<i></i></button>
+          </nav>
+        </div>
       </header>
-      <main class="main">
-        <div class="main__container"></div>
-      </main>
-      <footer>
-        <div class="footer__container"></div>
+      <div class="components">
+        <div class="section section1">
+          <h2>Button</h2>
+          <div class="item-wrap">
+            <h3>swiper-btn</h3>
+            <div class="item">
+              <div>
+                <p class="title">.swiper-btn + .arrow + .prev + .type1</p>
+                <div class="swiper-btn arrow prev type1"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .arrow + .next + .type1</p>
+                <div class="swiper-btn arrow next type1"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .pause + .type1</p>
+                <div class="swiper-btn pause type1"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .pause + .type1 + .on</p>
+                <div class="swiper-btn pause type1 on"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.swiper-btn + .arrow + .prev + .type2</p>
+                <div class="swiper-btn arrow prev type2"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .arrow + .next + .type2</p>
+                <div class="swiper-btn arrow next type2"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .pause + .type2</p>
+                <div class="swiper-btn pause type2"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .pause + .type2 + .on</p>
+                <div class="swiper-btn pause type2 on"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.swiper-btn + .arrow + .prev + .type3</p>
+                <div class="swiper-btn arrow prev type3"></div>
+              </div>
+              <div>
+                <p class="title">.swiper-btn + .arrow + .next + .type3</p>
+                <div class="swiper-btn arrow next type3"></div>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.swiper-btn + .arrow + .next + .type4</p>
+                <div class="swiper-btn arrow next type4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>swiper-bullet</h3>
+            <div class="item">
+              <div>
+                <p class="title">.swiper-bullet + .type1</p>
+                <button class="swiper-bullet type1" type="button">Easy Capture</button>
+                <button class="swiper-bullet type1" type="button">Window Capture</button>
+              </div>
+              <div>
+                <p class="title">.swiper-bullet + .type1 + .on</p>
+                <button class="swiper-bullet type1 on" type="button">Easy Capture</button>
+                <button class="swiper-bullet type1 on" type="button">Window Capture</button>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>basic-btn</h3>
+            <div class="item">
+              <div>
+                <p class="title">.basic-btn + .small</p>
+                <button class="basic-btn small" type="button">Submit Inquiry</button>
+              </div>
+              <div>
+                <p class="title">.basic-btn + .small + .fix</p>
+                <button class="basic-btn small fix" type="button">Confirm</button>
+              </div>
+              <div>
+                <p class="title">.basic-btn + .small + .fix + .white</p>
+                <button class="basic-btn small fix white" type="button">Cancel</button>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.basic-btn + .middle</p>
+                <button class="basic-btn middle" type="button">Submit Inquiry</button>
+              </div>
+              <div>
+                <p class="title">.basic-btn + .middle + .fix</p>
+                <button class="basic-btn middle fix" type="button">Learn More</button>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.basic-btn + .large</p>
+                <button class="basic-btn large" type="button">Submit Inquiry</button>
+              </div>
+              <div>
+                <p class="title">.basic-btn + .large + .fix</p>
+                <button class="basic-btn large fix" type="button"><span class="text">Learn More</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>pagination-arrow</h3>
+            <div class="item">
+              <div>
+                <p class="title">.pagination > .pagination-arrow + .double</p>
+                <div class="pagination">
+                  <a class="pagination-arrow double" href="javascript:void(0)">prev</a>
+                </div>
+              </div>
+              <div>
+                <p class="title">.pagination > .pagination-arrow</p>
+                <div class="pagination">
+                  <a class="pagination-arrow" href="javascript:void(0)">prev</a>
+                </div>
+              </div>
+              <div>
+                <p class="title">.pagination > .pagination-arrow + .next</p>
+                <div class="pagination">
+                  <a class="pagination-arrow next" href="javascript:void(0)">next</a>
+                </div>
+              </div>
+              <div>
+                <p class="title">.pagination > .pagination-arrow + .double + .next</p>
+                <div class="pagination">
+                  <a class="pagination-arrow next double" href="javascript:void(0)">next</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>page-list</h3>
+            <div class="item">
+              <div>
+                <p class="title">.pagination > .page-list > .page</p>
+                <div class="pagination" style="background-color: #fff; padding: 20px">
+                  <div class="page-list">
+                    <div class="page">
+                      <a class="btn" href="javascript:void(0)">1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="title">.pagination > .page-list > .page + .on</p>
+                <div class="pagination" style="background-color: #fff; padding: 20px">
+                  <div class="page-list">
+                    <div class="page on">
+                      <a class="btn" href="javascript:void(0)">1</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>pagination</h3>
+            <div class="item">
+              <div>
+                <div class="pagination" style="background-color: #fff; padding: 20px">
+                  <a class="pagination-arrow double" href="javascript:void(0)">prev</a>
+                  <a class="pagination-arrow" href="javascript:void(0)">prev</a>
+                  <div class="page-list">
+                    <div class="page">
+                      <a class="btn" href="javascript:void(0)">1</a>
+                    </div>
+                    <div class="page on">
+                      <a class="btn" href="javascript:void(0)">2</a>
+                    </div>
+                    <div class="page">
+                      <a class="btn" href="javascript:void(0)">3</a>
+                    </div>
+                    <div class="page">
+                      <a class="btn" href="javascript:void(0)">4</a>
+                    </div>
+                    <div class="page">
+                      <a class="btn" href="javascript:void(0)">5</a>
+                    </div>
+                  </div>
+                  <a class="pagination-arrow next" href="javascript:void(0)">next</a>
+                  <a class="pagination-arrow next double" href="javascript:void(0)">next</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section2">
+          <h2>Icon</h2>
+          <div class="item-wrap">
+            <h3>ez-icon</h3>
+            <div class="item">
+              <div>
+                <p class="title">.ez-icon + .small + .ezcapture</p>
+                <i class="ez-icon small ezcapture"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .small + .ezzip</p>
+                <i class="ez-icon small ezzip"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .small + .ezfinder</p>
+                <i class="ez-icon small ezfinder"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .small + .ezmemo</p>
+                <i class="ez-icon small ezmemo"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .small + .ezreader</p>
+                <i class="ez-icon small ezreader"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .small + .ezrecorder</p>
+                <i class="ez-icon small ezrecorder"></i>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.ez-icon + .large + .ezcapture</p>
+                <i class="ez-icon large ezcapture"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .large + .ezzip</p>
+                <i class="ez-icon large ezzip"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .large + .ezfinder</p>
+                <i class="ez-icon large ezfinder"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .large + .ezmemo</p>
+                <i class="ez-icon large ezmemo"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .large + .ezreader</p>
+                <i class="ez-icon large ezreader"></i>
+              </div>
+              <div>
+                <p class="title">.ez-icon + .large + .ezrecorder</p>
+                <i class="ez-icon large ezrecorder"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>review-star</h3>
+            <div class="item">
+              <div>
+                <p class="title">.review-star</p>
+                <i class="review-star"></i>
+              </div>
+              <div>
+                <p class="title">.review-star + .score1</p>
+                <i class="review-star score1"></i>
+              </div>
+              <div>
+                <p class="title">.review-star + .score2</p>
+                <i class="review-star score2"></i>
+              </div>
+              <div>
+                <p class="title">.review-star + .score3</p>
+                <i class="review-star score3"></i>
+              </div>
+              <div>
+                <p class="title">.review-star + .score4</p>
+                <i class="review-star score4"></i>
+              </div>
+              <div>
+                <p class="title">.review-star + .score5</p>
+                <i class="review-star score5"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>dropdown-wrap > arrow</h3>
+            <div class="item">
+              <div>
+                <p class="title">.dropdown-wrap > .arrow + .type1</p>
+                <div class="dropdown-wrap">
+                  <i class="arrow type1"></i>
+                </div>
+              </div>
+              <div>
+                <p class="title">.dropdown-wrap + .on > .arrow + .type1</p>
+                <div class="dropdown-wrap on">
+                  <i class="arrow type1"></i>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">.dropdown-wrap > .arrow + .type2</p>
+                <div class="dropdown-wrap">
+                  <i class="arrow type2"></i>
+                </div>
+              </div>
+              <div>
+                <p class="title">.dropdown-wrap + .on > .arrow + .type2</p>
+                <div class="dropdown-wrap on">
+                  <i class="arrow type2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>notice-icon</h3>
+            <div class="item">
+              <div>
+                <p class="title">.notice-icon + .viewer</p>
+                <i class="notice-icon viewer"></i>
+              </div>
+              <div>
+                <p class="title">.notice-icon + .hold</p>
+                <i class="notice-icon hold"></i>
+              </div>
+              <div>
+                <p class="title">.notice-icon + .reply</p>
+                <i class="notice-icon reply"></i>
+              </div>
+              <div>
+                <p class="title">.notice-icon + .file</p>
+                <i class="notice-icon file"></i>
+              </div>
+              <div>
+                <p class="title">.notice-icon + .download</p>
+                <div style="background: #fff; display: flex; align-items: center; justify-content: center">
+                  <i class="notice-icon download"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-wrap">
+            <h3>etc-icon</h3>
+            <div class="item">
+              <div>
+                <p class="title">.etc-icon + .file</p>
+                <div style="background: #fff; display: flex; align-items: center; justify-content: center">
+                  <i class="etc-icon file"></i>
+                </div>
+              </div>
+              <div>
+                <p class="title">.etc-icon + .delete + .type1</p>
+                <div style="background: #fff; display: flex; align-items: center; justify-content: center">
+                  <i class="etc-icon delete type1"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section3">
+          <h2>DropDown</h2>
+          <div class="item-wrap">
+            <h3>dropdown-wrap</h3>
+            <div class="item">
+              <div>
+                <p class="title">.dropdown-wrap + .type1</p>
+                <div id="dropdown1" class="dropdown-wrap type1">
+                  <div class="dropdown-box">
+                    <button class="dropdown-toggle" type="button" onclick="classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')"><span class="dropdown-title">Title</span><i class="arrow type2"></i></button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-list">
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown1 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">Text1</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown1 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">Text2</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown1 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">Text3</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown1 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown1')">Text4</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="title">.dropdown-wrap + .type1 > .dropdown-title + .gray</p>
+                <div id="dropdown2" class="dropdown-wrap type1">
+                  <div class="dropdown-box">
+                    <button class="dropdown-toggle" type="button" onclick="classChangeAndToggle('.dropdown-wrap.type1', '#dropdown2')"><span class="dropdown-title gray">Title</span><i class="arrow type2"></i></button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-list">
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown2 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown2')">Text1</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown2 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown2')">Text2</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown2 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown2')">Text3</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown2 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown2')">Text4</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="title">.dropdown-wrap + .type1 + .fw150</p>
+                <div id="dropdown3" class="dropdown-wrap type1 fw150">
+                  <div class="dropdown-box">
+                    <button class="dropdown-toggle" type="button" onclick="classChangeAndToggle('.dropdown-wrap.type1', '#dropdown3')"><span class="dropdown-title">Title</span><i class="arrow type2"></i></button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-list">
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown3 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown3')">Text1</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown3 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown3')">Text2</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown3 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown3')">Text3</button>
+                        <button class="dropdown-item" type="button" onclick="textChange('#dropdown3 .dropdown-title', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown3')">Text4</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="title">.dropdown-wrap + .type1 > .dropdown-score</p>
+                <div id="dropdown4" class="dropdown-wrap type1">
+                  <div class="dropdown-box">
+                    <button class="dropdown-toggle" type="button" onclick="classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                      <span class="dropdown-score">
+                        <i class="review-star score5"></i>
+                        <span class="num"><b class="bold">5</b> /5</span>
+                      </span>
+                      <i class="arrow type2"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-list">
+                        <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown4 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                          <i class="review-star score5"></i>
+                          <span class="num"><b class="bold">5</b> /5</span>
+                        </button>
+                        <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown4 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                          <i class="review-star score4"></i>
+                          <span class="num"><b class="bold">4</b> /5</span>
+                        </button>
+                        <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown4 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                          <i class="review-star score3"></i>
+                          <span class="num"><b class="bold">3</b> /5</span>
+                        </button>
+                        <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown4 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                          <i class="review-star score2"></i>
+                          <span class="num"><b class="bold">2</b> /5</span>
+                        </button>
+                        <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown4 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                          <i class="review-star score1"></i>
+                          <span class="num"><b class="bold">1</b> /5</span>
+                        </button>
+                        <button class="dropdown-item score" type="button" onclick="elmChange('#dropdown4 .dropdown-score', this), classChangeAndToggle('.dropdown-wrap.type1', '#dropdown4')">
+                          <i class="review-star score0"></i>
+                          <span class="num"><b class="bold">0</b> /5</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section4">
+          <h2>Popup</h2>
+          <div class="item-wrap">
+            <h3>popup</h3>
+            <div class="item">
+              <div>
+                <p class="title">.popup-wrap > .popup + .basic</p>
+                <button class="basic-btn small fix" type="button" onclick="popupOn('#popup-wrap', '#popup1')">Click!</button>
+                <div id="popup-wrap">
+                  <div id="popup1" class="popup basic">
+                    <div class="popup-head">
+                      <p class="popup-title type1">This is a secret article.</p>
+                      <p class="popup-desc type1">Please enter your password.</p>
+                    </div>
+                    <div class="popup-cont">
+                      <div class="item item--1">
+                        <div class="input-wrap">
+                          <input type="password" name="input1" />
+                        </div>
+                      </div>
+                      <div class="item item--2">
+                        <div class="btn-wrap">
+                          <button class="basic-btn small fix" type="button">Confirm</button>
+                          <button class="basic-btn small fix white" type="button" onclick="popupClose('#popup-wrap', '#popup1')">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section5">
+          <h2>Input</h2>
+          <div class="item-wrap">
+            <h3>radio</h3>
+            <div class="item">
+              <div>
+                <p class="title">input[type='radio'] == label + .type1 > .icon + .type1</p>
+                <div style="background: #fff; display: flex; align-items: center; justify-content: center; gap: 60px">
+                  <input type="radio" name="radio1" id="radio1-1" checked />
+                  <label class="type1" for="radio1-1"><i class="icon type1"></i>Public</label>
+                  <input type="radio" name="radio1" id="radio1-2" />
+                  <label class="type1" for="radio1-2"><i class="icon type1"></i>Secret</label>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <p class="title">input[type='radio'] == label + .type2 > .icon + .type2</p>
+                <div style="background: #fff; display: flex; align-items: center; justify-content: center; gap: 50px">
+                  <input type="radio" name="radio2" id="radio2-1" checked />
+                  <label class="type2" for="radio2-1"><i class="icon type2 ezcapture"></i>ezCapture</label>
+                  <input type="radio" name="radio2" id="radio2-2" />
+                  <label class="type2" for="radio2-2"><i class="icon type2 ezreader"></i>ezReader</label>
+                  <input type="radio" name="radio2" id="radio2-3" />
+                  <label class="type2" for="radio2-3"><i class="icon type2 ezfinder"></i>ezFinder</label>
+                  <input type="radio" name="radio2" id="radio2-4" />
+                  <label class="type2" for="radio2-4"><i class="icon type2 ezzip"></i>ezZip</label>
+                  <input type="radio" name="radio2" id="radio2-5" />
+                  <label class="type2" for="radio2-5"><i class="icon type2 ezmemo"></i>ezMemo</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <footer class="footer">
+        <div class="container">
+          <p class="logo">MOBSOFT</p>
+          <div class="info">
+            <div class="item">
+              <p>Mobsoft</p>
+              <p>CEO : Jaeyeon kim</p>
+              <p>BRN : 430-87-02743</p>
+              <p>Address : 5th Floor, Unit 518, 272 Digital-ro, Guro-gu, Seoul, Republic of Korea</p>
+            </div>
+            <div class="item">
+              <p>E-commerce Business Registration : 2023-Seoul-Guro-0243</p>
+              <p>FAX : 02-865-6845</p>
+              <p>E-Mail : tappstore@tappstore.com</p>
+            </div>
+            <div class="item">
+              <p>Copyright © mobsoft. All Right Reserved.</p>
+            </div>
+          </div>
+          <div class="links">
+            <a href="javascript:void(0)">Company introduction</a>
+            <a href="./termsofuse.html">Terms of Use</a>
+            <a href="javascript:void(0)">Privacy Policy</a>
+          </div>
+        </div>
+        <button type="button" id="top-btn">move top</button>
       </footer>
     </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
   </body>
 </html>
