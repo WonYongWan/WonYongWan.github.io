@@ -1,0 +1,59 @@
+@use './common' as *;
+@import './base/reset';
+@import './base/fonts';
+@import './components/button';
+@import './components/icon';
+@import './components/notice';
+@import './components/dropdown';
+@import './components/input';
+@import './components/popup';
+
+body {
+  @include preRegular();
+  background: #fff;
+  font-size: 18px;
+  line-height: 21px;
+  color: #111;
+
+  &.scroll-lock {
+    overflow: hidden;
+  }
+
+  .wrap {
+    overflow: hidden;
+    padding-top: 116px;
+
+    .scroll-trigger {
+      overflow: hidden;
+    }
+
+    br {
+      &.pc {
+        display: block;
+      }
+
+      &.mo {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    .wrap {
+      overflow: hidden;
+      padding-top: 60px;
+
+      br {
+        &.pc {
+          display: none;
+        }
+
+        &.mo {
+          display: block;
+        }
+      }
+    }
+  }
+}

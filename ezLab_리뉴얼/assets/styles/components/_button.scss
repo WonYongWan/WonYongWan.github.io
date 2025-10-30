@@ -1,0 +1,318 @@
+// swiper-btn
+.swiper-btn {
+  @include image-set();
+  cursor: pointer;
+  position: static;
+  margin-top: 0;
+
+  &::after {
+    display: none;
+  }
+
+  &.arrow {
+    &.prev {
+      &.type1 {
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/common/icon/swiper-arrow-prev-type1.png);
+      }
+
+      &.type2 {
+        width: 7px;
+        height: 12px;
+        background-image: url(../images/common/icon/swiper-arrow-prev-type2.png);
+      }
+
+      &.type3 {
+        transition: $transition-fast;
+        width: 40px;
+        height: 40px;
+        background-image: url(../images/common/icon/swiper-arrow-prev-type3.png);
+
+        &:hover {
+          background-image: url(../images/common/icon/swiper-arrow-prev-type3-hover.png);
+        }
+      }
+    }
+
+    &.next {
+      &.type1 {
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/common/icon/swiper-arrow-next-type1.png);
+      }
+
+      &.type2 {
+        width: 7px;
+        height: 12px;
+        background-image: url(../images/common/icon/swiper-arrow-next-type2.png);
+      }
+
+      &.type3 {
+        transition: $transition-fast;
+        width: 40px;
+        height: 40px;
+        background-image: url(../images/common/icon/swiper-arrow-next-type3.png);
+
+        &:hover {
+          background-image: url(../images/common/icon/swiper-arrow-next-type3-hover.png);
+        }
+      }
+
+      &.type4 {
+        transition: $transition-fast;
+        width: 44px;
+        height: 44px;
+        background-image: url(../images/common/icon/swiper-arrow-next-type4.png);
+
+        &:hover {
+          background-image: url(../images/common/icon/swiper-arrow-next-type4-hover.png);
+        }
+      }
+    }
+  }
+
+  &.pause {
+    &.type1 {
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/common/icon/swiper-stop-type1.png);
+
+      &.on {
+        background-image: url(../images/common/icon/swiper-play-type1.png);
+      }
+    }
+
+    &.type2 {
+      width: 9px;
+      height: 12px;
+      background-image: url(../images/common/icon/swiper-stop-type2.png);
+
+      &.on {
+        background-image: url(../images/common/icon/swiper-play-type2.png);
+      }
+    }
+  }
+}
+
+// swiper-bullet
+.swiper-bullet {
+  &.type1 {
+    @include preRegular();
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: -0.18px;
+    color: $color-text-gray2;
+    background: transparent;
+    transition: $transition-fast;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 27px;
+    border-radius: 25px;
+
+    &.on {
+      color: $color-text-white;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+      background-image: linear-gradient(108deg, #fc3220 3%, #f45526 116%);
+    }
+  }
+}
+
+// basic-btn
+.basic-btn {
+  @include preMedium();
+  background: $color-button-primary;
+  color: $color-text-white;
+  text-align: center;
+  display: block;
+
+  .text {
+    @include flex-pos($ai: center, $jc: center);
+  }
+
+  &.small {
+    border-radius: 8px;
+    min-width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 32px;
+    font-size: 18px;
+    letter-spacing: -0.18px;
+
+    &.white {
+      border: 1px solid $color-border-primary;
+      background: $color-button-secondary;
+      color: $color-text-gray;
+    }
+
+    &.fix {
+      max-width: 100px;
+      padding: 0;
+      font-size: 16px;
+      letter-spacing: -0.16px;
+    }
+  }
+
+  &.middle {
+    border-radius: 12px;
+    min-width: 140px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 30px;
+    font-size: 16px;
+    letter-spacing: -0.16px;
+
+    &.fix {
+      max-width: 140px;
+      padding: 0;
+    }
+  }
+
+  &.large {
+    border-radius: 10px;
+    min-width: 180px;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 35px;
+    font-size: 18px;
+    letter-spacing: -0.18px;
+
+    &.fix {
+      max-width: 180px;
+      padding: 0;
+    }
+
+    .text {
+      gap: 14px;
+    }
+  }
+}
+
+// pagination
+.pagination {
+  @include flex-pos($jc: center, $ai: center, $g: 20px);
+
+  .pagination-arrow {
+    @include image-set();
+    @include text-hide();
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/common/icon/pagination-arrow.png);
+
+    &.double {
+      background-image: url(../images/common/icon/pagination-arrow-double.png);
+    }
+
+    &.next {
+      transform: rotate(180deg);
+    }
+  }
+
+  .page-list {
+    @include flex-pos($ai: center, $g: 33px);
+    padding: 0 8px;
+    height: 40px;
+
+    .page {
+      position: relative;
+
+      .btn {
+        @include preMedium();
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: -0.16px;
+        color: $color-text-black;
+        position: relative;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.on {
+        &::before {
+          @include elm-create();
+          @include pos-center();
+          width: 40px;
+          height: 40px;
+          background: $color-bg-red;
+          border-radius: 100%;
+        }
+
+        .btn {
+          color: $color-text-white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  // swiper-btn
+  .swiper-btn {
+    &.arrow {
+      &.prev {
+        &.type3 {
+          width: 44px;
+          height: 44px;
+        }
+      }
+
+      &.next {
+        &.type3 {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+  }
+
+  // swiper-bullet
+  .swiper-bullet {
+    &.type1 {
+      font-size: 16px;
+      letter-spacing: -0.16px;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 17px;
+      border-radius: 20px;
+
+      &.on {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  // basic-btn
+  .basic-btn {
+    &.small {
+      height: 44px;
+      line-height: 44px;
+      padding: 0 32px; // 얘만 수정하면 됨
+      font-size: 16px;
+      letter-spacing: -0.16px;
+    }
+
+    &.middle {
+      border-radius: 10px;
+      min-width: 130px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 25px;
+
+      &.fix {
+        max-width: 130px;
+      }
+    }
+
+    &.large {
+      border-radius: 8px;
+      height: 44px;
+      line-height: 44px;
+
+      .text {
+        gap: 5px;
+      }
+    }
+  }
+}
