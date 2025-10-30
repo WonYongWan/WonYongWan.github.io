@@ -1,0 +1,204 @@
+// ez-icon
+.ez-icon {
+  @include image-set();
+  display: inline-block;
+
+  &.small {
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+  }
+
+  &.large {
+    min-width: 75px;
+    max-width: 75px;
+    min-height: 75px;
+    max-height: 75px;
+  }
+
+  &.ezcapture {
+    background-image: url(../images/common/icon/ezcapture.png);
+  }
+
+  &.ezzip {
+    background-image: url(../images/common/icon/ezzip.png);
+  }
+
+  &.ezfinder {
+    background-image: url(../images/common/icon/ezfinder.png);
+  }
+
+  &.ezmemo {
+    background-image: url(../images/common/icon/ezmemo.png);
+  }
+
+  &.ezreader {
+    background-image: url(../images/common/icon/ezreader.png);
+  }
+
+  &.ezrecorder {
+    background-image: url(../images/common/icon/ezrecorder.png);
+  }
+}
+
+// review-star
+.review-star {
+  @include image-set();
+  display: inline-block;
+  width: 69px;
+  height: 12px;
+  background-image: url(../images/common/icon/star0.png);
+
+  &.score1 {
+    background-image: url(../images/common/icon/star1.png);
+  }
+
+  &.score2 {
+    background-image: url(../images/common/icon/star2.png);
+  }
+
+  &.score3 {
+    background-image: url(../images/common/icon/star3.png);
+  }
+
+  &.score4 {
+    background-image: url(../images/common/icon/star4.png);
+  }
+
+  &.score5 {
+    background-image: url(../images/common/icon/star5.png);
+  }
+}
+
+// dropdown
+.dropdown-wrap {
+  .arrow {
+    @include image-set();
+    display: inline-block;
+
+    &.type1 {
+      transition: $transition-fast;
+      width: 20px;
+      height: 8px;
+      background-image: url(../images/common/icon/drop-down-type1-on.png);
+    }
+
+    &.type2 {
+      transition: $transition-fast;
+      min-width: 15px;
+      height: 7px;
+      background-image: url(../images/common/icon/drop-down-type2-on.png);
+    }
+  }
+
+  &.on {
+    .arrow {
+      &.type1 {
+        transform: rotate(-180deg);
+        background-image: url(../images/common/icon/drop-down-type1-off.png);
+      }
+
+      &.type2 {
+        transform: rotate(-180deg);
+        background-image: url(../images/common/icon/drop-down-type2-off.png);
+      }
+    }
+  }
+}
+
+// notice-icon
+.notice-icon {
+  @include image-set();
+  display: inline-block;
+
+  &.viewer {
+    min-width: 19px;
+    max-width: 19px;
+    min-height: 12px;
+    max-height: 12px;
+    background-image: url(../images/common/icon/notice-viewer.png);
+  }
+
+  &.hold {
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    background-image: url(../images/common/icon/notice-hold.png);
+  }
+
+  &.reply {
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    background-image: url(../images/common/icon/notice-reply.png);
+  }
+
+  &.file {
+    min-width: 34px;
+    max-width: 34px;
+    min-height: 34px;
+    max-height: 34px;
+    background-image: url(../images/common/icon/notice-file.png);
+  }
+
+  &.download {
+    min-width: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    background-image: url(../images/common/icon/notice-download.png);
+  }
+}
+
+// etc-icon
+.etc-icon {
+  @include image-set();
+  @include text-hide();
+  display: inline-block;
+
+  &.file {
+    min-width: 21px;
+    max-width: 21px;
+    min-height: 21px;
+    max-height: 21px;
+    background-image: url(../images/common/icon/load-file.png);
+  }
+
+  &.delete {
+    &.type1 {
+      min-width: 18px;
+      max-width: 18px;
+      min-height: 18px;
+      max-height: 18px;
+      background-image: url(../images/common/icon/delete-type1.png);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  // ez-icon
+  .ez-icon {
+    &.small {
+      min-width: 36px;
+      max-width: 36px;
+      min-height: 36px;
+      max-height: 36px;
+    }
+
+    &.large {
+      min-width: 46px;
+      max-width: 46px;
+      min-height: 46px;
+      max-height: 46px;
+    }
+  }
+
+  // review-star
+  .review-star {
+    width: 77px;
+    height: 14px;
+  }
+}
