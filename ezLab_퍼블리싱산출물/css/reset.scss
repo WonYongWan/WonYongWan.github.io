@@ -1,0 +1,259 @@
+@charset 'utf-8';
+
+// Pretendard
+@font-face {
+  font-family: 'Pretendard-Light';
+  src: url('../font/Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('../font/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: url('../font/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('../font/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('../font/Pretendard-Bold.woff') format('woff');
+}
+
+// Mont HeavyDEMO
+@font-face {
+  font-family: 'Mont-HeavyDEMO';
+  src: url('../font/Mont-HeavyDEMO.woff') format('woff');
+}
+
+// Gotham
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('../font/Gotham-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('../font/Gotham-Medium.woff') format('woff');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {text-decoration: none;}
+p, h2, h3, li {
+  word-break: keep-all;
+}
+
+// img tag
+img {
+	max-width: 100%;
+}
+
+button {
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+// input checkbox
+input[type='checkbox'] {display: none;}
+
+input[type='checkbox'] + label {
+	font-family: 'Pretendard-Regular';
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: -.16px;
+	color: #111;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	height: 22px;
+	padding-left: 30px;
+}
+
+input[type='checkbox'] + label i {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+	height: 22px;
+	border: solid 1px #d4d4d4;
+	border-radius: 6px;
+}
+
+input[type='checkbox']:checked + label i {
+	background: url(../images/icon/checkbox-on.png) no-repeat center / cover;
+	border: none;
+}
+
+input[type='checkbox'].type1 + label span {
+	font-size: 13px;
+	line-height: 19px;
+	margin-right: 8px;
+	color: #3873ec;
+}
+
+input[type='checkbox'].type1 + label span.gray {
+	color: #8e8e8e;
+}
+
+input.type1[type='checkbox'] + label i {
+	border: none;
+	border-radius: unset;
+	background: url(../images/icon/checkbox-type1.png) no-repeat center / cover;
+}
+
+input.type1[type='checkbox']:checked + label i {
+	background: url(../images/icon/checkbox-type1-on.png) no-repeat center / cover;
+}
+
+input[type='file'] {
+	display: none;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+	width: 100%;
+	display: block;
+	border: 1px solid #d4d4d4;
+	border-radius: 8px;
+	font-family: 'Pretendard-Medium';
+	color: #111;
+	font-size: 18px;
+	line-height: 21px;
+	letter-spacing: -.18px;
+	box-sizing: border-box;
+}
+
+input[type='text'],
+input[type='password'] {
+	padding: 0 20px;
+	height: 50px;
+}
+
+input:disabled {
+	background: #f5f5f5;
+}
+
+textarea {
+	padding: 15px 20px;
+	min-height: 250px;
+	max-height: 250px;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+input[type='text']::placeholder,
+input[type='password']::placeholder,
+textarea::placeholder {
+	font-family: 'Pretendard-Regular';
+	color: #8e8e8e;
+	font-size: 18px;
+	line-height: 21px;
+	letter-spacing: -.18px;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+textarea:focus {
+	outline: none;
+}
+
+* {user-select: none;}
+
+@media screen and (max-width: 768px) {
+	input[type='checkbox'] + label {
+		font-size: 13px;
+		line-height: 20px;
+		letter-spacing: -.13px;
+		height: 20px;
+		padding-left: 28px;
+	}
+	
+	input[type='checkbox'] + label i {
+		width: 20px;
+		height: 20px;
+	}
+
+	input[type='text'],
+	input[type='password'],
+	textarea {
+		font-size: 15px;
+		line-height: 18px;
+		letter-spacing: -.15px;
+	}
+
+	input[type='text'],
+	input[type='password'] {
+		padding: 0 15px;
+		height: 48px;
+	}
+
+	textarea {
+		padding: 15px;
+		min-height: 300px;
+		max-height: 300px;
+	}
+	
+	input[type='text']::placeholder,
+	input[type='password']::placeholder,
+	textarea::placeholder {
+		font-size: 15px;
+		line-height: 18px;
+		letter-spacing: -.15px;
+	}
+}

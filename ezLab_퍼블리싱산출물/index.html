@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>EZLAB</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <!-- style -->
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <!-- swiper style -->
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <!-- jquery -->
+    <script src="./js/jquery.js"></script>
+    <!-- swiper -->
+    <script src="./js/swiper.js"></script>
+  </head>
+  <body>
+    <div class="wrap en">
+      <!-- header -->
+      <header>
+        <div class="container">
+          <h1><a href="./index.html">EZLAB</a></h1>
+          <div class="content-box">
+            <div id="hd-menu-wrap">
+              <div>
+                <ul id="hd-menu" class="menu">
+                  <li><a href="./ezcapture.html">ezcapture</a></li>
+                  <li><a href="./ezzip.html">ezzip</a></li>
+                  <li id="hd-list3">
+                    <button id="hd-menu-btn" type="button" onclick="classToggle('#hd-menu-btn'), classToggle('#hd-depth1')">Customer service</button>
+                    <ul id="hd-depth1">
+                      <li><a href="./faq.html">FAQ</a></li>
+                      <li><a href="./contactUs.html">Contact Us</a></li>
+                      <li><a href="./userReview.html">User Review</a></li>
+                      <li><a href="./notice.html">Notice</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <div>
+                  <div class="lang">
+                    <div id="lang-btn" class="item" onclick="classToggle('#lang-btn'), classToggle('#lang-list')">
+                      <i class="icon icon1"></i>
+                      <p id="lang-text">ENG</p>
+                      <i class="icon icon2"></i>
+                    </div>
+                    <ul id="lang-list" class="list">
+                      <li>
+                        <button type="button" class="on" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">ENG</button>
+                      </li>
+                      <li>
+                        <button type="button" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">KOR</button>
+                      </li>
+                      <li>
+                        <button type="button" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">JPN</button>
+                      </li>
+                      <li>
+                        <button type="button" onclick="classToggle('#lang-btn'), classToggle('#lang-list'), textChange('#lang-text', this), classChange('#lang-list button', this)">CHN</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- 로그인 후 on 클래스 추가시 노출 -->
+                  <div class="my-etc">
+                    <div id="my-etc-btn" class="item" onclick="classToggle('#my-etc-btn'), classToggle('#my-etc-list')">
+                      <p>Mr.Hong</p>
+                      <i class="icon"></i>
+                    </div>
+                    <ul id="my-etc-list" class="list">
+                      <li><a href="javascript:void(0)">Point</a></li>
+                      <li><a href="./setting.html">Setting</a></li>
+                      <li><a href="javascript:void(0)">Logout</a></li>
+                    </ul>
+                  </div>
+                  <!-- 로그인 전 on 클래스 추가시 노출 -->
+                  <button class="login on" type="button" onclick="popupOn('#popup-wrap', '#popup-login')">Login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" id="hd-toggle" class="toggle" onclick="headerMenuToggle('#hd-toggle', '#hd-menu-wrap')">메뉴 열기/닫기<i></i></button>
+        </div>
+      </header>
+      <!-- main -->
+      <div class="main">
+        <!-- content1 -->
+        <div class="content content1">
+          <div class="container">
+            <div class="s-react">
+              <div class="swiper swiper1">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide swiper-slide1">
+                    <div class="item-box">
+                      <div class="logo">ezLab</div>
+                      <p class="text">Smarter tools for <br class="en mo" />a more convenient workflow.<br />Experience ezLAB now!</p>
+                      <a href="javascript:void(0)">Learn More</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide2">
+                    <div class="item-box">
+                      <div class="logo">ezcapture</div>
+                      <p class="text">Could screen capturing be this easy?<br />Save your screen quickly <br class="en mo" />with various capture modes<br class="en pc" />and <br class="en mo" />convenient features!</p>
+                      <a href="javascript:void(0)">Learn More</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide3">
+                    <div class="item-box">
+                      <div class="logo-box">
+                        <div class="logo">ez-zip</div>
+                        <p class="title">Launch</p>
+                      </div>
+                      <p class="text">Easy compression, fast extraction!<br />Manage your files effortlessly<br />with fast and secure compression <br class="en mo" />and extraction.</p>
+                      <a href="javascript:void(0)">Learn More</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide4">
+                    <div class="item-box">
+                      <div class="logo">ezFinder</div>
+                      <p class="text">
+                        I'm done searching for complicated<br class="en mo" />
+                        files!<br class="en pc" />
+                        Increase your work efficiency<br class="en mo" />
+                        with fast and easy search!
+                      </p>
+                      <a href="javascript:void(0)">Learn More</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide5">
+                    <div class="item-box">
+                      <div class="logo">ezMemo</div>
+                      <p class="text">
+                        Things to do, ideas, and important<br class="en mo" />
+                        schedules<br class="en pc" />
+                        Manage smartly<br class="en mo" />
+                        with notifications, locks and groups.
+                      </p>
+                      <a href="javascript:void(0)">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="all-box">
+                  <div class="progress-box">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-progress">
+                      <svg viewBox="0 0 100 10">
+                        <line x1="0" y1="0" x2="100" y2="0" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="arrow-box">
+                    <div class="swiper-button swiper-button-prev"></div>
+                    <div class="swiper-button swiper-button-next"></div>
+                    <div class="pause"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content2 -->
+        <div class="content content2">
+          <div class="container type2">
+            <div class="s-box type1">
+              <p class="title s-react">Explore Convenient PC Program</p>
+            </div>
+            <div class="s-react">
+              <div class="swiper swiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide swiper-slide1">
+                    <div class="item-box">
+                      <div class="logo"></div>
+                      <div class="text-box">
+                        <p class="title">ezCapture</p>
+                        <p class="text">Capture your screen <br class="en mo" />easily and quickly<br class="en pc" />with <br class="en mo" />various capture modes.</p>
+                        <div class="link-box">
+                          <p class="text">Learn More</p>
+                          <i></i>
+                        </div>
+                      </div>
+                      <a href="javascript:void(0)"></a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide2">
+                    <div class="item-box">
+                      <div class="logo"></div>
+                      <div class="text-box">
+                        <p class="title">ezZip</p>
+                        <p class="text">A smart compression tools <br class="en mo" />for fast,<br class="en pc" />powerful compres<br class="en mo" />sion and decompression</p>
+                        <div class="link-box">
+                          <p class="text">Learn More</p>
+                          <i></i>
+                        </div>
+                      </div>
+                      <a href="javascript:void(0)"></a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-slide3">
+                    <div class="item-box type1">
+                      <div class="wait"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content3 -->
+        <div class="content content3">
+          <div class="container type1">
+            <div class="s-box type1">
+              <p class="title s-react">Latest News from ezLAB</p>
+            </div>
+            <div class="item-box">
+              <!-- <div class="s-box">
+                <div class="item item1 s-react">
+                  <div class="logo"></div>
+                  <p class="text">Adorable UI <br class="en mo" />and sleek<br class="en pc" />edge <br class="en mo" />features added</p>
+                  <div class="link-text">Learn More</div>
+                  <a href="javascript:void(0)"></a>
+                </div>
+              </div>
+              <div class="s-box">
+                <div class="item item2 s-react">
+                  <div class="logo"></div>
+                  <p class="text">
+                    New version<br />
+                    released
+                  </p>
+                  <div class="link-text">Learn More</div>
+                  <a href="javascript:void(0)"></a>
+                </div>
+              </div> -->
+              <div class="s-box">
+                <div class="item item3 s-react">
+                  <div class="logo"></div>
+                  <p class="text">Google image <br class="en mo" />search <br class="en pc" />with the <br class="en mo" />captured image!</p>
+                  <div class="link-text">Learn More</div>
+                  <a href="javascript:void(0)"></a>
+                </div>
+              </div>
+              <div class="s-box">
+                <div class="item item4 s-react">
+                  <div class="logo"></div>
+                  <p class="text">Before opening <br class="en mo" />the file, <br class="en pc" />check for <br class="en mo" />the virus first!</p>
+                  <div class="link-text">Learn More</div>
+                  <a href="javascript:void(0)"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content4 -->
+        <div class="content content4">
+          <div class="container type1">
+            <div class="s-box type1">
+              <p class="title s-react">Make Your Work Easier <br class="en mo" />& Utilize Features to the Fullest!</p>
+            </div>
+          </div>
+          <div class="s-react">
+            <div class="swiper swiper3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide1">
+                  <div class="item-box">
+                    <div class="title-box">
+                      <p class="title title1">ezCapture</p>
+                      <p class="title title2">Easy Image Editing <br class="en mo" />Features</p>
+                    </div>
+                    <p class="text">
+                      Easily edit captured images using
+                      <br class="en mo" />drawing tools,<br class="en pc" />shapes, and text.
+                    </p>
+                    <a href="javascript:void(0)">Learn More</a>
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide2">
+                  <div class="item-box">
+                    <div class="title-box">
+                      <p class="title title1">ez-zip</p>
+                      <p class="title title2">Easy compression <br class="en mo" />and release</p>
+                    </div>
+                    <p class="text">Make it easy to compress <br class="en mo" />and decompress<br class="en pc" />with drag and drop</p>
+                    <a href="javascript:void(0)">Learn More</a>
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide3">
+                  <div class="item-box">
+                    <div class="title-box">
+                      <p class="title title1">ezFinder</p>
+                      <p class="title title2">I'll show you the file <br class="en mo" />I want to find</p>
+                    </div>
+                    <p class="text">A hand-remembered tool that searches files <br />and the web inside my PC</p>
+                    <a href="javascript:void(0)">Learn More</a>
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-slide4">
+                  <div class="item-box">
+                    <div class="title-box">
+                      <p class="title title1">ezMemo</p>
+                      <p class="title title2">To add notifications <br class="en mo" />and locks to a memo</p>
+                    </div>
+                    <p class="text">It supports schedule notification, password setting, <br />and group management</p>
+                    <a href="javascript:void(0)">Learn More</a>
+                  </div>
+                </div>
+              </div>
+              <div class="all-box">
+                <div class="swiper-button swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="pause"></div>
+                <div class="swiper-button swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <footer>
+        <div class="container">
+          <p class="footer-logo">MOBSOFT</p>
+          <div class="text-box text-box1">
+            <div class="line">
+              <p class="text">Mobsoft</p>
+              <p class="text">CEO : Jaeyeon kim</p>
+              <p class="text">BRN : 430-87-02743</p>
+              <p class="text">Address : 5th Floor, Unit 518, 272 Digital-ro, Guro-gu, Seoul, Republic of Korea</p>
+            </div>
+            <div class="line">
+              <p class="text">E-commerce Business Registration : 2023-Seoul-Guro-0243</p>
+              <p class="text">FAX : 02-865-6845</p>
+              <p class="text">E-Mail : tappstore@tappstore.com</p>
+            </div>
+            <div class="line">
+              <p class="text">Copyright © mobsoft. All Right Reserved.</p>
+            </div>
+          </div>
+          <div class="text-box text-box2">
+            <a href="javascript:void(0)">Company introduction</a>
+            <a href="./termsOfUse.html">Terms of Use</a>
+            <a href="javascript:void(0)">Privacy Policy</a>
+          </div>
+        </div>
+        <button type="button" id="top-btn">move top</button>
+      </footer>
+      <!-- popup -->
+      <div id="popup-wrap">
+        <div class="popup" id="popup-login">
+          <button class="close" type="button" onclick="popupClose('#popup-wrap', '#popup-login')">close</button>
+          <div class="popup-content">
+            <div class="content-box content-box1">
+              <p class="title">welcome! ezLab</p>
+            </div>
+            <div class="content-box content-box2">
+              <p class="title">Login</p>
+              <div class="line line1">
+                <!-- input-box에 on 클래스 추가시 경고 문구 노출 -->
+                <div class="input-box on">
+                  <input type="text" placeholder="ID" />
+                  <p class="text">Please enter your ID</p>
+                </div>
+                <!-- input-box에 on 클래스 추가시 경고 문구 노출 -->
+                <div class="input-box">
+                  <input type="password" placeholder="Password" />
+                  <p class="text">Please enter your Password</p>
+                </div>
+                <div class="list-box">
+                  <div class="check-box">
+                    <input type="checkbox" id="check_1" />
+                    <label for="check_1"><i></i>Stay logged in</label>
+                  </div>
+                  <div class="link-box">
+                    <a href="./findAcount.html">Find the ID/Pw</a>
+                    <a href="./signUp.html">Signup</a>
+                  </div>
+                </div>
+                <!-- warning-text에 on 클래스 추가시 경고 문구 노출 -->
+                <p class="warning-text on">Invalid ID or password entered</p>
+                <a class="link" href="javascript:void(0)">Login</a>
+              </div>
+              <div class="line line2">
+                <p class="text text1">or</p>
+                <div class="link-box link-box1">
+                  <a class="kakao" href="./signUp-1.html">kakao</a>
+                  <a class="naver" href="./signUp-1.html">naver</a>
+                  <a class="google" href="./signUp-1.html">google</a>
+                </div>
+                <div class="link-box link-box2">
+                  <a href="javascript:void(0)">Company introduction</a>
+                  <a href="./termsOfUse.html">Terms of Use</a>
+                  <a href="javascript:void(0)">Privacy Policy</a>
+                </div>
+                <p class="text text2">Copyright © mobsoft. All Right Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      // swiper1
+      const progressLine = document.querySelector('.swiper1 .swiper-progress svg');
+      const swiper1 = {
+        spaceBetween: 0,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        speed: 500,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper1 .swiper-pagination',
+          clickable: false,
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            return `<span class="current">0${current}</span><span class="total">0${total}</span>`;
+          },
+        },
+        on: {
+          autoplayTimeLeft(s, time, progress) {
+            progressLine.style.setProperty('--progress', 1 - progress);
+          },
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 30,
+            pagination: {
+              el: '.swiper1 .swiper-pagination',
+              clickable: false,
+              type: 'custom',
+              renderCustom: function (swiper, current, total) {
+                return `<span class="current">${current}</span><span class="total">${total}</span>`;
+              },
+            },
+          },
+        },
+      };
+
+      // swiper2
+      const swiper2 = {
+        slidesPerView: 'auto',
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        speed: 500,
+        loop: true,
+        loopedSlides: 3,
+      };
+
+      // swiper3
+      const swiper3 = {
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        speed: 500,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // swiper item 부족으로 인한 짤림 현상 개선
+        const $swiper2ItemsP = document.querySelector('.swiper2').querySelectorAll('.swiper-slide');
+        let swiper2Flag = true;
+        $swiper2ItemsP.forEach((elm) => {
+          const $cloneNode = elm.cloneNode(true);
+          if (swiper2Flag) {
+            $swiper2ItemsP[$swiper2ItemsP.length - 1].after($cloneNode);
+            swiper2Flag = false;
+          } else if (!swiper2Flag) {
+            const $swiper2ItemsC = document.querySelector('.swiper2').querySelectorAll('.swiper-slide');
+            $swiper2ItemsC[$swiper2ItemsC.length - 1].after($cloneNode);
+          }
+        });
+
+        // swiper play
+        const $swiper1 = new Swiper('.swiper1', swiper1);
+        const $swiper2 = new Swiper('.swiper2', swiper2);
+        const $swiper3 = new Swiper('.swiper3', swiper3);
+
+        // swiper1 pause script
+        const $swiper1Pause = document.querySelector('.swiper1 .pause');
+        let swiper1Flag = true;
+        $swiper1Pause.addEventListener('click', () => {
+          if (swiper1Flag) {
+            $swiper1Pause.classList.add('on');
+            progressLine.style.setProperty('--progress', 1);
+            $swiper1.autoplay.stop();
+            swiper1Flag = false;
+          } else if (!swiper1Flag) {
+            $swiper1Pause.classList.remove('on');
+            $swiper1.autoplay.start();
+            swiper1Flag = true;
+          }
+        });
+
+        // swiper3 pause script
+        const $swiper3Pause = document.querySelector('.swiper3 .pause');
+        let swiper3Flag = true;
+        $swiper3Pause.addEventListener('click', () => {
+          if (swiper3Flag) {
+            $swiper3Pause.classList.add('on');
+            $swiper3.autoplay.stop();
+            swiper3Flag = false;
+          } else if (!swiper3Flag) {
+            $swiper3Pause.classList.remove('on');
+            $swiper3.autoplay.start();
+            swiper3Flag = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
