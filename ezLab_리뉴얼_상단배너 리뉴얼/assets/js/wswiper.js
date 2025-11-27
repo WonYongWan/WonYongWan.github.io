@@ -145,7 +145,37 @@ class Wswiper {
     }
   }
 
+  // moveTo() {
+  //   const { hasStart, hasLast, slideMoveStartIdx, slideMoveLastIdx } = this._getSlideMoveRange();
+
+  //   const slideMoveSize = this.options.slideMoveSize;
+  //   const setPosX = this.options.setPosX || 0;
+
+  //   let moveCount = hasStart ? this.current - slideMoveStartIdx + 1 : 0;
+  //   let moveSpaceBetween = moveCount * this.options.spaceBetween;
+  //   let moveSizeX = 0;
+
+  //   if (hasStart && hasLast) {
+  //     if (this.current >= slideMoveLastIdx) {
+  //       moveCount = slideMoveLastIdx - slideMoveStartIdx;
+  //     }
+
+  //     moveSpaceBetween = moveCount * this.options.spaceBetween;
+  //     moveSizeX = moveCount * slideMoveSize;
+
+  //     const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
+
+  //     requestAnimationFrame(() => {
+  //       this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
+  //       this._addClass();
+  //     });
+  //   }
+  // }
+
   moveTo() {
+    if (this._isMoving) return; // 중복 실행 방지
+    this._isMoving = true;
+
     const { hasStart, hasLast, slideMoveStartIdx, slideMoveLastIdx } = this._getSlideMoveRange();
 
     const slideMoveSize = this.options.slideMoveSize;
@@ -168,7 +198,14 @@ class Wswiper {
       requestAnimationFrame(() => {
         this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
         this._addClass();
+
+        // ★ transform 적용 완료 후 다시 허용
+        requestAnimationFrame(() => {
+          this._isMoving = false;
+        });
       });
+    } else {
+      this._isMoving = false; // fallback
     }
   }
 
