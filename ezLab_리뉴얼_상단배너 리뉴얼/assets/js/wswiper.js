@@ -306,8 +306,9 @@ class Wswiper {
     this.$swiper.addEventListener(
       'touchmove',
       (e) => {
-        if (Math.abs(e.touches[0].clientY - startY) > threshold * 10) return;
-        e.preventDefault();
+        if (Math.abs(e.touches[0].clientY - startY) < threshold * 10) {
+          e.preventDefault();
+        }
       },
       { passive: false }
     );
