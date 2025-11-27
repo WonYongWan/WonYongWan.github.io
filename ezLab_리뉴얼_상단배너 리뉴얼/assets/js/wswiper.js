@@ -32,6 +32,7 @@ class Wswiper {
     this.current = 0;
     this.slideWidth = 0;
     this.autoplayInterval = null;
+    this.currentTotalMoveX = null;
 
     // method
     this.init();
@@ -163,6 +164,8 @@ class Wswiper {
       moveSizeX = moveCount * slideMoveSize;
 
       const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
+      if (this.currentTotalMoveX === totalMoveX) return;
+      this.currentTotalMoveX = totalMoveX;
 
       requestAnimationFrame(() => {
         this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
@@ -258,91 +261,36 @@ class Wswiper {
     }
   }
 
-  // _dragModSnap() {
-  //   let startX = null;
-
-  //   this.$swiper.addEventListener('pointerdown', (e) => {
-  //     this._isDragging = true;
-  //     startX = e.clientX;
-  //   });
-
-  //   this.$swiper.addEventListener('pointerup', (e) => {
-  //     const endX = e.clientX;
-  //     const deltaX = endX - startX;
-  //     const threshold = this.$swiper.clientWidth * 0.025;
-  //     const isNext = deltaX < 0;
-
-  //     if (Math.abs(deltaX) > threshold) {
-  //       if (isNext) {
-  //         this._next();
-  //       } else {
-  //         this._prev();
-  //       }
-  //       this.moveTo();
-  //       this.updateSlide();
-  //       this.updatePagination();
-  //       this.restartAutoPlay();
-  //     } else {
-  //       this._isDragging = false;
-  //     }
-
-  //     startX = null;
-  //   });
-  // }
-
   _dragModSnap() {
-    // 이벤트 핸들러 참조를 클래스 레벨로 저장
-    if (this._pointerDownHandler) {
-      this.$swiper.removeEventListener('pointerdown', this._pointerDownHandler);
-      this.$swiper.removeEventListener('pointermove', this._pointerMoveHandler);
-      this.$swiper.removeEventListener('pointerup', this._pointerUpHandler);
-    }
+    let startX = null;
 
-    let startX = 0;
-    let currentX = 0;
-
-    this._pointerDownHandler = (e) => {
+    this.$swiper.addEventListener('pointerdown', (e) => {
       this._isDragging = true;
       startX = e.clientX;
-      currentX = startX;
+    });
 
-      // 세로 스크롤 방지
-      this.$swiper.style.touchAction = 'pan-y';
-    };
-
-    this._pointerMoveHandler = (e) => {
-      if (!this._isDragging) return;
-      currentX = e.clientX;
-
-      // 선택적으로 실시간 translate 적용하려면 여기서 transform 해도 됨
-      // 예: this.$swiperWrap.style.transform = `translate3d(${currentX - startX}px,0,0)`;
-    };
-
-    this._pointerUpHandler = (e) => {
-      if (!this._isDragging) return;
-
-      const deltaX = currentX - startX;
+    this.$swiper.addEventListener('pointerup', (e) => {
+      const endX = e.clientX;
+      const deltaX = endX - startX;
       const threshold = this.$swiper.clientWidth * 0.025;
       const isNext = deltaX < 0;
 
       if (Math.abs(deltaX) > threshold) {
-        if (isNext) this._next();
-        else this._prev();
+        if (isNext) {
+          this._next();
+        } else {
+          this._prev();
+        }
+        this.moveTo();
+        this.updateSlide();
+        this.updatePagination();
+        this.restartAutoPlay();
       } else {
         this._isDragging = false;
       }
 
-      // threshold 미달 시 현재 슬라이드로 snap
-      this.moveTo();
-      this.updateSlide();
-      this.updatePagination();
-      this.restartAutoPlay();
-    };
-
-    // 이벤트 등록
-    this.$swiper.addEventListener('pointerdown', this._pointerDownHandler);
-    this.$swiper.addEventListener('pointermove', this._pointerMoveHandler);
-    this.$swiper.addEventListener('pointerup', this._pointerUpHandler);
+      startX = null;
+    });
   }
 
   _setAutoplay() {
@@ -383,4 +331,3 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
-
