@@ -258,75 +258,74 @@ class Wswiper {
     }
   }
 
- _dragModSnap() {
-  let startX = 0;
-  let startY = 0;
-  let lastX = null;
-  let isVerticalMove = false;
+  // _dragModSnap() {
+  //   let startX = null;
 
-  const threshold = this.$swiper.clientWidth * 0.025;
+  //   this.$swiper.addEventListener('pointerdown', (e) => {
+  //     this._isDragging = true;
+  //     startX = e.clientX;
+  //   });
 
-  this.$swiper.addEventListener('pointerdown', (e) => {
-    this._isDragging = true;
-    isVerticalMove = false;
-    lastX = e.clientX;
-    startX = e.clientX;
-    startY = e.clientY;
+  //   this.$swiper.addEventListener('pointerup', (e) => {
+  //     const endX = e.clientX;
+  //     const deltaX = endX - startX;
+  //     const threshold = this.$swiper.clientWidth * 0.025;
+  //     const isNext = deltaX < 0;
 
-    // 드래그 중 스크롤 방해 방지
-    this.$swiper.style.touchAction = 'pan-y';
-  });
+  //     if (Math.abs(deltaX) > threshold) {
+  //       if (isNext) {
+  //         this._next();
+  //       } else {
+  //         this._prev();
+  //       }
+  //       this.moveTo();
+  //       this.updateSlide();
+  //       this.updatePagination();
+  //       this.restartAutoPlay();
+  //     } else {
+  //       this._isDragging = false;
+  //     }
 
-  this.$swiper.addEventListener('pointermove', (e) => {
-    if (!this._isDragging) return;
+  //     startX = null;
+  //   });
+  // }
 
-    const deltaX = e.clientX - startX;
-    const deltaY = e.clientY - startY;
+  _dragModSnap() {
+    let startX = null;
 
-    // 1) 세로 움직임이 더 크면 스크롤로 판정 → 슬라이드 취소
-    if (Math.abs(deltaY) > Math.abs(deltaX)) {
-      isVerticalMove = true;
-      return;
-    }
+    this.$swiper.addEventListener('pointerdown', (e) => {
+      this._isDragging = true;
+      startX = e.clientX;
+      this.$swiper.style.touchAction = 'pan-y';
+      e.target.setPointerCapture(e.pointerId);
+    });
 
-    // 2) clientX가 갑자기 튀는 값 방지 (브라우저 제스처 간섭)
-    if (lastX !== null && Math.abs(e.clientX - lastX) > 45) {
-      return;
-    }
+    this.$swiper.addEventListener('pointerup', (e) => {
+      const endX = e.clientX;
+      const deltaX = endX - startX;
+      const threshold = this.$swiper.clientWidth * 0.025;
+      const isNext = deltaX < 0;
 
-    lastX = e.clientX;
-  });
+      console.log(deltaX);
 
-  this.$swiper.addEventListener('pointerup', (e) => {
-    // 드래그 종료
-    this.$swiper.style.touchAction = '';
-    this._isDragging = false;
+      if (Math.abs(deltaX) > threshold) {
+        if (isNext) {
+          this._next();
+        } else {
+          this._prev();
+        }
+        this.moveTo();
+        this.updateSlide();
+        this.updatePagination();
+        this.restartAutoPlay();
+      } else {
+        this._isDragging = false;
+      }
 
-    // 세로로 움직였으면 슬라이드 무시
-    if (isVerticalMove) return;
+      startX = null;
+    });
+  }
 
-    const endX = e.clientX;
-    const deltaX = endX - startX;
-
-    const isNext = deltaX < 0;
-
-    if (Math.abs(deltaX) > threshold) {
-      if (isNext) this._next();
-      else this._prev();
-
-      this.moveTo();
-      this.updateSlide();
-      this.updatePagination();
-      this.restartAutoPlay();
-    }
-  });
-
-  this.$swiper.addEventListener('pointercancel', () => {
-    // 절대 움직임 호출 X — 버벅임 원인
-    this._isDragging = false;
-    this.$swiper.style.touchAction = '';
-  });
-}
   _setAutoplay() {
     const autoplay = this.options.autoplay;
     if (!autoplay) return;
@@ -365,7 +364,3 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
-
-
-
-
