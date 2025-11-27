@@ -308,9 +308,6 @@ class Wswiper {
 
       // 세로 스크롤 방지
       this.$swiper.style.touchAction = 'pan-y';
-
-      // pointerup 안정적으로 받기 위해
-      e.target.setPointerCapture(e.pointerId);
     };
 
     this._pointerMoveHandler = (e) => {
@@ -386,3 +383,4 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
+
