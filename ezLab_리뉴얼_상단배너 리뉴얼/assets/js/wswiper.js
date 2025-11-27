@@ -202,6 +202,7 @@ class Wswiper {
         // ★ transform 적용 완료 후 다시 허용
         requestAnimationFrame(() => {
           this._isMoving = false;
+          document.querySelector('.test1').innerText = `수정됐어요`;
         });
       });
     } else {
