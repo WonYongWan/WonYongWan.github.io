@@ -293,25 +293,33 @@ class Wswiper {
 
   _dragModSnap() {
     let startX = null;
+    let startY = null;
+    const threshold = this.$swiper.clientWidth * 0.025;
+    console.log(threshold * 10);
 
     this.$swiper.addEventListener('touchstart', (e) => {
       this._isDragging = true;
       startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
     });
 
-    // this.$swiper.addEventListener('pointerdown', (e) => {
-    //   this._isDragging = true;
-    //   startX = e.clientX;
-    //   console.log(startX);
-    // });
+    this.$swiper.addEventListener(
+      'touchmove',
+      (e) => {
+        if (Math.abs(e.touches[0].clientY - startY) > threshold * 10) return;
+        e.preventDefault();
+      },
+      { passive: false }
+    );
 
     this.$swiper.addEventListener('touchend', (e) => {
       const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
       const deltaX = endX - startX;
-      console.log(deltaX);
-      const threshold = this.$swiper.clientWidth * 0.025;
+      const deltaY = endY - startY;
       const isNext = deltaX < 0;
 
+      if (Math.abs(deltaY) > threshold * 10) return;
       if (Math.abs(deltaX) > threshold) {
         if (isNext) {
           this._next();
