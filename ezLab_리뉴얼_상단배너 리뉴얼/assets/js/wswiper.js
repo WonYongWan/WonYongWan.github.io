@@ -258,40 +258,44 @@ class Wswiper {
     }
   }
 
-  _dragModSnap() {
-    let startX = null;
+ _dragModSnap() {
+  let startX = 0;
+  let currentX = 0;
 
-    this.$swiper.addEventListener('pointerdown', (e) => {
-      this._isDragging = true;
-      startX = e.clientX;
+  this.$swiper.addEventListener('pointerdown', (e) => {
+    this._isDragging = true;
+    startX = e.clientX;
+    currentX = startX;
 
-      e.target.setPointerCapture(e.pointerId);
-    });
+    // pointerup을 안정적으로 받기 위해 캡처
+    e.target.setPointerCapture(e.pointerId);
+  });
 
-    this.$swiper.addEventListener('pointerup', (e) => {
-      const endX = e.clientX;
-      const deltaX = endX - startX;
-      const threshold = this.$swiper.clientWidth * 0.025;
-      const isNext = deltaX < 0;
+  this.$swiper.addEventListener('pointermove', (e) => {
+    if (!this._isDragging) return;
+    currentX = e.clientX;
+  });
 
-      if (Math.abs(deltaX) > threshold) {
-        if (isNext) {
-          this._next();
-        } else {
-          this._prev();
-        }
-        this.moveTo();
-        this.updateSlide();
-        this.updatePagination();
-        this.restartAutoPlay();
-      } else {
-        this._isDragging = false;
-      }
+  this.$swiper.addEventListener('pointerup', (e) => {
+    if (!this._isDragging) return;
 
-      startX = null;
-    });
-  }
+    const deltaX = currentX - startX;
+    const threshold = this.$swiper.clientWidth * 0.025;
+    const isNext = deltaX < 0;
 
+    if (Math.abs(deltaX) > threshold) {
+      if (isNext) this._next();
+      else this._prev();
+
+      this.moveTo();
+      this.updateSlide();
+      this.updatePagination();
+      this.restartAutoPlay();
+    } else {
+      this._isDragging = false;
+    }
+  });
+}
   _setAutoplay() {
     const autoplay = this.options.autoplay;
     if (!autoplay) return;
@@ -330,4 +334,5 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
+
 
