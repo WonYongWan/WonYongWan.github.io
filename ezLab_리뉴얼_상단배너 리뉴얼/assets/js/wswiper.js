@@ -260,41 +260,55 @@ class Wswiper {
 
  _dragModSnap() {
   let startX = 0;
-  let currentX = 0;
+  let startY = 0;
+  let lastX = null;
+  let isVerticalMove = false;
 
-  const endDrag = () => {
-    this._isDragging = false;
-    startX = 0;
-    currentX = 0;
-  };
+  const threshold = this.$swiper.clientWidth * 0.025;
 
   this.$swiper.addEventListener('pointerdown', (e) => {
-    if (this._isDragging) return; // 드래그 중복 방지
-
     this._isDragging = true;
+    isVerticalMove = false;
+    lastX = e.clientX;
     startX = e.clientX;
-    currentX = startX;
+    startY = e.clientY;
 
-    // pointerup 보장
-    e.target.setPointerCapture(e.pointerId);
+    // 드래그 중 스크롤 방해 방지
+    this.$swiper.style.touchAction = 'pan-y';
   });
 
   this.$swiper.addEventListener('pointermove', (e) => {
     if (!this._isDragging) return;
-    currentX = e.clientX;
+
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+
+    // 1) 세로 움직임이 더 크면 스크롤로 판정 → 슬라이드 취소
+    if (Math.abs(deltaY) > Math.abs(deltaX)) {
+      isVerticalMove = true;
+      return;
+    }
+
+    // 2) clientX가 갑자기 튀는 값 방지 (브라우저 제스처 간섭)
+    if (lastX !== null && Math.abs(e.clientX - lastX) > 45) {
+      return;
+    }
+
+    lastX = e.clientX;
   });
 
-  const pointerEnd = (e) => {
-    if (!this._isDragging) return;
+  this.$swiper.addEventListener('pointerup', (e) => {
+    // 드래그 종료
+    this.$swiper.style.touchAction = '';
+    this._isDragging = false;
 
-    const deltaX = currentX - startX;
-    const threshold = this.$swiper.clientWidth * 0.025;
+    // 세로로 움직였으면 슬라이드 무시
+    if (isVerticalMove) return;
+
+    const endX = e.clientX;
+    const deltaX = endX - startX;
+
     const isNext = deltaX < 0;
-
-    // 캡처 해제 (이거 없으면 모바일에서 pointercancel 자주 뜸)
-    try {
-      e.target.releasePointerCapture(e.pointerId);
-    } catch {}
 
     if (Math.abs(deltaX) > threshold) {
       if (isNext) this._next();
@@ -305,13 +319,13 @@ class Wswiper {
       this.updatePagination();
       this.restartAutoPlay();
     }
+  });
 
-    endDrag();
-  };
-
-  this.$swiper.addEventListener('pointerup', pointerEnd);
-  this.$swiper.addEventListener('pointercancel', pointerEnd); // 모바일 필수
-  this.$swiper.addEventListener('pointerleave', pointerEnd);  // 터치 벗어나면 정리
+  this.$swiper.addEventListener('pointercancel', () => {
+    // 절대 움직임 호출 X — 버벅임 원인
+    this._isDragging = false;
+    this.$swiper.style.touchAction = '';
+  });
 }
   _setAutoplay() {
     const autoplay = this.options.autoplay;
@@ -351,6 +365,7 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
+
 
 
 
