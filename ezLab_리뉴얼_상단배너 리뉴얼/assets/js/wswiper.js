@@ -164,8 +164,6 @@ class Wswiper {
       moveSizeX = moveCount * slideMoveSize;
 
       const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
-      if (this.currentTotalMoveX === totalMoveX) return;
-      this.currentTotalMoveX = totalMoveX;
 
       requestAnimationFrame(() => {
         this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
