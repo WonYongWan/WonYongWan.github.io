@@ -290,42 +290,54 @@ class Wswiper {
   //   });
   // }
 
-  _dragModSnap() {
-    let startX = null;
+  let startX = 0;
+let startY = 0;
+let currentX = 0;
+let currentY = 0;
 
-    this.$swiper.addEventListener('pointerdown', (e) => {
-      this._isDragging = true;
-      startX = e.clientX;
-      this.$swiper.style.touchAction = 'pan-y';
-      e.target.setPointerCapture(e.pointerId);
-    });
+this.$swiper.addEventListener('pointerdown', (e) => {
+  this._isDragging = true;
+  startX = e.clientX;
+  startY = e.clientY;
+  currentX = startX;
+  currentY = startY;
 
-    this.$swiper.addEventListener('pointerup', (e) => {
-      const endX = e.clientX;
-      const deltaX = endX - startX;
-      const threshold = this.$swiper.clientWidth * 0.025;
-      const isNext = deltaX < 0;
+  e.target.setPointerCapture(e.pointerId);
+});
 
-      console.log(deltaX);
+this.$swiper.addEventListener('pointermove', (e) => {
+  if (!this._isDragging) return;
+  currentX = e.clientX;
+  currentY = e.clientY;
+});
 
-      if (Math.abs(deltaX) > threshold) {
-        if (isNext) {
-          this._next();
-        } else {
-          this._prev();
-        }
-        this.moveTo();
-        this.updateSlide();
-        this.updatePagination();
-        this.restartAutoPlay();
-      } else {
-        this._isDragging = false;
-      }
+this.$swiper.addEventListener('pointerup', (e) => {
+  if (!this._isDragging) return;
 
-      startX = null;
-    });
+  const deltaX = currentX - startX;
+  const deltaY = currentY - startY;
+
+  // 세로 이동이 수평 이동보다 크면 스와이프 취소
+  if (Math.abs(deltaY) > Math.abs(deltaX)) {
+    this._isDragging = false;
+    return;
   }
 
+  const threshold = this.$swiper.clientWidth * 0.025;
+  const isNext = deltaX < 0;
+
+  if (Math.abs(deltaX) > threshold) {
+    if (isNext) this._next();
+    else this._prev();
+
+    this.moveTo();
+    this.updateSlide();
+    this.updatePagination();
+    this.restartAutoPlay();
+  } else {
+    this._isDragging = false;
+  }
+});
   _setAutoplay() {
     const autoplay = this.options.autoplay;
     if (!autoplay) return;
@@ -364,3 +376,4 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
+
