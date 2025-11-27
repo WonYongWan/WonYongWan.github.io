@@ -263,6 +263,7 @@ class Wswiper {
     let startX = null;
 
     this.$swiper.addEventListener('pointerdown', (e) => {
+      this.$swiper.setPointerCapture(e.pointerId);
       this._isDragging = true;
       startX = e.clientX;
     });
