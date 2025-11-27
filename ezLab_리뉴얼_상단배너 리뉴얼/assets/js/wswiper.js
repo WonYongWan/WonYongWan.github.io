@@ -290,54 +290,57 @@ class Wswiper {
   //   });
   // }
 
-  let startX = 0;
-let startY = 0;
-let currentX = 0;
-let currentY = 0;
-
-this.$swiper.addEventListener('pointerdown', (e) => {
-  this._isDragging = true;
-  startX = e.clientX;
-  startY = e.clientY;
-  currentX = startX;
-  currentY = startY;
-
-  e.target.setPointerCapture(e.pointerId);
-});
-
-this.$swiper.addEventListener('pointermove', (e) => {
-  if (!this._isDragging) return;
-  currentX = e.clientX;
-  currentY = e.clientY;
-});
-
-this.$swiper.addEventListener('pointerup', (e) => {
-  if (!this._isDragging) return;
-
-  const deltaX = currentX - startX;
-  const deltaY = currentY - startY;
-
-  // 세로 이동이 수평 이동보다 크면 스와이프 취소
-  if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    this._isDragging = false;
-    return;
+  _dragModSnap() {
+    let startX = 0;
+    let startY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    
+    this.$swiper.addEventListener('pointerdown', (e) => {
+      this._isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      currentX = startX;
+      currentY = startY;
+    
+      e.target.setPointerCapture(e.pointerId);
+    });
+    
+    this.$swiper.addEventListener('pointermove', (e) => {
+      if (!this._isDragging) return;
+      currentX = e.clientX;
+      currentY = e.clientY;
+    });
+    
+    this.$swiper.addEventListener('pointerup', (e) => {
+      if (!this._isDragging) return;
+    
+      const deltaX = currentX - startX;
+      const deltaY = currentY - startY;
+    
+      // 세로 이동이 수평 이동보다 크면 스와이프 취소
+      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+        this._isDragging = false;
+        return;
+      }
+    
+      const threshold = this.$swiper.clientWidth * 0.025;
+      const isNext = deltaX < 0;
+    
+      if (Math.abs(deltaX) > threshold) {
+        if (isNext) this._next();
+        else this._prev();
+    
+        this.moveTo();
+        this.updateSlide();
+        this.updatePagination();
+        this.restartAutoPlay();
+      } else {
+        this._isDragging = false;
+      }
+    });
   }
 
-  const threshold = this.$swiper.clientWidth * 0.025;
-  const isNext = deltaX < 0;
-
-  if (Math.abs(deltaX) > threshold) {
-    if (isNext) this._next();
-    else this._prev();
-
-    this.moveTo();
-    this.updateSlide();
-    this.updatePagination();
-    this.restartAutoPlay();
-  } else {
-    this._isDragging = false;
-  }
-});
   _setAutoplay() {
     const autoplay = this.options.autoplay;
     if (!autoplay) return;
@@ -376,4 +379,3 @@ this.$swiper.addEventListener('pointerup', (e) => {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
-
