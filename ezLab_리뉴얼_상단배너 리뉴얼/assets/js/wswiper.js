@@ -259,17 +259,56 @@ class Wswiper {
     }
   }
 
+  // _dragModSnap() {
+  //   let startX = null;
+
+  //   this.$swiper.addEventListener('pointerdown', (e) => {
+  //     this._isDragging = true;
+  //     startX = e.clientX;
+  //   });
+
+  //   this.$swiper.addEventListener('pointerup', (e) => {
+  //     const endX = e.clientX;
+  //     const deltaX = endX - startX;
+  //     const threshold = this.$swiper.clientWidth * 0.025;
+  //     const isNext = deltaX < 0;
+
+  //     if (Math.abs(deltaX) > threshold) {
+  //       if (isNext) {
+  //         this._next();
+  //       } else {
+  //         this._prev();
+  //       }
+  //       this.moveTo();
+  //       this.updateSlide();
+  //       this.updatePagination();
+  //       this.restartAutoPlay();
+  //     } else {
+  //       this._isDragging = false;
+  //     }
+
+  //     startX = null;
+  //   });
+  // }
+
   _dragModSnap() {
     let startX = null;
 
-    this.$swiper.addEventListener('pointerdown', (e) => {
+    this.$swiper.addEventListener('touchstart', (e) => {
       this._isDragging = true;
-      startX = e.clientX;
+      startX = e.touches[0].clientX;
     });
 
-    this.$swiper.addEventListener('pointerup', (e) => {
-      const endX = e.clientX;
+    // this.$swiper.addEventListener('pointerdown', (e) => {
+    //   this._isDragging = true;
+    //   startX = e.clientX;
+    //   console.log(startX);
+    // });
+
+    this.$swiper.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
       const deltaX = endX - startX;
+      console.log(deltaX);
       const threshold = this.$swiper.clientWidth * 0.025;
       const isNext = deltaX < 0;
 
