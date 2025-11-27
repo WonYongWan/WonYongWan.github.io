@@ -264,6 +264,8 @@ class Wswiper {
     this.$swiper.addEventListener('pointerdown', (e) => {
       this._isDragging = true;
       startX = e.clientX;
+
+      e.target.setPointerCapture(e.pointerId);
     });
 
     this.$swiper.addEventListener('pointerup', (e) => {
@@ -328,3 +330,4 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
+
