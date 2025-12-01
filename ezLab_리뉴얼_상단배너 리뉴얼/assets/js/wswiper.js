@@ -43,7 +43,7 @@ class Wswiper {
     // set
     this._setBreakpoints();
     this._setPagination();
-    // this._setDragMode();
+    this._setDragMode();
     this._setAutoplay();
     this._setSliderPosX();
     this._addClass();
@@ -145,37 +145,7 @@ class Wswiper {
     }
   }
 
-  // moveTo() {
-  //   const { hasStart, hasLast, slideMoveStartIdx, slideMoveLastIdx } = this._getSlideMoveRange();
-
-  //   const slideMoveSize = this.options.slideMoveSize;
-  //   const setPosX = this.options.setPosX || 0;
-
-  //   let moveCount = hasStart ? this.current - slideMoveStartIdx + 1 : 0;
-  //   let moveSpaceBetween = moveCount * this.options.spaceBetween;
-  //   let moveSizeX = 0;
-
-  //   if (hasStart && hasLast) {
-  //     if (this.current >= slideMoveLastIdx) {
-  //       moveCount = slideMoveLastIdx - slideMoveStartIdx;
-  //     }
-
-  //     moveSpaceBetween = moveCount * this.options.spaceBetween;
-  //     moveSizeX = moveCount * slideMoveSize;
-
-  //     const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
-
-  //     requestAnimationFrame(() => {
-  //       this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
-  //       this._addClass();
-  //     });
-  //   }
-  // }
-
   moveTo() {
-    if (this._isMoving) return; // 중복 실행 방지
-    this._isMoving = true;
-
     const { hasStart, hasLast, slideMoveStartIdx, slideMoveLastIdx } = this._getSlideMoveRange();
 
     const slideMoveSize = this.options.slideMoveSize;
@@ -195,18 +165,8 @@ class Wswiper {
 
       const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
 
-      requestAnimationFrame(() => {
-        this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
-        this._addClass();
-
-        // ★ transform 적용 완료 후 다시 허용
-        requestAnimationFrame(() => {
-          this._isMoving = false;
-          document.querySelector('.test1').innerText = `수정됐어요`;
-        });
-      });
-    } else {
-      this._isMoving = false; // fallback
+      this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
+      this._addClass();
     }
   }
 
@@ -289,49 +249,49 @@ class Wswiper {
     this.$swiperWrap.style.transition = `${speed * 0.001}s`;
   }
 
-  // _setDragMode() {
-  //   const dragMode = this.options.dragMode;
-  //   if (dragMode === 'live') {
-  //   } else if (dragMode === 'snap') {
-  //     this._dragModSnap();
-  //   }
-  // }
+  _setDragMode() {
+    const dragMode = this.options.dragMode;
+    if (dragMode === 'live') {
+    } else if (dragMode === 'snap') {
+      this._dragModSnap();
+    }
+  }
 
-  // _dragModSnap() {
-  //   let startX = null;
+  _dragModSnap() {
+    let startX = null;
 
-  //   this.$swiper.addEventListener('pointerdown', (e) => {
-  //     this.$swiper.setPointerCapture(e.pointerId);
-  //     this._isDragging = true;
-  //     startX = e.clientX;
-  //   });
+    this.$swiper.addEventListener('pointerdown', (e) => {
+      this.$swiper.setPointerCapture(e.pointerId);
+      this._isDragging = true;
+      startX = e.clientX;
+    });
 
-  //   this.$swiper.addEventListener('pointerup', (e) => {
-  //     const endX = e.clientX;
-  //     const deltaX = endX - startX;
-  //     const threshold = this.$swiper.clientWidth * 0.025;
-  //     const isNext = deltaX < 0;
+    this.$swiper.addEventListener('pointerup', (e) => {
+      const endX = e.clientX;
+      const deltaX = endX - startX;
+      const threshold = this.$swiper.clientWidth * 0.025;
+      const isNext = deltaX < 0;
 
-  //     document.querySelector('.test1').innerText = `스와이퍼 width * 0.025값 ${threshold}`;
-  //     document.querySelector('.test2').innerText = `Math.abs(deltaX) ${Math.abs(deltaX)}`;
+      document.querySelector('.test1').innerText = `스와이퍼 width * 0.025값 ${threshold}`;
+      document.querySelector('.test2').innerText = `Math.abs(deltaX) ${Math.abs(deltaX)}`;
 
-  //     if (Math.abs(deltaX) > threshold) {
-  //       if (isNext) {
-  //         this._next();
-  //       } else {
-  //         this._prev();
-  //       }
-  //       this.moveTo();
-  //       this.updateSlide();
-  //       this.updatePagination();
-  //       this.restartAutoPlay();
-  //     } else {
-  //       this._isDragging = false;
-  //     }
+      if (Math.abs(deltaX) > threshold) {
+        if (isNext) {
+          this._next();
+        } else {
+          this._prev();
+        }
+        this.moveTo();
+        this.updateSlide();
+        this.updatePagination();
+        this.restartAutoPlay();
+      } else {
+        this._isDragging = false;
+      }
 
-  //     startX = null;
-  //   });
-  // }
+      startX = null;
+    });
+  }
 
   _setAutoplay() {
     const autoplay = this.options.autoplay;
