@@ -272,9 +272,7 @@ class Wswiper {
       const threshold = this.$swiper.clientWidth * 0.025;
       const isNext = deltaX < 0;
 
-      document.querySelector('.test1').innerText = `수정2 requestAnimationFrame제거`;
-      // document.querySelector('.test1').innerText = `스와이퍼 width * 0.025값 ${threshold}`;
-      document.querySelector('.test2').innerText = `Math.abs(deltaX) ${Math.abs(deltaX)}`;
+      document.querySelector('.test1').innerText = `isNext false=앞으로, true=뒤로 : ${isNext}`;
 
       if (Math.abs(deltaX) > threshold) {
         if (isNext) {
