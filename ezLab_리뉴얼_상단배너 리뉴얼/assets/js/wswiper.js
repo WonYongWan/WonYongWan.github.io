@@ -165,8 +165,10 @@ class Wswiper {
 
       const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
 
-      this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
-      this._addClass();
+      requestAnimationFrame(() => {
+        this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
+        this._addClass();
+      });
     }
   }
 
@@ -331,3 +333,4 @@ class Wswiper {
     this.current > 0 ? this.current-- : (this.current = this.slidesLength - 1);
   }
 }
+
