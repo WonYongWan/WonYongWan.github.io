@@ -33,7 +33,6 @@ class Wswiper {
     this.slideWidth = 0;
     this.autoplayInterval = null;
     this.currentTotalMoveX = null;
-    this.prevTotalMoveX = this.options.setPosX ? this.options.setPosX : 0;
 
     // method
     this.init();
@@ -165,13 +164,9 @@ class Wswiper {
       moveSizeX = moveCount * slideMoveSize;
 
       const totalMoveX = this.current >= slideMoveStartIdx ? moveSizeX + moveSpaceBetween + setPosX : setPosX;
-      if (this.prevTotalMoveX === totalMoveX) return;
-      this.prevTotalMoveX = totalMoveX;
 
-      requestAnimationFrame(() => {
-        this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
-        this._addClass();
-      });
+      this.$swiperWrap.style.transform = `translate3d(-${totalMoveX}px, 0, 0)`;
+      this._addClass();
     }
   }
 
@@ -277,7 +272,7 @@ class Wswiper {
       const threshold = this.$swiper.clientWidth * 0.025;
       const isNext = deltaX < 0;
 
-      document.querySelector('.test1').innerText = `수정1 moveTo 최적화`;
+      document.querySelector('.test1').innerText = `수정2 requestAnimationFrame제거`;
       // document.querySelector('.test1').innerText = `스와이퍼 width * 0.025값 ${threshold}`;
       document.querySelector('.test2').innerText = `Math.abs(deltaX) ${Math.abs(deltaX)}`;
 
