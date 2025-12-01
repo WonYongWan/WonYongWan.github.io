@@ -272,8 +272,6 @@ class Wswiper {
       const threshold = this.$swiper.clientWidth * 0.025;
       const isNext = deltaX < 0;
 
-      document.querySelector('.test1').innerText = `isNext false=앞으로, true=뒤로 : ${isNext}`;
-
       if (Math.abs(deltaX) > threshold) {
         if (isNext) {
           this._next();
