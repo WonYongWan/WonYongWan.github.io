@@ -1,0 +1,8 @@
+@use '../common' as *;
+
+.main {
+  &--subscription {
+    padding-top: 52px;
+    padding-bottom: 56px;
+  }
+}
