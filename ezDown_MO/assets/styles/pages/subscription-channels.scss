@@ -1,0 +1,22 @@
+@use '../common' as *;
+
+.main {
+  &--subscription-channels {
+    @include max-width();
+    padding-top: calc(52px + 14px);
+    padding-bottom: 56px;
+
+    > .title {
+      @include preBold();
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: -0.24px;
+      color: var(--text-base-300);
+      margin-bottom: 20px;
+    }
+
+    > .btn {
+      margin-bottom: 10px;
+    }
+  }
+}

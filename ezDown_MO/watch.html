@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/watch.css" />
+  </head>
+  <body onscroll="elmFixOnClose(['#btn-wrap1'], 58)">
+    <div class="wrap">
+      <!-- nav -->
+      <nav class="bottom-nav">
+        <ul class="list">
+          <li class="item on">
+            <a class="btn" href="./home.html"><span class="icon icon--300 nav-home on"></span>홈</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./shorts.html"><span class="icon icon--300 nav-shorts"></span>쇼츠</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./my-point.html"><span class="icon icon--900 nav-ezdown"></span></a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./subscription.html"><span class="icon icon--300 nav-subscription"></span>구독</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./library.html"><span class="icon icon--300 nav-library"></span>보관함</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- main -->
+      <div class="main main--watch">
+        <div class="player-wrap">
+          <div class="player" style="background-color: #000"></div>
+          <div id="btn-wrap1" class="btn-wrap">
+            <button class="btn btn--basic-watchdown btn--orange" type="button" onclick="popupAndOverlayOn('#popup-select1 .overlay--popup', '#popup-select1')"><span class="icon icon--300 video-down video-down--white"></span>다운로드</button>
+          </div>
+        </div>
+        <div class="player-area"></div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+            </div>
+            <div class="text-cover"></div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+            </div>
+            <div class="text-cover"></div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+            </div>
+            <div class="text-cover"></div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+            </div>
+            <div class="text-cover"></div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+            </div>
+            <div class="text-cover"></div>
+          </div>
+        </div>
+      </div>
+      <!-- popup -->
+      <div class="popup-wrap">
+        <div id="popup-toast1" class="popup popup--toast">
+          <div class="box box--center">
+            <div class="cont">
+              <span class="icon icon--300 video-down video-down--white"></span>
+              <p class="desc">다운로드가 완료되었습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select1" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1')"></div>
+          <div class="box box--bottom">
+            <p class="title">다운로드 유형 선택</p>
+            <div class="cont cont--down-type">
+              <div class="cont-item cont-item--1">
+                <input type="checkbox" name="popup-select1-checkbox1" id="popup-select1-checkbox1-1" checked="" />
+                <label class="type1" for="popup-select1-checkbox1-1"><span class="icon type1"></span><span class="title">시리즈 다운로드</span></label>
+                <p class="desc">
+                  영상이 시리즈로 구성되었을 경우 시리즈 전체가<br />
+                  폴더로 다운로드 됩니다.
+                </p>
+              </div>
+              <div class="cont-item">
+                <p class="title">동영상</p>
+                <ul class="list list--radio">
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-1" checked="" />
+                    <label class="type1" for="popup-select1-radio1-1"><span class="title">2160p</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-2" />
+                    <label class="type1" for="popup-select1-radio1-2"><span class="title">1440p</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-3" />
+                    <label class="type1" for="popup-select1-radio1-3"><span class="title">1080p</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-4" />
+                    <label class="type1" for="popup-select1-radio1-4"><span class="title">720p</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-5" />
+                    <label class="type1" for="popup-select1-radio1-5"><span class="title">360p</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-6" />
+                    <label class="type1" for="popup-select1-radio1-6"><span class="title">240p</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-7" />
+                    <label class="type1" for="popup-select1-radio1-7"
+                      ><span class="title">오디오만<span class="desc">음성 파일로 저장됩니다</span></span
+                      ><span class="icon type1"></span
+                    ></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <p class="title">자막</p>
+                <ul class="list list--radio">
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio2" id="popup-select1-radio2-1" checked="" />
+                    <label class="type1" for="popup-select1-radio2-1"><span class="title">선택 안함</span><span class="icon type1"></span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio2" id="popup-select1-radio2-2" />
+                    <label class="type1" for="popup-select1-radio2-2"
+                      ><span class="title">앱 설정 언어<span class="desc">해당 언어 자막이 있을 때만 다운로드 됩니다</span></span
+                      ><span class="icon type1"></span
+                    ></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio2" id="popup-select1-radio2-3" />
+                    <label class="type1" for="popup-select1-radio2-3" onclick="popupAndOverlayOn('#popup1 .overlay--popup', '#popup1')"><span class="title">영상 내 자막 중 선택</span><span class="icon type1"></span></label>
+                  </li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <ul class="list list--radio list--radio-type2">
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio3" id="popup-select1-radio3-1" checked="" />
+                    <label class="type3" for="popup-select1-radio3-1"><span class="title">Korean</span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio3" id="popup-select1-radio3-2" />
+                    <label class="type3" for="popup-select1-radio3-2"><span class="title">English</span></label>
+                  </li>
+                  <li class="item">
+                    <input type="radio" name="popup-select1-radio3" id="popup-select1-radio3-3" />
+                    <label class="type3" for="popup-select1-radio3-3"><span class="title">Japanese</span></label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="btn-wrap btn-wrap--row">
+              <button class="btn btn--popup btn--half btn--gray-base size--300" type="button" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1')">취소</button>
+              <button class="btn btn--popup btn--half btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1'), popupAndOverlayOn('#popup2 .overlay--popup', '#popup2')">확인</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <div class="gauge-wrap">
+                <div class="gauge" style="width: 50%"></div>
+              </div>
+              <p class="text text--base">자막 목록 확인중</p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--max btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')">취소</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup2" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <div class="gauge-wrap">
+                <div class="gauge" style="width: 50%"></div>
+              </div>
+              <p class="text text--base">다운로드 중입니다</p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--max btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2'), toastOn('#popup-toast1')">취소</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
+  </body>
+</html>
