@@ -157,8 +157,12 @@ function resizeVideoPlayListControl(player, playList, playListArea, size) {
   const $playList = document.querySelector(playList);
   const $playListArea = document.querySelector(playListArea);
 
-  if (window.innerWidth < size) {
-    if ($player.classList.contains('fullscreen-playlist')) {
+  if (window.innerWidth >= size) {
+    if (!$player.classList.contains('fullscreen-playlist')) {
+      $player.classList.add('fullscreen-playlist');
+      $playList.classList.add('fullscreen-playlist');
+      $playListArea.style.width = `${$playList.clientWidth}px`;
+    } else {
       $player.classList.remove('fullscreen-playlist');
       $playList.classList.remove('fullscreen-playlist');
       $playListArea.style.width = '0';
