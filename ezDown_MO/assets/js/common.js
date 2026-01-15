@@ -117,57 +117,65 @@ function changeInOrderClass(elm, arr) {
   $elm.classList.add(arr[currentCount]);
 }
 
-// video play list
-function videoPlayListAction(player, playList, playListArea, size, playScreenBtnIcon) {
-  const $player = document.querySelector(player);
-  const $playList = document.querySelector(playList);
-  const $playListArea = document.querySelector(playListArea);
-  const $playScreenBtnIcon = document.querySelector(playScreenBtnIcon);
+// video player control
+function videoPlayerControl() {
+  const $player = document.querySelector('.video-player');
+  const $playList = document.querySelector('.video-play-list');
+  const $playListArea = document.querySelector('.play-list-area');
+  const $playListBtnClose = document.querySelector('.player-btn.close');
+  const $playBtnScreen = document.querySelector('.player-btn.screen');
+  const $playBtnScreenIcon = $playBtnScreen.querySelector('.icon');
+  const $playBtnList = document.querySelector('.player-btn.list');
+  const fullMaxSize = 500;
 
-  if (window.innerWidth < size) {
-    classToggleAndScrollLock(player);
-    if ($playScreenBtnIcon && $playScreenBtnIcon.classList.contains('on')) $playScreenBtnIcon.classList.remove('on');
-  } else if (window.innerWidth >= size) {
-    if (!$player.classList.contains('fullscreen-playlist')) {
+  $playBtnScreen.addEventListener('click', () => {
+    classToggleAndScrollLock('.video-player');
+    if ($player.classList.contains('on')) {
+      $playBtnScreenIcon.classList.add('on');
+    } else {
+      $playBtnScreenIcon.classList.remove('on');
+      if ($player.classList.contains('fullscreen-playlist')) {
+        $player.classList.remove('fullscreen-playlist');
+        $playList.classList.remove('fullscreen-playlist');
+        $playListArea.style.width = '0';
+      }
+    }
+  });
+
+  $playBtnList.addEventListener('click', () => {
+    if (window.innerWidth < fullMaxSize) {
+      if ($player.classList.contains('on')) {
+        classToggleAndScrollLock('.video-player');
+        $playBtnScreenIcon.classList.remove('on');
+      }
+    } else if (window.innerWidth >= fullMaxSize) {
       $player.classList.add('fullscreen-playlist');
       $playList.classList.add('fullscreen-playlist');
       $playListArea.style.width = `${$playList.clientWidth}px`;
-    } else {
-      $player.classList.remove('fullscreen-playlist');
-      $playList.classList.remove('fullscreen-playlist');
-      $playListArea.style.width = '0';
     }
-  }
-}
+  });
 
-function videoPlayListRemove(player, playList, playListArea) {
-  const $player = document.querySelector(player);
-  const $playList = document.querySelector(playList);
-  const $playListArea = document.querySelector(playListArea);
-
-  if ($player.classList.contains('fullscreen-playlist')) {
+  $playListBtnClose.addEventListener('click', () => {
     $player.classList.remove('fullscreen-playlist');
     $playList.classList.remove('fullscreen-playlist');
     $playListArea.style.width = '0';
-  }
-}
+  });
 
-function resizeVideoPlayListControl(player, playList, playListArea, size) {
-  const $player = document.querySelector(player);
-  const $playList = document.querySelector(playList);
-  const $playListArea = document.querySelector(playListArea);
-
-  if (window.innerWidth >= size) {
-    if (!$player.classList.contains('fullscreen-playlist')) {
-      $player.classList.add('fullscreen-playlist');
-      $playList.classList.add('fullscreen-playlist');
-      $playListArea.style.width = `${$playList.clientWidth}px`;
-    } else {
-      $player.classList.remove('fullscreen-playlist');
-      $playList.classList.remove('fullscreen-playlist');
-      $playListArea.style.width = '0';
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < fullMaxSize) {
+      if ($playList.classList.contains('fullscreen-playlist')) {
+        classToggleAndScrollLock('.video-player');
+        $player.classList.remove('fullscreen-playlist');
+        $playList.classList.remove('fullscreen-playlist');
+        $playListArea.style.width = '0';
+        $playBtnScreenIcon.classList.remove('on');
+      }
+    } else if (window.innerWidth >= fullMaxSize) {
+      if ($playList.classList.contains('fullscreen-playlist')) {
+        $playListArea.style.width = `${$playList.clientWidth}px`;
+      }
     }
-  }
+  });
 }
 
 // popup
