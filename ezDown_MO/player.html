@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/styles/global.css" />
     <link rel="stylesheet" href="./assets/styles/pages/player.css" />
   </head>
-  <body onresize="resizeVideoPlayListControl('.video-player', '.video-play-list', '.play-list-area', 500)" onclick="nonTargetPopupRemove(event, '.js-target', '.popup--btn')">
+  <body onload="videoPlayerControl()" onclick="nonTargetPopupRemove(event, '.js-target', '.popup--btn')">
     <div class="wrap">
       <!-- main -->
       <div class="main main--player">
@@ -31,8 +31,8 @@
               </div>
               <div class="bottom-controls">
                 <div class="player-actions">
-                  <button class="player-btn screen" type="button" onclick="classToggle('.player-btn.screen .play-screen-size'), classToggleAndScrollLock('.video-player'), videoPlayListRemove('.video-player', '.video-play-list', '.play-list-area')"><span class="icon icon--300 play-screen-size"></span></button>
-                  <button class="player-btn list" type="button" onclick="videoPlayListAction('.video-player', '.video-play-list', '.play-list-area', 500, '.player-btn.screen .icon.play-screen-size')"><span class="icon icon--300 play-list"></span></button>
+                  <button class="player-btn screen" type="button"><span class="icon icon--300 play-screen-size"></span></button>
+                  <button class="player-btn list" type="button"><span class="icon icon--300 play-list"></span></button>
                 </div>
                 <div class="player-timeline">
                   <div class="gauge-wrap">
@@ -70,7 +70,7 @@
         <div class="video-player-area"></div>
         <p class="video-title">[Playlist] 쌀쌀한 가을 아니면 세월이 흘러도-도원 쌀쌀한 가을 아니면 세월이 흘러도-도원</p>
         <div class="video-play-list">
-          <button class="close" type="button" onclick="videoPlayListAction('.video-player', '.video-play-list', '.play-list-area', 500)"><span class="icon icon--300 sidebar-close"></span></button>
+          <button class="player-btn close" type="button"><span class="icon icon--300 sidebar-close"></span></button>
           <div class="play-list-wrap">
             <div class="text-cover">
               <div class="title-box">
