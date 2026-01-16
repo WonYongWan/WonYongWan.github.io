@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: var(--bg-base-100);
+  height: 52px;
+  transition: top 0.1s ease;
+
+  &.hide {
+    top: -52px;
+  }
+
+  .container {
+    @include max-width();
+    @include flex-pos($jc: space-between, $ai: center);
+    height: 100%;
+  }
+
+  .logo {
+    a {
+      @include text-hide();
+      display: block;
+      height: 100%;
+    }
+  }
+
+  .utils {
+    @include flex-pos($ai: center, $g: 14px);
+
+    .point {
+      @include flex-pos($ai: center, $g: 3px);
+
+      .value {
+        @include preRegular();
+        font-size: 13px;
+        color: var(--text-base-100);
+      }
+    }
+  }
+}
