@@ -1,8 +1,0 @@
-@use '../common' as *;
-
-.main {
-  &--splash {
-    @include flex-pos($jc: center, $ai: center);
-    height: 100dvh;
-  }
-}
