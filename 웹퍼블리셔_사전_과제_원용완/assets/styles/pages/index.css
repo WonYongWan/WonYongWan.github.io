@@ -1,0 +1,1080 @@
+:root {
+  --color-white: #fff;
+  --color-black: #353535;
+  --color-blue: #4d49f1;
+  --color-blue-100: #85b5ff;
+  --color-pink: #ec008b;
+  --color-yellow: #fffe6b;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrap .bg {
+  width: 100%;
+  height: auto;
+}
+.wrap .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.wrap .stamp {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+.wrap .stamp--already-taken {
+  background-image: url(../../images/already-taken-stamp.png);
+}
+.wrap .stamp--completed {
+  background-image: url(../../images/completed-stamp.png);
+}
+.wrap .icon {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+.wrap .icon--antenna {
+  background-image: url(../../images/icon-antenna.png);
+}
+.wrap .sec-move-list {
+  position: fixed;
+  top: 9%;
+  right: 0;
+  bottom: unset;
+  left: unset;
+  transform: translateX(100%);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+.wrap .sec-move-list .item {
+  margin-bottom: clamp(6px, 1vw, 12px);
+  box-shadow: rgba(0, 0, 0, 0.55) clamp(0.5px, 0.15vw, 1px) clamp(2px, 0.6vw, 5px) clamp(1px, 0.3vw, 2px) 0;
+}
+.wrap .sec-move-list .item .btn {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.1875vw;
+  line-height: 1;
+  letter-spacing: 0.0176em;
+  color: var(--color-white);
+  width: 5vw;
+  height: 5vw;
+  min-width: 24px;
+  min-height: 24px;
+  background: linear-gradient(#c350fe, #3060dd);
+  border-style: solid;
+  border-color: #fff;
+  border-width: clamp(0.5px, 0.15vw, 1px) 0 0 clamp(0.5px, 0.15vw, 1px);
+}
+.wrap .sec-move-list.on {
+  transform: translateX(0);
+}
+.wrap .time-info {
+  position: absolute;
+  top: 0.45%;
+  right: unset;
+  bottom: unset;
+  left: 4.17%;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1.5;
+  letter-spacing: 0.0175em;
+  color: var(--color-black);
+}
+.wrap .sec {
+  width: 100%;
+}
+.wrap .sec .sec-title-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.wrap .sec .sec-title-wrap .sec-title--primary {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 3.125vw;
+  line-height: 1;
+  letter-spacing: 0.0196em;
+  color: var(--color-blue);
+}
+.wrap .sec .sec-title-wrap .sec-title--secondary {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 2.9167vw;
+  line-height: 1;
+  letter-spacing: 0.0196em;
+  color: var(--color-yellow);
+}
+.wrap .sec .sec-title-wrap .sec-title--secondary .line {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+}
+.wrap .sec .sec-title-wrap .sec-title--secondary .line .char {
+  display: inline-block;
+}
+.wrap .sec .sec-title-wrap.scroll-trigger .sec-title--primary {
+  transform: translateY(100%);
+  transition: 0.5s ease;
+}
+.wrap .sec .sec-title-wrap.scroll-trigger .sec-title--secondary .line .char {
+  transform: translateY(100%) rotate(40deg);
+}
+.wrap .sec .sec-title-wrap.scroll-trigger.on .sec-title--primary {
+  transform: translateY(0);
+}
+.wrap .sec .sec-title-wrap.scroll-trigger.on .sec-title--secondary .line .char {
+  animation: charInAni_1 0.6s ease forwards;
+}
+.wrap .sec .sec-desc-wrap--main {
+  transform: translateX(-50%);
+  text-align: center;
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1.4;
+  letter-spacing: 0.0184em;
+  color: var(--color-black);
+  white-space: nowrap;
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc span {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  color: var(--color-pink);
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.5vw;
+  left: 0;
+  top: 50%;
+  background: #cbe7ff;
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc.scroll-trigger {
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc.scroll-trigger span::before {
+  transition: 0.6s ease;
+  transition-delay: 0.2s;
+  transform: translateY(-50%);
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc.scroll-trigger.on {
+  opacity: 1;
+}
+.wrap .sec .sec-desc-wrap--main .sec-desc.scroll-trigger.on span::before {
+  transform: translateY(-50%) translateX(101%);
+}
+.wrap .sec .sec-desc-wrap--note {
+  position: absolute;
+  top: 79.25%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85.42%;
+}
+.wrap .sec .sec-desc-wrap--note .sec-desc-list .sec-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1.4;
+  letter-spacing: 0.0175em;
+  color: var(--color-white);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.wrap .sec .sec-desc-wrap--note .sec-desc-list .sec-desc.is-bullet {
+  padding-left: 1.6667vw;
+}
+.wrap .sec .sec-desc-wrap--note .sec-desc-list .sec-desc.is-bullet::before {
+  content: "*";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1.4;
+  letter-spacing: 0.0175em;
+  color: var(--color-white);
+  left: 0;
+  top: 5%;
+}
+.wrap .sec .sec-desc-wrap--note .sec-desc-list .sec-desc.scroll-trigger {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.wrap .sec .sec-desc-wrap--note .sec-desc-list .sec-desc.scroll-trigger.on {
+  opacity: 1;
+}
+.wrap .sec.sec1 {
+  position: absolute;
+  top: 8.93%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 22.49%;
+}
+.wrap .sec.sec1 .sec-title-wrap {
+  position: absolute;
+  top: 3.95%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec1 .cont-wrap {
+  position: absolute;
+  top: 41.7%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 79.17%;
+  height: 34.58%;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--avatar {
+  position: absolute;
+  top: 77.4%;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  width: 47.37%;
+  height: 22.86%;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--avatar.is-left {
+  left: 0%;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--avatar.is-right {
+  right: 0;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--avatar .avatar-name {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1;
+  letter-spacing: 0.0184em;
+  color: var(--color-white);
+  position: absolute;
+  top: 34%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--avatar .promo-badge {
+  position: absolute;
+  top: -364.5%;
+  right: -5.8%;
+  bottom: unset;
+  left: unset;
+  width: 12.08vw;
+  height: 12.08vw;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--avatar .promo-badge .promo-title {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1.4;
+  letter-spacing: 0.0175em;
+  color: var(--color-yellow);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: scaleAni_1 1s ease infinite;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--promo {
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20.6%;
+  height: 32%;
+}
+.wrap .sec.sec1 .cont-wrap .cont-item--promo .promo-title {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1;
+  letter-spacing: 0.0184em;
+  color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .sec.sec1 .sec-desc-wrap--main {
+  position: absolute;
+  top: 13.04%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec1 .sec-desc-wrap--main .sec-desc.is-gap {
+  margin-bottom: 3.16%;
+}
+.wrap .sec.sec1 .sec-desc-wrap--note {
+  height: 20.75%;
+}
+.wrap .sec.sec1 .sec-desc-wrap--note .sec-desc-list {
+  position: absolute;
+  top: 7.5%;
+  right: unset;
+  bottom: unset;
+  left: 3.41%;
+}
+.wrap .sec.sec2 {
+  position: absolute;
+  top: 32.29%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 25.61%;
+}
+.wrap .sec.sec2 .sec-title-wrap {
+  position: absolute;
+  top: 3.45%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec2 .cont-wrap {
+  position: absolute;
+  top: 34%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 61.4%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: 24.77%;
+  width: 23.02%;
+  height: 20.6%;
+  white-space: nowrap;
+  text-align: center;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status .ticket-title {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 500;
+  font-size: 1.9792vw;
+  line-height: 1.4;
+  letter-spacing: 0.0184em;
+  color: var(--color-black);
+  position: absolute;
+  top: 8%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status .ticket-count {
+  position: absolute;
+  top: 53%;
+  right: unset;
+  bottom: unset;
+  left: 13.5%;
+  width: 76%;
+  height: 37.93%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status .ticket-count .line {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 500;
+  font-size: 3.6458vw;
+  line-height: 1;
+  letter-spacing: 0.0203em;
+  color: var(--color-yellow);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status .ticket-count .line .char {
+  display: inline-block;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status.scroll-trigger .ticket-count .line .char {
+  transform: translateY(100%);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--ticket-status.scroll-trigger.on .ticket-count .line .char {
+  animation: charInAni_1 0.6s ease forwards;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--dino-visual {
+  position: absolute;
+  top: -1.13%;
+  right: 25.63%;
+  bottom: unset;
+  left: unset;
+  width: 21.35%;
+  height: 34.32%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--dino-visual .visual-volplane {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-image: url(../../images/sec2-volplane.png);
+  width: 100%;
+  height: 100%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--dino-visual .visual-volplane .visual-dino {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-image: url(../../images/sec2-dino.png);
+  width: 48.78%;
+  height: 48.97%;
+  transform: translate(70%, -10%);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--dino-visual.scroll-trigger .visual-volplane .visual-dino {
+  transform: translate(70%, -10%);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--dino-visual.scroll-trigger.on .visual-volplane .visual-dino {
+  animation: dinoAni_1 1.5s linear forwards;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info {
+  position: absolute;
+  top: 35.17%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 79.17%;
+  height: 64.69%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3% 0%;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item {
+  position: relative;
+  width: 49%;
+  height: 22.8%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge {
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 0;
+  width: 27.9%;
+  height: 100%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .stamp {
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  width: 78.85%;
+  height: 78.85%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .badge-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.875vw;
+  line-height: 1;
+  letter-spacing: 0.0194em;
+  color: var(--color-black);
+  position: absolute;
+  top: 70%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-desc-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: unset;
+  left: unset;
+  width: 72.1%;
+  height: 100%;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-desc-wrap .item-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1.5;
+  letter-spacing: 0.0184em;
+  color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  text-align: center;
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-desc-wrap .item-desc .item-count {
+  display: block;
+  color: var(--color-yellow);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item.scroll-trigger .item-badge .stamp {
+  transform: translate(-10%, -70%) scale(1.2);
+}
+.wrap .sec.sec2 .cont-wrap .cont-item--quest-info .quest-list .quest-item.scroll-trigger.on .item-badge .stamp {
+  animation: stampAni_1 0.3s ease-in-out forwards;
+}
+.wrap .sec.sec2 .sec-desc-wrap--main {
+  position: absolute;
+  top: 11.49%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec3 {
+  position: absolute;
+  top: 57.93%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 16.17%;
+}
+.wrap .sec.sec3 .sec-title-wrap {
+  position: absolute;
+  top: 2.8%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec3 .sec-title-wrap .sec-title--secondary .line.is-gap {
+  margin-bottom: 1.8%;
+}
+.wrap .sec.sec3 .sec-desc-wrap--main {
+  position: absolute;
+  top: 19.28%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec3 .sec-desc-wrap--note {
+  position: absolute;
+  top: 71%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  height: 28.93%;
+}
+.wrap .sec.sec3 .sec-desc-wrap--note .sec-desc-list {
+  position: absolute;
+  top: 9%;
+  right: unset;
+  bottom: unset;
+  left: 3.41%;
+}
+.wrap .sec.sec3 .sec-desc-wrap--note .sec-desc-list .sec-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1.4;
+  letter-spacing: 0.0184em;
+  color: var(--color-white);
+}
+.wrap .sec.sec3 .cont-wrap {
+  position: absolute;
+  top: 29.89%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 79.38%;
+  height: 35.67%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item {
+  width: 100%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge {
+  width: 100%;
+  height: 25.48%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge .gauge-wrap {
+  height: 100%;
+  background: #6e66a4;
+  border-style: solid;
+  border-color: #5c4fab;
+  border-width: clamp(1.5px, 0.45vw, 3px);
+  border-radius: 10vw;
+  overflow: hidden;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge .gauge-wrap .gauge {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(90deg, #3fbbfe, #a541ff);
+  border-radius: 10vw;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge .gauge-wrap .gauge .gauge-dino {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  bottom: unset;
+  left: unset;
+  width: 5.3125vw;
+  height: 100%;
+  background-image: url(../../images/sec3-dino.png);
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge.scroll-trigger .gauge-wrap .gauge {
+  width: 10%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge.scroll-trigger .gauge-wrap .gauge .gauge-dino {
+  transform: translateY(-50%);
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge.scroll-trigger.on .gauge-wrap .gauge {
+  animation: gaugeAni_1 0.8s ease forwards;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--gauge.scroll-trigger.on .gauge-wrap .gauge .gauge-dino {
+  animation: dinoAni_2 1.2s ease forwards;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 52.9%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: normal;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item {
+  position: relative;
+  width: 13.5%;
+  height: 100%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-percent {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1;
+  letter-spacing: 0.0184em;
+  color: var(--color-black);
+  position: absolute;
+  top: -33.39%;
+  right: -2.97%;
+  bottom: unset;
+  left: unset;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge {
+  width: 100%;
+  height: 100%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .badge-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.875vw;
+  line-height: 1;
+  letter-spacing: 0.0194em;
+  color: var(--color-black);
+  position: absolute;
+  top: 73.39%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: center;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .stamp {
+  position: absolute;
+  top: 9.39%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8.8542vw;
+  height: 8.8542vw;
+  animation: stampAni_2 1.5s ease infinite;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-detail {
+  position: absolute;
+  top: unset;
+  right: -16.8%;
+  bottom: -39.38%;
+  left: unset;
+  width: 52.6vw;
+  height: 35.04%;
+}
+.wrap .sec.sec3 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-detail .detail-desc {
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1;
+  letter-spacing: 0.0195em;
+  color: var(--color-pink);
+  white-space: nowrap;
+  text-align: center;
+}
+.wrap .sec.sec4 {
+  position: absolute;
+  top: 75.01%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 22.27%;
+}
+.wrap .sec.sec4 .sec-title-wrap {
+  position: absolute;
+  top: 3.75%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec4 .sec-desc-wrap--main {
+  position: absolute;
+  top: 13.19%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+}
+.wrap .sec.sec4 .sec-desc-wrap--note {
+  height: 20.75%;
+}
+.wrap .sec.sec4 .sec-desc-wrap--note .sec-desc-list {
+  position: absolute;
+  top: 6.5%;
+  right: unset;
+  bottom: unset;
+  left: 3.41%;
+}
+.wrap .sec.sec4 .cont-wrap {
+  position: absolute;
+  top: 47.95%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 28.17%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--watch-info {
+  position: absolute;
+  top: 2.08%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36.67%;
+  height: 27.08%;
+  background: #d64444;
+  border-radius: 10vw;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--watch-info .watch-btn {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #ffc600;
+  border-style: solid;
+  border-color: #ffefc4;
+  border-width: clamp(1px, 0.3vw, 2px);
+  border-radius: 10vw;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--watch-info .watch-btn .btn-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.875vw;
+  line-height: 1.58;
+  letter-spacing: 0.0194em;
+  color: var(--color-black);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 31%;
+  transform: translateY(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--watch-info .watch-btn .icon--antenna {
+  position: absolute;
+  top: -25.64%;
+  right: unset;
+  bottom: unset;
+  left: -1.42%;
+  width: 24.43%;
+  height: 108.97%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--watch-info.scroll-trigger .watch-btn {
+  transform: translateY(-7.69%);
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--watch-info.scroll-trigger.on .watch-btn {
+  animation: watchBtnAni_1 1.2s ease forwards;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 79.17%;
+  height: 65.5%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: normal;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item {
+  position: relative;
+  width: 31.65%;
+  height: 100%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-title-wrap {
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 38%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-title-wrap .item-title {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.9792vw;
+  line-height: 1.4;
+  letter-spacing: 0.0184em;
+  color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge {
+  position: absolute;
+  top: unset;
+  right: unset;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 62%;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .badge-desc {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1.5;
+  letter-spacing: 0.0175em;
+  color: var(--color-black);
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .badge-desc span {
+  color: var(--color-pink);
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item .item-badge .stamp {
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 50%;
+  width: 10.625vw;
+  height: 10.625vw;
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item.scroll-trigger .item-badge .stamp {
+  transform: translate(-10%, -70%) scale(1.2);
+}
+.wrap .sec.sec4 .cont-wrap .cont-item--quest-info .quest-list .quest-item.scroll-trigger.on .item-badge .stamp {
+  animation: stampAni_1 0.3s ease-in-out forwards;
+}
+.wrap footer {
+  position: absolute;
+  top: 98.44%;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  width: 100%;
+  height: 1.56%;
+}
+.wrap footer .foo-desc {
+  position: absolute;
+  top: 50%;
+  right: unset;
+  bottom: unset;
+  left: 10.31%;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2.0833vw;
+  line-height: 1.5;
+  letter-spacing: 0.0175em;
+  color: var(--color-blue-100);
+  transform: translateY(-50%);
+}
+
+@keyframes scaleAni_1 {
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes charInAni_1 {
+  to {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes dinoAni_1 {
+  10% {
+    transform: translate(44%, 50%) rotate(10deg);
+  }
+  30% {
+    transform: translate(-18%, 110%);
+  }
+  40% {
+    transform: translate(-18%, 90%) rotate(-10deg);
+  }
+  50% {
+    transform: translate(-18%, 110%);
+  }
+  60% {
+    transform: translate(-18%, 90%) rotate(10deg);
+  }
+  70% {
+    transform: translate(-18%, 110%);
+  }
+  100% {
+    transform: translate(-18%, 110%);
+  }
+}
+@keyframes dinoAni_2 {
+  10% {
+    transform: translateY(-50%) rotate(20deg);
+  }
+  20% {
+    transform: translateY(-50%) rotate(-20deg);
+  }
+  30% {
+    transform: translateY(-50%) rotate(20deg);
+  }
+  40% {
+    transform: translateY(-50%) rotate(-20deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+@keyframes watchBtnAni_1 {
+  25% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7.69%);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-7.69%);
+  }
+}
+@keyframes gaugeAni_1 {
+  to {
+    width: 57.14%;
+  }
+}
+@keyframes stampAni_1 {
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes stampAni_2 {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+  50.001% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
