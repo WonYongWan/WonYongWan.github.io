@@ -1,0 +1,73 @@
+.my-point {
+  background-color: var(--color-bg-item-200);
+  border-radius: 15px;
+  padding: 20px;
+
+  &__content {
+    &--point {
+      @include flex-pos($ai: center, $jc: space-between);
+    }
+
+    &--summary {
+      @include flex-pos($fd: column, $g: 10px);
+      padding: 16px 15px;
+      background: var(--color-bg-item-100);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  &__box {
+    @include flex-pos($jc: space-between, $ai: center);
+  }
+
+  &__title {
+    @include preMedium();
+    font-size: 14px;
+    color: var(--color-text-title-item-100);
+  }
+
+  &__box-title {
+    @include preRegular();
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-text-title-item-100);
+  }
+
+  &__desc {
+    &--link {
+      @include preMedium();
+      font-size: 14px;
+      color: var(--color-text-title-item-100);
+    }
+  }
+
+  &__point {
+    @include preBold();
+    @include flex-pos($ai: center, $g: 8px);
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-text-title-item-100);
+  }
+
+  &__box-point {
+    @include preSemiBold();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-title-item-100);
+  }
+
+  &__btn {
+    @include flex-pos($ai: center, $g: 10px);
+    padding: 5px 15px;
+    border-radius: 10px;
+    min-height: 40px;
+    background-color: var(--color-bg-item-100);
+    box-shadow: 0 0 8px 0 #0000001a;
+    margin-top: 20px;
+
+    .icon--arrow-right-type1 {
+      margin-left: auto;
+    }
+  }
+}
