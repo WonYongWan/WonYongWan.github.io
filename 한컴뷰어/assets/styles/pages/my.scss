@@ -1,0 +1,40 @@
+@use '../common' as *;
+
+.my {
+  &__section {
+    .container {
+      @include max-width();
+    }
+
+    &--my-point {
+      padding: 20px 0 30px;
+    }
+
+    &--menu {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    @include flex-pos($ai: center, $g: 16px);
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  &__title {
+    &--menu {
+      @include preMedium();
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 10px;
+      color: var(--color-text-title-section-200);
+    }
+  }
+
+  &__item-title {
+    @include preMedium();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text-title-item-100);
+  }
+}

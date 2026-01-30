@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한컴뷰어</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/product-details.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <div class="header__content">
+            <a class="header__btn header__btn--back" href="./redeem-points.html" aria-label="뒤로가기">
+              <span class="icon icon--200 icon--arrow-left-type1" aria-hidden="true"></span>
+            </a>
+            <h1 class="header__title">상품 정보</h1>
+          </div>
+        </div>
+      </header>
+      <!-- product-details -->
+      <div class="product-details">
+        <section class="product-details__section product-details__section--purchase">
+          <div class="product-details__img-box">
+            <span class="coupon coupon--npay coupon--l coupon--3000" aria-hidden="true"></span>
+          </div>
+          <div class="product-details__content product-details__content--purchase">
+            <div class="container">
+              <p class="product-details__sub-title product-details__sub-title--purchase">네이버페이 포인트 쿠폰</p>
+              <p class="product-details__title product-details__title--purchase">네이버페이 포인트 3,000원</p>
+              <p class="product-details__price product-details__price--purchase">3,900P</p>
+              <p class="product-details__desc product-details__desc--purchase">
+                <span class="product-details__label product-details__label--purchase">유효기간</span>
+                <span class="product-details__value product-details__value--purchase">발급일로부터 30일</span>
+              </p>
+              <button class="btn btn--content btn--default" type="button" data-popup-btn-on="identity-verification">구매하기</button>
+            </div>
+          </div>
+        </section>
+        <section class="product-details__section product-details__section--guide">
+          <div class="container">
+            <div class="product-details__content product-details__content--guide">
+              <p class="product-details__desc product-details__desc--guide">네이버페이 포인트는 네이버 쇼핑 / 네이버 웹툰 / 네이버 예약을 비롯한 45만개 이상의 가맹점에서 현금처럼 이용하실 수 있습니다.</p>
+            </div>
+            <div class="product-details__content product-details__content--guide">
+              <h3 class="product-details__title product-details__title--guide">[쿠폰 등록 방법]</h3>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">모바일 : 네이버페이 &gt; 우상단 메뉴(三) &gt; 쿠폰 &gt; 포인트 쿠폰등록</span>
+              </p>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">PC : 네이버페이 &gt; 우하단 쿠폰 &gt; 포인트 쿠폰등록</span>
+              </p>
+            </div>
+            <div class="product-details__content product-details__content--guide">
+              <h3 class="product-details__title product-details__title--guide">[이용 안내]</h3>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">쿠폰이 정상적으로 등록된 경우, 네이버페이 &gt; 포인트 메뉴에서 내역을 확인하실 수 있습니다. (반영에최대1분이 소요됩니다.)</span>
+              </p>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">쿠폰으로 등록된 금액은 적립 포인트로 지급되며, 취소 및 현금 인출이 불가합니다.</span>
+              </p>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">네이버페이 포인트의 소멸시효는 마지막 적립, 충전 일 또는 사용일로부터 10년입니다.</span>
+              </p>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">일부 페이 가맹점에서는 포인트 사용이 제한될 수 있습니다.</span>
+              </p>
+              <p class="product-details__desc-box product-details__desc-box--guide">
+                <span class="product-details__dash product-details__dash--guide" aria-hidden="true">-</span>
+                <span class="product-details__text product-details__text--guide">자세한 내용은 네이버페이 이용약관을 참고하여 주시기 바랍니다</span>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- popup -->
+    <div class="popup-root" data-popup-root>
+      <div class="overlay" data-popup-btn-off></div>
+      <div class="popup popup--default" data-popup="identity-verification">
+        <div class="popup__header">
+          <p class="popup__title popup__title--default">
+            상품 구매를 위해<br />
+            최소1회 본인 인증을 진행합니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--secondary popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <a class="popup__btn popup__btn--primary popup__btn--half" href="./purchase.html">휴대폰 인증</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

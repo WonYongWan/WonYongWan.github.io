@@ -1,0 +1,56 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  height: 55px;
+  background: var(--color-bg-header-100);
+
+  .container {
+    @include max-width();
+    @include flex-pos($jc: space-between, $ai: center);
+    height: 100%;
+  }
+
+  &__content {
+    @include flex-pos($ai: center, $g: 20px);
+  }
+
+  &__user {
+    &--name {
+      @include preBold();
+      color: var(--color-text-header-100);
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    @include preBold();
+    color: var(--color-text-header-100);
+    font-size: 18px;
+  }
+
+  &__btn {
+    &--point {
+      @include flex-pos($ai: center);
+
+      .icon--point {
+        margin-right: 8px;
+      }
+
+      .header__info {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__info {
+    &--point {
+      @include preBold();
+      color: var(--color-text-button-100);
+      font-size: 18px;
+      line-height: 1;
+    }
+  }
+}
