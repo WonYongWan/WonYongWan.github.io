@@ -1,0 +1,31 @@
+.btn {
+  @include flex-pos($jc: center, $ai: center);
+  border-radius: 8px;
+}
+
+.btn--content {
+  background-color: var(--color-bg-button-100);
+  color: var(--color-text-button-200);
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &.btn--default {
+    @include preBold();
+    padding: 16px;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.32px;
+  }
+
+  &.btn--secondary {
+    @include preRegular();
+    padding: 15px;
+    max-width: 110px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

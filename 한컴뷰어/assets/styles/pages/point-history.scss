@@ -1,0 +1,121 @@
+@use '../common' as *;
+
+.point-history {
+  &__section {
+    .container {
+      @include max-width();
+    }
+
+    &--my-point {
+      padding: 20px 0 15px;
+    }
+  }
+
+  &__list {
+    padding: 10px 20px 30px;
+  }
+
+  &__notice {
+    padding: 30px 0;
+    background-color: var(--color-bg-item-200);
+  }
+
+  &__item {
+    &--tab {
+      @include flex-pos($ai: center, $jc: space-between);
+      padding: 20px 0;
+      border-bottom: 1px solid var(--color-border-item-100);
+    }
+
+    &--notice {
+      @include flex-pos($g: 5px);
+      margin-bottom: 6px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+    min-width: 85px;
+    margin-left: auto;
+
+    .icon--arrow-top-type1 {
+      transform: rotate(180deg);
+      flex-shrink: 0;
+    }
+  }
+
+  &__dropdown-inner {
+    @include pos-y-center();
+    right: 0;
+  }
+
+  &__dropdown-btn {
+    @include flex-pos($ai: center, $g: 10px);
+  }
+
+  &__dropdown-label {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-desc-item-100);
+  }
+
+  &__title {
+    &--tab {
+      @include preMedium();
+      font-size: 16px;
+      line-height: 18px;
+      color: var(--color-text-title-item-100);
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    &--notice {
+      @include preMedium();
+      font-size: 12px;
+      line-height: 14px;
+      color: var(--color-text-title-item-200);
+      margin-bottom: 9px;
+    }
+  }
+
+  &__date {
+    @include preRegular();
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-text-desc-item-600);
+  }
+
+  &__point {
+    @include preBold();
+    font-size: 16px;
+    line-height: 19px;
+
+    &--plus {
+      color: var(--color-text-desc-item-300);
+    }
+
+    &--minus {
+      color: var(--color-text-desc-item-700);
+    }
+  }
+
+  &__desc {
+    @include preRegular();
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-desc-item-500);
+    word-break: keep-all;
+  }
+
+  &__marker {
+    @include preRegular();
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-desc-item-500);
+  }
+}

@@ -1,0 +1,156 @@
+:root {
+  --white-100: #fff;
+  --black-100: #000;
+  --black-200: #222;
+  --black-300: #030303;
+  --charcoal-100: #555;
+  --charcoal-200: #999;
+  --charcoal-300: #777;
+  --gray-100: #f3f4f6;
+  --gray-200: #888;
+  --gray-300: #b1b1b1;
+  --gray-400: #e9e9e9;
+  --gray-500: #f8f9fb;
+  --gray-600: #f0f0f0;
+  --gray-700: #d8d8d8;
+  --gray-800: #afafaf;
+  --gray-900: #aaa;
+  --gray-1000: #eee;
+  --yellow-100: #ffdd00;
+  --blue-100: #0084fd;
+  --red-100: #f83131;
+  --color-bg-header-100: var(--white-100);
+  --color-bg-bottom-nav-100: var(--white-100);
+  --color-bg-section-100: var(--white-100);
+  --color-bg-section-200: var(--gray-100);
+  --color-bg-section-300: var(--gray-500);
+  --color-bg-item-100: var(--white-100);
+  --color-bg-item-200: var(--gray-500);
+  --color-bg-popup-100: var(--white-100);
+  --color-bg-button-100: var(--blue-100);
+  --color-bg-button-200: var(--gray-1000);
+  --color-bg-badge-100: var(--yellow-100);
+  --color-bg-badge-200: var(--white-100);
+  --color-bg-badge-300: var(--blue-100);
+  --color-bg-badge-400: var(--black-200);
+  --color-text-header-100: var(--black-200);
+  --color-text-bottom-nav-100: var(--gray-300);
+  --color-text-title-section-100: var(--black-100);
+  --color-text-title-section-200: var(--charcoal-200);
+  --color-text-title-item-100: var(--black-200);
+  --color-text-title-item-200: var(--charcoal-200);
+  --color-text-title-item-300: var(--charcoal-300);
+  --color-text-title-item-400: var(--charcoal-100);
+  --color-text-desc-item-100: var(--charcoal-100);
+  --color-text-desc-item-200: var(--gray-200);
+  --color-text-desc-item-300: var(--blue-100);
+  --color-text-desc-item-400: var(--black-200);
+  --color-text-desc-item-500: var(--charcoal-300);
+  --color-text-desc-item-600: var(--charcoal-200);
+  --color-text-desc-item-700: var(--red-100);
+  --color-text-button-100: var(--black-200);
+  --color-text-button-200: var(--white-100);
+  --color-text-button-300: var(--gray-900);
+  --color-text-button-400: var(--blue-100);
+  --color-text-input-100: var(--gray-800);
+  --color-text-input-200: var(--black-200);
+  --color-text-input-300: var(--blue-100);
+  --color-text-badge-100: var(--black-300);
+  --color-text-badge-200: var(--blue-100);
+  --color-text-badge-300: var(--white-100);
+  --color-border-bottom-nav-100: var(--gray-400);
+  --color-border-item-100: var(--gray-600);
+  --color-border-input-100: var(--gray-700);
+  --color-border-badge-100: var(--blue-100);
+  --color-border-badge-200: var(--black-200);
+}
+
+.purchase__section .container {
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+}
+.purchase__section--delivery {
+  background-color: var(--color-bg-section-300);
+  padding-bottom: 10px;
+}
+.purchase__section--delivery .purchase__title--section {
+  margin-bottom: 20px;
+}
+.purchase__section--product {
+  padding: 20px 0 50px;
+}
+.purchase__section--product .purchase__title--section {
+  margin-bottom: 30px;
+}
+.purchase__section--product .npay-coupon {
+  margin-bottom: 14px;
+}
+.purchase__content--delivery {
+  background-color: var(--color-bg-section-100);
+  padding-top: 20px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1019607843);
+}
+.purchase__item {
+  margin-bottom: 9px;
+}
+.purchase__item:last-of-type {
+  margin-bottom: 30px;
+}
+.purchase__item .icon--arrow-top-type1 {
+  transform: rotate(180deg);
+}
+.purchase__item .purchase__field--product {
+  padding: 3px 0;
+}
+.purchase__item .notice-box {
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+}
+.purchase__item.is-active .icon--arrow-top-type1 {
+  transform: rotate(0deg);
+}
+.purchase__item.is-active .purchase__field--product {
+  padding: 16px 0;
+}
+.purchase__item.is-active .notice-box {
+  height: 100%;
+  padding: 20px;
+}
+.purchase__field-group {
+  padding-bottom: 30px;
+}
+.purchase__field--delivery {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  margin-bottom: 12px;
+}
+.purchase__field--delivery:last-of-type {
+  margin-bottom: 0;
+}
+.purchase__field--product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: normal;
+  flex-wrap: nowrap;
+}
+.purchase__title--section {
+  font-family: "Pretendard-Bold";
+  font-size: 16px;
+  line-height: 19px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border-item-100);
+}
+.purchase__title--recipient {
+  font-family: "Pretendard-SemiBold";
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-text-title-item-100);
+  margin-bottom: 12px;
+}

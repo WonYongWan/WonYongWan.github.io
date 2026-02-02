@@ -1,0 +1,26 @@
+.npay-coupon {
+  @include flex-pos($ai: center, $g: 20px);
+
+  &__sub-title {
+    @include preRegular();
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-title-item-200);
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    @include preMedium();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-title-item-100);
+    margin-bottom: 8px;
+  }
+
+  &__price {
+    @include preBold();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text-desc-item-300);
+  }
+}
