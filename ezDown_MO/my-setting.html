@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/my.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo logo--primary">
+            <a href="./home.html">ezDown</a>
+          </h1>
+          <div class="utils">
+            <button class="icon icon--300 sidebar-open" type="button" onclick="popupAndOverlayOn('.overlay--app-nav', '.app-nav')">메뉴열기</button>
+          </div>
+        </div>
+      </header>
+      <!-- nav -->
+      <nav class="app-nav js-popup">
+        <div class="overlay overlay--app-nav" onclick="popupAndOverlayOff('.overlay--app-nav', '.app-nav')"></div>
+        <div class="box box--category">
+          <div class="head">
+            <p class="title">더보기</p>
+            <button class="icon icon--300 sidebar-close" type="button" onclick="popupAndOverlayOff('.overlay--app-nav', '.app-nav')">닫기</button>
+          </div>
+          <div class="cont">
+            <div class="user-actions-wrap">
+              <div class="user-actions">
+                <a class="btn btn--login" href="javascript:void(0)">
+                  <span class="desc-wrap">
+                    <span class="icon icon--700 sidebar-login-profile"></span>
+                    <span class="desc">로그인하러 가기</span>
+                  </span>
+                  <span class="icon icon--100 arrow-right-gray"></span>
+                </a>
+                <a class="btn btn--point" href="javascript:void(0)">
+                  <span class="desc-wrap">
+                    <span class="desc">내 포인트</span>
+                    <span class="point-wrap">
+                      <span class="icon icon--300 point"></span>
+                      <span class="count">2,450P</span>
+                    </span>
+                  </span>
+                  <span class="icon icon--100 arrow-right-gray"></span>
+                </a>
+              </div>
+            </div>
+            <div class="list">
+              <a class="item" href="./my-point.html">
+                <span class="icon icon--300 sidebar-point"></span>
+                <span class="title">포인트</span>
+              </a>
+              <a class="item" href="./my-page.html">
+                <span class="icon icon--300 sidebar-my"></span>
+                <span class="title">마이페이지</span>
+              </a>
+              <a class="item" href="./my-download.html">
+                <span class="icon icon--300 sidebar-down"></span>
+                <span class="title">다운로드</span>
+              </a>
+              <a class="item" href="./my-ezplayer.html">
+                <span class="icon icon--300 sidebar-play"></span>
+                <span class="title">ezPlayer</span>
+              </a>
+              <a class="item on" href="./my-setting.html">
+                <span class="icon icon--300 sidebar-setting"></span>
+                <span class="title">설정</span>
+              </a>
+              <button class="item" type="button" onclick="popupAndOverlayOn('#popup1 .overlay--popup', '#popup1')">
+                <span class="icon icon--300 sidebar-inquiry"></span>
+                <span class="title">가이드</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="bottom-nav">
+        <ul class="list">
+          <li class="item on">
+            <a class="btn" href="./home.html"><span class="icon icon--300 nav-home"></span>홈</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./shorts.html"><span class="icon icon--300 nav-shorts"></span>쇼츠</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./my-point.html"><span class="icon icon--900 nav-ezdown on"></span></a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./subscription.html"><span class="icon icon--300 nav-subscription"></span>구독</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./library.html"><span class="icon icon--300 nav-library"></span>보관함</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- main-->
+      <div class="main main--my main--my-setting">
+        <div class="container">
+          <p class="page-title">설정</p>
+          <div class="item">
+            <p class="title">언어</p>
+            <button class="btn btn--select btn--select-base" type="button" onclick="popupAndOverlayOn('#popup-select1 .overlay--popup', '#popup-select1')"><span class="title">한국어</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+          </div>
+          <div class="item">
+            <p class="title">테마</p>
+            <div class="input-list input-list--radio">
+              <div class="input-wrap">
+                <input type="radio" name="setting-radio1" id="setting-radio1-1" checked="" />
+                <label class="type2" for="setting-radio1-1"><span class="icon type1"></span><span class="title">시스템 설정에 따르기</span></label>
+              </div>
+              <div class="input-wrap">
+                <input type="radio" name="setting-radio1" id="setting-radio1-2" />
+                <label class="type2" for="setting-radio1-2"><span class="icon type1"></span><span class="title">화이트 모드</span></label>
+              </div>
+              <div class="input-wrap">
+                <input type="radio" name="setting-radio1" id="setting-radio1-3" />
+                <label class="type2" for="setting-radio1-3"><span class="icon type1"></span><span class="title">다크 모드</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="item item--save">
+            <p class="title">저장</p>
+            <p class="desc">폴더 경로</p>
+            <div class="input-wrap">
+              <input type="file" name="setting-file1" id="setting-file1-1" />
+              <label for="setting-file1-1">
+                <span class="name">C://Users/application/folder/UI/application/folder/UI/application/folder/UI</span>
+                <span class="icon icon--300 file"></span>
+              </label>
+            </div>
+            <p class="desc">파일 이름</p>
+            <div class="btn-list">
+              <button class="btn btn--select btn--select-base" type="button" onclick="popupAndOverlayOn('#popup-select2 .overlay--popup', '#popup-select2')"><span class="title">ezDown_파일명</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+              <span class="format format1">_</span>
+              <button class="btn btn--select btn--select-base" type="button" onclick="popupAndOverlayOn('#popup-select3 .overlay--popup', '#popup-select3')"><span class="title">date and time</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+              <span class="format format2">_XXX</span>
+            </div>
+            <p class="desc">ex) ezDown_20250709105320_xxx</p>
+          </div>
+          <div class="item item--video">
+            <p class="title">영상</p>
+            <p class="desc">포맷</p>
+            <button class="btn btn--select btn--select-base" type="button" onclick="popupAndOverlayOn('#popup-select4 .overlay--popup', '#popup-select4')"><span class="title">mp4</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+            <p class="desc">화질</p>
+            <button class="btn btn--select btn--select-base" type="button" onclick="popupAndOverlayOn('#popup-select5 .overlay--popup', '#popup-select5')"><span class="title">1080p (고화질)</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+          </div>
+          <div class="item">
+            <p class="title">음원</p>
+            <p class="desc">포맷</p>
+            <button class="btn btn--select btn--select-base" type="button" onclick="popupAndOverlayOn('#popup-select6 .overlay--popup', '#popup-select6')"><span class="title">mp4</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+          </div>
+          <div class="item">
+            <p class="title">기타</p>
+            <div class="input-list input-list--checkbox">
+              <div class="input-wrap">
+                <input type="checkbox" name="setting-checkbox1" id="setting-checkbox1-1" />
+                <label class="type1" for="setting-checkbox1-1"><span class="icon type1"></span><span class="title">Wi-Fi 전용 다운로드</span></label>
+              </div>
+              <div class="input-wrap">
+                <input type="checkbox" name="setting-checkbox1" id="setting-checkbox1-2" />
+                <label class="type1" for="setting-checkbox1-2"><span class="icon type1"></span><span class="title">시리즈로 다운받기(별도 폴더 생성)</span></label>
+              </div>
+              <div class="input-wrap">
+                <input type="checkbox" name="setting-checkbox1" id="setting-checkbox1-3" />
+                <label class="type1" for="setting-checkbox1-3"><span class="icon type1"></span><span class="title">자막 다운로드</span></label>
+              </div>
+              <div class="input-wrap">
+                <input type="checkbox" name="setting-checkbox1" id="setting-checkbox1-4" />
+                <label class="type1" for="setting-checkbox1-4"><span class="icon type1"></span><span class="title">자동 생성 자막 다운로드</span></label>
+                <p class="desc">등록된 자막이 없을 때 자동 생성 자막을 다운로드 할 수 있습니다. (단, 자동 생성 자막이 제공되지 않는 영상은 자막이 다운로드되지 않습니다.)</p>
+              </div>
+              <div class="input-wrap">
+                <input type="checkbox" name="setting-checkbox1" id="setting-checkbox1-5" />
+                <label class="type1" for="setting-checkbox1-5"><span class="icon type1"></span><span class="title">오프라인 다운로드 동영상 자막 항상 켜기</span></label>
+                <p class="desc">자막이 다운로드된 영상에만 적용됩니다.</p>
+              </div>
+              <div class="input-wrap">
+                <input type="checkbox" name="setting-checkbox1" id="setting-checkbox1-6" />
+                <label class="type1" for="setting-checkbox1-6"><span class="icon type1"></span><span class="title">기간 다운로드 내역 동기화 시 자동 다운로드</span></label>
+                <p class="desc">Wi-Fi 전용 다운로드 설정 시 Wi-Fi환경에서만 자동 다운로드 됩니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button class="btn btn--popup btn--half btn--gray-base size--300" type="button">취소</button>
+            <button class="btn btn--popup btn--half btn--orange size--300" type="button">저장</button>
+          </div>
+        </div>
+      </div>
+      <!-- popup -->
+      <div class="popup-wrap">
+        <div id="popup1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="text text--base">노션으로<br />이동하시겠어요?</p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')">취소</button>
+                <a class="btn btn--popup btn--half btn--orange size--100" href="javascript:void(0)">확인</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select1" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1')"></div>
+          <div class="box box--bottom">
+            <p class="title">선택하세요</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio" id="popup-select1-radio1" checked="" />
+                  <label class="type1" for="popup-select1-radio1"><span class="title">한국어</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio" id="popup-select1-radio2" />
+                  <label class="type1" for="popup-select1-radio2"><span class="title">English</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio" id="popup-select1-radio3" />
+                  <label class="type1" for="popup-select1-radio3"><span class="title">Japanese</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio" id="popup-select1-radio4" />
+                  <label class="type1" for="popup-select1-radio4"><span class="title">Taiwanese</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1')">선택 완료</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select2" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select2 .overlay--popup', '#popup-select2')"></div>
+          <div class="box box--bottom">
+            <p class="title">선택하세요</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select2-radio" id="popup-select2-radio1" checked="" />
+                  <label class="type1" for="popup-select2-radio1"><span class="title">ezDown_파일명</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select2-radio" id="popup-select2-radio2" />
+                  <label class="type1" for="popup-select2-radio2"><span class="title">파일명</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select2-radio" id="popup-select2-radio3" />
+                  <label class="type1" for="popup-select2-radio3"><span class="title">직접입력</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select2 .overlay--popup', '#popup-select2')">선택 완료</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select3" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select3 .overlay--popup', '#popup-select3')"></div>
+          <div class="box box--bottom">
+            <p class="title">선택하세요</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select3-radio" id="popup-select3-radio1" checked="" />
+                  <label class="type1" for="popup-select3-radio1"><span class="title">date and time</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select3-radio" id="popup-select3-radio2" />
+                  <label class="type1" for="popup-select3-radio2"><span class="title">직접입력</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select3 .overlay--popup', '#popup-select3')">선택 완료</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select4" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select4 .overlay--popup', '#popup-select4')"></div>
+          <div class="box box--bottom">
+            <p class="title">선택하세요</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select4-radio" id="popup-select4-radio1" checked="" />
+                  <label class="type1" for="popup-select4-radio1"><span class="title">mp4</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select4-radio" id="popup-select4-radio2" />
+                  <label class="type1" for="popup-select4-radio2"><span class="title">webm</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select4-radio" id="popup-select4-radio3" />
+                  <label class="type1" for="popup-select4-radio3"><span class="title">av01</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select4 .overlay--popup', '#popup-select4')">선택 완료</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select5" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select5 .overlay--popup', '#popup-select5')"></div>
+          <div class="box box--bottom">
+            <p class="title">선택하세요</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio1" checked="" />
+                  <label class="type1" for="popup-select5-radio1"><span class="title">2160p</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio2" />
+                  <label class="type1" for="popup-select5-radio2"><span class="title">1440p</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio3" />
+                  <label class="type1" for="popup-select5-radio3"><span class="title">1080p</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio4" />
+                  <label class="type1" for="popup-select5-radio4"><span class="title">720p</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio5" />
+                  <label class="type1" for="popup-select5-radio5"><span class="title">480p</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio6" />
+                  <label class="type1" for="popup-select5-radio6"><span class="title">360p</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select5-radio" id="popup-select5-radio7" />
+                  <label class="type1" for="popup-select5-radio7"><span class="title">240p</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select5 .overlay--popup', '#popup-select5')">선택 완료</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select6" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select6 .overlay--popup', '#popup-select6')"></div>
+          <div class="box box--bottom">
+            <p class="title">선택하세요</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select6-radio" id="popup-select6-radio1" checked="" />
+                  <label class="type1" for="popup-select6-radio1"><span class="title">m4a</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select6-radio" id="popup-select6-radio2" />
+                  <label class="type1" for="popup-select6-radio2"><span class="title">opus</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select6 .overlay--popup', '#popup-select6')">선택 완료</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
+  </body>
+</html>

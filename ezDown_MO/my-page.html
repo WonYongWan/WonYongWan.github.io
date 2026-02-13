@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/my.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo logo--primary">
+            <a href="./home.html">ezDown</a>
+          </h1>
+          <div class="utils">
+            <button class="icon icon--300 sidebar-open" type="button" onclick="popupAndOverlayOn('.overlay--app-nav', '.app-nav')">메뉴열기</button>
+          </div>
+        </div>
+      </header>
+      <!-- nav -->
+      <nav class="app-nav js-popup">
+        <div class="overlay overlay--app-nav" onclick="popupAndOverlayOff('.overlay--app-nav', '.app-nav')"></div>
+        <div class="box box--category">
+          <div class="head">
+            <p class="title">더보기</p>
+            <button class="icon icon--300 sidebar-close" type="button" onclick="popupAndOverlayOff('.overlay--app-nav', '.app-nav')">닫기</button>
+          </div>
+          <div class="cont">
+            <div class="user-actions-wrap">
+              <div class="user-actions">
+                <a class="btn btn--login" href="javascript:void(0)">
+                  <span class="desc-wrap">
+                    <span class="icon icon--700 sidebar-login-profile"></span>
+                    <span class="desc">로그인하러 가기</span>
+                  </span>
+                  <span class="icon icon--100 arrow-right-gray"></span>
+                </a>
+                <a class="btn btn--point" href="javascript:void(0)">
+                  <span class="desc-wrap">
+                    <span class="desc">내 포인트</span>
+                    <span class="point-wrap">
+                      <span class="icon icon--300 point"></span>
+                      <span class="count">2,450P</span>
+                    </span>
+                  </span>
+                  <span class="icon icon--100 arrow-right-gray"></span>
+                </a>
+              </div>
+            </div>
+            <div class="list">
+              <a class="item" href="./my-point.html">
+                <span class="icon icon--300 sidebar-point"></span>
+                <span class="title">포인트</span>
+              </a>
+              <a class="item on" href="./my-page.html">
+                <span class="icon icon--300 sidebar-my"></span>
+                <span class="title">마이페이지</span>
+              </a>
+              <a class="item" href="./my-download.html">
+                <span class="icon icon--300 sidebar-down"></span>
+                <span class="title">다운로드</span>
+              </a>
+              <a class="item" href="./my-ezplayer.html">
+                <span class="icon icon--300 sidebar-play"></span>
+                <span class="title">ezPlayer</span>
+              </a>
+              <a class="item" href="./my-setting.html">
+                <span class="icon icon--300 sidebar-setting"></span>
+                <span class="title">설정</span>
+              </a>
+              <button class="item" type="button" onclick="popupAndOverlayOn('#popup1 .overlay--popup', '#popup1')">
+                <span class="icon icon--300 sidebar-inquiry"></span>
+                <span class="title">가이드</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="bottom-nav">
+        <ul class="list">
+          <li class="item on">
+            <a class="btn" href="./home.html"><span class="icon icon--300 nav-home"></span>홈</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./shorts.html"><span class="icon icon--300 nav-shorts"></span>쇼츠</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./my-point.html"><span class="icon icon--900 nav-ezdown on"></span></a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./subscription.html"><span class="icon icon--300 nav-subscription"></span>구독</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./library.html"><span class="icon icon--300 nav-library"></span>보관함</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- main-->
+      <div class="main main--my main--my-page" style="height: 1000px; background-color: blue"></div>
+      <!-- popup -->
+      <div class="popup-wrap">
+        <div id="popup1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="text text--base">노션으로<br />이동하시겠어요?</p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')">취소</button>
+                <a class="btn btn--popup btn--half btn--orange size--100" href="javascript:void(0)">확인</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
+  </body>
+</html>

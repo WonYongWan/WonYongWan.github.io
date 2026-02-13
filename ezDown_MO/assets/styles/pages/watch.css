@@ -1,0 +1,275 @@
+:root {
+  --bg-base-100: #fff;
+  --bg-base-200: #fff;
+  --bg-base-300: #f8f8f8;
+  --bg-base-400: #eeeeee;
+  --bg-base-500: #bbbbbb;
+  --bg-base-600: #bbbbbb;
+  --bg-base-700: #fff;
+  --bg-base-800: #f8f8f8;
+  --bg-base-900: #ececec;
+  --bg-base-1000: #ececec;
+  --bg-base-1100: #fbfbfd;
+  --bg-base-1200: #fbfbfd;
+  --bg-base-1300: #c8c8c8;
+  --bg-secondary-100: #000;
+  --bg-accent-100: #fa3d22;
+  --text-base-100: #000;
+  --text-base-200: #fff;
+  --text-base-300: #222;
+  --text-base-400: #040404;
+  --text-base-500: #222;
+  --text-base-600: #111;
+  --text-base-700: #111;
+  --text-base-800: #444;
+  --text-base-900: #000;
+  --text-base-1000: #444;
+  --text-base-1100: #444;
+  --text-base-1200: #222;
+  --text-base-1300: #222;
+  --text-base-1400: #222;
+  --text-base-1500: #555;
+  --text-secondary-100: #6e6e6e;
+  --text-secondary-200: #8b8b8b;
+  --text-secondary-300: #f8f8f8;
+  --text-secondary-400: #999999;
+  --text-secondary-500: #686868;
+  --text-secondary-600: #8b8b8b;
+  --text-secondary-700: #666666;
+  --text-secondary-800: #666666;
+  --text-secondary-900: #bbb;
+  --text-secondary-1000: #686868;
+  --text-secondary-1100: #777;
+  --text-secondary-1200: #777;
+  --text-secondary-fix-100: #999999;
+  --text-secondary-fix-200: #bbb;
+  --text-accent-100: #fa3d22;
+  --border-base-100: #e9ebee;
+  --border-base-200: #dddddd;
+  --border-base-300: #d4d4d4;
+  --border-base-400: #eeeeee;
+  --border-base-500: #e4e4e4;
+  --border-base-600: #e3e3e3;
+  --border-accent-100: #fa3d22;
+  --btn-bg-base-100: #f8f8f8;
+  --btn-bg-base-200: #eeeeee;
+  --btn-bg-base-300: #eeeeee;
+  --btn-bg-base-400: #f8f8f8;
+  --btn-bg-base-500: #f8f8f8;
+  --btn-bg-base-600: #bbb;
+  --btn-bg-base-700: #eee;
+  --btn-bg-base-800: #fff;
+  --btn-bg-accent-100: #fa3d22;
+  --tag-bg-base-100: rgba(4, 4, 4, 0.6);
+  --tag-bg-base-200: rgba(255, 255, 255, 0.8);
+  --tag-bg-base-300: #eee;
+  --tag-bg-accent: #fa3d22;
+  --tag-text-base-100: #fff;
+  --tag-text-base-200: #040404;
+  --selection-bg-base-100: #d9e6ff;
+  --filter-100: invert(0);
+  --overlay-bg-base-100: rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base-100: #000;
+    --bg-base-200: #222;
+    --bg-base-300: #000;
+    --bg-base-400: #444;
+    --bg-base-500: #666;
+    --bg-base-600: #444;
+    --bg-base-700: #444;
+    --bg-base-800: #444;
+    --bg-base-900: #000;
+    --bg-base-1000: #525252;
+    --bg-base-1100: #000;
+    --bg-base-1200: #444;
+    --bg-base-1300: #8b8b8b;
+    --bg-secondary-100: #444;
+    --text-base-100: #fff;
+    --text-base-300: #fff;
+    --text-base-400: #fff;
+    --text-base-600: #f8f8f8;
+    --text-base-700: #fff;
+    --text-base-800: #ececec;
+    --text-base-900: #ececec;
+    --text-base-1000: #8b8b8b;
+    --text-base-1100: #fff;
+    --text-base-1200: #eee;
+    --text-base-1300: #bbb;
+    --text-base-1400: #ececec;
+    --text-base-1500: #eee;
+    --text-secondary-200: #bbbbbb;
+    --text-secondary-400: #bbbbbb;
+    --text-secondary-500: #ececec;
+    --text-secondary-700: #bbbbbb;
+    --text-secondary-800: #8b8b8b;
+    --text-secondary-900: #666;
+    --text-secondary-1000: #d3d3d3;
+    --text-secondary-1100: #ececec;
+    --text-secondary-1200: #bbb;
+    --border-base-100: #444;
+    --border-base-200: #444;
+    --border-base-300: #8b8b8b;
+    --border-base-400: #444;
+    --border-base-500: #444;
+    --border-base-600: #fff;
+    --btn-bg-base-100: #222;
+    --btn-bg-base-200: #8b8b8b;
+    --btn-bg-base-300: #222;
+    --btn-bg-base-500: #444;
+    --btn-bg-base-600: #8b8b8b;
+    --btn-bg-base-700: #999;
+    --btn-bg-base-800: #000;
+    --tag-bg-base-300: #222;
+    --selection-bg-base-100: #42629e;
+    --filter-100: invert(1);
+    --overlay-bg-base-100: rgba(0, 0, 0, 0.7);
+  }
+}
+.dark {
+  --bg-base-100: #000;
+  --bg-base-200: #222;
+  --bg-base-300: #000;
+  --bg-base-400: #444;
+  --bg-base-500: #666;
+  --bg-base-600: #444;
+  --bg-base-700: #444;
+  --bg-base-800: #444;
+  --bg-base-900: #000;
+  --bg-base-1000: #525252;
+  --bg-base-1100: #000;
+  --bg-base-1200: #444;
+  --bg-base-1300: #8b8b8b;
+  --bg-secondary-100: #444;
+  --text-base-100: #fff;
+  --text-base-300: #fff;
+  --text-base-400: #fff;
+  --text-base-600: #f8f8f8;
+  --text-base-700: #fff;
+  --text-base-800: #ececec;
+  --text-base-900: #ececec;
+  --text-base-1000: #8b8b8b;
+  --text-base-1100: #fff;
+  --text-base-1200: #eee;
+  --text-base-1300: #bbb;
+  --text-base-1400: #ececec;
+  --text-base-1500: #eee;
+  --text-secondary-200: #bbbbbb;
+  --text-secondary-400: #bbbbbb;
+  --text-secondary-500: #ececec;
+  --text-secondary-700: #bbbbbb;
+  --text-secondary-800: #8b8b8b;
+  --text-secondary-900: #666;
+  --text-secondary-1000: #d3d3d3;
+  --text-secondary-1100: #ececec;
+  --text-secondary-1200: #bbb;
+  --border-base-100: #444;
+  --border-base-200: #444;
+  --border-base-300: #8b8b8b;
+  --border-base-400: #444;
+  --border-base-500: #444;
+  --border-base-600: #fff;
+  --btn-bg-base-100: #222;
+  --btn-bg-base-200: #8b8b8b;
+  --btn-bg-base-300: #222;
+  --btn-bg-base-500: #444;
+  --btn-bg-base-600: #8b8b8b;
+  --btn-bg-base-700: #999;
+  --btn-bg-base-800: #000;
+  --tag-bg-base-300: #222;
+  --selection-bg-base-100: #42629e;
+  --filter-100: invert(1);
+  --overlay-bg-base-100: rgba(0, 0, 0, 0.7);
+}
+
+.main--watch {
+  padding-bottom: 56px;
+}
+.main--watch .player-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 56.25%;
+  z-index: 99;
+}
+.main--watch .player-wrap .player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+.main--watch .player-wrap .btn-wrap {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  bottom: -58px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  gap: 16px;
+  flex-wrap: nowrap;
+  padding: 14px 16px;
+  width: 100%;
+  height: 58px;
+  background: var(--bg-base-100);
+  transition: bottom 0.1s ease;
+}
+.main--watch .player-wrap .btn-wrap.hide {
+  bottom: 0;
+}
+.main--watch .player-area {
+  padding-top: 56.25%;
+  margin-bottom: 58px;
+}
+
+.popup--select .box .cont .cont-item {
+  margin-bottom: 40px;
+}
+.popup--select .box .cont .cont-item:first-of-type {
+  margin-bottom: 20px;
+}
+.popup--select .box .cont .cont-item:nth-last-child(2) {
+  margin-bottom: 0;
+}
+.popup--select .box .cont .cont-item:last-of-type {
+  margin-top: 15px;
+}
+.popup--select .box .cont .cont-item > .title {
+  margin-bottom: 14px;
+}
+.popup--select .box .cont .cont-item--1 {
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+}
+.popup--select .box .cont .cont-item--1 > .desc {
+  margin-left: 32px;
+  margin-top: 2px;
+}
+.popup--select .box .cont .cont-item .list--radio .item label {
+  padding-left: 8px;
+}
+.popup--select .box .cont .cont-item .list--radio-type2 .item label {
+  padding-left: 32px;
+}
+
+@media (max-width: 930px) and (orientation: landscape) {
+  .main--watch .player-wrap {
+    position: relative;
+    padding-top: calc(56.25% - 96px);
+  }
+  .main--watch .player-wrap .btn-wrap {
+    bottom: -58px;
+  }
+  .main--watch .player-wrap .btn-wrap.hide {
+    bottom: -58px;
+  }
+  .main--watch .player-area {
+    display: none;
+  }
+}

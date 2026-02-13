@@ -1,0 +1,240 @@
+.btn {
+  // basic
+  &--basic {
+    &-watchdown {
+      @include flex-pos($jc: center, $ai: center, $g: 4px);
+      font-size: 13px;
+      border-radius: 15px;
+      padding: 5px 12px;
+      min-height: 30px;
+      min-width: 96px;
+    }
+
+    &-base {
+      @include flex-pos($jc: center, $ai: center, $g: 4px);
+      @include preMedium();
+      padding: 0 16px;
+      height: 48px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+
+    &-secondary {
+      @include preRegular();
+      font-size: 13px;
+      line-height: 15px;
+      color: var(--text-base-300);
+      border: 1px solid var(--border-base-600);
+      border-radius: 5px;
+      padding: 8.5px 16px;
+      background-color: var(--btn-bg-base-800);
+    }
+
+    &-underline {
+      @include preRegular();
+      display: block;
+      font-size: 13px;
+      line-height: 15px;
+      text-decoration: underline;
+      color: var(--text-base-1300);
+    }
+  }
+
+  // popup
+  &--popup {
+    @include preMedium();
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+
+    &.radius {
+      &--zero {
+        border-radius: 0;
+      }
+    }
+
+    &.family {
+      &--regular {
+        @include preRegular();
+      }
+    }
+
+    &.textalign {
+      &--left {
+        text-align: left;
+      }
+    }
+
+    // size
+    &.size {
+      &--100 {
+        padding: 12px;
+        line-height: 18px;
+        min-width: 112px;
+      }
+
+      &--200 {
+        @include flex-pos($jc: center, $ai: center, $g: 22px);
+        height: 46px;
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      &--300 {
+        @include flex-pos($jc: center, $ai: center);
+        height: 48px;
+        line-height: 1;
+      }
+
+      &--400 {
+        @include flex-pos($ai: center);
+        padding: 15px;
+        height: 45px;
+        line-height: 1;
+      }
+    }
+  }
+
+  // select
+  &--select {
+    @include flex-pos($jc: space-between, $ai: center, $g: 25px);
+    border-radius: 8px;
+
+    &-base {
+      width: 100%;
+      border: 1px solid var(--border-base-200);
+      padding: 0 16px;
+      height: 48px;
+
+      .title {
+        @include text-cut-one();
+        @include preMedium();
+        font-size: 14px;
+        line-height: 16px;
+        color: var(--text-base-300);
+      }
+
+      &.base100 {
+        gap: 10px;
+        border: none;
+        padding: 7px 10px;
+        border: none;
+        height: unset;
+        max-width: 104px;
+
+        .title {
+          color: var(--text-secondary-1000);
+        }
+
+        .icon {
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-secondary {
+      min-width: 113px;
+      padding: 10px 16px;
+      background: var(--btn-bg-base-100);
+
+      .title {
+        @include preMedium();
+        font-size: 14px;
+        color: var(--text-secondary-500);
+      }
+    }
+  }
+
+  // login
+  &--login {
+    &-base {
+      @include preMedium();
+      font-size: 12px;
+      line-height: 14px;
+      color: var(--text-accent-100);
+      border-radius: 6px;
+      padding: 5px 9px;
+      line-height: 1;
+      border: 1px solid var(--border-accent-100);
+      background: var(--bg-base-100);
+    }
+  }
+
+  // toggle
+  &--toggle {
+    border-radius: 14px;
+    padding: 2px;
+    background: var(--btn-bg-base-700);
+    width: 48px;
+    height: 28px;
+    text-align: left;
+    transition: 0.1s ease-in-out;
+
+    .circle {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      background: #fff;
+      box-shadow: 0 2px 4px 0 #0000001a;
+      transition: 0.1s ease-in-out;
+    }
+
+    &.on {
+      background: var(--btn-bg-accent-100);
+
+      .circle {
+        transform: translateX(calc(100% - 4px));
+      }
+    }
+  }
+
+  // size
+  &--half {
+    width: 50%;
+  }
+
+  &--max {
+    width: 100%;
+  }
+
+  // background
+  &--gray {
+    &-base {
+      background: var(--btn-bg-base-200);
+      color: var(--text-base-300);
+
+      &-100 {
+        background: var(--btn-bg-base-400);
+        color: var(--text-base-500);
+      }
+
+      &-200 {
+        background: var(--btn-bg-base-200);
+        color: var(--text-secondary-fix-200);
+      }
+    }
+
+    &-border {
+      border: 1px solid var(--border-base-300);
+      background: var(--bg-base-200);
+      color: var(--text-base-600);
+    }
+  }
+
+  &--hovergray {
+    &-base100 {
+      background: var(--bg-base-200);
+      color: var(--text-base-300);
+
+      &:hover {
+        background: var(--bg-base-800);
+      }
+    }
+  }
+
+  &--orange {
+    background: var(--btn-bg-accent-100);
+    color: var(--text-base-200);
+  }
+}

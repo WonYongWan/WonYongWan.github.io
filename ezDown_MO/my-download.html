@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/my.css" />
+  </head>
+  <body onclick="nonTargetPopupRemove(event, '.js-target', '.popup--btn')">
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo logo--primary">
+            <a href="./home.html">ezDown</a>
+          </h1>
+          <div class="utils">
+            <button class="icon icon--300 sidebar-open" type="button" onclick="popupAndOverlayOn('.overlay--app-nav', '.app-nav')">메뉴열기</button>
+          </div>
+        </div>
+      </header>
+      <!-- nav -->
+      <nav class="app-nav js-popup">
+        <div class="overlay overlay--app-nav" onclick="popupAndOverlayOff('.overlay--app-nav', '.app-nav')"></div>
+        <div class="box box--category">
+          <div class="head">
+            <p class="title">더보기</p>
+            <button class="icon icon--300 sidebar-close" type="button" onclick="popupAndOverlayOff('.overlay--app-nav', '.app-nav')">닫기</button>
+          </div>
+          <div class="cont">
+            <div class="user-actions-wrap">
+              <div class="user-actions">
+                <a class="btn btn--login" href="javascript:void(0)">
+                  <span class="desc-wrap">
+                    <span class="icon icon--700 sidebar-login-profile"></span>
+                    <span class="desc">로그인하러 가기</span>
+                  </span>
+                  <span class="icon icon--100 arrow-right-gray"></span>
+                </a>
+                <a class="btn btn--point" href="javascript:void(0)">
+                  <span class="desc-wrap">
+                    <span class="desc">내 포인트</span>
+                    <span class="point-wrap">
+                      <span class="icon icon--300 point"></span>
+                      <span class="count">2,450P</span>
+                    </span>
+                  </span>
+                  <span class="icon icon--100 arrow-right-gray"></span>
+                </a>
+              </div>
+            </div>
+            <div class="list">
+              <a class="item" href="./my-point.html">
+                <span class="icon icon--300 sidebar-point"></span>
+                <span class="title">포인트</span>
+              </a>
+              <a class="item" href="./my-page.html">
+                <span class="icon icon--300 sidebar-my"></span>
+                <span class="title">마이페이지</span>
+              </a>
+              <a class="item on" href="./my-download.html">
+                <span class="icon icon--300 sidebar-down"></span>
+                <span class="title">다운로드</span>
+              </a>
+              <a class="item" href="./my-ezplayer.html">
+                <span class="icon icon--300 sidebar-play"></span>
+                <span class="title">ezPlayer</span>
+              </a>
+              <a class="item" href="./my-setting.html">
+                <span class="icon icon--300 sidebar-setting"></span>
+                <span class="title">설정</span>
+              </a>
+              <button class="item" type="button" onclick="popupAndOverlayOn('#popup1 .overlay--popup', '#popup1')">
+                <span class="icon icon--300 sidebar-inquiry"></span>
+                <span class="title">가이드</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="bottom-nav">
+        <ul class="list">
+          <li class="item on">
+            <a class="btn" href="./home.html"><span class="icon icon--300 nav-home"></span>홈</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./shorts.html"><span class="icon icon--300 nav-shorts"></span>쇼츠</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./my-point.html"><span class="icon icon--900 nav-ezdown on"></span></a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./subscription.html"><span class="icon icon--300 nav-subscription"></span>구독</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./library.html"><span class="icon icon--300 nav-library"></span>보관함</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- main-->
+      <div class="main main--my main--my-download">
+        <div class="container">
+          <p class="page-title">오프라인 저장 동영상</p>
+          <p class="page-desc">데이터 사용 없이 오프라인 저장한 동영상 시청</p>
+        </div>
+        <div class="tab-bar tab-bar--download">
+          <div class="list">
+            <li class="item">
+              <button id="tab-bar-btn1" class="btn on" type="button" onclick="tabListAction('.tab-bar .btn', '#tab-bar-btn1', '.tab-section', '#tab-section1')">다운로드중</button>
+            </li>
+            <li class="item">
+              <button id="tab-bar-btn2" class="btn" type="button" onclick="(tabListAction('.tab-bar .btn', '#tab-bar-btn2', '.tab-section', '#tab-section2'), popupAndOverlayOn('#popup-play1 .overlay--popup', '#popup-play1'), popupAndOverlayOn('#popup-play2 .overlay--popup', '#popup-play2'), popupAndOverlayOn('#popup-play3 .overlay--popup', '#popup-play3'))">다운로드 완료</button>
+            </li>
+            <li class="item">
+              <button id="tab-bar-btn3" class="btn" type="button" onclick="tabListAction('.tab-bar .btn', '#tab-bar-btn3', '.tab-section', '#tab-section3')">불러오기</button>
+            </li>
+          </div>
+        </div>
+        <div id="tab-section1" class="tab-section tab-section--downloading on">
+          <div class="cont">
+            <div class="category-bar">
+              <ul class="list">
+                <li class="item">
+                  <button class="btn js-target" type="button" onclick="popupsOffAndTargetOn('.popup--btn', '#popup-btn3', false)">전체 선택</button>
+                </li>
+              </ul>
+            </div>
+            <div class="video-section video-section--download js-target">
+              <div class="download-list">
+                <div class="download-card download-card--downloading selected">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                    <span class="icon icon--500 down-music"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">세월이 흘러도 듣기</p>
+                    <div class="gauge-wrap">
+                      <div class="gauge" style="width: 50%"></div>
+                    </div>
+                    <p class="desc">음원 다운로드<span class="percent">29%</span></p>
+                  </div>
+                  <button class="btn" type="button" onclick="popupsOffAndTargetOn('.popup--btn', '#popup-btn1', false)"></button>
+                </div>
+                <div class="download-card download-card--downloading">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                    <span class="icon icon--500 down-video"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    <div class="gauge-wrap">
+                      <div class="gauge" style="width: 50%"></div>
+                    </div>
+                    <p class="desc"><span class="percent">29%</span></p>
+                  </div>
+                  <button class="btn" type="button"></button>
+                </div>
+                <div class="download-card download-card--downloading selected stop">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                    <span class="icon icon--500 down-video"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    <div class="gauge-wrap">
+                      <div class="gauge" style="width: 50%"></div>
+                    </div>
+                    <p class="desc"><span class="percent">29%</span></p>
+                  </div>
+                  <button class="btn" type="button" onclick="popupsOffAndTargetOn('.popup--btn', '#popup-btn2', false)"></button>
+                </div>
+                <div class="download-card download-card--downloading stop">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                    <span class="icon icon--500 down-music"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">세월이 흘러도 듣기</p>
+                    <div class="gauge-wrap">
+                      <div class="gauge" style="width: 29%"></div>
+                    </div>
+                    <p class="desc">음원 다운로드<span class="percent">29%</span></p>
+                  </div>
+                  <button class="btn" type="button"></button>
+                </div>
+                <div class="download-card download-card--downloading">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                    <span class="icon icon--500 down-music"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">세월이 흘러도 듣기</p>
+                    <div class="gauge-wrap">
+                      <div class="gauge" style="width: 29%"></div>
+                    </div>
+                    <p class="desc">음원 다운로드<span class="percent">29%</span></p>
+                  </div>
+                  <button class="btn" type="button"></button>
+                </div>
+              </div>
+            </div>
+            <div id="folder-wrap1" class="folder-wrap mb-88 on">
+              <div class="folder-head">
+                <h3 class="title"><span class="icon icon--800 down-folder"></span>오레오 영상 시리즈</h3>
+                <button class="dropdown-btn" type="button" onclick="classToggle('#folder-wrap1')"><span class="count">3개</span><span class="icon icon--100 arrow-bottom-gray"></span></button>
+              </div>
+              <div class="folder-cont">
+                <div class="video-section video-section--download js-target">
+                  <div class="download-list">
+                    <div class="download-card download-card--downloading">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                        <span class="icon icon--500 down-video"></span>
+                      </div>
+                      <div class="text-cover">
+                        <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                        <div class="gauge-wrap">
+                          <div class="gauge" style="width: 50%"></div>
+                        </div>
+                        <p class="desc"><span class="percent">29%</span></p>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                    <div class="download-card download-card--downloading">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                        <span class="icon icon--500 down-music"></span>
+                      </div>
+                      <div class="text-cover">
+                        <p class="title">세월이 흘러도 듣기</p>
+                        <div class="gauge-wrap">
+                          <div class="gauge" style="width: 29%"></div>
+                        </div>
+                        <p class="desc">음원 다운로드<span class="percent">29%</span></p>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                    <div class="download-card download-card--downloading">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                        <span class="icon icon--500 down-music"></span>
+                      </div>
+                      <div class="text-cover">
+                        <p class="title">세월이 흘러도 듣기</p>
+                        <div class="gauge-wrap">
+                          <div class="gauge" style="width: 29%"></div>
+                        </div>
+                        <p class="desc">음원 다운로드<span class="percent">29%</span></p>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-none">
+              <span class="icon myfile-down-ing-none"></span>
+              <p class="desc">
+                다운로드 진행중인<br />
+                파일이 없습니다
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-section2" class="tab-section tab-section--completed">
+          <div class="cont">
+            <div class="cont-head">
+              <div class="category-bar">
+                <ul class="list">
+                  <li class="item">
+                    <button class="btn js-target on" type="button" onclick="popupsOffAndTargetOn('.popup--btn', '#popup-btn4', false)">전체 선택</button>
+                  </li>
+                  <li class="item">
+                    <button class="btn js-target" type="button" onclick="popupAndOverlayOn('#popup-select2 .overlay--popup', '#popup-select2')">휴지통</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-wrap">
+                <button class="btn btn--select btn--select-base base100" type="button" onclick="popupAndOverlayOn('#popup-select1 .overlay--popup', '#popup-select1')">
+                  <span class="title">다운로드순</span>
+                  <span class="icon icon--100 arrow-bottom-gray"></span>
+                </button>
+              </div>
+            </div>
+            <div class="video-section video-section--download mb-88 js-target">
+              <div class="download-list">
+                <div class="download-card download-card--completed">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                  </div>
+                  <div class="text-cover">
+                    <div class="title-wrap">
+                      <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    </div>
+                    <p class="desc">종합</p>
+                    <div class="info"><span class="badge-shape badge-shape--pc">PC</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                    <div class="info"><span class="badge-shape badge-shape--mo">MO</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                  </div>
+                  <button class="btn" type="button"></button>
+                  <button class="more" type="button" onclick="popupAndOverlayOn('#popup-more1 .overlay--popup', '#popup-more1')">
+                    <span class="icon icon--300 topbar-more">more</span>
+                  </button>
+                </div>
+                <div class="download-card download-card--completed selected">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                  </div>
+                  <div class="text-cover">
+                    <div class="title-wrap">
+                      <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    </div>
+                    <p class="desc">종합</p>
+                    <div class="info"><span class="badge-shape badge-shape--pc">PC</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                  </div>
+                  <button class="btn" type="button"></button>
+                  <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+                </div>
+                <div class="download-card download-card--completed">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                  </div>
+                  <div class="text-cover">
+                    <div class="title-wrap">
+                      <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    </div>
+                    <p class="desc">종합</p>
+                    <div class="info"><span class="badge-shape badge-shape--mo">MO</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                  </div>
+                  <button class="btn" type="button"></button>
+                  <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+                </div>
+                <div class="download-card download-card--completed selected">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                  </div>
+                  <div class="text-cover">
+                    <div class="title-wrap">
+                      <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    </div>
+                    <p class="desc">종합</p>
+                    <div class="info"><span class="badge-shape badge-shape--mo">MO</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                  </div>
+                  <button class="btn" type="button"></button>
+                  <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+                </div>
+                <div class="download-card download-card--completed">
+                  <div class="img-cover">
+                    <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                  </div>
+                  <div class="text-cover">
+                    <div class="title-wrap">
+                      <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                    </div>
+                    <p class="desc">종합</p>
+                    <div class="info"><span class="badge-shape badge-shape--pc">PC</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                  </div>
+                  <button class="btn" type="button"></button>
+                  <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="list-none">
+              <span class="icon myfile-down-ing-none"></span>
+              <p class="desc">다운로드한 파일이 없습니다</p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-section3" class="tab-section tab-section--import">
+          <div class="cont cont1 on">
+            <div class="text-cover">
+              <span class="icon icon--1000 myfile-none"></span>
+              <p class="cont-title">내 파일에서 불러오기</p>
+              <p class="cont-desc">
+                기기에 저장된 영상도 <br />
+                재생 목록에 추가해보세요
+              </p>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn btn--basic-base btn--max btn--orange" type="button" onclick="popupAndOverlayOn('#popup2 .overlay--popup', '#popup2')">로컬 파일 불러오기</button>
+            </div>
+          </div>
+          <div class="cont cont2">
+            <div class="category-bar">
+              <ul class="list">
+                <li class="item">
+                  <button class="btn js-target" type="button" onclick="popupsOffAndTargetOn('.popup--btn', '#popup-btn4', false)">전체 선택</button>
+                </li>
+              </ul>
+            </div>
+            <div class="video-section video-section--download mb-88 js-target">
+              <div class="download-list">
+                <div class="download-card download-card--import">
+                  <div class="img-cover">
+                    <span class="icon icon--900 down-music-type2"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">세월이 흘러도 듣기</p>
+                    <p class="time">3:12</p>
+                  </div>
+                  <button class="btn" type="button"></button>
+                </div>
+                <div class="download-card download-card--import selected">
+                  <div class="img-cover">
+                    <span class="icon icon--900 down-music-type2"></span>
+                  </div>
+                  <div class="text-cover">
+                    <p class="title">세월이 흘러도 듣기</p>
+                    <p class="time">3:12</p>
+                  </div>
+                  <button class="btn" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="video-pip1" class="video-pip on">
+          <div class="video" style="background-color: green"></div>
+          <div class="gauge-wrap">
+            <div class="gauge" style="width: 40%"></div>
+          </div>
+          <div class="controls">
+            <button class="btn" onclick="freeClassToggle('#video-pip1 .video-play', 'stop')"><span class="icon video-play stop"></span></button>
+            <button class="btn" onclick="classRemove('#video-pip1', 'on')"><span class="icon close-white"></span></button>
+          </div>
+        </div>
+        <div id="video-pip2" class="video-pip video-pip--vertical on">
+          <div class="video" style="background-color: blue"></div>
+          <div class="gauge-wrap">
+            <div class="gauge" style="width: 40%"></div>
+          </div>
+          <div class="controls">
+            <button class="btn" onclick="freeClassToggle('#video-pip2 .video-play', 'stop')"><span class="icon video-play stop"></span></button>
+            <button class="btn" onclick="classRemove('#video-pip2', 'on')"><span class="icon close-white"></span></button>
+          </div>
+        </div>
+      </div>
+      <!-- popup -->
+      <div class="popup-wrap">
+        <div id="popup-toast1" class="popup popup--toast">
+          <div class="box box--center">
+            <div class="cont">
+              <p class="desc">2개 항목이 추가 되었습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div id="popup-toast2" class="popup popup--toast">
+          <div class="box box--center">
+            <div class="cont">
+              <p class="desc">
+                서버 통신 실패하여 <br />
+                일부 항목이 표시되지 않을 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="popup1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="text text--base">노션으로<br />이동하시겠어요?</p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')">취소</button>
+                <a class="btn btn--popup btn--half btn--orange size--100" href="javascript:void(0)">확인</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup2" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="text text--base">
+                ‘이지다운’이(가)<br />
+                내 파일에 접근하려고 합니다.
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2')">취소</button>
+                <a class="btn btn--popup btn--half btn--orange size--100" href="javascript:void(0)" onclick="(popupAndOverlayOff('#popup2 .overlay--popup', '#popup2'), classChangeAndToggle('#tab-section3 .cont', '#tab-section3 .cont2'), toastOn('#popup-toast1'))">확인</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup3" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup3 .overlay--popup', '#popup3')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="title--base-200 mb-20">제목 바꾸기</p>
+              <input class="type1 size-s mb-20" type="text" placeholder="입력하세요" />
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup3 .overlay--popup', '#popup3')">취소</button>
+                <a class="btn btn--popup btn--half btn--orange size--100" href="javascript:void(0)" onclick="popupAndOverlayOff('#popup3 .overlay--popup', '#popup3')">확인</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-play1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="(popupAndOverlayOff('#popup-play1 .overlay--popup', '#popup-play1'), toastOn('#popup-toast2'))"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="title title--base-200">현재 기기에서 재생할 수 없는 <br />항목이 있습니다. <br />다운로드를 진행하시겠습니까?</p>
+              <p class="text text--base text--color-100">
+                · 다운로드 필요 항목: 3개(총 1.5GB)<br />
+                · Wi-Fi 전용 다운로드 설정 시, <br />Wi-Fi 연결 필요
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="(popupAndOverlayOff('#popup-play1 .overlay--popup', '#popup-play1'), toastOn('#popup-toast2'))">바로 재생</button>
+                <button class="btn btn--popup btn--half btn--gray-base-200 size--100" type="button" onclick="(popupAndOverlayOff('#popup-play1 .overlay--popup', '#popup-play1'), toastOn('#popup-toast2'))">Wi-Fi 연결</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-play2" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-play2 .overlay--popup', '#popup-play2')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="title title--base-200">현재 기기에서 재생할 수 없는 <br />항목이 있습니다. <br />다운로드를 진행하시겠습니까?</p>
+              <p class="text text--base text--color-100">
+                · 다운로드 필요 항목: 3개(총 1.5GB)<br />
+                · Wi-Fi 전용 다운로드 설정 시, <br />Wi-Fi 연결 필요
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup-play2 .overlay--popup', '#popup-play2')">바로 재생</button>
+                <button class="btn btn--popup btn--half btn--orange size--100" type="button" onclick="popupAndOverlayOff('#popup-play2 .overlay--popup', '#popup-play2')">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-play3" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-play3 .overlay--popup', '#popup-play3')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="title title--base-200">동일한 파일이 재생목록에 있습니다. <br />추가하시겠습니까?</p>
+              <p class="text text--base text--color-100">
+                취소시 동일한 리스트는 제외하고 <br />
+                재생목록에 추가됩니다.
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup-play3 .overlay--popup', '#popup-play3')">취소</button>
+                <button class="btn btn--popup btn--half btn--orange size--100" type="button" onclick="popupAndOverlayOff('#popup-play3 .overlay--popup', '#popup-play3')">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-more1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-more1 .overlay--popup', '#popup-more1')"></div>
+          <div class="box box--center">
+            <div class="cont cont--padding-100">
+              <p class="title title--base-300">더보기 선택</p>
+              <div class="btn-wrap btn-wrap--column gapnone">
+                <button class="btn btn--popup btn--max btn--hovergray-base100 size--400 textalign--left family--regular radius--zero js-target2" type="button" onclick="(popupAndOverlayOff('#popup-more1 .overlay--popup', '#popup-more1'), popupAndOverlayOn('#popup3 .overlay--popup', '#popup3'))">제목 바꾸기</button>
+                <button class="btn btn--popup btn--max btn--hovergray-base100 size--400 textalign--left family--regular radius--zero" type="button" onclick="(popupAndOverlayOff('#popup-more1 .overlay--popup', '#popup-more1'), popupAndOverlayOn('#popup-select3 .overlay--popup', '#popup-select3'), inputFocusAndSelectAll('#card1-title-info'))">정보</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-btn1" class="popup popup--btn popup--btn-downloading">
+          <div class="box box--bottom">
+            <div class="container">
+              <div class="cont">
+                <div class="btn-wrap btn-wrap--row">
+                  <button class="btn btn--popup btn--half btn--gray-base size--300" type="button" onclick="popupOff('#popup-btn1')">삭제</button>
+                  <button class="btn btn--popup btn--half btn--orange size--300" type="button" onclick="popupOff('#popup-btn1')">중지</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-btn2" class="popup popup--btn popup--btn-downloading">
+          <div class="box box--bottom">
+            <div class="container">
+              <div class="cont">
+                <div class="btn-wrap btn-wrap--row">
+                  <button class="btn btn--popup btn--half btn--gray-base size--300" type="button" onclick="popupOff('#popup-btn2')">삭제</button>
+                  <button class="btn btn--popup btn--half btn--orange size--300" type="button" onclick="popupOff('#popup-btn2')">다운로드 재개</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-btn3" class="popup popup--btn popup--btn-downloading">
+          <div class="box box--bottom">
+            <div class="container">
+              <div class="cont">
+                <div class="btn-wrap btn-wrap--row">
+                  <button class="btn btn--popup btn--half btn--gray-base size--300" type="button" onclick="popupOff('#popup-btn3')">삭제</button>
+                  <button class="btn btn--popup btn--half btn--gray-base size--300" type="button" onclick="popupOff('#popup-btn3')">중지</button>
+                  <button class="btn btn--popup btn--half btn--orange size--300" type="button" onclick="popupOff('#popup-btn3')">재개</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-btn4" class="popup popup--btn popup--btn-downloading">
+          <div class="box box--bottom">
+            <div class="container">
+              <div class="cont">
+                <div class="btn-wrap btn-wrap--row">
+                  <button class="btn btn--popup btn--half btn--gray-base size--300" type="button" onclick="popupOff('#popup-btn4')">삭제</button>
+                  <a class="btn btn--popup btn--half btn--orange size--300" href="./player.html">재생</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select1" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1')"></div>
+          <div class="box box--bottom">
+            <p class="title">정렬</p>
+            <div class="cont">
+              <ul class="list list--radio">
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-1" checked="" />
+                  <label class="type1" for="popup-select1-radio1-1"><span class="title">다운로드순</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-2" />
+                  <label class="type1" for="popup-select1-radio1-2"><span class="title">제목순</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-3" />
+                  <label class="type1" for="popup-select1-radio1-3"><span class="title">PC 다운로드만</span><span class="icon type1"></span></label>
+                </li>
+                <li class="item">
+                  <input type="radio" name="popup-select1-radio1" id="popup-select1-radio1-4" />
+                  <label class="type1" for="popup-select1-radio1-4"><span class="title">Mobile 다운로드만</span><span class="icon type1"></span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap btn-wrap--row">
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select1 .overlay--popup', '#popup-select1')">적용</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select2" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup on" onclick="popupAndOverlayOff('#popup-select2 .overlay--popup', '#popup-select2')"></div>
+          <div class="box box--bottom">
+            <p class="title title--smallmb">휴지통</p>
+            <p class="desc">30일 동안 보관되며 이후 자동 삭제됩니다</p>
+            <div class="list-head list-head--type1">
+              <div class="category-bar">
+                <ul class="list">
+                  <li class="item">
+                    <button class="btn js-target" type="button">전체 선택</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="dropdown-wrap">
+                <div id="dropdown1" class="dropdown dropdown--type1">
+                  <button class="dropdown-btn" type="button" onclick="classToggle('#dropdown1')">
+                    <span class="title">최근삭제순</span>
+                    <span class="icon icon--100 arrow-bottom-gray"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="item">
+                      <button class="btn" type="button" onclick="(textChange('#dropdown1 .dropdown-btn .title', event.target), classToggle('#dropdown1'))">제목순</button>
+                    </li>
+                    <li class="item">
+                      <button class="btn" type="button" onclick="(textChange('#dropdown1 .dropdown-btn .title', event.target), classToggle('#dropdown1'))">PC만</button>
+                    </li>
+                    <li class="item">
+                      <button class="btn" type="button" onclick="(textChange('#dropdown1 .dropdown-btn .title', event.target), classToggle('#dropdown1'))">Mobile만</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="cont">
+              <ul class="list">
+                <div class="video-section video-section--download js-target">
+                  <div class="download-list">
+                    <div class="download-card download-card--completed">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="text-cover">
+                        <div class="title-wrap">
+                          <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                        </div>
+                        <p class="desc">종합</p>
+                        <div class="info"><span class="badge-shape badge-shape--pc">PC</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                        <div class="info"><span class="badge-shape badge-shape--mo">MO</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                    <div class="download-card download-card--completed selected">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="text-cover">
+                        <div class="title-wrap">
+                          <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                        </div>
+                        <p class="desc">종합</p>
+                        <div class="info"><span class="badge-shape badge-shape--pc">PC</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                    <div class="download-card download-card--completed">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="text-cover">
+                        <div class="title-wrap">
+                          <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                        </div>
+                        <p class="desc">종합</p>
+                        <div class="info"><span class="badge-shape badge-shape--mo">MO</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                    <div class="download-card download-card--completed selected">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="text-cover">
+                        <div class="title-wrap">
+                          <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                        </div>
+                        <p class="desc">종합</p>
+                        <div class="info"><span class="badge-shape badge-shape--mo">MO</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                    <div class="download-card download-card--completed">
+                      <div class="img-cover">
+                        <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="text-cover">
+                        <div class="title-wrap">
+                          <p class="title">궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도</p>
+                        </div>
+                        <p class="desc">종합</p>
+                        <div class="info"><span class="badge-shape badge-shape--pc">PC</span><span class="date">다운로드 일시: 2025.12.15</span></div>
+                      </div>
+                      <button class="btn" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="btn-wrap btn-wrap--row">
+              <button class="btn btn--popup btn--max btn--gray-base size--300" type="button" onclick="popupAndOverlayOff('#popup-select2 .overlay--popup', '#popup-select2')">영구 삭제</button>
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select2 .overlay--popup', '#popup-select2')">복구</button>
+            </div>
+          </div>
+        </div>
+        <div id="popup-select3" class="popup popup--select js-popup">
+          <div class="overlay overlay--popup on" onclick="popupAndOverlayOff('#popup-select3 .overlay--popup', '#popup-select3')"></div>
+          <div class="box box--bottom">
+            <p class="title">정보</p>
+            <div class="cont">
+              <ul class="list list--vedio-info">
+                <li class="item item--column">
+                  <p class="title">파일명</p>
+                  <input id="card1-title-info" class="type1" type="text" value="궁금한건 못참아! 쇼핑의 왕도 궁금한건 못참아! 쇼핑의 왕도" />
+                </li>
+                <li class="item">
+                  <p class="title">원본파일명</p>
+                  <p class="desc">[Playlist] 쌀쌀한 가을 아니면 겨울에 듣기 좋은 노래</p>
+                </li>
+                <li class="item">
+                  <p class="title">채널명</p>
+                  <p class="desc">종팝</p>
+                </li>
+                <li class="item">
+                  <p class="title">크기</p>
+                  <p class="desc">1.6GB</p>
+                </li>
+                <li class="item">
+                  <p class="title">다운로드 기기</p>
+                  <p class="desc">아이폰 14<br />2025년 12월 17일</p>
+                </li>
+                <li class="item">
+                  <p class="title">다운로드 자막</p>
+                  <p class="desc">한국어 / English</p>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-wrap btn-wrap--row">
+              <button class="btn btn--popup btn--max btn--gray-base size--300" type="button" onclick="popupAndOverlayOff('#popup-select3 .overlay--popup', '#popup-select3')">취소</button>
+              <button class="btn btn--popup btn--max btn--orange size--300" type="button" onclick="popupAndOverlayOff('#popup-select3 .overlay--popup', '#popup-select3')">수정</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="iconn" type="image/x-iconn" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/trending.css" />
+  </head>
+  <body onscroll="elmFixOnClose(['.header'], 52)">
+    <div class="wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo logo--primary">
+            <a href="./home.html">ezDown</a>
+          </h1>
+          <div class="utils">
+            <button class="icon icon--300 search" type="button" onclick="(popupOn('.popup--search'), inputFocus('#popup--search-input'))"></button>
+            <button class="point" type="button"><span class="icon icon--300 point"></span><span class="value">2,450P</span></button>
+            <button class="icon icon--300 profile" type="button"></button>
+          </div>
+        </div>
+      </header>
+      <!-- nav -->
+      <nav class="bottom-nav">
+        <ul class="list">
+          <li class="item on">
+            <a class="btn" href="./home.html"><span class="icon icon--300 nav-home"></span>홈</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./shorts.html"><span class="icon icon--300 nav-shorts"></span>쇼츠</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./my-point.html"><span class="icon icon--900 nav-ezdown"></span></a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./subscription.html"><span class="icon icon--300 nav-subscription on"></span>구독</a>
+          </li>
+          <li class="item">
+            <a class="btn" href="./library.html"><span class="icon icon--300 nav-library"></span>보관함</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- main -->
+      <div class="main main--trending">
+        <div class="title-cover">
+          <span class="icon favmov"></span>
+          <h2 class="title">인기 동영상<span class="meta">조회수 기준 인기 동영상 TOP 40</span></h2>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <a class="video-link" href="./watch.html"></a>
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+              <div class="tag tag--time tag--time-base">
+                <div class="badge-shape">
+                  <span class="text">10:47</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-cover">
+              <a class="profile" href="javascript:void(0)" style="background-image: url(./assets/images/test/video-profile.png)"></a>
+              <div class="title-box">
+                <h3 class="title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</h3>
+                <p class="info"><span>JTBC Entertainment</span><span>·</span><span>조회수 52만회</span><span>·</span><span>7일 전</span></p>
+              </div>
+              <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="container">
+            <div class="video-head">
+              <p class="title"><span class="icon icon--600 shorts"></span>Shorts</p>
+              <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+            </div>
+            <div class="video-list">
+              <div class="video-card video-card--short">
+                <a class="video-link" href="javascript:void(0)"></a>
+                <div class="img-cover">
+                  <img src="./assets/images/test/shorts-test.jpg" alt="JLPT" />
+                  <button class="down" type="button"><span class="icon icon--300 shorts-down">down</span></button>
+                  <button class="more" type="button"><span class="icon icon--300 shorts-more"></span></button>
+                </div>
+              </div>
+              <div class="video-card video-card--short">
+                <a class="video-link" href="javascript:void(0)"></a>
+                <div class="img-cover">
+                  <img src="./assets/images/test/shorts-test.jpg" alt="JLPT" />
+                  <button class="down" type="button"><span class="icon icon--300 shorts-down">down</span></button>
+                  <button class="more" type="button"><span class="icon icon--300 shorts-more"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <a class="video-link" href="javascript:void(0)"></a>
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+              <div class="tag tag--time tag--time-light">
+                <div class="badge-shape">
+                  <span class="text">10:47</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-cover">
+              <a class="profile" href="javascript:void(0)" style="background-image: url(./assets/images/test/video-profile.png)"></a>
+              <div class="title-box">
+                <h3 class="title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</h3>
+                <p class="info"><span>JTBC Entertainment</span><span>·</span><span>조회수 52만회</span><span>·</span><span>7일 전</span></p>
+              </div>
+              <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <a class="video-link" href="javascript:void(0)"></a>
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+              <div class="tag tag--live">
+                <div class="badge-shape">
+                  <span class="text">LIVE</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-cover">
+              <a class="profile" href="javascript:void(0)" style="background-image: url(./assets/images/test/video-profile.png)"></a>
+              <div class="title-box">
+                <h3 class="title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</h3>
+                <p class="info"><span>JTBC Entertainment</span><span>·</span><span>조회수 52만회</span><span>·</span><span>7일 전</span></p>
+              </div>
+              <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <a class="video-link" href="javascript:void(0)"></a>
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+              <div class="tag tag--shorts tag--shorts-base">
+                <div class="badge-shape">
+                  <span class="icon icon--200 shorts-tag"></span>
+                  <span class="text">Shorts</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-cover">
+              <a class="profile" href="javascript:void(0)" style="background-image: url(./assets/images/test/video-profile.png)"></a>
+              <div class="title-box">
+                <h3 class="title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</h3>
+                <p class="info"><span>JTBC Entertainment</span><span>·</span><span>조회수 52만회</span><span>·</span><span>7일 전</span></p>
+              </div>
+              <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="video-section video-section--link">
+          <div class="video-card video-card--single">
+            <a class="video-link" href="javascript:void(0)"></a>
+            <div class="img-cover">
+              <img src="./assets/images/test/video-test.jpg" alt="냉장고를 부탁해" />
+              <button class="down" type="button"><span class="icon icon--900 video-down">down</span></button>
+              <div class="tag tag--shorts tag--shorts-light">
+                <div class="badge-shape">
+                  <span class="icon icon--200 shorts-tag"></span>
+                  <span class="text">Shorts</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-cover">
+              <a class="profile" href="javascript:void(0)" style="background-image: url(./assets/images/test/video-profile.png)"></a>
+              <div class="title-box">
+                <h3 class="title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</h3>
+                <p class="info"><span>JTBC Entertainment</span><span>·</span><span>조회수 52만회</span><span>·</span><span>7일 전</span></p>
+              </div>
+              <button class="more" type="button"><span class="icon icon--300 topbar-more">more</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- popup -->
+      <div class="popup-wrap">
+        <div class="popup popup--search js-popup">
+          <div class="head">
+            <div class="container">
+              <button class="back" type="button" onclick="popupOff('.popup--search')"><span class="icon icon--300 arrow-back">뒤로가기</span></button>
+              <div class="input-wrap">
+                <input id="popup--search-input" type="text" placeholder="검색" />
+              </div>
+              <button class="delete on" type="button"><span class="icon icon--300 search-delete">지우기</span></button>
+              <button class="mike" type="button" onclick="popupAndOverlayOn('#popup1 .overlay--popup', '#popup1')"><span class="icon icon--400 search-mike">음성검색</span></button>
+            </div>
+          </div>
+          <!-- 검색 기록 중지 -->
+          <div class="list-stop on">
+            <span class="icon icon--1000 search-stop"></span>
+            <p class="title">검색 기록이 중지된 상태입니다.</p>
+          </div>
+          <div class="list-head">
+            <p class="title">최근 검색어</p>
+            <button class="btn remove" type="button" onclick="popupAndOverlayOn('#popup2 .overlay--popup', '#popup2')">전체삭제</button>
+          </div>
+          <div class="list">
+            <div class="item">
+              <div class="btn">
+                <div class="container">
+                  <span class="icon icon--300 search-history"></span>
+                  <div class="title-wrap"><p class="title">노래</p></div>
+                  <button class="close-btn" type="button"><span class="icon icon--300 sidebar-close"></span></button>
+                </div>
+                <a class="link" href="./search.html"></a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="btn">
+                <div class="container">
+                  <span class="icon icon--300 search-history"></span>
+                  <div class="title-wrap"><p class="title">IU concert</p></div>
+                  <button class="close-btn" type="button"><span class="icon icon--300 sidebar-close"></span></button>
+                </div>
+                <a class="link" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="btn">
+                <div class="container">
+                  <span class="icon icon--300 search"></span>
+                  <div class="title-wrap"><p class="title">iudc</p></div>
+                  <span class="icon icon--300 search-go"></span>
+                </div>
+                <a class="link" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="btn">
+                <div class="container">
+                  <span class="icon icon--300 search"></span>
+                  <div class="title-wrap"><p class="title">iudc</p></div>
+                  <span class="icon icon--300 search-go"></span>
+                </div>
+                <a class="link" href="javascript:void(0)"></a>
+              </div>
+            </div>
+          </div>
+          <button class="btn search-toggle" type="button" onclick="popupAndOverlayOn('#popup3 .overlay--popup', '#popup3')">검색 기록 시작</button>
+        </div>
+        <div id="popup1" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="text text--base">
+                ‘이지다운’이(가)<br />
+                마이크에<br />
+                접근하려고 합니다.
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup1 .overlay--popup', '#popup1')">취소</button>
+                <button class="btn btn--popup btn--half btn--orange size--100" type="button" onclick="(popupOn('#popup-mike1'), popupOn('#popup-mike2'), popupOn('#popup-mike3'), popupAndOverlayOff('#popup1 .overlay--popup', '#popup1'))">허용</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup2" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="text text--base">
+                검색 기록을<br />
+                모두 삭제할까요?
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2')">취소</button>
+                <button class="btn btn--popup btn--half btn--orange size--100" type="button" onclick="popupAndOverlayOff('#popup2 .overlay--popup', '#popup2')">삭제</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup3" class="popup popup--basic js-popup">
+          <div class="overlay overlay--popup" onclick="popupAndOverlayOff('#popup3 .overlay--popup', '#popup3')"></div>
+          <div class="box box--center">
+            <div class="cont">
+              <p class="title title--base-200">검색 기록을 중지할까요?</p>
+              <p class="text text--base text--color-100">
+                이 설정은 <span class="point point--color-100 underline">기기설정</span>에서 <br />
+                언제든 변경할 수 있습니다.
+              </p>
+              <div class="btn-wrap btn-wrap--row">
+                <button class="btn btn--popup btn--half btn--gray-base size--100" type="button" onclick="popupAndOverlayOff('#popup3 .overlay--popup', '#popup3')">취소</button>
+                <button class="btn btn--popup btn--half btn--orange size--100" type="button" onclick="popupAndOverlayOff('#popup3 .overlay--popup', '#popup3')">중지</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-mike1" class="popup popup--mike js-popup">
+          <div class="head">
+            <button class="close" type="button" onclick="popupOff('#popup-mike1')"><span class="icon icon--300 sidebar-close">닫기</span></button>
+          </div>
+          <div class="box">
+            <div class="cont">
+              <p class="desc">
+                <span>대기 중···</span>
+                <span>지금 듣고 있어요.</span>
+              </p>
+              <div class="voice-status voice-status--mic">
+                <div class="circle-wrap">
+                  <div class="circle circle--1"></div>
+                  <div class="circle circle--2"></div>
+                  <button class="circle circle--3" type="button">
+                    <span class="icon icon--800 voice"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-mike2" class="popup popup--mike js-popup">
+          <div class="head">
+            <button class="close" type="button" onclick="popupOff('#popup-mike2')"><span class="icon icon--300 sidebar-close">닫기</span></button>
+          </div>
+          <div class="box">
+            <div class="cont">
+              <p class="desc">
+                <span>잠시만 기다려 주세요···</span>
+              </p>
+              <div class="voice-status voice-status--listening">
+                <div class="loader"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-mike3" class="popup popup--mike js-popup">
+          <div class="head">
+            <button class="close" type="button" onclick="popupOff('#popup-mike3')"><span class="icon icon--300 sidebar-close">닫기</span></button>
+          </div>
+          <div class="box">
+            <div class="cont">
+              <p class="desc">
+                <span>다시 시도해주세요.</span>
+              </p>
+              <div class="voice-status voice-status--error">
+                <div class="circle-wrap">
+                  <button class="circle" type="button">
+                    <span class="icon icon--800 voice-gray"></span>
+                  </button>
+                </div>
+                <p class="desc">다시 시도하려면 마이크를 탭하세요</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/event.js"></script>
+  </body>
+</html>
