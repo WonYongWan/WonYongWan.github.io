@@ -1,0 +1,628 @@
+:root {
+  // basic
+  --ic-arrow-back: url(../icons/ic-arrow-back.png);
+  --ic-arrow-next: url(../icons/ic-arrow-next.png);
+  --ic-arrow-next-white: url(../icons/ic-arrow-next-white.png);
+  --ic-arrow-down-underline: url(../icons/ic-arrow-down-underline.png);
+  --ic-arrow-down-underline-white: url(../icons/ic-arrow-down-underline-white.png);
+  --ic-arrow-top: url(../icons/ic-arrow-top.png);
+  --ic-arrow-bottom: url(../icons/ic-arrow-bottom.png);
+  --ic-arrow-left-circle: url(../icons/ic-arrow-left-circle.png);
+  --ic-arrow-left-circle-disabled: url(../icons/ic-arrow-left-circle-disabled.png);
+  --ic-triangle-bottom: url(../icons/ic-triangle-bottom.png);
+  --ic-check: url(../icons/ic-check.png);
+  --ic-close-app: url(../icons/ic-close-app.png);
+  --ic-close-sidebar: url(../icons/ic-close-sidebar.png);
+  --ic-close-search: url(../icons/ic-close-search.png);
+  --ic-close-pip: url(../icons/ic-close-pip.png);
+  --ic-delete-search: url(../icons/ic-delete-search.png);
+  --ic-refresh: url(../icons/ic-refresh.png);
+  --ic-point: url(../icons/ic-point.png);
+  --ic-minus-app: url(../icons/ic-minus-app.png);
+  --ic-square-app: url(../icons/ic-square-app.png);
+  --ic-more-left: url(../icons/ic-more-left.png);
+  --ic-more-right: url(../icons/ic-more-right.png);
+  --ic-search: url(../icons/ic-search.png);
+  --ic-search-secondary: url(../icons/ic-search-secondary.png);
+  --ic-thema: url(../icons/ic-thema.png);
+  --ic-mic: url(../icons/ic-mic.png);
+  --ic-mic-gray: url(../icons/ic-mic-gray.png);
+  --ic-mic-secondary: url(../icons/ic-mic-secondary.png);
+  --ic-win-small: url(../icons/ic-win-small.png);
+  --ic-win-large: url(../icons/ic-win-large.png);
+  --ic-shorts: url(../icons/ic-shorts.png);
+  --ic-search-history: url(../icons/ic-search-history.png);
+  --ic-search-empty: url(../icons/ic-search-empty.png);
+  --ic-search-empty-result: url(../icons/ic-search-empty-result.png);
+  --ic-my-download-empty: url(../icons/ic-my-download-empty.png);
+  --ic-favmov: url(../icons/ic-favmov.png);
+  --ic-favmov-secondary: url(../icons/ic-favmov-secondary.png);
+  --ic-google: url(../icons/ic-google.png);
+  --ic-video-section-grid: url(../icons/ic-video-section-grid.png);
+  --ic-video-section-grid-active: url(../icons/ic-video-section-grid-active.png);
+  --ic-video-section-list: url(../icons/ic-video-section-list.png);
+  --ic-video-section-list-active: url(../icons/ic-video-section-list-active.png);
+  --ic-bell: url(../icons/ic-bell.png);
+  --ic-bell-rings: url(../icons/ic-bell-rings.png);
+  --ic-bell-none: url(../icons/ic-bell-none.png);
+  --ic-person-cancel: url(../icons/ic-person-cancel.png);
+  --ic-download-forder: url(../icons/ic-download-forder.png);
+  --ic-trash-empty: url(../icons/ic-trash-empty.png);
+  --ic-myfile-empty: url(../icons/ic-myfile-empty.png);
+  --ic-play-allplay: url(../icons/ic-play-allplay.png);
+  --ic-play-onlyplay: url(../icons/ic-play-onlyplay.png);
+  --ic-play-shuffle: url(../icons/ic-play-shuffle.png);
+  --ic-play-shuffle: url(../icons/ic-play-shuffle.png);
+  --ic-play-list-pick: url(../icons/ic-play-list-pick.png);
+  --ic-play-list-current-mark: url(../icons/ic-play-list-current-mark.png);
+  --ic-pip-bigger: url(../icons/ic-pip-bigger.png);
+  --ic-tooltip: url(../icons/ic-tooltip.png);
+  --ic-alarm: url(../icons/ic-alarm.png);
+  --ic-battery: url(../icons/ic-battery.png);
+  --ic-ezp-pick: url(../icons/ic-ezp-pick.png);
+  --ic-playlist-white: url(../icons/ic-playlist-white.png);
+
+  // video
+  --ic-video-download: url(../icons/ic-video-download.png);
+  --ic-video-more: url(../icons/ic-video-more.png);
+  --ic-state-music: url(../icons/ic-state-music.png);
+  --ic-state-video: url(../icons/ic-state-video.png);
+  --ic-video-share: url(../icons/ic-video-share.png);
+
+  // player
+  --ic-player-speed-up: url(../icons/ic-player-speed-up.png);
+  --ic-player-speed-down: url(../icons/ic-player-speed-down.png);
+  --ic-player-volume: url(../icons/ic-player-volume.png);
+  --ic-player-fullscreen: url(../icons/ic-player-fullscreen.png);
+  --ic-player-exit-fullscreen: url(../icons/ic-player-exit-fullscreen.png);
+  --ic-player-playlist: url(../icons/ic-player-playlist.png);
+  --ic-player-play: url(../icons/ic-player-play.png);
+  --ic-player-stop: url(../icons/ic-player-stop.png);
+  --ic-player-prev: url(../icons/ic-player-prev.png);
+  --ic-player-next: url(../icons/ic-player-next.png);
+
+  // sidebar
+  --ic-sidebar-music: url(../icons/ic-sidebar-music.png);
+  --ic-sidebar-hype: url(../icons/ic-sidebar-hype.png);
+  --ic-sidebar-live: url(../icons/ic-sidebar-live.png);
+  --ic-sidebar-game: url(../icons/ic-sidebar-game.png);
+  --ic-sidebar-sports: url(../icons/ic-sidebar-sports.png);
+  --ic-sidebar-courses: url(../icons/ic-sidebar-courses.png);
+  --ic-sidebar-podcast: url(../icons/ic-sidebar-podcast.png);
+  --ic-sidebar-kids: url(../icons/ic-sidebar-kids.png);
+
+  // pagination
+  --ic-page-first: url(../icons/ic-page-first.png);
+  --ic-page-prev: url(../icons/ic-page-prev.png);
+  --ic-page-next: url(../icons/ic-page-next.png);
+  --ic-page-last: url(../icons/ic-page-last.png);
+
+  // bottom-nav
+  --ic-nav-home: url(../icons/ic-nav-home.png);
+  --ic-nav-home-active: url(../icons/ic-nav-home-active.png);
+  --ic-nav-shorts: url(../icons/ic-nav-shorts.png);
+  --ic-nav-shorts-active: url(../icons/ic-nav-shorts-active.png);
+  --ic-nav-subscriptions: url(../icons/ic-nav-subscription.png);
+  --ic-nav-subscriptions-active: url(../icons/ic-nav-subscription-active.png);
+  --ic-nav-library: url(../icons/ic-nav-library.png);
+  --ic-nav-library-active: url(../icons/ic-nav-library-active.png);
+  --ic-nav-ezdown: url(../icons/ic-nav-ezdown.png);
+  --ic-nav-ezdown-active: url(../icons/ic-nav-ezdown-active.png);
+
+  // input
+  --ic-checkbox: url(../icons/ic-checkbox.png);
+  --ic-checkbox-active: url(../icons/ic-checkbox-active.png);
+  --ic-radio: url(../icons/ic-radio.png);
+  --ic-radio-active: url(../icons/ic-radio-active.png);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // basic
+    --ic-arrow-back: url(../icons/dark/ic-arrow-back.png);
+    --ic-arrow-next: url(../icons/dark/ic-arrow-next.png);
+    --ic-arrow-down-underline: url(../icons/dark/ic-arrow-down-underline.png);
+    --ic-arrow-top: url(../icons/dark/ic-arrow-top.png);
+    --ic-arrow-bottom: url(../icons/dark/ic-arrow-bottom.png);
+    --ic-arrow-left-circle: url(../icons/dark/ic-arrow-left-circle.png);
+    --ic-arrow-left-circle-disabled: url(../icons/dark/ic-arrow-left-circle-disabled.png);
+    --ic-triangle-bottom: url(../icons/dark/ic-triangle-bottom.png);
+    --ic-close-app: url(../icons/dark/ic-close-app.png);
+    --ic-close-sidebar: url(../icons/dark/ic-close-sidebar.png);
+    --ic-close-search: url(../icons/dark/ic-close-search.png);
+    --ic-refresh: url(../icons/dark/ic-refresh.png);
+    --ic-minus-app: url(../icons/dark/ic-minus-app.png);
+    --ic-square-app: url(../icons/dark/ic-square-app.png);
+    --ic-more-left: url(../icons/dark/ic-more-left.png);
+    --ic-more-right: url(../icons/dark/ic-more-right.png);
+    --ic-search: url(../icons/dark/ic-search.png);
+    --ic-thema: url(../icons/dark/ic-thema.png);
+    --ic-win-small: url(../icons/dark/ic-win-small.png);
+    --ic-win-large: url(../icons/dark/ic-win-large.png);
+    --ic-shorts: url(../icons/dark/ic-shorts.png);
+    --ic-search-history: url(../icons/dark/ic-search-history.png);
+    --ic-search-empty: url(../icons/dark/ic-search-empty.png);
+    --ic-search-empty-result: url(../icons/dark/ic-search-empty-result.png);
+    --ic-my-download-empty: url(../icons/dark/ic-my-download-empty.png);
+    --ic-video-section-grid: url(../icons/dark/ic-video-section-grid.png);
+    --ic-video-section-list: url(../icons/dark/ic-video-section-list.png);
+    --ic-bell: url(../icons/dark/ic-bell.png);
+    --ic-bell-rings: url(../icons/dark/ic-bell-rings.png);
+    --ic-bell-none: url(../icons/dark/ic-bell-none.png);
+    --ic-person-cancel: url(../icons/dark/ic-person-cancel.png);
+    --ic-download-forder: url(../icons/dark/ic-download-forder.png);
+    --ic-trash-empty: url(../icons/dark/ic-trash-empty.png);
+    --ic-myfile-empty: url(../icons/dark/ic-myfile-empty.png);
+    --ic-play-allplay: url(../icons/dark/ic-play-allplay.png);
+    --ic-play-onlyplay: url(../icons/dark/ic-play-onlyplay.png);
+    --ic-play-shuffle: url(../icons/dark/ic-play-shuffle.png);
+    --ic-ezp-pick: url(../icons/dark/ic-ezp-pick.png);
+
+    // video
+    --ic-video-more: url(../icons/dark/ic-video-more.png);
+
+    // sidebar
+    --ic-sidebar-music: url(../icons/dark/ic-sidebar-music.png);
+    --ic-sidebar-hype: url(../icons/dark/ic-sidebar-hype.png);
+    --ic-sidebar-live: url(../icons/dark/ic-sidebar-live.png);
+    --ic-sidebar-game: url(../icons/dark/ic-sidebar-game.png);
+    --ic-sidebar-sports: url(../icons/dark/ic-sidebar-sports.png);
+    --ic-sidebar-courses: url(../icons/dark/ic-sidebar-courses.png);
+    --ic-sidebar-podcast: url(../icons/dark/ic-sidebar-podcast.png);
+    --ic-sidebar-kids: url(../icons/dark/ic-sidebar-kids.png);
+
+    // pagination
+    --ic-page-first: url(../icons/dark/ic-page-first.png);
+    --ic-page-prev: url(../icons/dark/ic-page-prev.png);
+    --ic-page-next: url(../icons/dark/ic-page-next.png);
+    --ic-page-last: url(../icons/dark/ic-page-last.png);
+
+    // bottom-nav
+    --ic-nav-home: url(../icons/dark/ic-nav-home.png);
+    --ic-nav-home-active: url(../icons/dark/ic-nav-home-active.png);
+    --ic-nav-shorts: url(../icons/dark/ic-nav-shorts.png);
+    --ic-nav-shorts-active: url(../icons/dark/ic-nav-shorts-active.png);
+    --ic-nav-subscriptions: url(../icons/dark/ic-nav-subscription.png);
+    --ic-nav-subscriptions-active: url(../icons/dark/ic-nav-subscription-active.png);
+    --ic-nav-library: url(../icons/dark/ic-nav-library.png);
+    --ic-nav-library-active: url(../icons/dark/ic-nav-library-active.png);
+    --ic-nav-ezdown: url(../icons/dark/ic-nav-ezdown.png);
+
+    // input
+    --ic-checkbox: url(../icons/dark/ic-checkbox.png);
+    --ic-checkbox-active: url(../icons/dark/ic-checkbox-active.png);
+    --ic-radio: url(../icons/dark/ic-radio.png);
+    --ic-radio-active: url(../icons/dark/ic-radio-active.png);
+  }
+}
+
+.dark {
+  // basic
+  --ic-arrow-back: url(../icons/dark/ic-arrow-back.png);
+  --ic-arrow-next: url(../icons/dark/ic-arrow-next.png);
+  --ic-arrow-down-underline: url(../icons/dark/ic-arrow-down-underline.png);
+  --ic-arrow-top: url(../icons/dark/ic-arrow-top.png);
+  --ic-arrow-bottom: url(../icons/dark/ic-arrow-bottom.png);
+  --ic-arrow-left-circle: url(../icons/dark/ic-arrow-left-circle.png);
+  --ic-arrow-left-circle-disabled: url(../icons/dark/ic-arrow-left-circle-disabled.png);
+  --ic-triangle-bottom: url(../icons/dark/ic-triangle-bottom.png);
+  --ic-close-app: url(../icons/dark/ic-close-app.png);
+  --ic-close-sidebar: url(../icons/dark/ic-close-sidebar.png);
+  --ic-close-search: url(../icons/dark/ic-close-search.png);
+  --ic-refresh: url(../icons/dark/ic-refresh.png);
+  --ic-minus-app: url(../icons/dark/ic-minus-app.png);
+  --ic-square-app: url(../icons/dark/ic-square-app.png);
+  --ic-more-left: url(../icons/dark/ic-more-left.png);
+  --ic-more-right: url(../icons/dark/ic-more-right.png);
+  --ic-search: url(../icons/dark/ic-search.png);
+  --ic-thema: url(../icons/dark/ic-thema.png);
+  --ic-win-small: url(../icons/dark/ic-win-small.png);
+  --ic-win-large: url(../icons/dark/ic-win-large.png);
+  --ic-shorts: url(../icons/dark/ic-shorts.png);
+  --ic-search-history: url(../icons/dark/ic-search-history.png);
+  --ic-search-empty: url(../icons/dark/ic-search-empty.png);
+  --ic-search-empty-result: url(../icons/dark/ic-search-empty-result.png);
+  --ic-my-download-empty: url(../icons/dark/ic-my-download-empty.png);
+  --ic-video-section-grid: url(../icons/dark/ic-video-section-grid.png);
+  --ic-video-section-list: url(../icons/dark/ic-video-section-list.png);
+  --ic-bell: url(../icons/dark/ic-bell.png);
+  --ic-bell-rings: url(../icons/dark/ic-bell-rings.png);
+  --ic-bell-none: url(../icons/dark/ic-bell-none.png);
+  --ic-person-cancel: url(../icons/dark/ic-person-cancel.png);
+  --ic-download-forder: url(../icons/dark/ic-download-forder.png);
+  --ic-trash-empty: url(../icons/dark/ic-trash-empty.png);
+  --ic-myfile-empty: url(../icons/dark/ic-myfile-empty.png);
+  --ic-play-allplay: url(../icons/dark/ic-play-allplay.png);
+  --ic-play-onlyplay: url(../icons/dark/ic-play-onlyplay.png);
+  --ic-play-shuffle: url(../icons/dark/ic-play-shuffle.png);
+  --ic-ezp-pick: url(../icons/dark/ic-ezp-pick.png);
+
+  // video
+  --ic-video-more: url(../icons/dark/ic-video-more.png);
+
+  // sidebar
+  --ic-sidebar-music: url(../icons/dark/ic-sidebar-music.png);
+  --ic-sidebar-hype: url(../icons/dark/ic-sidebar-hype.png);
+  --ic-sidebar-live: url(../icons/dark/ic-sidebar-live.png);
+  --ic-sidebar-game: url(../icons/dark/ic-sidebar-game.png);
+  --ic-sidebar-sports: url(../icons/dark/ic-sidebar-sports.png);
+  --ic-sidebar-courses: url(../icons/dark/ic-sidebar-courses.png);
+  --ic-sidebar-podcast: url(../icons/dark/ic-sidebar-podcast.png);
+  --ic-sidebar-kids: url(../icons/dark/ic-sidebar-kids.png);
+
+  // pagination
+  --ic-page-first: url(../icons/dark/ic-page-first.png);
+  --ic-page-prev: url(../icons/dark/ic-page-prev.png);
+  --ic-page-next: url(../icons/dark/ic-page-next.png);
+  --ic-page-last: url(../icons/dark/ic-page-last.png);
+
+  // bottom-nav
+  --ic-nav-home: url(../icons/dark/ic-nav-home.png);
+  --ic-nav-home-active: url(../icons/dark/ic-nav-home-active.png);
+  --ic-nav-shorts: url(../icons/dark/ic-nav-shorts.png);
+  --ic-nav-shorts-active: url(../icons/dark/ic-nav-shorts-active.png);
+  --ic-nav-subscriptions: url(../icons/dark/ic-nav-subscription.png);
+  --ic-nav-subscriptions-active: url(../icons/dark/ic-nav-subscription-active.png);
+  --ic-nav-library: url(../icons/dark/ic-nav-library.png);
+  --ic-nav-library-active: url(../icons/dark/ic-nav-library-active.png);
+  --ic-nav-ezdown: url(../icons/dark/ic-nav-ezdown.png);
+
+  // input
+  --ic-checkbox: url(../icons/dark/ic-checkbox.png);
+  --ic-checkbox-active: url(../icons/dark/ic-checkbox-active.png);
+  --ic-radio: url(../icons/dark/ic-radio.png);
+  --ic-radio-active: url(../icons/dark/ic-radio-active.png);
+}
+
+.icon {
+  @include image-set();
+  display: inline-block;
+
+  // basic
+  &--arrow-back {
+    background-image: var(--ic-arrow-back);
+  }
+
+  &--arrow-next {
+    background-image: var(--ic-arrow-next);
+  }
+
+  &--arrow-next-white {
+    background-image: var(--ic-arrow-next-white);
+  }
+
+  &--arrow-down-underline {
+    background-image: var(--ic-arrow-down-underline);
+  }
+
+  &--arrow-down-underline-white {
+    background-image: var(--ic-arrow-down-underline-white);
+  }
+
+  &--arrow-top {
+    background-image: var(--ic-arrow-top);
+  }
+
+  &--arrow-bottom {
+    background-image: var(--ic-arrow-bottom);
+  }
+
+  &--triangle-bottom {
+    background-image: var(--ic-triangle-bottom);
+  }
+
+  &--check {
+    background-image: var(--ic-check);
+  }
+
+  &--close-app {
+    background-image: var(--ic-close-app);
+  }
+
+  &--close-sidebar {
+    background-image: var(--ic-close-sidebar);
+  }
+
+  &--close-search {
+    background-image: var(--ic-close-search);
+  }
+
+  &--close-pip {
+    background-image: var(--ic-close-pip);
+  }
+
+  &--delete-search {
+    background-image: var(--ic-delete-search);
+  }
+
+  &--refresh {
+    background-image: var(--ic-refresh);
+  }
+
+  &--point {
+    background-image: var(--ic-point);
+  }
+
+  &--minus-app {
+    background-image: var(--ic-minus-app);
+  }
+
+  &--more {
+    &-left {
+      background-image: var(--ic-more-left);
+    }
+
+    &-right {
+      background-image: var(--ic-more-right);
+    }
+  }
+
+  &--square-app {
+    background-image: var(--ic-square-app);
+  }
+
+  &--search {
+    background-image: var(--ic-search);
+  }
+
+  &--search-secondary {
+    background-image: var(--ic-search-secondary);
+  }
+
+  &--thema {
+    background-image: var(--ic-thema);
+  }
+
+  &--mic {
+    background-image: var(--ic-mic);
+  }
+
+  &--mic-gray {
+    background-image: var(--ic-mic-gray);
+  }
+
+  &--mic-secondary {
+    background-image: var(--ic-mic-secondary);
+  }
+
+  &--shorts {
+    background-image: var(--ic-shorts);
+  }
+
+  &--search-history {
+    background-image: var(--ic-search-history);
+  }
+
+  &--search-empty {
+    background-image: var(--ic-search-empty);
+  }
+
+  &--search-empty-result {
+    background-image: var(--ic-search-empty-result);
+  }
+
+  &--my-download-empty {
+    background-image: var(--ic-my-download-empty);
+  }
+
+  &--favmov {
+    background-image: var(--ic-favmov);
+  }
+
+  &--favmov-secondary {
+    background-image: var(--ic-favmov-secondary);
+  }
+
+  &--google {
+    background-image: var(--ic-google);
+  }
+
+  &--video-section-grid {
+    background-image: var(--ic-video-section-grid);
+  }
+
+  &--video-section-list {
+    background-image: var(--ic-video-section-list);
+  }
+
+  &--bell {
+    background-image: var(--ic-bell);
+  }
+
+  &--bell-rings {
+    background-image: var(--ic-bell-rings);
+  }
+
+  &--bell-none {
+    background-image: var(--ic-bell-none);
+  }
+
+  &--person-cancel {
+    background-image: var(--ic-person-cancel);
+  }
+
+  &--download-folder {
+    background-image: var(--ic-download-forder);
+  }
+
+  &--trash-empty {
+    background-image: var(--ic-trash-empty);
+  }
+
+  &--myfile-empty {
+    background-image: var(--ic-myfile-empty);
+  }
+
+  &--play-allplay {
+    background-image: var(--ic-play-allplay);
+  }
+
+  &--play-onlyplay {
+    background-image: var(--ic-play-onlyplay);
+  }
+
+  &--play-shuffle {
+    background-image: var(--ic-play-shuffle);
+  }
+
+  &--play-list-pick {
+    background-image: var(--ic-play-list-pick);
+  }
+
+  &--play-list-current-mark {
+    background-image: var(--ic-play-list-current-mark);
+  }
+
+  &--pip-bigger {
+    background-image: var(--ic-pip-bigger);
+  }
+
+  &--tooltip {
+    background-image: var(--ic-tooltip);
+  }
+
+  &--alarm {
+    background-image: var(--ic-alarm);
+  }
+
+  &--battery {
+    background-image: var(--ic-battery);
+  }
+
+  &--ezp-pick {
+    background-image: var(--ic-ezp-pick);
+  }
+
+  &--playlist-white {
+    background-image: var(--ic-playlist-white);
+  }
+
+  // video / shorts
+  &--video-download {
+    background-image: var(--ic-video-download);
+  }
+
+  &--video-more {
+    background-image: var(--ic-video-more);
+  }
+
+  &--state-music {
+    background-image: var(--ic-state-music);
+  }
+
+  &--state-video {
+    background-image: var(--ic-state-video);
+  }
+
+  &--video-share {
+    background-image: var(--ic-video-share);
+  }
+
+  // player
+  &--player-speed-up {
+    background-image: var(--ic-player-speed-up);
+  }
+
+  &--player-speed-down {
+    background-image: var(--ic-player-speed-down);
+  }
+
+  &--player-volume {
+    background-image: var(--ic-player-volume);
+  }
+
+  &--player-fullscreen {
+    background-image: var(--ic-player-fullscreen);
+  }
+
+  &--player-playlist {
+    background-image: var(--ic-player-playlist);
+  }
+
+  &--player-play {
+    background-image: var(--ic-player-play);
+  }
+
+  &--player-stop {
+    background-image: var(--ic-player-stop);
+  }
+
+  &--player-prev {
+    background-image: var(--ic-player-prev);
+  }
+
+  &--player-next {
+    background-image: var(--ic-player-next);
+  }
+
+  // sidebar
+  &--sidebar-music {
+    background-image: var(--ic-sidebar-music);
+  }
+
+  &--sidebar-hype {
+    background-image: var(--ic-sidebar-hype);
+  }
+
+  &--sidebar-live {
+    background-image: var(--ic-sidebar-live);
+  }
+
+  &--sidebar-game {
+    background-image: var(--ic-sidebar-game);
+  }
+
+  &--sidebar-sports {
+    background-image: var(--ic-sidebar-sports);
+  }
+
+  &--sidebar-courses {
+    background-image: var(--ic-sidebar-courses);
+  }
+
+  &--sidebar-podcast {
+    background-image: var(--ic-sidebar-podcast);
+  }
+
+  &--sidebar-kids {
+    background-image: var(--ic-sidebar-kids);
+  }
+
+  // pagination
+  &--page-first {
+    background-image: var(--ic-page-first);
+  }
+
+  &--page-prev {
+    background-image: var(--ic-page-prev);
+  }
+
+  &--page-next {
+    background-image: var(--ic-page-next);
+  }
+
+  &--page-last {
+    background-image: var(--ic-page-last);
+  }
+
+  // bottom-nav
+  &--nav-home {
+    background-image: var(--ic-nav-home);
+  }
+
+  &--nav-shorts {
+    background-image: var(--ic-nav-shorts);
+  }
+
+  &--nav-subscriptions {
+    background-image: var(--ic-nav-subscriptions);
+  }
+
+  &--nav-library {
+    background-image: var(--ic-nav-library);
+  }
+
+  &--nav-ezdown {
+    background-image: var(--ic-nav-ezdown);
+  }
+}

@@ -1,0 +1,20 @@
+.swiper {
+  &__action {
+    @include flex-pos($ai: center, $g: 10px);
+  }
+
+  &__btn {
+    @include image-set();
+    width: 40px;
+    height: 40px;
+    background-image: var(--ic-arrow-left-circle);
+
+    &--next {
+      transform: rotate(180deg);
+    }
+
+    &.swiper-button-disabled {
+      background-image: var(--ic-arrow-left-circle-disabled);
+    }
+  }
+}

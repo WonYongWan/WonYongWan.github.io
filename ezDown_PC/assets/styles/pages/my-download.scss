@@ -1,0 +1,330 @@
+@use '../common' as *;
+
+.my-download {
+  width: 100%;
+
+  .main-content__container,
+  &__contents-group,
+  .btn-group {
+    @include max-width($mw: 1060px);
+    padding: 0 30px;
+  }
+
+  .pagination {
+    @include max-width($mw: 1060px);
+    padding: 50px 30px;
+  }
+
+  .btn-group {
+    position: sticky;
+    margin: 0 auto;
+    bottom: 0;
+    background-color: var(--color-bg-100);
+    z-index: 3;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+
+    &.is-active {
+      width: 100%;
+      height: unset;
+      padding: 32px 30px 0;
+    }
+  }
+
+  .select-box {
+    max-width: 144px;
+  }
+
+  &__contents-group {
+    padding-right: calc(30px + var(--scrollbar-width));
+  }
+
+  &__header {
+    padding: 30px 0 48px;
+  }
+
+  &__title {
+    @include preBold();
+    font-size: 34px;
+    line-height: 40px;
+    color: var(--color-text-100);
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    @include preRegular();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text-400);
+  }
+
+  &__tab-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid var(--color-border-200);
+    padding-bottom: 22px;
+  }
+
+  &__tab-menu-item {
+    position: relative;
+    text-align: center;
+  }
+
+  &__tab-btn {
+    @include preRegular();
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.44px;
+    color: var(--color-btn-text-fix-500);
+    margin: 0 auto;
+
+    &::before {
+      @include elm-create();
+      left: 0;
+      top: calc(100% + 20px);
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background-color: var(--color-bg-accent-red);
+      display: none;
+    }
+
+    &.is-active {
+      @include preBold();
+      color: var(--color-btn-text-1000);
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  &__controls {
+    @include flex-pos($ai: center);
+    padding: 32px 0 22px;
+
+    .my-download__dropdown-group {
+      margin-left: auto;
+    }
+  }
+
+  &__selection {
+    @include flex-pos($ai: center, $g: 16px);
+
+    .btn {
+      &.is-active ~ .my-download__selection-info {
+        display: block;
+      }
+    }
+  }
+
+  &__dropdown-group {
+    @include flex-pos($ai: center, $g: 12px);
+
+    .dropdown {
+      min-width: 144px;
+    }
+  }
+
+  &__group {
+    margin-bottom: 20px;
+
+    &--toggle {
+      padding-left: 24px;
+
+      .video-section {
+        overflow: hidden;
+        height: 0;
+      }
+
+      &.is-select {
+        background-color: var(--color-bg-400);
+
+        .progress {
+          background-color: var(--color-bg-500);
+        }
+      }
+
+      &.is-active {
+        .video-section {
+          height: 100%;
+        }
+
+        .my-download__group-btn {
+          .icon {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__group-header {
+    @include flex-pos($ai: center);
+    padding: 12px 0;
+
+    .icon--download-folder {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__group-left {
+    @include flex-pos($ai: center, $g: 16px);
+    width: calc(100% - 150px);
+
+    .icon {
+      flex-shrink: 0;
+    }
+  }
+
+  &__group-right {
+    margin-left: auto;
+    @include flex-pos($ai: center, $g: 16px);
+  }
+
+  &__group-title-wrap {
+    position: relative;
+    width: 100%;
+    height: 48px;
+  }
+
+  &__group-title {
+    @include preBold();
+    font-size: 22px;
+    line-height: 48px;
+    color: var(--color-text-600);
+  }
+
+  &__group-title-input {
+    @include preBold();
+    position: absolute;
+    font-size: 22px;
+    line-height: 26px;
+    color: var(--color-input-text-200);
+    padding: 0 16px;
+    top: 0;
+    left: 0;
+    background: var(--color-input-bg-100);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border: none;
+
+    &.is-active {
+      overflow: visible;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--color-border-100);
+    }
+  }
+
+  &__group-count {
+    @include preRegular();
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-text-fix-100);
+  }
+
+  &__group-btn {
+    .icon {
+      width: 40px;
+      height: 40px;
+      transition: 0.3s;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__selection-info {
+    @include preRegular();
+    display: none;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-text-fix-100);
+  }
+
+  &__empty {
+    @include flex-pos($fd: column, $jc: center, $ai: center);
+    padding-top: 100px;
+    padding-bottom: 150px;
+    min-height: 100%;
+
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__empty-desc {
+    @include preBold();
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-text-100);
+  }
+
+  &__import {
+    @include max-width($mw: 1060px);
+    @include flex-pos($fd: column-reverse, $jc: space-between);
+    position: relative;
+    min-height: 100%;
+    padding: 50px 30px 50px;
+    padding-right: calc(30px + var(--scrollbar-width));
+
+    .my-download__import-item {
+      @include pos-center();
+      transform: translate(-50%, -90%);
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__import-item {
+    text-align: center;
+  }
+
+  &__import-desc {
+    @include preBold();
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-text-100);
+    margin-bottom: 12px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &--secondary {
+      @include preRegular();
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-text-200);
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .my-download {
+    .main-content__container,
+    &__contents-group,
+    .btn-group {
+      padding: 0 50px;
+    }
+
+    &__contents-group {
+      padding-right: calc(50px + var(--scrollbar-width));
+    }
+  }
+}

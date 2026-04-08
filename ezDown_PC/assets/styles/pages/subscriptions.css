@@ -1,0 +1,86 @@
+.subscriptions {
+  width: 100%;
+}
+.subscriptions .main-content__container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.subscriptions__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  padding: 30px 0 10px;
+}
+.subscriptions__manage-link {
+  font-family: "Pretendard-Medium";
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.18px;
+  color: var(--color-text-200);
+}
+.subscriptions__view-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+.subscriptions__view-btn .icon {
+  width: 40px;
+  height: 40px;
+}
+.subscriptions__view-btn.is-active .icon--video-section-grid {
+  --ic-video-section-grid-active: url(../../icons/ic-video-section-grid-active.png);
+  background-image: var(--ic-video-section-grid-active);
+}
+.subscriptions__view-btn.is-active .icon--video-section-list {
+  --ic-video-section-list-active: url(../../icons/ic-video-section-list-active.png);
+  background-image: var(--ic-video-section-list-active);
+}
+.subscriptions__video {
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--color-border-200);
+  margin-bottom: 18px;
+}
+.subscriptions__video:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.subscriptions__video-channel {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+}
+.subscriptions__video-profile {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}
+.subscriptions__video-name {
+  font-family: "Pretendard-Bold";
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text-200);
+}
+
+@media screen and (max-width: 1400px) {
+  .subscriptions .main-content {
+    margin-left: 82px;
+  }
+  .subscriptions .main-content__container {
+    padding: 0 20px;
+  }
+}

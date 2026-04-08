@@ -1,0 +1,40 @@
+:root {
+  --logo-primary: url(../logos/logo.png);
+  --logo-splash: url(../logos/splash-logo.png);
+  --logo-icon: url(../logos/logo-icon.png);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --logo-primary: url(../logos/dark/logo.png);
+    --logo-splash: url(../logos/dark/splash-logo.png);
+  }
+}
+
+.dark {
+  --logo-primary: url(../logos/dark/logo.png);
+  --logo-splash: url(../logos/dark/splash-logo.png);
+}
+
+.logo {
+  @include image-set();
+  display: inline-block;
+
+  &--primary {
+    width: 115px;
+    height: 28px;
+    background-image: var(--logo-primary);
+  }
+
+  &--splash {
+    width: 252px;
+    height: 232px;
+    background-image: var(--logo-splash);
+  }
+
+  &--icon {
+    width: 80px;
+    height: 80px;
+    background-image: var(--logo-icon);
+  }
+}

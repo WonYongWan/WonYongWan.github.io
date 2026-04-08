@@ -1,0 +1,129 @@
+.settings {
+  width: 100%;
+  background-color: var(--color-bg-1300);
+}
+.settings .main-content__container {
+  position: relative;
+  min-height: 100%;
+  max-width: 560px;
+  padding: 0 30px 168px;
+  margin: 0 auto;
+}
+.settings__title {
+  font-family: "Pretendard-Bold";
+  font-size: 34px;
+  line-height: 40px;
+  color: var(--color-text-100);
+  padding-top: 30px;
+  margin-bottom: 40px;
+}
+.settings__desc {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--color-text-1400);
+}
+.settings__desc--top {
+  margin-top: 8px;
+}
+.settings__desc--bottom {
+  margin-top: 10px;
+}
+.settings__section {
+  margin-bottom: 40px;
+}
+.settings__section:nth-last-child(2) {
+  margin-bottom: 0;
+}
+.settings__section-header {
+  margin-bottom: 16px;
+}
+.settings__section-with-tooltip {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+.settings__section-title, .settings__underscore {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-text-200);
+}
+.settings__field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  padding: 0 16px;
+  height: 58px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  background-color: var(--color-bg-700);
+  border: 1px solid var(--color-border-200);
+}
+.settings__field:last-of-type {
+  margin-bottom: 0;
+}
+.settings__field-label {
+  font-family: "Pretendard-Regular";
+  font-size: 17px;
+  line-height: 20px;
+  color: var(--color-text-200);
+  flex-shrink: 0;
+}
+.settings__field-control--dropdown {
+  width: 100%;
+  max-width: 200px;
+}
+.settings__field-control--toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+.settings__field-control--channel {
+  width: 100%;
+  max-width: 355px;
+}
+.settings__field-control--file-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.settings__field-control--file-name .dropdown {
+  min-width: 190px;
+}
+.settings__btn--channel {
+  font-family: "Pretendard-Regular";
+  width: 100%;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-text-200);
+  padding: 8px 12px 9px 10px;
+  border-radius: 5px;
+  background-color: var(--color-btn-bg-300);
+  border: 1px solid var(--color-border-400);
+  text-align: left;
+}
+.settings__btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
+}

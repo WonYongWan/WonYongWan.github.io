@@ -1,0 +1,314 @@
+.my-download {
+  width: 100%;
+}
+.my-download .main-content__container, .my-download__contents-group,
+.my-download .btn-group {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.my-download .pagination {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+.my-download .btn-group {
+  position: sticky;
+  margin: 0 auto;
+  bottom: 0;
+  background-color: var(--color-bg-100);
+  z-index: 3;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.my-download .btn-group.is-active {
+  width: 100%;
+  height: unset;
+  padding: 32px 30px 0;
+}
+.my-download .select-box {
+  max-width: 144px;
+}
+.my-download__contents-group {
+  padding-right: calc(30px + var(--scrollbar-width));
+}
+.my-download__header {
+  padding: 30px 0 48px;
+}
+.my-download__title {
+  font-family: "Pretendard-Bold";
+  font-size: 34px;
+  line-height: 40px;
+  color: var(--color-text-100);
+  margin-bottom: 8px;
+}
+.my-download__desc {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-text-400);
+}
+.my-download__tab-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 2px solid var(--color-border-200);
+  padding-bottom: 22px;
+}
+.my-download__tab-menu-item {
+  position: relative;
+  text-align: center;
+}
+.my-download__tab-btn {
+  font-family: "Pretendard-Regular";
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.44px;
+  color: var(--color-btn-text-fix-500);
+  margin: 0 auto;
+}
+.my-download__tab-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: calc(100% + 20px);
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--color-bg-accent-red);
+  display: none;
+}
+.my-download__tab-btn.is-active {
+  font-family: "Pretendard-Bold";
+  color: var(--color-btn-text-1000);
+}
+.my-download__tab-btn.is-active::before {
+  display: block;
+}
+.my-download__controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: normal;
+  flex-wrap: nowrap;
+  padding: 32px 0 22px;
+}
+.my-download__controls .my-download__dropdown-group {
+  margin-left: auto;
+}
+.my-download__selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+.my-download__selection .btn.is-active ~ .my-download__selection-info {
+  display: block;
+}
+.my-download__dropdown-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+.my-download__dropdown-group .dropdown {
+  min-width: 144px;
+}
+.my-download__group {
+  margin-bottom: 20px;
+}
+.my-download__group--toggle {
+  padding-left: 24px;
+}
+.my-download__group--toggle .video-section {
+  overflow: hidden;
+  height: 0;
+}
+.my-download__group--toggle.is-select {
+  background-color: var(--color-bg-400);
+}
+.my-download__group--toggle.is-select .progress {
+  background-color: var(--color-bg-500);
+}
+.my-download__group--toggle.is-active .video-section {
+  height: 100%;
+}
+.my-download__group--toggle.is-active .my-download__group-btn .icon {
+  transform: rotate(0);
+}
+.my-download__group:last-of-type {
+  margin-bottom: 0;
+}
+.my-download__group-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: normal;
+  flex-wrap: nowrap;
+  padding: 12px 0;
+}
+.my-download__group-header .icon--download-folder {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.my-download__group-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  width: calc(100% - 150px);
+}
+.my-download__group-left .icon {
+  flex-shrink: 0;
+}
+.my-download__group-right {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+.my-download__group-title-wrap {
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
+.my-download__group-title {
+  font-family: "Pretendard-Bold";
+  font-size: 22px;
+  line-height: 48px;
+  color: var(--color-text-600);
+}
+.my-download__group-title-input {
+  font-family: "Pretendard-Bold";
+  position: absolute;
+  font-size: 22px;
+  line-height: 26px;
+  color: var(--color-input-text-200);
+  padding: 0 16px;
+  top: 0;
+  left: 0;
+  background: var(--color-input-bg-100);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border: none;
+}
+.my-download__group-title-input.is-active {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-border-100);
+}
+.my-download__group-count {
+  font-family: "Pretendard-Regular";
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text-fix-100);
+}
+.my-download__group-btn .icon {
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+  transform: rotate(180deg);
+}
+.my-download__selection-info {
+  font-family: "Pretendard-Regular";
+  display: none;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text-fix-100);
+}
+.my-download__empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: normal;
+  flex-wrap: nowrap;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  min-height: 100%;
+}
+.my-download__empty .icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 30px;
+}
+.my-download__empty-desc {
+  font-family: "Pretendard-Bold";
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--color-text-100);
+}
+.my-download__import {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: normal;
+  flex-wrap: nowrap;
+  position: relative;
+  min-height: 100%;
+  padding: 50px 30px 50px;
+  padding-right: calc(30px + var(--scrollbar-width));
+}
+.my-download__import .my-download__import-item {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -90%);
+}
+.my-download__import .icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+.my-download__import-item {
+  text-align: center;
+}
+.my-download__import-desc {
+  font-family: "Pretendard-Bold";
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--color-text-100);
+  margin-bottom: 12px;
+}
+.my-download__import-desc:last-of-type {
+  margin-bottom: 0;
+}
+.my-download__import-desc--secondary {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-text-200);
+}
+
+@media screen and (max-width: 1400px) {
+  .my-download .main-content__container, .my-download__contents-group,
+  .my-download .btn-group {
+    padding: 0 50px;
+  }
+  .my-download__contents-group {
+    padding-right: calc(50px + var(--scrollbar-width));
+  }
+}

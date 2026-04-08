@@ -1,0 +1,128 @@
+input {
+  &[type='text'],
+  &[type='number'] {
+    &::selection {
+      background: var(--color-input-selection-100);
+    }
+  }
+}
+
+.input {
+  padding: 0;
+
+  &::placeholder {
+    @include preRegular();
+    font-size: 16px;
+    line-height: 19px;
+    color: #8b8b8b;
+  }
+
+  &[type='text'],
+  &[type='number'] {
+    @include preSemiBold();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-input-text-100);
+  }
+
+  &[type='checkbox'] {
+    & + label {
+      cursor: pointer;
+
+      .icon {
+        &--checkbox {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: var(--ic-checkbox);
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        .icon {
+          &--checkbox {
+            background-image: var(--ic-checkbox-active);
+          }
+        }
+      }
+    }
+  }
+
+  &[type='radio'] {
+    & + label {
+      @include flex-pos($jc: space-between, $ai: center);
+      cursor: pointer;
+
+      .icon {
+        &--radio {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: var(--ic-radio);
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        .icon {
+          &--radio {
+            background-image: var(--ic-radio-active);
+          }
+        }
+      }
+    }
+  }
+
+  &--radio {
+    &.input--secondary {
+      &[type='radio'] {
+        & + label {
+          @include preRegular();
+          @include flex-pos($ai: center);
+          padding: 0 24px;
+          height: 42px;
+          font-size: 14px;
+          line-height: 16px;
+          color: var(--color-text-300);
+        }
+
+        &:checked {
+          & + label {
+            background-color: var(--color-bg-200);
+            color: var(--color-text-1300);
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    &--radio {
+      @include preMedium();
+      font-size: 18px;
+      line-height: 21px;
+      color: var(--color-text-200);
+    }
+
+    &--checkbox {
+      @include preBold();
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--color-text-200);
+    }
+  }
+
+  &__desc {
+    &--radio {
+      @include preRegular();
+      display: block;
+      margin-top: 6px;
+      font-size: 15px;
+      line-height: 18px;
+      color: var(--color-text-fix-100);
+    }
+  }
+}

@@ -1,0 +1,537 @@
+.player {
+  .icon {
+    &--player-speed-up,
+    &--player-speed-down {
+      width: 12px;
+      height: 12px;
+    }
+
+    &--player-volume,
+    &--player-fullscreen,
+    &--player-playlist {
+      width: 28px;
+      height: 28px;
+    }
+
+    &--player-play,
+    &--player-stop {
+      width: 66px;
+      height: 66px;
+    }
+
+    &--player-prev,
+    &--player-next {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  &__screen {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  &__media {
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-position: center;
+  }
+
+  &__controls-wrap {
+    @include flex-pos($fd: column, $jc: space-between);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+  }
+
+  &__top-controls {
+    @include flex-pos($jc: flex-end);
+  }
+
+  &__middle-controls {
+    @include pos-center();
+    @include flex-pos($ai: center, $g: 45px);
+  }
+
+  &__actions {
+    @include flex-pos($fd: column, $ai: flex-end, $g: 12px);
+    margin-bottom: 15px;
+  }
+
+  &__progress {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    margin-bottom: 16px;
+  }
+
+  &__progress-track,
+  &__progress-buffer,
+  &__progress-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  &__progress-track {
+    width: 100%;
+    background-color: #bfbfbf;
+    opacity: 0.3;
+  }
+
+  &__progress-buffer {
+    background-color: #f8f8f8;
+    opacity: 0.5;
+  }
+
+  &__progress-played {
+    background-image: linear-gradient(to right, #fa3d22 12%, #de203d 97%);
+  }
+
+  &__preview {
+    position: absolute;
+    top: -170px;
+  }
+
+  &__progress-handle {
+    @include pos-y-center();
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--color-bg-accent-red);
+  }
+
+  &__preview-container {
+    @include pos-x-center();
+    @include flex-pos($fd: column-reverse, $g: 10px, $ai: center);
+  }
+
+  &__preview-time {
+    @include preRegular();
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-fix-200);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__preview-thumbnail-cover {
+    aspect-ratio: 16 / 9;
+    width: 193px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #fff;
+  }
+
+  &__preview-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__time {
+    @include preRegular();
+    display: inline-block;
+    padding: 11px 16px 10px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #bbb;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__time-current {
+    color: #fff;
+  }
+
+  &__time-duration {
+    color: #999;
+  }
+
+  &__controls {
+    @include flex-pos($ai: center, $g: 12px);
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  &__speed {
+    @include flex-pos($ai: center, $g: 6px);
+    padding: 11px 10px 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__volume {
+    @include flex-pos($ai: center, $g: 8px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__volume-progress {
+    position: relative;
+    width: 80px;
+    height: 4px;
+  }
+
+  &__volume-progress-track,
+  &__volume-progress-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 2px;
+  }
+
+  &__volume-progress-track {
+    width: 100%;
+    background-color: rgba(191, 191, 191, 0.5);
+  }
+
+  &__volume-progress-played {
+    background-image: linear-gradient(to right, #fa3d22 12%, #de203d 97%);
+  }
+
+  &__volume-progress-handle {
+    @include pos-y-center();
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--color-bg-accent-red);
+  }
+
+  &__popup {
+    @include pos-x-center();
+    min-width: 420px;
+    bottom: 16px;
+    padding: 32px 24px;
+    border-radius: 16px;
+    background-color: var(--color-bg-700);
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+
+    &--speed {
+      padding: 32px 30px;
+
+      .player__popup-title {
+        margin-bottom: 16px;
+      }
+
+      .progress {
+        margin-bottom: 24px;
+      }
+
+      .player__btn-group {
+        @include flex-pos($jc: center, $ai: center, $g: 10px);
+      }
+
+      .btn {
+        @include flex-pos($jc: center, $ai: center);
+        width: 64px;
+      }
+    }
+
+    &--cc {
+      border: 1px solid var(--color-border-fix-100);
+
+      .player__popup-title {
+        margin-bottom: 30px;
+      }
+
+      .player__popup-list {
+        &--radio {
+          .player__popup-item {
+            margin-bottom: 32px;
+
+            &:last-of-type {
+              margin-bottom: 22px;
+            }
+          }
+        }
+
+        &--toggle {
+          .player__popup-item {
+            @include flex-pos($jc: space-between, $ai: center);
+          }
+
+          .player__popup-item-title {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  &__popup-title {
+    @include preBold();
+    font-size: 22px;
+    line-height: 26px;
+    color: var(--color-text-200);
+    text-align: center;
+  }
+
+  &__popup-item-title {
+    @include preMedium();
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-text-200);
+  }
+
+  &__popup-item-desc {
+    @include preRegular();
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-text-fix-100);
+  }
+
+  &__popup-item-underline {
+    color: var(--color-text-1300);
+    text-decoration: underline;
+  }
+
+  &__btn {
+    &--play {
+      @include flex-pos($jc: center, $ai: center);
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      &.is-stop {
+        .icon--player-play {
+          background-image: var(--ic-player-stop);
+        }
+      }
+    }
+
+    &--prev,
+    &--next {
+      @include flex-pos($jc: center, $ai: center);
+      width: 84px;
+      height: 84px;
+      border-radius: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &--speed-control {
+      @include preRegular();
+      font-size: 16px;
+      line-height: 19px;
+      color: #fff;
+    }
+
+    &--cc,
+    &--screen,
+    &--playlist {
+      @include flex-pos($jc: center, $ai: center);
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &--cc {
+      @include preRegular();
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-text-fix-200);
+    }
+
+    &--screen {
+      &.is-exit {
+        .icon--player-fullscreen {
+          background-image: var(--ic-player-exit-fullscreen);
+        }
+      }
+    }
+
+    &--playlist {
+      display: none;
+    }
+
+    &--close {
+      .icon {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    &--pip-bigger {
+      .icon {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  &.is-fullscreen {
+    position: fixed;
+    @include flex-pos($ai: center);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 44px);
+    background: #000;
+
+    .player__screen {
+      border-radius: 0;
+    }
+
+    .player__controls-wrap {
+      padding: 20px 24px 13px;
+    }
+
+    .player__controls {
+      right: 24px;
+      bottom: 13px;
+    }
+
+    .player__btn--playlist {
+      display: flex;
+    }
+
+    .player__screen {
+      max-height: 100%;
+    }
+  }
+
+  &--pip {
+    position: fixed;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 12px 0 #0000001f;
+
+    .player__screen {
+      border-radius: 0;
+      overflow: visible;
+    }
+
+    .player__controls-wrap {
+      padding: 8px 0 0;
+    }
+
+    .player__top-controls {
+      justify-content: space-between;
+      padding: 0 8px 0 10px;
+    }
+
+    .player__btn--play {
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    .icon--player-play,
+    .icon--player-stop {
+      width: 100%;
+      height: 100%;
+    }
+
+    .player__progress {
+      margin-bottom: 0;
+      height: 4px;
+    }
+    .player__progress-track,
+    .player__progress-buffer,
+    .player__progress-played {
+      border-radius: 0;
+    }
+
+    .player__progress-handle {
+      width: 12px;
+      height: 12px;
+      right: -6px;
+    }
+
+    .player__time {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 11px 10px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    .player__time-duration {
+      color: #fff;
+    }
+
+    .player__info {
+      padding: 11px 16px 24px;
+      background-color: var(--color-bg-700);
+    }
+
+    .player__info-title {
+      @include preSemiBold();
+      @include text-cut-multiline($wlc: 1);
+      font-size: 15px;
+      line-height: 18px;
+      color: var(--color-text-100);
+      margin-bottom: 7px;
+    }
+
+    .player__info-category {
+      @include preRegular();
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--color-text-400);
+    }
+
+    .player__info-channel {
+      @include preSemiBold();
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--color-text-fix-200);
+    }
+
+    &.player--shorts {
+      max-width: 220px;
+
+      .player__media {
+        aspect-ratio: 2 / 3;
+      }
+
+      .player__controls-wrap {
+        padding: 7px 0 0;
+      }
+
+      .player__top-controls {
+        justify-content: space-between;
+        padding: 0 7px 0 8px;
+      }
+
+      .player__info {
+        position: absolute;
+        background-color: transparent;
+        padding: 0;
+        left: 8px;
+        bottom: 12px;
+      }
+    }
+
+    &.player--windows {
+      .player__controls-wrap {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

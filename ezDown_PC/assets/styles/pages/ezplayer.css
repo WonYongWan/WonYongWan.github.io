@@ -1,0 +1,209 @@
+.ezplayer {
+  width: 100%;
+}
+.ezplayer .main-content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  gap: normal;
+  flex-wrap: nowrap;
+  position: relative;
+  max-width: 1672px;
+  padding: 0 30px 50px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+.ezplayer__title {
+  font-family: "Pretendard-Bold";
+  font-size: 34px;
+  line-height: 40px;
+  color: var(--color-text-100);
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.ezplayer__section {
+  margin-bottom: 60px;
+}
+.ezplayer__section:last-of-type {
+  margin-bottom: 90px;
+}
+.ezplayer__section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: normal;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
+}
+.ezplayer__section-texts--with-icon .ezplayer__info {
+  padding-left: 40px;
+}
+.ezplayer__section-title {
+  font-family: "Pretendard-Bold";
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: normal;
+  flex-wrap: nowrap;
+  font-size: 26px;
+  line-height: 30px;
+  color: var(--color-text-200);
+}
+.ezplayer__section-title .icon {
+  width: 40px;
+  height: 40px;
+}
+.ezplayer__info {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  line-height: 19px;
+  display: block;
+  margin-top: 6px;
+  color: var(--color-text-400);
+}
+.ezplayer__action {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.ezplayer__content {
+  position: relative;
+}
+.ezplayer__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.ezplayer__item {
+  position: relative;
+}
+.ezplayer__item.is-select::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  background-color: var(--color-bg-400);
+  border-radius: 12px;
+}
+.ezplayer__item.is-select .ezplayer__item-tag {
+  background-color: var(--color-bg-1800);
+}
+.ezplayer__link {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.ezplayer__thumbnail {
+  position: relative;
+  max-width: 391px;
+  margin-bottom: 12px;
+}
+.ezplayer__thumbnail--stack {
+  padding-top: 8px;
+}
+.ezplayer__thumbnail--stack::before, .ezplayer__thumbnail--stack::after {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: calc(100% - 34px);
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background-color: #b7bac6;
+}
+.ezplayer__thumbnail--stack::after {
+  width: calc(100% - 24px);
+  top: 4px;
+}
+.ezplayer__thumbnail .tag {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+.ezplayer__thumbnail-img {
+  width: 100%;
+  border-radius: 12px;
+}
+.ezplayer__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 7px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.ezplayer__item-title {
+  font-family: "Pretendard-Bold";
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: wrap;
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--color-text-100);
+}
+.ezplayer__item-info {
+  font-family: "Pretendard-Regular";
+  display: inline-block;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-text-400);
+}
+.ezplayer__item-tag {
+  font-family: "Pretendard-Medium";
+  display: inline-block;
+  padding: 3px 6px 2px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 15px;
+  color: var(--color-text-400);
+  background-color: var(--color-bg-300);
+}
+.ezplayer__desc {
+  font-family: "Pretendard-Regular";
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-text-fix-100);
+  margin-top: auto;
+}
+.ezplayer__btn--add .icon {
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  .ezplayer .main-content__container {
+    padding: 0 50px 50px;
+  }
+  .ezplayer__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

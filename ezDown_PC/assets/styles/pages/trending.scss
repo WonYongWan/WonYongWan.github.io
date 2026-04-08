@@ -1,0 +1,69 @@
+@use '../common' as *;
+
+.trending {
+  width: 100%;
+
+  .main-content__container {
+    @include max-width($mw: 1667px);
+    padding: 0 30px;
+  }
+
+  &__header {
+    @include flex-pos($ai: center, $g: 24px);
+    padding-top: 30px;
+
+    .icon--favmov,
+    .icon--favmov-secondary {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__title {
+    @include preBold();
+    font-size: 34px;
+    line-height: 40px;
+    color: var(--color-text-100);
+    margin-bottom: 4px;
+  }
+
+  &__desc {
+    @include preRegular();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text-400);
+  }
+
+  &__video-container {
+    padding: 30px 0 28px;
+  }
+
+  .video-section--horizontal {
+    margin-bottom: 40px;
+
+    &.video-section--size-1 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .trending {
+    .main-content__container {
+      padding: 0 20px;
+      margin-left: 82px;
+    }
+
+    &__video-container {
+      padding: 20px 0 30px;
+    }
+
+    .video-section {
+      margin-bottom: 35px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

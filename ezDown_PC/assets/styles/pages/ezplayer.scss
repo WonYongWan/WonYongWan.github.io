@@ -1,0 +1,206 @@
+@use '../common' as *;
+
+.ezplayer {
+  width: 100%;
+
+  .main-content__container {
+    @include flex-pos($fd: column);
+    position: relative;
+    max-width: 1672px;
+    padding: 0 30px 50px;
+    min-height: 100%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include preBold();
+    font-size: 34px;
+    line-height: 40px;
+    color: var(--color-text-100);
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__section {
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__section-header {
+    @include flex-pos($jc: space-between, $ai: center);
+    margin-bottom: 20px;
+  }
+
+  &__section-texts {
+    &--with-icon {
+      .ezplayer__info {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  &__section-title {
+    @include preBold();
+    @include flex-pos($ai: center);
+    font-size: 26px;
+    line-height: 30px;
+    color: var(--color-text-200);
+
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__info {
+    @include preRegular();
+    font-size: 16px;
+    line-height: 19px;
+    display: block;
+    margin-top: 6px;
+    color: var(--color-text-400);
+  }
+
+  &__action {
+    @include flex-pos($ai: center, $g: 10px);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  &__item {
+    position: relative;
+
+    &.is-select {
+      &::before {
+        @include elm-create();
+        @include pos-center();
+        width: calc(100% + 12px);
+        height: calc(100% + 12px);
+        background-color: var(--color-bg-400);
+        border-radius: 12px;
+      }
+
+      .ezplayer__item-tag {
+        background-color: var(--color-bg-1800);
+      }
+    }
+  }
+
+  &__link {
+    @include pos-center();
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  &__thumbnail {
+    position: relative;
+    max-width: 391px;
+    margin-bottom: 12px;
+
+    &--stack {
+      padding-top: 8px;
+
+      &::before,
+      &::after {
+        @include elm-create();
+        @include pos-x-center();
+        top: 0;
+        width: calc(100% - 34px);
+        height: 3px;
+        border-radius: 3px 3px 0 0;
+        background-color: #b7bac6;
+      }
+
+      &::after {
+        width: calc(100% - 24px);
+        top: 4px;
+      }
+    }
+
+    .tag {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+    }
+  }
+
+  &__thumbnail-img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  &__meta {
+    @include flex-pos($fd: column, $ai: flex-start, $g: 7px);
+    position: relative;
+  }
+
+  &__item-title {
+    @include preBold();
+    @include text-cut-multiline();
+    font-size: 17px;
+    line-height: 1.35;
+    color: var(--color-text-100);
+  }
+
+  &__item-info {
+    @include preRegular();
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-400);
+  }
+
+  &__item-tag {
+    @include preMedium();
+    display: inline-block;
+    padding: 3px 6px 2px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-text-400);
+    background-color: var(--color-bg-300);
+  }
+
+  &__desc {
+    @include preRegular();
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-fix-100);
+    margin-top: auto;
+  }
+
+  &__btn {
+    &--add {
+      .icon {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ezplayer {
+    .main-content__container {
+      padding: 0 50px 50px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+}

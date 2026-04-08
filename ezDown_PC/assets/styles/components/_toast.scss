@@ -1,0 +1,38 @@
+.toast-root {
+  pointer-events: none;
+  position: fixed;
+  bottom: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.toast {
+  pointer-events: none;
+  @include flex-pos($jc: center, $ai: center, $g: 10px);
+  opacity: 0;
+  padding: 18px 55px;
+  border-radius: 43px;
+  background-color: var(--color-toast-bg-100);
+
+  &.is-active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .icon {
+    &--arrow-down-underline-white {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    @include preSemiBold();
+    font-size: 19px;
+    line-height: 25px;
+    color: var(--color-toast-text-fix-100);
+    text-align: center;
+    white-space: nowrap;
+  }
+}

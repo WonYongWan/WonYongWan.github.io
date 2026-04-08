@@ -1,0 +1,238 @@
+@use '../common' as *;
+
+.my-download-player {
+  .select-box {
+    max-width: 144px;
+  }
+
+  .main-content__container {
+    padding: 10px 30px 50px;
+    max-width: 1821px;
+    margin: 0 auto;
+  }
+
+  &__content-group {
+    @include flex-pos($ai: flex-start, $g: 20px);
+  }
+
+  &__player {
+    width: 100%;
+    min-width: 640px;
+  }
+
+  &__info {
+    margin-top: 16px;
+  }
+
+  &__info-title {
+    @include preExtraBold();
+    font-size: 22px;
+    line-height: 32px;
+    color: var(--color-text-100);
+    margin-bottom: 12px;
+  }
+
+  &__channel {
+    @include flex-pos($ai: center);
+    margin-bottom: 15px;
+  }
+
+  &__profile {
+    @include image-set();
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    margin-right: 12px;
+  }
+
+  &__channel-info {
+    margin-right: 20px;
+  }
+
+  &__channel-name {
+    @include preBold();
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-text-200);
+    margin-bottom: 3px;
+  }
+
+  &__subscriber {
+    @include preRegular();
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-text-300);
+  }
+
+  &__meta {
+    border-radius: 12px;
+    background-color: var(--color-bg-900);
+    padding: 16px;
+  }
+
+  &__stats {
+    @include flex-pos($ai: center, $g: 8px);
+    margin-bottom: 16px;
+  }
+
+  &__views,
+  &__date {
+    @include preBold();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text-200);
+  }
+
+  &__tags {
+    @include flex-pos($ai: center, $g: 2px);
+    @include preSemiBold();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-fix-500);
+  }
+
+  &__meta-description {
+    @include preMedium();
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-text-900);
+
+    > p {
+      @include text-cut-multiline();
+      margin-bottom: 20px;
+    }
+
+    &.is-active {
+      > p {
+        display: block;
+        overflow: visible;
+      }
+    }
+  }
+
+  &__playlist {
+    position: relative;
+    width: 100%;
+    max-width: 425px;
+    border: 1px solid var(--color-border-100);
+    background-color: var(--color-bg-100);
+    border-radius: 12px;
+    padding-top: 16px;
+    padding-right: 8px;
+
+    > .btn,
+    .toast {
+      @include pos-x-center();
+      width: 100%;
+      bottom: 20px;
+      z-index: 3;
+      max-width: calc(100% - 40px);
+    }
+
+    > .btn {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    .toast {
+      padding: 16px 20px;
+
+      .toast__text {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    &.is-fullscreen {
+      position: fixed;
+    }
+  }
+
+  &__playlist-header {
+    padding: 0 16px;
+  }
+
+  &__playlist-text-wrap {
+    @include flex-pos($ai: center, $g: 8px);
+    margin-bottom: 10px;
+  }
+
+  &__playlist-title {
+    @include preExtraBold();
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-text-100);
+  }
+
+  &__playlist-index {
+    @include preRegular();
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-fix-100);
+  }
+
+  &__playlist-list-wrap {
+    position: relative;
+    margin-top: 10px;
+    height: 632px;
+    padding-right: 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* 스크롤바의 폭 너비 */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-scrollbar-bg-100); /* 스크롤바 색상 */
+      border-radius: 2.5px; /* 스크롤바 둥근 테두리 */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+
+  &__btn {
+    &--subscribe {
+      @include flex-pos($jc: center, $ai: center);
+      @include preSemiBold();
+      font-size: 15px;
+      line-height: 18px;
+      border-radius: 18px;
+      width: 58px;
+      height: 36px;
+      color: var(--color-btn-text-200);
+      background-color: var(--color-btn-bg-900);
+    }
+
+    &--more {
+      @include preBold();
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-btn-text-100);
+    }
+
+    &--close {
+      position: absolute;
+      top: 16px;
+      right: 21px;
+
+      .icon {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    &--play {
+      .icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

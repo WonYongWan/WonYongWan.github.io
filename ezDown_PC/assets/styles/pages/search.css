@@ -1,0 +1,201 @@
+.search {
+  width: 100%;
+}
+.search .main-content__container {
+  max-width: 1308px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.search--with-channel .main-content__container {
+  max-width: 1341px;
+  margin: 0 auto;
+}
+.search .category-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.search .category-bar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 30px);
+  z-index: 0;
+  height: 100%;
+  background-color: var(--color-bg-100);
+}
+.search__content-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+.search__video-container {
+  padding: 9px 0 28px;
+}
+.search__channel {
+  width: 385px;
+  flex-shrink: 0;
+}
+.search__channel--light {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.search__channel--light .search__channel-creator {
+  align-items: center;
+  padding: 20px 0;
+  gap: 15px;
+  background-color: var(--color-bg-100);
+}
+.search__channel--light .search__channel-link--profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: normal;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+.search__channel--light .search__channel-profile {
+  width: 145px;
+  height: 145px;
+}
+.search__channel--light .search__channel-meta {
+  gap: 8px;
+  flex: 1;
+}
+.search__channel--light .search__channel-name {
+  margin-bottom: 8px;
+}
+.search__channel--light .search__channel-id,
+.search__channel--light .search__channel-dot,
+.search__channel--light .search__channel-subscribers,
+.search__channel--light .search__channel-info {
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-text-400);
+}
+.search__channel-main {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.search__channel-media {
+  height: 216px;
+}
+.search__channel-creator {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+  background-color: var(--color-bg-900);
+  padding: 16px 20px;
+}
+.search__channel-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  gap: normal;
+  flex-wrap: nowrap;
+}
+.search__channel-profile {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  border-radius: 100%;
+}
+.search__channel-name {
+  font-family: "Pretendard-SemiBold";
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text-100);
+}
+.search__channel-id {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-text-700);
+}
+.search__channel-btn {
+  font-family: "Pretendard-SemiBold";
+  font-size: 15px;
+  color: var(--color-btn-text-200);
+  width: 58px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: var(--color-btn-bg-400);
+}
+.search__channel-video-cover {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.search__channel-video-title {
+  font-family: "Pretendard-SemiBold";
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text-fix-200);
+  display: block;
+  margin-bottom: 8px;
+}
+.search__channel-video-info {
+  font-family: "Pretendard-Regular";
+  font-size: 13px;
+  line-height: 15px;
+  color: var(--color-text-fix-300);
+}
+.search__channel-link--name {
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+.search__channel-link--id {
+  margin-bottom: 15px;
+}
+.search__channel-link--media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.search__channel-link--media .search__channel-text-box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 3%, #000 103%);
+}
+.search__channel-link--media .tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  .search .main-content__container {
+    padding: 0 20px;
+    margin-left: 82px;
+  }
+  .search__channel {
+    display: none;
+  }
+  .search__channel--light {
+    display: block;
+  }
+}

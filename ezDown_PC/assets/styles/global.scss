@@ -1,0 +1,67 @@
+@use './common' as *;
+@import './base/tokens';
+@import './base/reset';
+@import './base/fonts';
+@import './utilities/spacing';
+@import './components/logos';
+@import './components/icons';
+@import './components/input';
+@import './components/btn';
+@import './components/popup';
+@import './components/toast';
+@import './components/bar';
+@import './components/header';
+@import './components/nav';
+@import './components/main-content';
+@import './components/video';
+@import './components/player';
+@import './components/dropdown';
+@import './components/tag';
+@import './components/pagination';
+@import './components/progress';
+@import './components/tooltip';
+@import './components/swiper';
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+html {
+  &.dark {
+    color-scheme: dark;
+  }
+}
+
+body {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+
+  .wrap {
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: var(--color-bg-100);
+
+    &--sidebar {
+      transition: 0.3s;
+      margin-left: 0;
+
+      &.is-sidebar-open {
+        margin-left: 248px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  body {
+    .wrap {
+      &--sidebar {
+        &.is-sidebar-open {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

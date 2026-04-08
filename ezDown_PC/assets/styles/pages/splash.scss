@@ -1,0 +1,11 @@
+@use '../common' as *;
+
+.splash {
+  .main-content {
+    @include flex-pos($ai: center, $jc: center);
+  }
+
+  &__title {
+    @include text-hide();
+  }
+}

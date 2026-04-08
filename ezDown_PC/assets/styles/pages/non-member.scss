@@ -1,0 +1,49 @@
+@use '../common' as *;
+
+.non-member {
+  width: 100%;
+
+  .main-content__container {
+    height: 100%;
+  }
+
+  &__content {
+    @include flex-pos($fd: column, $jc: center, $ai: center);
+    height: 100%;
+    padding-bottom: 14px;
+  }
+
+  &__deco {
+    @include image-set();
+    background-image: url(../../images/non-member/empty.png);
+    width: 280px;
+    height: 280px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    @include preBold();
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--color-text-200);
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    @include preRegular();
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.4px;
+    color: var(--color-text-fix-400);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .non-member {
+    .main-content__container {
+      padding: 0 20px;
+      margin-left: 82px;
+    }
+  }
+}

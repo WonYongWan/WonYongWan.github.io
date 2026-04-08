@@ -1,0 +1,33 @@
+.main-content {
+  // app-header(54px) + page-header(56px) + botton-nav(68px)
+  height: calc(100dvh - 178px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  // my-download
+  &--variant-1 {
+    // app-header(54px) +
+    // page-header(56px) +
+    // botton-nav(68px) +
+    // my-download__header(145px) +
+    // my-download__tab-menu(50px) +
+    // my-download__controls(95px)
+    // pagination(140px)
+    height: calc(100dvh - 608px);
+  }
+
+  // my-download empty
+  &--variant-2 {
+    // app-header(54px) +
+    // page-header(56px) +
+    // botton-nav(68px) +
+    // my-download__header(145px) +
+    // my-download__tab-menu(50px)
+    height: calc(100dvh - 373px);
+  }
+
+  &--variant-3 {
+    // app-header(54px)
+    height: calc(100dvh - 54px);
+  }
+}

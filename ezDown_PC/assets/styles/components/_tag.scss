@@ -1,0 +1,129 @@
+.tag {
+  display: inline-block;
+
+  &__badge-shape {
+    border-radius: 4px;
+  }
+
+  &__time {
+    @include preBold();
+    display: block;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.22px;
+  }
+
+  &__text {
+    @include preBold();
+    display: block;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 0.2px;
+  }
+
+  &__device {
+    @include preBold();
+    display: inline-block;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    color: var(--color-text-fix-200);
+    border-radius: 4px;
+    width: 28px;
+    height: 18px;
+    background-color: #9c87f2;
+
+    &--red {
+      background-color: #f95943;
+    }
+
+    &--size-s {
+      @include preMedium();
+      width: 22px;
+      height: 15px;
+      font-size: 9px;
+      line-height: 15px;
+    }
+  }
+
+  &--time {
+    .tag__badge-shape {
+      padding: 3px 5px 2px;
+      background-color: rgba(4, 4, 4, 0.6);
+    }
+
+    .tag__time {
+      color: #fff;
+    }
+
+    &.tag--light {
+      .tag__badge-shape {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .tag__time {
+        color: #040404;
+      }
+    }
+  }
+
+  &--info {
+    .tag__badge-shape {
+      @include flex-pos($ai: center, $g: 1px);
+      padding: 3px 5px 2px;
+      background-color: rgba(4, 4, 4, 0.6);
+    }
+
+    .tag__text {
+      @include preMedium();
+      font-size: 13px;
+      line-height: 15px;
+      color: #fff;
+    }
+
+    .icon {
+      &--playlist-white {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  &--live {
+    .tag__badge-shape {
+      padding: 4px 4px 3px;
+      background-color: #fa3d22;
+    }
+
+    .tag__text {
+      color: #fff;
+    }
+  }
+
+  &--shorts {
+    .tag__badge-shape {
+      @include flex-pos($ai: center, $g: 2.5px);
+      padding: 2px 5px;
+      background-color: rgba(4, 4, 4, 0.6);
+    }
+
+    .icon--shorts {
+      width: 14px;
+      height: 14px;
+    }
+
+    .tag__text {
+      color: #fff;
+    }
+
+    &.tag--light {
+      .tag__badge-shape {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .tag__text {
+        color: #040404;
+      }
+    }
+  }
+}

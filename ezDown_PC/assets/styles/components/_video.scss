@@ -1,0 +1,745 @@
+.video-section-header {
+  &--shorts {
+    @include flex-pos($ai: center, $jc: space-between);
+    margin-bottom: 20px;
+
+    .video-section-header__title {
+      @include flex-pos($ai: center, $g: 10px);
+
+      .icon--shorts {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .video-section-header__text {
+      @include preBold();
+      font-size: 18px;
+      line-height: 21px;
+      color: var(--color-text-500);
+    }
+
+    .video-section-header__more {
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+      transform: translateX(10px);
+
+      &:hover {
+        background-color: var(--color-btn-bg-100);
+      }
+
+      .icon--video-more {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.video-section {
+  display: grid;
+
+  &--grid-1 {
+    // 3열 기본형
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 22px;
+  }
+
+  &--grid-2 {
+    // 5열 쇼츠형
+    grid-template-columns: repeat(5, 1fr);
+    gap: 23px;
+  }
+
+  &--grid-3 {
+    // 세로 gap 14
+    grid-template-columns: repeat(1, 1fr);
+    gap: 14px;
+  }
+
+  &--grid-4 {
+    // 세로 gap 16
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+
+  &--grid-5 {
+    // 세로 gap 26
+    grid-template-columns: repeat(1, 1fr);
+    gap: 26px;
+
+    // 2열
+    &.video-section--vertical {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--grid-6 {
+    // 세로 gap 0
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.video-card {
+  // ---------------- common
+  --img-cover-max-width: 521px;
+  --img-cover-min-width: 240px;
+  --img-cover-aspect-ratio: 16 / 9;
+  // -----------------------
+  position: relative;
+
+  &__hover-bg {
+    @include pos-center();
+    top: calc(50% + 2px);
+    border-radius: 14px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    background: transparent;
+  }
+
+  // hover효과 script로 변환 해주세요
+  &:hover {
+    .video-card__hover-bg {
+      width: calc(100% + 20px);
+      height: calc(100% + 24px);
+      background: var(--color-bg-800);
+    }
+  }
+
+  &__link {
+    @include pos-center();
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  &__img-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    width: 100%;
+    max-width: var(--img-cover-max-width);
+    min-width: var(--img-cover-min-width);
+    aspect-ratio: var(--img-cover-aspect-ratio);
+    margin-bottom: 16px;
+
+    .tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__btn {
+    &--download {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 3;
+
+      .icon--video-download {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &--select {
+      @include pos-center();
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+  }
+
+  &__meta {
+    @include flex-pos($g: 2px);
+  }
+
+  &__meta-row {
+    @include flex-pos($g: 16px);
+  }
+
+  &__meta-box {
+    position: relative;
+  }
+
+  &__profile {
+    @include image-set();
+    position: relative;
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+
+  &__title {
+    @include text-cut-multiline();
+    @include preSemiBold();
+    font-size: 16px;
+    line-height: 1.32;
+    color: var(--color-text-100);
+    margin-bottom: 6px;
+  }
+
+  &__desc {
+    @include text-cut-multiline($wlc: 1);
+    @include preRegular();
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--color-text-400);
+  }
+
+  &__channel {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-400);
+    margin-bottom: 4px;
+  }
+
+  &__channel-link {
+    @include flex-pos($ai: center, $g: 8px);
+    position: relative;
+    z-index: 3;
+    margin-bottom: 12px;
+  }
+
+  &__channel-link-profile {
+    @include image-set();
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__channel-link-name {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-400);
+  }
+
+  &__info {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-400);
+  }
+
+  &__category {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-400);
+    margin-top: 4px;
+  }
+
+  &__more {
+    position: relative;
+    transform: translate(10px, -6px);
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    z-index: 3;
+
+    &:hover {
+      background-color: var(--color-btn-bg-100);
+    }
+
+    .icon--video-more {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__progress {
+    margin-top: 18px;
+  }
+
+  &__progress-info {
+    @include flex-pos();
+    margin-top: 16px;
+  }
+
+  &__status {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-fix-100);
+  }
+
+  &__percent {
+    @include preRegular();
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-400);
+    margin-left: auto;
+  }
+
+  &__badge-list {
+    @include flex-pos($fd: column, $g: 3px);
+  }
+
+  &__badge-item {
+    @include flex-pos($ai: center, $g: 8px);
+  }
+
+  &__number {
+    @include preRegular();
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-text-fix-100);
+    display: inline-block;
+  }
+
+  // 쇼츠
+  &--shorts {
+    --img-cover-max-width: 303px;
+    --img-cover-min-width: unset;
+    --img-cover-aspect-ratio: 2 / 3;
+
+    .video-card__img-cover {
+      margin-bottom: 12px;
+    }
+  }
+
+  // 검색 결과
+  &--variant-1 {
+    --img-cover-max-width: 500px;
+    --img-cover-min-width: 428px;
+    @include flex-pos();
+
+    .video-card__meta {
+      gap: 16px;
+    }
+
+    .video-card__title {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 0;
+    }
+
+    .video-card__img-cover {
+      margin-bottom: 0;
+      margin-right: 16px;
+    }
+
+    .video-card__more {
+      transform: translate(0, 0);
+    }
+
+    .video-card__info {
+      margin-bottom: 12px;
+    }
+  }
+
+  // 검색 결과 음악
+  &--variant-2 {
+    --img-cover-max-width: 121px;
+    --img-cover-min-width: 121px;
+    @include flex-pos();
+
+    .video-card__meta {
+      gap: 16px;
+    }
+
+    .video-card__title {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 8px;
+    }
+
+    .video-card__img-cover {
+      max-height: 69px;
+      margin-bottom: 0;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+
+    .video-card__channel {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    .video-card__info {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  // 구독
+  &--variant-3 {
+    --img-cover-max-width: 247px;
+    --img-cover-min-width: 247px;
+    @include flex-pos();
+
+    .video-card__meta {
+      display: block;
+    }
+
+    .video-card__meta-row {
+      margin-bottom: 16px;
+    }
+
+    .video-card__title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 5px;
+    }
+
+    .video-card__img-cover {
+      margin-bottom: 0;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+
+    .video-card__more {
+      transform: translate(0, -10px);
+    }
+
+    .video-card__desc {
+      @include text-cut-multiline($wlc: 2);
+      line-height: 20px;
+    }
+
+    &.video-card--vertical {
+      --img-cover-max-width: 487px;
+      --img-cover-min-width: 400px;
+      flex-direction: column;
+
+      .video-card__meta-row {
+        margin-bottom: 14px;
+      }
+
+      .video-card__title {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 6px;
+      }
+
+      .video-card__img-cover {
+        margin-right: 0;
+        margin-bottom: 17px;
+        border-radius: 12px;
+      }
+
+      .video-card__more {
+        transform: translate(0, -7px);
+      }
+    }
+  }
+
+  // 다운리스트
+  &--variant-4 {
+    --img-cover-max-width: 175px;
+    --img-cover-min-width: 175px;
+    @include flex-pos($ai: center);
+    padding: 8px 0;
+    min-height: 116px;
+
+    &.is-select {
+      background-color: var(--color-bg-400);
+
+      .progress {
+        background-color: var(--color-bg-500);
+      }
+    }
+
+    &.is-failed {
+      .video-card__title {
+        color: var(--color-text-1200);
+      }
+
+      .progress {
+        background-color: var(--color-bg-600);
+
+        .progress__fill {
+          width: 0 !important;
+        }
+      }
+    }
+
+    .video-card__img-cover {
+      margin-bottom: 0;
+      margin-right: 24px;
+      border-radius: 8px;
+
+      .icon {
+        @include pos-center();
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .video-card__meta {
+      display: block;
+    }
+
+    .video-card__meta-box {
+      margin-right: 100px;
+    }
+
+    .video-card__title {
+      -webkit-line-clamp: 1;
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 0;
+    }
+
+    .video-card__info {
+      margin-top: 6px;
+    }
+
+    .video-card__badge-list {
+      margin-top: 10px;
+    }
+
+    .dropdown {
+      position: absolute;
+      max-width: 36px;
+      top: 11px;
+      right: 0;
+    }
+
+    .video-card__more {
+      transform: translate(0, 0);
+    }
+  }
+
+  // 휴지통
+  &--variant-5 {
+    --img-cover-max-width: 111px;
+    --img-cover-min-width: 70px;
+    @include flex-pos($ai: center);
+    padding: 9px 24px;
+    min-height: 88px;
+
+    &.is-select {
+      background-color: var(--color-bg-400);
+    }
+
+    .video-card__img-cover {
+      flex-shrink: 0;
+      margin-bottom: 0;
+      margin-right: 12px;
+      border-radius: 4px;
+    }
+
+    .video-card__title {
+      -webkit-line-clamp: 1;
+      font-size: 15px;
+      line-height: 18px;
+      margin-bottom: 0;
+    }
+
+    .video-card__category {
+      margin-top: 2px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .video-card__badge-list {
+      margin-top: 4px;
+      gap: 2px;
+    }
+
+    .video-card__badge-item {
+      gap: 4px;
+    }
+
+    .video-card__info {
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+
+  // 플레이 리스트
+  &--variant-6 {
+    --img-cover-max-width: 100px;
+    --img-cover-min-width: 70px;
+    @include flex-pos($ai: center);
+    padding: 7px 0;
+    min-height: 71px;
+
+    &.is-select {
+      background-color: var(--color-bg-400);
+    }
+
+    .icon--play-list-current-mark {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-left: 3px;
+      margin-right: 2px;
+    }
+
+    .video-card__number {
+      flex-shrink: 0;
+      width: 25px;
+      text-align: center;
+      padding: 0 1px;
+    }
+
+    .video-card__img-cover {
+      flex-shrink: 0;
+      margin-bottom: 0;
+      margin-right: 10px;
+      border-radius: 8px;
+
+      .tag {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+
+        .tag__badge-shape {
+          padding: 2px 4px;
+        }
+
+        .tag__time {
+          font-size: 10px;
+          line-height: 11px;
+          letter-spacing: 0.2px;
+        }
+      }
+
+      .icon--play-list-pick {
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .video-card__meta {
+      gap: 20px;
+    }
+
+    .video-card__title {
+      -webkit-line-clamp: 2;
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: 5px;
+    }
+
+    .video-card__info {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    .dropdown {
+      max-width: 20px;
+    }
+
+    .video-card__more {
+      transform: translate(0, 0);
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .video-section-header {
+    &--shorts {
+      margin-bottom: 15px;
+    }
+  }
+
+  .video-section {
+    &--grid-1 {
+      // 3열 기본형
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+    }
+
+    &--grid-2 {
+      // 5열 쇼츠형
+      grid-template-columns: repeat(3, 1fr);
+      gap: 21px;
+    }
+
+    &--grid-3 {
+      // 세로 gap 16
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+
+    &--grid-5 {
+      // 세로 gap 22
+      gap: 22px;
+    }
+  }
+
+  .video-card {
+    --img-cover-max-width: 100%;
+
+    // 검색 결과
+    &--variant-1 {
+      --img-cover-min-width: 400px;
+    }
+
+    // 검색 결과 음악
+    &--variant-2 {
+      --img-cover-max-width: 121px;
+    }
+
+    // 구독
+    &--variant-3 {
+      --img-cover-max-width: 290px;
+      --img-cover-min-width: 247px;
+
+      &.video-card--vertical {
+        --img-cover-max-width: 487px;
+        --img-cover-min-width: unset;
+      }
+    }
+
+    // 다운리스트
+    &--variant-4 {
+      --img-cover-max-width: 175px;
+    }
+
+    // 휴지통
+    &--variant-5 {
+      --img-cover-max-width: 111px;
+    }
+
+    // 플레이 리스트
+    &--variant-6 {
+      --img-cover-max-width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .video-section {
+    &--grid-1 {
+      // 3열 기본형
+      grid-template-columns: repeat(1, 1fr);
+      gap: 35px;
+    }
+
+    &--grid-2 {
+      // 5열 쇼츠형
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  .video-card {
+    // 검색 결과
+    &--variant-1 {
+      --img-cover-min-width: 300px;
+    }
+  }
+}

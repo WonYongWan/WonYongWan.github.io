@@ -1,0 +1,91 @@
+@use '../common' as *;
+
+.subscriptions {
+  width: 100%;
+
+  .main-content__container {
+    @include max-width($mw: 1060px);
+    padding: 0 30px;
+  }
+
+  &__header {
+    @include flex-pos($jc: flex-end, $ai: center, $g: 20px);
+    padding: 30px 0 10px;
+  }
+
+  &__manage-link {
+    @include preMedium();
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.18px;
+    color: var(--color-text-200);
+  }
+
+  &__view-toggle {
+    @include flex-pos($ai: center, $g: 20px);
+  }
+
+  &__view-btn {
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    &.is-active {
+      .icon {
+        &--video-section-grid {
+          --ic-video-section-grid-active: url(../../icons/ic-video-section-grid-active.png);
+          background-image: var(--ic-video-section-grid-active);
+        }
+
+        &--video-section-list {
+          --ic-video-section-list-active: url(../../icons/ic-video-section-list-active.png);
+          background-image: var(--ic-video-section-list-active);
+        }
+      }
+    }
+  }
+
+  &__video {
+    padding-bottom: 34px;
+    border-bottom: 1px solid var(--color-border-200);
+    margin-bottom: 18px;
+
+    &:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &__video-channel {
+    @include flex-pos($d: inline-flex, $ai: center, $g: 8px);
+    margin-bottom: 15px;
+  }
+
+  &__video-profile {
+    @include image-set();
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+  }
+
+  &__video-name {
+    @include preBold();
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-text-200);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .subscriptions {
+    .main-content {
+      margin-left: 82px;
+    }
+
+    .main-content__container {
+      padding: 0 20px;
+    }
+  }
+}

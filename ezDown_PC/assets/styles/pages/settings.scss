@@ -1,0 +1,131 @@
+@use '../common' as *;
+
+.settings {
+  width: 100%;
+  background-color: var(--color-bg-1300);
+
+  .main-content__container {
+    position: relative;
+    min-height: 100%;
+    max-width: 560px;
+    padding: 0 30px 168px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include preBold();
+    font-size: 34px;
+    line-height: 40px;
+    color: var(--color-text-100);
+    padding-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__desc {
+    @include preRegular();
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--color-text-1400);
+
+    &--top {
+      margin-top: 8px;
+    }
+
+    &--bottom {
+      margin-top: 10px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 40px;
+
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-header {
+    margin-bottom: 16px;
+  }
+
+  &__section-with-tooltip {
+    @include flex-pos($ai: center, $g: 5px);
+  }
+
+  &__section-title,
+  &__underscore {
+    @include preRegular();
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text-200);
+  }
+
+  &__field {
+    @include flex-pos($jc: space-between, $ai: center, $g: 16px);
+    padding: 0 16px;
+    height: 58px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    background-color: var(--color-bg-700);
+    border: 1px solid var(--color-border-200);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__field-label {
+    @include preRegular();
+    font-size: 17px;
+    line-height: 20px;
+    color: var(--color-text-200);
+    flex-shrink: 0;
+  }
+
+  &__field-control {
+    &--dropdown {
+      width: 100%;
+      max-width: 200px;
+    }
+
+    &--toggle {
+      @include flex-pos($ai: center, $g: 16px);
+    }
+
+    &--channel {
+      width: 100%;
+      max-width: 355px;
+    }
+
+    &--file-name {
+      @include flex-pos($ai: center, $g: 10px);
+
+      .dropdown {
+        min-width: 190px;
+      }
+    }
+  }
+
+  &__btn {
+    &--channel {
+      @include preRegular();
+      width: 100%;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-text-200);
+      padding: 8px 12px 9px 10px;
+      border-radius: 5px;
+      background-color: var(--color-btn-bg-300);
+      border: 1px solid var(--color-border-400);
+      text-align: left;
+    }
+  }
+
+  &__btn-group {
+    @include flex-pos($jc: flex-end, $ai: center, $g: 10px);
+    width: 100%;
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+  }
+}

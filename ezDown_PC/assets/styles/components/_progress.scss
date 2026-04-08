@@ -1,0 +1,36 @@
+.progress {
+  overflow: hidden;
+  border-radius: 3px;
+  height: 6px;
+  background-color: var(--color-bg-1200);
+
+  &__fill {
+    position: relative;
+    width: 0;
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--color-bg-accent-red);
+  }
+
+  &--slider {
+    overflow: visible;
+  }
+
+  &__handle {
+    @include pos-y-center();
+    right: -8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: var(--color-bg-accent-red);
+  }
+
+  &--size-l {
+    height: 10px;
+    border-radius: 5px;
+
+    .progress__fill {
+      border-radius: 5px;
+    }
+  }
+}

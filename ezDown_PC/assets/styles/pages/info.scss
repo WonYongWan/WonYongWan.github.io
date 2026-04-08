@@ -1,0 +1,136 @@
+@use '../common' as *;
+
+.info {
+  width: 100%;
+  background-color: var(--color-bg-1300);
+
+  .main-content__container {
+    position: relative;
+    min-height: 100%;
+    max-width: 1060px;
+    padding: 0 30px 174px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include preBold();
+    font-size: 34px;
+    line-height: 40px;
+    color: var(--color-text-100);
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__header {
+    @include flex-pos($ai: center, $g: 40px);
+    padding: 30px 0;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--color-btn-border-200);
+  }
+
+  &__header-item {
+    @include flex-pos($ai: center, $g: 28px);
+  }
+
+  &__version {
+    @include preBold();
+    font-size: 26px;
+    line-height: 30px;
+    color: var(--color-text-200);
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    @include preRegular();
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-text-1500);
+  }
+
+  &__section-title {
+    @include preRegular();
+    font-size: 26px;
+    line-height: 30px;
+    color: var(--color-text-200);
+    margin-bottom: 50px;
+  }
+
+  &__changelog {
+    @include flex-pos($fd: column, $g: 50px);
+  }
+
+  &__changelog-texts {
+    @include flex-pos($jc: space-between, $ai: center);
+    margin-bottom: 20px;
+  }
+
+  &__changelog-version {
+    @include preRegular();
+    font-size: 22px;
+    line-height: 26px;
+    color: var(--color-text-200);
+  }
+
+  &__changelog-date {
+    @include preRegular();
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-text-1600);
+  }
+
+  &__changelog-detail {
+    @include flex-pos($fd: column, $g: 5px);
+  }
+
+  &__changelog-desc {
+    @include preRegular();
+    position: relative;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--color-text-1400);
+    padding-left: 16px;
+
+    &::before {
+      @include elm-create();
+      top: 8px;
+      left: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background-color: var(--color-text-1400);
+    }
+  }
+
+  &__btn-group {
+    @include flex-pos($jc: center, $ai: center, $g: 20px);
+    @include pos-x-center();
+    bottom: 50px;
+    padding: 0 30px;
+    width: 100%;
+
+    .btn {
+      max-width: 300px;
+    }
+  }
+
+  &__btn {
+    @include flex-pos($jc: center, $ai: center);
+    @include preRegular();
+    font-size: 16px;
+    line-height: 19px;
+    min-height: 40px;
+    width: 100%;
+    max-width: 127px;
+    border-radius: 8px;
+    background-color: var(--color-btn-bg-1300);
+    border: 1px solid var(--color-btn-border-200);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .info {
+    .main-content__container {
+      padding: 0 50px 174px;
+    }
+  }
+}

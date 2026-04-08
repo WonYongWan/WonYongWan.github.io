@@ -1,0 +1,58 @@
+.tooltip {
+  position: relative;
+
+  &__btn {
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__message {
+    position: absolute;
+    display: none;
+    left: -13px;
+    bottom: 100%;
+    margin-bottom: 10px;
+    background-color: var(--color-bg-fix-100);
+    border-radius: 8px;
+    padding: 12px;
+
+    &::before {
+      @include elm-create();
+      top: 100%;
+      left: 17px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 5px 0 5px;
+      border-color: var(--color-bg-fix-100) transparent transparent transparent;
+    }
+  }
+
+  &__text {
+    @include preLight();
+    position: relative;
+    padding-left: 12px;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-fix-600);
+    white-space: nowrap;
+
+    &::before {
+      @include elm-create();
+      width: 3px;
+      height: 3px;
+      border-radius: 100%;
+      background-color: var(--color-text-fix-600);
+      top: 6px;
+      left: 0;
+    }
+  }
+
+  &.is-active {
+    .tooltip__message {
+      @include flex-pos($fd: column, $g: 8px);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.pagination {
+  &__inner {
+    @include flex-pos($ai: center, $jc: center);
+  }
+
+  &__btn {
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      background-color: var(--color-btn-bg-100);
+      border-radius: 100%;
+    }
+  }
+
+  &__info {
+    @include preSemiBold();
+    display: inline-block;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-text-500);
+    margin: 0 28px;
+  }
+
+  &__current {
+    color: var(--color-text-accent-red);
+  }
+}

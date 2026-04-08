@@ -1,0 +1,29 @@
+.category-bar {
+  width: 100%;
+  background-color: var(--color-bg-100);
+
+  &__list {
+    @include flex-pos($ai: center, $g: 12px);
+    position: relative;
+    padding: 12px 0;
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    @include preSemiBold();
+    padding: 7px 14px;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-btn-text-100);
+    background-color: var(--color-btn-bg-600);
+    border-radius: 16px;
+
+    &.is-active {
+      background-color: var(--color-btn-bg-accent-red);
+      color: var(--color-btn-text-fix-300);
+    }
+  }
+}

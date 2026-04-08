@@ -1,0 +1,139 @@
+.btn-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  &--columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.btn {
+  display: inline-block;
+
+  &--default {
+    @include flex-pos($jc: center, $ai: center);
+    @include preMedium();
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-btn-text-100);
+    width: 100%;
+    min-height: 58px;
+    border-radius: 10px;
+    background-color: var(--color-btn-bg-200);
+
+    &.btn--red {
+      background-color: var(--color-btn-bg-accent-red);
+      color: var(--color-btn-text-fix-300);
+    }
+
+    &.btn--border {
+      background-color: var(--color-btn-bg-300);
+      border: 2px solid var(--color-btn-border-100);
+    }
+
+    &.btn--size-l {
+      min-height: 64px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &.btn--size-s {
+      @include preRegular();
+      max-width: 110px;
+      min-height: 48px;
+      font-size: 17px;
+      line-height: 20px;
+      border-radius: 5px;
+
+      &.btn--border {
+        border: 1px solid var(--color-btn-border-300);
+      }
+    }
+  }
+
+  &--underline {
+    @include preRegular();
+    text-decoration: underline;
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-btn-text-1200);
+  }
+
+  &--chip {
+    @include preSemiBold();
+    padding: 11px 22px 10px;
+    border-radius: 20px;
+    background-color: var(--color-btn-bg-600);
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-btn-text-100);
+
+    &.text-regular {
+      @include preRegular();
+    }
+
+    &.is-active {
+      background-color: var(--color-btn-bg-accent-red);
+      color: var(--color-btn-text-fix-300);
+    }
+
+    &.btn--red {
+      box-sizing: border-box;
+      background-color: transparent;
+      color: var(--color-text-accent-red);
+      border: 1.5px solid var(--color-border-accent-red);
+      box-sizing: border-box;
+      padding: 10px 21.5px 9px;
+
+      &.btn--variant-1 {
+        background-color: var(--color-btn-bg-accent-red);
+        color: var(--color-btn-text-fix-300);
+      }
+    }
+  }
+
+  &--toggle {
+    border-radius: 12px;
+    padding: 2px;
+    background-color: var(--color-btn-bg-1000);
+    width: 44px;
+    height: 24px;
+    text-align: left;
+    transition: 0.1s ease-in-out;
+
+    &.is-active {
+      background-color: var(--color-btn-bg-accent-red);
+
+      .btn__circle {
+        transform: translateX(100%);
+      }
+    }
+
+    &.btn--variant-1 {
+      border-radius: 15px;
+      background-color: var(--color-btn-bg-1100);
+      width: 56px;
+      height: 30px;
+
+      .btn__circle {
+        width: 26px;
+        height: 26px;
+        box-shadow: 0 2px 4px 0 #0000001a;
+      }
+
+      &.is-active {
+        background-color: var(--color-btn-bg-accent-red);
+      }
+    }
+  }
+
+  &__circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #fff;
+    transition: 0.1s ease-in-out;
+  }
+}
