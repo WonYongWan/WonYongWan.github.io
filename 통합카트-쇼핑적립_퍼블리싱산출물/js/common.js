@@ -9,6 +9,11 @@ const $type3Lists = document.querySelectorAll('.list-wrap.type3 .list');
 const $type3ListsTop = document.querySelectorAll('.list-wrap.type3 .list > .top');
 const $type3ListsBottom = document.querySelectorAll('.list-wrap.type3 .list > .bottom');
 const $type3ListsBottomContent = document.querySelectorAll('.list-wrap.type3 .list > .bottom > div');
+// cart list type1
+const $type1CartLists = document.querySelectorAll('.cart-list-wrap.type1 .list');
+const $type1CartListsIcoHeart = document.querySelectorAll('.cart-list-wrap.type1 .ico-heart');
+const $type1CartListsIcoalarm = document.querySelectorAll('.cart-list-wrap.type1 .ico-alarm');
+
 // file
 const $inputFile1 = document.querySelector('#file-1');
 
@@ -72,6 +77,29 @@ if($type3Lists) {
   });
 }
 
+// cart list type1
+if($type1CartLists) {
+  $type1CartListsIcoHeart.forEach(elm => {
+    elm.addEventListener('click', () => {
+      if(!elm.classList.contains('on')) {
+        elm.classList.add('on');
+      } else if(elm.classList.contains('on')) {
+        elm.classList.remove('on');
+      }
+    });
+  });
+
+  $type1CartListsIcoalarm.forEach(elm => {
+    elm.addEventListener('click', () => {
+      if(!elm.classList.contains('on')) {
+        elm.classList.add('on');
+      } else if(elm.classList.contains('on')) {
+        elm.classList.remove('on');
+      }
+    });
+  });
+}
+
 // resize event
 window.addEventListener('resize', () => {
   // list type3
@@ -85,6 +113,128 @@ window.addEventListener('resize', () => {
 });
 
 // component
+// on off
+function onOff(elm, flagElm) {
+  const $elm = document.querySelector(elm);
+  const $flagElm = document.querySelector(flagElm);
+
+  if($flagElm && $flagElm.classList.contains('on')) return;
+
+  if(!$elm.classList.contains('on')) {
+    $elm.classList.add('on');
+  } else if($elm.classList.contains('on')) {
+    $elm.classList.remove('on');
+  }
+}
+
+function toolTipOnOff(toolTip, toolTips) {
+  const $toolTips = document.querySelectorAll(toolTips);
+  const $toolTip = document.querySelector(toolTip);
+
+  $toolTips.forEach(elm => {
+    if(elm !== $toolTip) elm.classList.remove('on');
+  })
+
+  if(!$toolTip.classList.contains('on')) {
+    $toolTip.classList.add('on')
+     
+  } else if($toolTip.classList.contains('on')) {
+    $toolTip.classList.remove('on');
+
+  }
+}
+
+function toolTipsOff(e, toolTips) {
+  const $toolTips = document.querySelectorAll(toolTips);
+  let flag = true;
+
+  $toolTips.forEach(elm => {
+    if(e.target.closest(toolTips) === elm) flag = false;
+  });
+
+  if(flag) {
+    $toolTips.forEach(elm => {
+      elm.classList.remove('on');
+    });
+  }
+}
+
+// cart
+function cartListType(btn, cartList) {
+  const $btn = document.querySelector(btn);
+  const $cartList = document.querySelector(cartList);
+
+  if($btn.classList.contains('one')) {
+    $btn.classList.remove('one');
+    $cartList.classList.remove('one');
+    $btn.classList.add('two');
+    $cartList.classList.add('two');
+
+  } else if($btn.classList.contains('two')) {
+    $btn.classList.remove('two');
+    $cartList.classList.remove('two');
+    $btn.classList.add('three');
+    $cartList.classList.add('three');
+
+  } else if($btn.classList.contains('three')) {
+    $btn.classList.remove('three');
+    $cartList.classList.remove('three');
+    $btn.classList.add('one');
+    $cartList.classList.add('one');
+  }
+}
+
+function topDowmBoxOnOff(topDownBtn, topDownBox) {
+  const $btn = document.querySelector(topDownBtn);
+  const $box = document.querySelector(topDownBox);
+
+  if(!$btn.classList.contains('on')) {
+    $btn.classList.add('on');
+    $box.classList.add('on');
+
+  } else if($btn.classList.contains('on')) {
+    $btn.classList.remove('on');
+    $box.classList.remove('on');
+
+  }
+}
+
+function addFolderList(input, tabListWrap, selectWrap, selectList, btn, tost) {
+  const $input = document.querySelector(input);
+  const $tabListWrap = document.querySelector(tabListWrap);
+  const $tost = document.querySelector(tost);
+  if($input.value.length <= 0) return;
+
+  const $tab = document.createElement('div');
+  $tab.setAttribute('class', `tab tab${$tabListWrap.children.length + 1}`)
+  $tab.innerHTML = `<a href="javascript:void(0)">${$input.value}</a>`;
+  $tabListWrap.appendChild($tab);
+  $input.value = '';
+  document.body.classList.remove('scrollNone');
+  document.querySelector(selectWrap).classList.remove('on');
+  document.querySelector(selectList).classList.remove('on');
+  document.querySelector(btn).classList.remove('on');
+
+  if($tost && !$tost.classList.contains('on')) {
+    $tost.classList.add('on');
+    setTimeout(() => $tost.classList.remove('on'), 1000);
+  }
+}
+
+// cart input value check
+function inputValueCheck(input, btn) {
+  const $input = document.querySelector(input);
+  const $btn = document.querySelector(btn);
+
+  if($input.value.length > 0) {
+    $btn.classList.add('on');
+
+  } else {
+    $btn.classList.remove('on');
+
+  }
+}
+
 // popup
 function popupOn(popupWrap, popup) {
   document.body.classList.add('scrollNone');
@@ -98,7 +248,18 @@ function popupClose(popupWrap, popup) {
   document.querySelector(popup).classList.remove('on');
 }
 
-// select box
+// popup change
+function popupChange(nowPop, nextPop) {
+  document.querySelector(nowPop).classList.remove('on');
+  document.querySelector(nextPop).classList.add('on');
+}
+
+// event popup
+function eventPopupClose(popup) {
+  document.querySelector(popup).classList.remove('on');
+}
+
+// select list box
 function selectListOn(selectBtn, selectWrap, selectList) {
   const $selectBtnValue = document.querySelector(`${selectBtn} .value`);
   const $selectLists = document.querySelectorAll(`${selectList} .list`);
@@ -127,6 +288,36 @@ function selectListClose(selectBtn, selectWrap, selectList) {
   $selectLists.forEach((elm) => elm.removeEventListener('click', () => selectListsCheck(elm, $selectBtnValue)));
 }
 
+// select input box
+function selectInputOn(selectWrap, selectList) {
+  document.body.classList.add('scrollNone');
+  document.querySelector(selectWrap).classList.add('on');
+  document.querySelector(selectList).classList.add('on');
+}
+
+function selectInputClose(selectWrap, selectList) {
+  const $selectInput = document.querySelector(`${selectList} .select-cont > input`);
+  const $selectBtn = document.querySelector(`${selectList} .select-cont .folder-btn`)
+  document.body.classList.remove('scrollNone');
+  document.querySelector(selectWrap).classList.remove('on');
+  document.querySelector(selectList).classList.remove('on');
+  if($selectInput) $selectInput.value = '';
+  if($selectBtn.classList.contains('on')) $selectBtn.classList.remove('on');
+}
+
+// select basic box
+function selectBasicOn(selectWrap, selectList) {
+  document.body.classList.add('scrollNone');
+  document.querySelector(selectWrap).classList.add('on');
+  document.querySelector(selectList).classList.add('on');
+}
+
+function selectBasicClose(selectWrap, selectList) {
+  document.body.classList.remove('scrollNone');
+  document.querySelector(selectWrap).classList.remove('on');
+  document.querySelector(selectList).classList.remove('on');
+}
+
 // form box
 function formBoxOn(askElms, askTarget, askText, askValue, formBoxElms, formBoxTarget) {
   const $formBoxElms = document.querySelectorAll(formBoxElms);
@@ -143,4 +334,402 @@ function formBoxOn(askElms, askTarget, askText, askValue, formBoxElms, formBoxTa
   $formBoxElms.forEach(elm => elm.classList.remove('on'));
   $formBoxTarget.classList.add('on');
   sessionStorage.setItem('form-box-number', JSON.stringify(formObj));
+}
+
+// favorites list
+function favoritesList(heart, cartWrap) {
+  const $heart = document.querySelector(heart);
+  const $cartLists = document.querySelectorAll(`${cartWrap} .list .ico-heart`);
+
+  if($heart.classList.contains('on')) {
+    $cartLists.forEach(elm => {
+      if(!elm.classList.contains('on')) {
+        elm.closest('.list').classList.add('none');
+      }
+    });
+
+  } else if(!$heart.classList.contains('on')) {
+    $cartLists.forEach(elm => {
+      if(!elm.classList.contains('on')) {
+        elm.closest('.list').classList.remove('none');
+      }
+    });
+
+  }
+}
+
+function bottomCartCancel(bottomCartMenu, cartWrap, selectBtn, alarmBtn) {
+  const $bottomCartMenu = document.querySelector(bottomCartMenu);
+  const $cartCheckBoxs = document.querySelectorAll(`${cartWrap} .check-box`);
+  const $selectBtn = document.querySelector(selectBtn);
+  const $alarmBtn = document.querySelector(alarmBtn);
+  const $alarmBtnIco = document.querySelector(`${alarmBtn} .ico-b-cart-alarm`);
+
+  $bottomCartMenu.classList.remove('on');
+  $cartCheckBoxs.forEach(elm => {
+    elm.classList.remove('on');
+    if(elm.querySelector('.img-bg').classList.contains('on')) {
+      elm.querySelector('.img-bg').classList.remove('on');
+    }
+  });
+
+  if($selectBtn.classList.contains('selected')) $selectBtn.classList.remove('selected');
+  $selectBtn.classList.remove('on');
+  $selectBtn.innerText = '선택';
+
+  if($alarmBtnIco && !$alarmBtnIco.classList.contains('on')) {
+    $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm on"></span>알림 켜기';
+    $alarmBtnIco.classList.add('on');
+  }
+}
+
+function bottomCartAlarm(alarmBtn, cartWrap, textBtn, tost1, tost2) {
+  const $alarmBtn = document.querySelector(alarmBtn);
+  const $alarmBtnIco = document.querySelector(`${alarmBtn} .ico-b-cart-alarm`);
+  const $cartLists = document.querySelectorAll(`${cartWrap} .list`);
+  const $textBtn = document.querySelector(textBtn);
+  const $tost1 = document.querySelector(tost1);
+  const $tost2 = document.querySelector(tost2);
+  let count = 0;
+
+  $cartLists.forEach(elm => {
+    const $cartImgBg = elm.querySelector('.img-bg');
+    const $cartIcoAlarm = elm.querySelector('.ico-alarm');
+
+    if($cartImgBg.classList.contains('on')) count += 1;
+
+    if($alarmBtnIco.classList.contains('on')) {
+      if($cartImgBg.classList.contains('on')) {
+        $cartImgBg.classList.remove('on');
+        if(!$cartIcoAlarm.classList.contains('on')) $cartIcoAlarm.classList.add('on');
+      }
+
+    } else if(!$alarmBtnIco.classList.contains('on')) {
+      if($cartImgBg.classList.contains('on')) {
+        $cartImgBg.classList.remove('on');
+        if($cartIcoAlarm.classList.contains('on')) $cartIcoAlarm.classList.remove('on');
+      }
+
+    }
+  });
+
+  if(count > 0) {
+    if($alarmBtnIco.classList.contains('on')) {
+      if($tost1 && !$tost1.classList.contains('on')) {
+        if($tost2.classList.contains('on')) $tost2.classList.remove('on');
+        $tost1.classList.add('on');
+        setTimeout(() => $tost1.classList.remove('on'), 1000);
+      }
+  
+    } else if(!$alarmBtnIco.classList.contains('on')) {
+      if($tost2 && !$tost2.classList.contains('on')) {
+        if($tost1.classList.contains('on')) $tost1.classList.remove('on');
+        $tost2.classList.add('on');
+        setTimeout(() => $tost2.classList.remove('on'), 1000);
+      }
+  
+    }
+  }
+
+  if($textBtn.classList.contains('selected')) $textBtn.classList.remove('selected');
+  $textBtn.innerText = '전체선택';
+  if(!$alarmBtnIco.classList.contains('on')) {
+    $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm on"></span>알림 켜기';
+    $alarmBtnIco.classList.add('on');
+  }
+}
+
+function bottomCartFavorites(cartWrap, textBtn, tost) {
+  const $cartLists = document.querySelectorAll(`${cartWrap} .list`);
+  const $textBtn = document.querySelector(textBtn);
+  const $tost = document.querySelector(tost);
+  let count = 0;
+
+  $cartLists.forEach(elm => {
+    const $cartImgBg = elm.querySelector('.img-bg');
+    const $cartIcoFavorites = elm.querySelector('.ico-heart');
+
+    if($cartImgBg.classList.contains('on')) {
+      if(!$cartIcoFavorites.classList.contains('on')) {
+        $cartIcoFavorites.classList.add('on');
+        if(elm.classList.contains('none')) elm.classList.remove('none');
+        count += 1;
+      }
+
+      $cartImgBg.classList.remove('on');
+    }
+  });
+
+  if($textBtn.classList.contains('selected')) {
+    $textBtn.classList.remove('selected');
+    $textBtn.innerText = '전체선택';
+  }
+
+  if(count > 0) {
+    if($tost && !$tost.classList.contains('on')) {
+      $tost.classList.add('on');
+      setTimeout(() => $tost.classList.remove('on'), 1000);
+    }
+  }
+}
+
+function bottomCartAlarmChangeCheck(alarmBtn, cartWrap) {
+  const $alarmBtn = document.querySelector(`${alarmBtn}`);
+  const $alarmBtnIco = document.querySelector(`${alarmBtn} .ico-b-cart-alarm`);
+  const $cartLists = document.querySelectorAll(`${cartWrap} .list`);
+  let count = 0;
+
+  $cartLists.forEach(elm => {
+    const $cartImgBg = elm.querySelector('.img-bg');
+    const $alarmIco = elm.querySelector('.ico-alarm');
+    if($cartImgBg.classList.contains('on') && $alarmIco.classList.contains('on')) count += 1;
+  });
+
+  if(count === 0) {
+    if($alarmBtnIco && !$alarmBtnIco.classList.contains('on')) {
+      $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm on"></span>알림 켜기';
+      $alarmBtnIco.classList.add('on');
+    }
+
+  } else if(count > 0) {
+    if($alarmBtnIco && $alarmBtnIco.classList.contains('on')) {
+      $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm"></span>알림 끄기';
+      $alarmBtnIco.classList.remove('on');
+    }
+  }
+}
+
+function bottomPopupOn(popup, cartWrap) {
+  const $popup = document.querySelector(popup);
+  const $popupCountText = document.querySelector(`${popup} .head > p`);
+  const $cartList = document.querySelectorAll(`${cartWrap} .list`);
+  let count = 0;
+
+  $cartList.forEach(elm => {
+    const $cartImgBg = elm.querySelector('.img-bg');
+
+    if($cartImgBg.classList.contains('on')) count += 1;
+  });
+
+  if(count === 0) return;
+  $popupCountText.innerText = `${count}개 상품을 삭제할까요?`;
+  $popup.classList.add('on');
+}
+
+function bottomCartRemove(cartWrap, popup, bottomCartMenu, textBtn, tost) {
+  const $cartListBefore = document.querySelectorAll(`${cartWrap} .list`);
+  const $popup = document.querySelector(popup);
+  const $bottomCartMenu = document.querySelector(bottomCartMenu);
+  const $textBtn = document.querySelector(textBtn);
+  const $tost = document.querySelector(tost);
+
+  $cartListBefore.forEach(elm => {
+    const $cartImgBg = elm.querySelector('.img-bg');
+
+    if($cartImgBg.classList.contains('on')) {
+      elm.remove();
+    }
+  });
+
+  $popup.classList.remove('on');
+
+  if($tost && !$tost.classList.contains('on')) {
+    $tost.classList.add('on');
+    setTimeout(() => $tost.classList.remove('on'), 1000);
+  }
+
+  const $cartListAfter = document.querySelectorAll(`${cartWrap} .list`);
+  if($cartListAfter.length === 0) {
+    $bottomCartMenu.classList.remove('on');
+    if($textBtn.classList.contains('selected')) $textBtn.classList.remove('selected');
+    $textBtn.classList.remove('on');
+    $textBtn.innerText = '선택';
+  }
+}
+
+// cartList organize
+function cartListOrganizeOn(btn, cartWrap, bottomCartMenu, alarmBtn, flagElm) {
+  const $btn = document.querySelector(btn);
+  const $cartLists = document.querySelectorAll(`${cartWrap} .list`);
+  const $cartCheckBox = document.querySelectorAll(`${cartWrap} .check-box`);
+  const $bottomCartMenu = document.querySelector(bottomCartMenu);
+  const $alarmBtn = document.querySelector(alarmBtn);
+  const $alarmBtnIco = document.querySelector(`${alarmBtn} .ico-b-cart-alarm`);
+  const $flagElm = document.querySelector(flagElm);
+  let count = 0;
+  
+  if($flagElm && $flagElm.classList.contains('on')) return;
+  if($cartLists.length === 0) return;
+
+  if(!$btn.classList.contains('on')) {
+    $btn.classList.add('on');
+    $btn.innerText = '전체선택';
+    $cartCheckBox.forEach(elm => {
+      elm.classList.add('on');
+    });
+    $bottomCartMenu.classList.add('on');
+
+  } else if($btn.classList.contains('on') && !$btn.classList.contains('selected')) {
+    $btn.classList.add('selected');
+    $btn.innerText = '전체해제';
+    $cartCheckBox.forEach(elm => {
+      elm.querySelector('.img-bg').classList.add('on');
+    });
+
+    $cartLists.forEach(elm => {
+      const $cartImgBg = elm.querySelector('.img-bg');
+      const $alarmIco = elm.querySelector('.ico-alarm');
+      if($cartImgBg.classList.contains('on') && $alarmIco.classList.contains('on')) count += 1;
+    });
+  
+    if(count === 0) {
+      if($alarmBtnIco && !$alarmBtnIco.classList.contains('on')) {
+        $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm on"></span>알림 켜기';
+        $alarmBtnIco.classList.add('on');
+      }
+  
+    } else if(count > 0) {
+      if($alarmBtnIco && $alarmBtnIco.classList.contains('on')) {
+        $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm"></span>알림 끄기';
+        $alarmBtnIco.classList.remove('on');
+      }
+    }
+
+  } else if($btn.classList.contains('on') && $btn.classList.contains('selected')) {
+    $btn.classList.remove('selected');
+    $btn.innerText = '전체선택';
+    $cartCheckBox.forEach(elm => {
+      elm.querySelector('.img-bg').classList.remove('on');
+    });
+
+    if($alarmBtnIco && !$alarmBtnIco.classList.contains('on')) {
+      $alarmBtn.innerHTML = '<span class="ico-b-cart-alarm on"></span>알림 켜기';
+      $alarmBtnIco.classList.add('on');
+    }
+  }
+}
+
+function cartListOrganizeCheck(btn, cartWrap, flagElm) {
+  const $btn = document.querySelector(btn);
+  const $cartCheckBox = document.querySelectorAll(`${cartWrap} .check-box`);
+  let count = 0;
+
+  $cartCheckBox.forEach(elm => {
+    if(elm.querySelector('.img-bg').classList.contains('on')) {
+      count += 1;
+    }
+
+    if(count >= 0 && count < $cartCheckBox.length) {
+      $btn.classList.remove('selected');
+      $btn.innerText = '전체선택';
+
+    } else if(count === $cartCheckBox.length) {
+      $btn.classList.add('selected');
+      $btn.innerText = '전체해제';
+
+    }
+  });
+}
+
+// input checked check
+function checkedCheck(input, btn) {
+  const $input = document.querySelector(input);
+  const $btn = document.querySelector(btn);
+
+  if($input.checked) {
+
+    if($btn.classList.contains('gray')) {
+      $btn.classList.remove('gray');
+    }
+  } else if(!$input.checked) {
+
+    if(!$btn.classList.contains('gray')) {
+      $btn.classList.add('gray');
+    }
+  }
+}
+
+// tab menu event
+function tabMenuOnOff(tab, cont, tabs, conts) {
+  const $tab = document.querySelector(tab);
+  const $cont = document.querySelector(cont);
+  const $tabs = document.querySelectorAll(tabs);
+  const $conts = document.querySelectorAll(conts);
+
+  if($tab.classList.contains('on')) return;
+  $tabs.forEach(elm => elm.classList.remove('on'));
+  $conts.forEach(elm => elm.classList.remove('on'));
+  $tab.classList.add('on');
+  $cont.classList.add('on');
+}
+
+// event banner touch event
+let selectListTouchStartY;
+let selectListTouchEndY;
+
+function selectListTouchStart(pageY) {
+  selectListTouchStartY = pageY;
+}
+
+function selectListTouchEnd(pageY, selectWrap, selectList) {
+  selectListTouchEndY = pageY;
+  const touchLength = selectListTouchEndY - selectListTouchStartY;
+  if(touchLength > 280) {
+    document.body.classList.remove('scrollNone');
+    document.querySelector(selectWrap).classList.remove('on');
+    document.querySelector(selectList).classList.remove('on');
+  }
+  document.querySelector(selectList).style.bottom = '0px';
+}
+
+function selectListTouchMove(pageY, selectList) {
+  const $selectList = document.querySelector(selectList);
+  const touchLength = pageY - selectListTouchStartY;
+  if(Number(getComputedStyle($selectList).bottom.replace(/([^0-9.])/g, '')) >= 0) {
+    $selectList.style.bottom = `-${touchLength}px`;
+  }
+}
+
+// copy text
+function copyText(elm) {
+  const $copyText = document.querySelector(elm);
+
+  $copyText.select();
+  $copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText($copyText.value);
+}
+
+// swiper control
+function swiperClose(swiper) {
+  document.querySelector(swiper).classList.add('none');
+}
+
+function swiperOn(swiper) {
+  document.querySelector(swiper).classList.remove('none');
+}
+
+
+// 00시 시작
+function timer() {
+  // 현재 시간
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+  const currentDay = currentDate.getDate().toString().padStart(2, '0');
+  const currentHours = currentDate.getHours().toString().padStart(2, '0');
+  const currentMinutes = currentDate.getMinutes().toString().padStart(2, '0');
+  const currentSeconds = currentDate.getSeconds().toString().padStart(2, '0');
+  // 다음 시간
+  const nextDate = new Date(currentDate.setDate(currentDate.getDate() + 1));
+  const nextYear = nextDate.getFullYear();
+  const nextMonth = (nextDate.getMonth() + 1).toString().padStart(2, '0');
+  const nextDay = nextDate.getDate().toString().padStart(2, '0');
+
+  const currentTime = Number(currentYear + currentMonth + currentDay + currentHours + currentMinutes + currentSeconds + '000');
+  const nextTime = Number(nextYear + nextMonth + nextDay + '000000' + '000');
+
+  // 딜레이 시간
+  const time = Number(String(nextTime - currentTime));
+
+  return time;
 }
