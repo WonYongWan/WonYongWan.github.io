@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- html에 dark 추가 시 다크모드 활성화 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/splash.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap wrap--sidebar">
+      <!-- splash -->
+      <div class="splash">
+        <!-- app-header -->
+        <header class="app-header">
+          <div class="app-header__container">
+            <div class="app-header__nav">
+              <button class="app-header__btn app-header__btn--back" type="button" aria-label="이전 페이지">
+                <span class="icon icon--arrow-back" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--arrow-next" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--reload" type="button" aria-label="새로고침">
+                <span class="icon icon--refresh" aria-hidden="true"></span>
+              </button>
+            </div>
+            <form class="app-header__search app-header__search--variant-1">
+              <input class="app-header__search-input" name="search" type="text" placeholder="다운로드 하고자하는 유튜브 URL 을 입력하세요." />
+              <button class="app-header__btn app-header__btn--down" type="submit" aria-label="다운로드">
+                <span class="icon icon--arrow-down-underline" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="app-header__actions app-header__actions--variant-1">
+              <button class="app-header__btn app-header__btn--minimize" type="button" aria-label="최소화">
+                <span class="icon icon--minus-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--maximize" type="button" aria-label="최대화">
+                <span class="icon icon--square-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--close" type="button" aria-label="닫기">
+                <span class="icon icon--close-app" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- splash 영역 -->
+        <div class="splash__container">
+          <div class="main-content main-content--variant-3">
+            <h1>
+              <span class="logo logo--splash" aria-hidden="true"></span>
+              <span class="splash__title">ezDown</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

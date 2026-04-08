@@ -1,0 +1,186 @@
+<!doctype html>
+<!-- html에 dark 추가 시 다크모드 활성화 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/my-download.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap wrap--sidebar" data-sidebar-layout>
+      <!-- app-nav -->
+      <nav class="app-nav app-nav--variant-1" data-sidebar>
+        <div class="app-nav__overlay" data-sidebar-close></div>
+        <div class="app-nav__container">
+          <div class="app-nav__header">
+            <p class="app-nav__title">더보기</p>
+            <button class="app-nav__btn app-nav__btn--header" type="button" aria-label="닫기" data-sidebar-close>
+              <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content is-active" href="./my-download.html">
+                  <span class="app-nav__text">다운로드</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./ezplayer.html">
+                  <span class="app-nav__text">ezPlayer</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button" data-toggle-btn="app-nav-sub-list">
+                  <span class="app-nav__text">설정</span>
+                </button>
+                <ul class="app-nav__sub-list" data-toggle-target="app-nav-sub-list">
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings.html">
+                      <span class="app-nav__text">일반 설정</span>
+                    </a>
+                  </li>
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings-downloads.html">
+                      <span class="app-nav__text">다운로드 설정</span>
+                    </a>
+                  </li>
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings-synchronization.html">
+                      <span class="app-nav__text">동기화 설정</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="app-nav__text">가이드</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./info.html">
+                  <span class="app-nav__text">정보</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">문의하기</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">기본값으로 복원</a>
+          </div>
+        </div>
+      </nav>
+      <!-- my-download -->
+      <div class="my-download">
+        <!-- app-header -->
+        <header class="app-header">
+          <div class="app-header__container">
+            <div class="app-header__nav">
+              <button class="app-header__btn app-header__btn--back" type="button" aria-label="이전 페이지">
+                <span class="icon icon--arrow-back" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--arrow-next" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--reload" type="button" aria-label="새로고침">
+                <span class="icon icon--refresh" aria-hidden="true"></span>
+              </button>
+            </div>
+            <form class="app-header__search">
+              <input class="app-header__search-input" name="search" type="text" placeholder="다운로드 하고자하는 유튜브 URL 을 입력하세요." />
+              <button class="app-header__btn app-header__btn--down" type="submit" aria-label="다운로드">
+                <span class="icon icon--arrow-down-underline" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="app-header__actions">
+              <button class="app-header__btn app-header__btn--point" type="button">
+                <span class="icon icon--point" aria-hidden="true"></span>
+                <span class="app-header__point-info">12,450P</span>
+              </button>
+              <button class="app-header__btn app-header__btn--profile" type="button">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                <span class="app-header__profile-email">test@enliple.com</span>
+              </button>
+              <button class="app-header__btn app-header__btn--minimize" type="button" aria-label="최소화">
+                <span class="icon icon--minus-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--maximize" type="button" aria-label="최대화">
+                <span class="icon icon--square-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--close" type="button" aria-label="닫기">
+                <span class="icon icon--close-app" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- page-header -->
+        <header class="page-header page-header--variant-1">
+          <div class="page-header__container">
+            <div class="page-header__brand">
+              <a href="./home.html" aria-label="ezDown 홈">
+                <span class="logo logo--primary" aria-hidden="true"></span>
+              </a>
+              <button class="page-header__btn page-header__btn--menu" type="button" aria-label="네비게이션 열기" data-sidebar-open>
+                <span class="icon icon--more-right" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- my-download 영역 -->
+        <div class="my-download__container">
+          <div class="main-content">
+            <div class="my-download__import">
+              <div class="my-download__import-item">
+                <span class="icon icon--my-download-empty" aria-hidden="true"></span>
+                <p class="my-download__import-desc">재생 목록이 없습니다</p>
+                <p class="my-download__import-desc my-download__import-desc--secondary">오프라인 다운로드 파일을 추가해보세요</p>
+              </div>
+              <button class="btn btn--default btn--red" type="button" data-popup-btn-on="file-access-request">재생목록 추가</button>
+            </div>
+          </div>
+        </div>
+        <!-- bottom-nav -->
+        <nav class="bottom-nav">
+          <ul class="bottom-nav__list">
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./home.html">
+                <span class="icon icon--nav-home" aria-hidden="true"></span>
+                <span class="bottom-nav__text">홈</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./shorts.html">
+                <span class="icon icon--nav-shorts" aria-hidden="true"></span>
+                <span class="bottom-nav__text">쇼츠</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn is-active" href="./my-download.html" aria-label="다운로드">
+                <span class="icon icon--nav-ezdown" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./subscriptions.html">
+                <span class="icon icon--nav-subscriptions" aria-hidden="true"></span>
+                <span class="bottom-nav__text">구독</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./library.html">
+                <span class="icon icon--nav-library" aria-hidden="true"></span>
+                <span class="bottom-nav__text">보관함</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

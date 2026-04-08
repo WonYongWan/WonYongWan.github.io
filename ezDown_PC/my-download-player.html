@@ -1,0 +1,643 @@
+<!doctype html>
+<!-- html에 dark 추가 시 다크모드 활성화 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/my-download-player.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap wrap--sidebar" data-sidebar-layout>
+      <!-- app-nav -->
+      <nav class="app-nav app-nav--variant-1" data-sidebar>
+        <div class="app-nav__overlay" data-sidebar-close></div>
+        <div class="app-nav__container">
+          <div class="app-nav__header">
+            <p class="app-nav__title">더보기</p>
+            <button class="app-nav__btn app-nav__btn--header" type="button" aria-label="닫기" data-sidebar-close>
+              <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content is-active" href="./my-download.html">
+                  <span class="app-nav__text">다운로드</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./ezplayer.html">
+                  <span class="app-nav__text">ezPlayer</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button" data-toggle-btn="app-nav-sub-list">
+                  <span class="app-nav__text">설정</span>
+                </button>
+                <ul class="app-nav__sub-list" data-toggle-target="app-nav-sub-list">
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings.html">
+                      <span class="app-nav__text">일반 설정</span>
+                    </a>
+                  </li>
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings-downloads.html">
+                      <span class="app-nav__text">다운로드 설정</span>
+                    </a>
+                  </li>
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings-synchronization.html">
+                      <span class="app-nav__text">동기화 설정</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="app-nav__text">가이드</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./info.html">
+                  <span class="app-nav__text">정보</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">문의하기</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">기본값으로 복원</a>
+          </div>
+        </div>
+      </nav>
+      <!-- my-download-player -->
+      <div class="my-download-player">
+        <!-- app-header -->
+        <header class="app-header">
+          <div class="app-header__container">
+            <div class="app-header__nav">
+              <button class="app-header__btn app-header__btn--back" type="button" aria-label="이전 페이지">
+                <span class="icon icon--arrow-back" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--arrow-next" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--reload" type="button" aria-label="새로고침">
+                <span class="icon icon--refresh" aria-hidden="true"></span>
+              </button>
+            </div>
+            <form class="app-header__search">
+              <input class="app-header__search-input" name="search" type="text" placeholder="다운로드 하고자하는 유튜브 URL 을 입력하세요." />
+              <button class="app-header__btn app-header__btn--down" type="submit" aria-label="다운로드">
+                <span class="icon icon--arrow-down-underline" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="app-header__actions">
+              <button class="app-header__btn app-header__btn--point" type="button">
+                <span class="icon icon--point" aria-hidden="true"></span>
+                <span class="app-header__point-info">12,450P</span>
+              </button>
+              <button class="app-header__btn app-header__btn--profile" type="button">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                <span class="app-header__profile-email">test@enliple.com</span>
+              </button>
+              <button class="app-header__btn app-header__btn--minimize" type="button" aria-label="최소화">
+                <span class="icon icon--minus-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--maximize" type="button" aria-label="최대화">
+                <span class="icon icon--square-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--close" type="button" aria-label="닫기">
+                <span class="icon icon--close-app" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- page-header -->
+        <header class="page-header page-header--variant-1">
+          <div class="page-header__container">
+            <div class="page-header__brand">
+              <a href="./home.html" aria-label="ezDown 홈">
+                <span class="logo logo--primary" aria-hidden="true"></span>
+              </a>
+              <button class="page-header__btn page-header__btn--menu" type="button" aria-label="네비게이션 열기" data-sidebar-open>
+                <span class="icon icon--more-right" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- my-download-player 영역 -->
+        <div class="my-download-player__container">
+          <div class="main-content">
+            <div class="main-content__container">
+              <div class="my-download-player__content-group">
+                <div class="my-download-player__player">
+                  <div class="player">
+                    <div class="player__screen">
+                      <div class="player__media" style="background-image: url(./assets/images-test/player-test.png)"></div>
+                      <div class="player__controls-wrap">
+                        <div class="player__top-controls">
+                          <button class="player__btn player__btn--cc" type="button" data-toggle-btn="player-speed-cc">C.C</button>
+                        </div>
+                        <div class="player__middle-controls">
+                          <button class="player__btn player__btn--prev" type="button" aria-label="이전">
+                            <span class="icon icon--player-prev" aria-hidden="true"></span>
+                          </button>
+                          <!-- is-stop 추가 시 아이콘 이미지 변경 -->
+                          <button class="player__btn player__btn--play" type="button" aria-label="재생 버튼">
+                            <span class="icon icon--player-play" aria-hidden="true"></span>
+                          </button>
+                          <button class="player__btn player__btn--next" type="button" aria-label="다음">
+                            <span class="icon icon--player-next" aria-hidden="true"></span>
+                          </button>
+                        </div>
+                        <div class="player__bottom-controls">
+                          <div class="player__actions">
+                            <!-- is-exit 추가 시 아이콘 이미지 변경 -->
+                            <a class="player__btn player__btn--screen" href="./my-download-player-fullscreen.html" aria-label="스크린 사이즈">
+                              <span class="icon icon--player-fullscreen" aria-hidden="true"></span>
+                            </a>
+                            <button class="player__btn player__btn--playlist" type="button" aria-label="재생목록">
+                              <span class="icon icon--player-playlist" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="player__timeline">
+                            <div class="player__progress">
+                              <div class="player__progress-track"></div>
+                              <div class="player__progress-buffer" style="width: 60%"></div>
+                              <div class="player__progress-played" style="width: 50%">
+                                <button class="player__progress-handle"></button>
+                              </div>
+                              <!-- right로 위치 조정 -->
+                              <div class="player__preview" style="right: 50%">
+                                <div class="player__preview-container">
+                                  <span class="player__preview-time">0:07</span>
+                                  <div class="player__preview-thumbnail-cover">
+                                    <img class="player__preview-thumbnail" src="./assets/images-test/player-test.png" alt="현재 영상 위치" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="player__time">
+                              <span class="player__time-current">0:07</span>
+                              <span>/</span>
+                              <span class="player__time-duration">6:29</span>
+                            </div>
+                          </div>
+                          <div class="player__controls">
+                            <div class="player__speed">
+                              <button class="player__btn player__btn--speed-up" type="button" aria-label="사운드 업">
+                                <span class="icon icon--player-speed-up" aria-hidden="true"></span>
+                              </button>
+                              <button class="player__btn player__btn--speed-control" type="button" data-toggle-btn="player-speed-popup">X1.0</button>
+                              <button class="player__btn player__btn--speed-down" type="button" aria-label="사운드 다운">
+                                <span class="icon icon--player-speed-down" aria-hidden="true"></span>
+                              </button>
+                            </div>
+                            <div class="player__volume">
+                              <span class="icon icon--player-volume" aria-hidden="true"></span>
+                              <div class="player__volume-progress">
+                                <div class="player__volume-progress-track"></div>
+                                <div class="player__volume-progress-played" style="width: 50%">
+                                  <button class="player__volume-progress-handle"></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="player__popups">
+                        <!-- is-active 추가 시 팝업 활성화 -->
+                        <div class="player__popup player__popup--speed" data-toggle-target="player-speed-popup">
+                          <p class="player__popup-title">X1.3</p>
+                          <div class="progress progress--slider">
+                            <div class="progress__fill" style="width: 50%">
+                              <button class="progress__handle" type="button" aria-label="프로그래스 조절 버튼"></button>
+                            </div>
+                          </div>
+                          <div class="player__btn-group">
+                            <button class="btn btn--chip" type="button">1.0</button>
+                            <button class="btn btn--chip" type="button">1.25</button>
+                            <button class="btn btn--chip" type="button">1.5</button>
+                            <button class="btn btn--chip" type="button">2.0</button>
+                            <button class="btn btn--chip" type="button">3.0</button>
+                          </div>
+                        </div>
+                        <!-- is-active 추가 시 팝업 활성화 -->
+                        <div class="player__popup player__popup--cc" data-toggle-target="player-speed-cc">
+                          <p class="player__popup-title">자막</p>
+                          <ul class="player__popup-list player__popup-list--radio">
+                            <li class="player__popup-item">
+                              <input id="popup-cc-radio1-1" class="input" name="popup-cc-radio1" type="radio" checked="" />
+                              <label for="popup-cc-radio1-1">
+                                <span class="input__title input__title--radio">자막 사용 중지</span>
+                                <span class="icon icon--radio" aria-hidden="true"></span>
+                              </label>
+                            </li>
+                            <li class="player__popup-item">
+                              <input id="popup-cc-radio1-2" class="input" name="popup-cc-radio1" type="radio" />
+                              <label for="popup-cc-radio1-2">
+                                <span class="input__title input__title--radio">Korean</span>
+                                <span class="icon icon--radio" aria-hidden="true"></span>
+                              </label>
+                            </li>
+                            <li class="player__popup-item">
+                              <input id="popup-cc-radio1-3" class="input" name="popup-cc-radio1" type="radio" />
+                              <label for="popup-cc-radio1-3">
+                                <span class="input__title input__title--radio">English</span>
+                                <span class="icon icon--radio" aria-hidden="true"></span>
+                              </label>
+                            </li>
+                          </ul>
+                          <ul class="player__popup-list player__popup-list--toggle">
+                            <li class="player__popup-item">
+                              <div class="player__popup-texts">
+                                <p class="player__popup-item-title">현재 설정을 기본 값으로 사용</p>
+                                <p class="player__popup-item-desc">이 설정은 <a class="player__popup-item-underline" href="javascript:void(0)">기기설정</a>에서 언제든 변경할 수 있습니다.</p>
+                              </div>
+                              <button class="btn btn--toggle" type="button" aria-label="토글 버튼" data-toggle-btn="cc-toggle-btn" data-toggle-target="cc-toggle-btn">
+                                <span class="btn__circle" aria-hidden="true"></span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-download-player__info">
+                    <h2 class="my-download-player__info-title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</h2>
+                    <div class="my-download-player__channel">
+                      <a class="my-download-player__profile" href="javascript:void(0)" style="background-image: url(./assets/icons-test/video-profile.png)"></a>
+                      <div class="my-download-player__channel-info">
+                        <button class="my-download-player__channel-name" type="button">이지금 [IU Official]</button>
+                        <p class="my-download-player__subscriber">구독자 192만명</p>
+                      </div>
+                      <button class="my-download-player__btn my-download-player__btn--subscribe" type="button">구독</button>
+                    </div>
+                    <div class="my-download-player__meta">
+                      <div class="my-download-player__stats">
+                        <span class="my-download-player__views">조회수 211,738회</span>
+                        <span class="my-download-player__date">2023. 4. 23</span>
+                        <ul class="my-download-player__tags">
+                          <li class="my-download-player__tag">#둠칫둠칫</li>
+                          <li class="my-download-player__tag">#기분전환</li>
+                          <li class="my-download-player__tag">#플레이리스트</li>
+                        </ul>
+                      </div>
+                      <!-- is-active 추가 시 메타 박스 활성화 -->
+                      <div class="my-download-player__meta-description" data-class-target="video-description">
+                        <p>
+                          먼저 범죄 조직에 속아서 일주일 동안 원룸에 스스로를 가두고 거액을 보내려던 남성이 가까스로 위기를 탈출했다고요?<br /><br />
+                          네, 지난달 29일 대구에서 벌어진 일인데요.<br /><br />
+                          지인과 연락이 잘 안 된다는 신고를 받고 출동한 경찰이 달서구의 한 원룸에서 40대 A 씨를 발견했습니다.<br /><br />
+                          ☞더 자세한 정보<br />
+                          https://news.sbs.co.kr/y/?id=N1008431286<br /><br />
+                          #피싱 #경찰 #감금 #해킹 <br /><br />
+                          ▶SBS 뉴스 채널 구독하기 : https://n.sbs.co.kr/youtube <br /><br />
+                          ♨지금 뜨거운 이슈, 함께 토론하기(스프 구독) : https://premium.sbs.co.kr<br /><br />
+                          ▶SBS 뉴스 제보하기<br />
+                          홈페이지: https://n.sbs.co.kr/inform <br />
+                          애플리케이션: 'SBS뉴스' 앱 설치하고 제보 - https://n.sbs.co.kr/App <br />
+                          카카오톡: 'SBS뉴스'와 친구 맺고 채팅 - https://pf.kakao.com/_ewsdq/chat <br />
+                          페이스북: 'SBS뉴스' 메시지 전송 - / sbs8news <br />
+                          이메일: sbs8news@sbs.co.kr <br />
+                          문자 # 누르고 6000 <br />
+                          전화: 02-2113-6000
+                        </p>
+                        <button class="my-download-player__btn my-download-player__btn--more" type="button" data-class-btn="video-description" data-class-action="open">자세히 보기</button>
+                        <button class="my-download-player__btn my-download-player__btn--more" type="button" data-class-btn="video-description" data-class-action="close">간략히 보기</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-download-player__playlist">
+                  <div class="my-download-player__playlist-header">
+                    <div class="my-download-player__playlist-text-wrap">
+                      <span class="my-download-player__playlist-title">오프라인 다운로드 목록</span>
+                      <button class="my-download-player__btn my-download-player__btn--play" type="button">
+                        <!-- 전체 플레이 아이콘 -->
+                        <span class="icon icon--play-allplay" aria-hidden="true"></span>
+                        <!-- 1개만 플레이 아이콘 -->
+                        <span class="icon icon--play-onlyplay" aria-hidden="true"></span>
+                        <!-- 셔플 아이콘 -->
+                        <span class="icon icon--play-shuffle" aria-hidden="true"></span>
+                      </button>
+                      <span class="my-download-player__playlist-index">1 / 59</span>
+                    </div>
+                    <!-- is-active 추가 시 버튼 스타일 변경 -->
+                    <button class="btn btn--chip" type="button">전체 선택</button>
+                  </div>
+                  <button class="my-download-player__btn my-download-player__btn--close" type="button" aria-label="닫기">
+                    <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+                  </button>
+                  <div class="my-download-player__playlist-list-wrap" data-scroll-select-box>
+                    <div class="video-section video-section--grid-6">
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="icon icon--play-list-current-mark" aria-hidden="true"></span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <span class="icon icon--play-list-pick" aria-hidden="true"></span>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test1">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test1" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6 is-select">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">2</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test2">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test2" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">3</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test3">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test3" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">4</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test4">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test4" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">5</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test5">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test5" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">6</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test6">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test6" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">7</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test7">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test7" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">8</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test8">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test8" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">9</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test9">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test9" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-6">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <span class="video-card__number">10</span>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                          <div class="tag tag--time">
+                            <div class="tag__badge-shape">
+                              <span class="tag__time">10:47</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">크리스마스 선물🎁 아이유 키링 도착! #아이유 #IU #키링챌린지</p>
+                            <p class="video-card__info">이지금 [IU Official]</p>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test10">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test10" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- is-active 추가 시 재생목록 추가 버튼 활성화 -->
+                  <button class="btn btn--default btn--red is-active" type="button">재생목록 추가</button>
+                  <button class="btn btn--default btn--red" type="button" data-toggle-target="add-playlist">재생목록에서 삭제</button>
+                  <!-- is-active 추가 시 토스트 팝업 활성화 -->
+                  <div class="toast">
+                    <p class="toast__text">
+                      서버 통신 실패하여<br />
+                      일부 항목이 표시되지 않을 수 있습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 공통 셀렉트 박스 -->
+            <div class="select-box" data-dropdown-select-box="video-menu" data-dropdown-scroll>
+              <ul class="select-box__list">
+                <li class="select-box__item">
+                  <button class="select-box__btn" type="button">리스트에서 삭제</button>
+                </li>
+                <li class="select-box__item">
+                  <button class="select-box__btn" type="button" data-popup-btn-on="download-file-info">정보</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- bottom-nav -->
+        <nav class="bottom-nav">
+          <ul class="bottom-nav__list">
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn is-active" href="./home.html">
+                <span class="icon icon--nav-home" aria-hidden="true"></span>
+                <span class="bottom-nav__text">홈</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./shorts.html">
+                <span class="icon icon--nav-shorts" aria-hidden="true"></span>
+                <span class="bottom-nav__text">쇼츠</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./my-download.html" aria-label="다운로드">
+                <span class="icon icon--nav-ezdown" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./subscriptions.html">
+                <span class="icon icon--nav-subscriptions" aria-hidden="true"></span>
+                <span class="bottom-nav__text">구독</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./library.html">
+                <span class="icon icon--nav-library" aria-hidden="true"></span>
+                <span class="bottom-nav__text">보관함</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

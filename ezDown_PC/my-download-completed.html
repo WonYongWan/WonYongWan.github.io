@@ -1,0 +1,994 @@
+<!doctype html>
+<!-- html에 dark 추가 시 다크모드 활성화 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/my-download.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap wrap--sidebar" data-sidebar-layout>
+      <!-- app-nav -->
+      <nav class="app-nav app-nav--variant-1" data-sidebar>
+        <div class="app-nav__overlay" data-sidebar-close></div>
+        <div class="app-nav__container">
+          <div class="app-nav__header">
+            <p class="app-nav__title">더보기</p>
+            <button class="app-nav__btn app-nav__btn--header" type="button" aria-label="닫기" data-sidebar-close>
+              <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content is-active" href="./my-download.html">
+                  <span class="app-nav__text">다운로드</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./ezplayer.html">
+                  <span class="app-nav__text">ezPlayer</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button" data-toggle-btn="app-nav-sub-list">
+                  <span class="app-nav__text">설정</span>
+                </button>
+                <ul class="app-nav__sub-list" data-toggle-target="app-nav-sub-list">
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings.html">
+                      <span class="app-nav__text">일반 설정</span>
+                    </a>
+                  </li>
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings-downloads.html">
+                      <span class="app-nav__text">다운로드 설정</span>
+                    </a>
+                  </li>
+                  <li class="app-nav__sub-item">
+                    <a class="app-nav__btn app-nav__btn--content app-nav__btn--sub" href="./settings-synchronization.html">
+                      <span class="app-nav__text">동기화 설정</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="app-nav__text">가이드</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./info.html">
+                  <span class="app-nav__text">정보</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">문의하기</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">기본값으로 복원</a>
+          </div>
+        </div>
+      </nav>
+      <!-- my-download -->
+      <div class="my-download">
+        <!-- app-header -->
+        <header class="app-header">
+          <div class="app-header__container">
+            <div class="app-header__nav">
+              <button class="app-header__btn app-header__btn--back" type="button" aria-label="이전 페이지">
+                <span class="icon icon--arrow-back" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--arrow-next" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--reload" type="button" aria-label="새로고침">
+                <span class="icon icon--refresh" aria-hidden="true"></span>
+              </button>
+            </div>
+            <form class="app-header__search">
+              <input class="app-header__search-input" name="search" type="text" placeholder="다운로드 하고자하는 유튜브 URL 을 입력하세요." />
+              <button class="app-header__btn app-header__btn--down" type="submit" aria-label="다운로드">
+                <span class="icon icon--arrow-down-underline" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="app-header__actions">
+              <button class="app-header__btn app-header__btn--point" type="button">
+                <span class="icon icon--point" aria-hidden="true"></span>
+                <span class="app-header__point-info">12,450P</span>
+              </button>
+              <button class="app-header__btn app-header__btn--profile" type="button">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                <span class="app-header__profile-email">test@enliple.com</span>
+              </button>
+              <button class="app-header__btn app-header__btn--minimize" type="button" aria-label="최소화">
+                <span class="icon icon--minus-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--maximize" type="button" aria-label="최대화">
+                <span class="icon icon--square-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--close" type="button" aria-label="닫기">
+                <span class="icon icon--close-app" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- page-header -->
+        <header class="page-header page-header--variant-1">
+          <div class="page-header__container">
+            <div class="page-header__brand">
+              <a href="./home.html" aria-label="ezDown 홈">
+                <span class="logo logo--primary" aria-hidden="true"></span>
+              </a>
+              <button class="page-header__btn page-header__btn--menu" type="button" aria-label="네비게이션 열기" data-sidebar-open>
+                <span class="icon icon--more-right" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- my-download 영역 -->
+        <div class="my-download__container">
+          <div class="my-download__contents-group">
+            <div class="my-download__header">
+              <p class="my-download__title">오프라인 저장 동영상</p>
+              <p class="my-download__desc">데이터 사용 없이 오프라인 저장한 동영상 시청</p>
+            </div>
+            <ul class="my-download__tab-menu" role="tablist">
+              <li class="my-download__tab-menu-item">
+                <a class="my-download__tab-btn" href="./my-download.html">다운로드중</a>
+              </li>
+              <li class="my-download__tab-menu-item">
+                <a class="my-download__tab-btn is-active" href="./my-download-completed.html">다운로드 완료</a>
+              </li>
+              <li class="my-download__tab-menu-item">
+                <a class="my-download__tab-btn" href="./my-download-import.html">불러오기</a>
+              </li>
+            </ul>
+            <div class="my-download__controls">
+              <div class="my-download__selection">
+                <!-- is-active 추가 시 my-download__selection-info 활성화 -->
+                <button class="btn btn--chip" type="button" data-toggle-btn="download-bulk-actions select-all" data-toggle-target="select-all">전체 선택</button>
+                <button class="btn btn--chip" type="button" data-popup-btn-on="trash-empty">휴지통</button>
+                <p class="my-download__selection-info">50개 선택</p>
+              </div>
+              <div class="my-download__dropdown-group">
+                <!-- is-active 추가 시 드롭다운 활성화 -->
+                <div class="dropdown" data-dropdown="page-size">
+                  <button class="dropdown__btn" type="button" data-dropdown-btn data-dropdown-name="page-size">
+                    <!-- is-active 추가 시 텍스트 스타일 변경 -->
+                    <span class="dropdown__label">10개씩 보기</span>
+                    <span class="icon icon--arrow-bottom" aria-hidden="true"></span>
+                  </button>
+                  <div class="select-box">
+                    <ul class="select-box__list">
+                      <li class="select-box__item">
+                        <button class="select-box__btn" type="button">10개씩 보기</button>
+                      </li>
+                      <li class="select-box__item">
+                        <button class="select-box__btn" type="button">20개씩 보기</button>
+                      </li>
+                      <li class="select-box__item">
+                        <button class="select-box__btn" type="button">50개씩 보기</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- is-active 추가 시 드롭다운 활성화 -->
+                <div class="dropdown" data-dropdown="download-sort">
+                  <button class="dropdown__btn" type="button" data-dropdown-btn data-dropdown-name="download-sort">
+                    <!-- is-active 추가 시 텍스트 스타일 변경 -->
+                    <span class="dropdown__label">다운로드 순</span>
+                    <span class="icon icon--arrow-bottom" aria-hidden="true"></span>
+                  </button>
+                  <div class="select-box">
+                    <ul class="select-box__list">
+                      <li class="select-box__item">
+                        <button class="select-box__btn" type="button">다운로드 순</button>
+                      </li>
+                      <li class="select-box__item">
+                        <button class="select-box__btn" type="button">PC 다운로드만</button>
+                      </li>
+                      <li class="select-box__item">
+                        <button class="select-box__btn" type="button">MO 다운로드만</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-content main-content--variant-1">
+            <div class="main-content__container">
+              <div class="my-download__tab-contents">
+                <div class="my-download__tab-content">
+                  <div class="my-download__group">
+                    <div class="video-section video-section--grid-6">
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-4 is-select">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                            <p class="video-card__category">종합</p>
+                            <div class="video-card__badge-list">
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device">PC</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device tag__device--red">MO</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test1">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test1" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-4">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                            <p class="video-card__category">종합</p>
+                            <div class="video-card__badge-list">
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device">PC</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device tag__device--red">MO</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test2">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test2" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- is-select 추가 시 그룹 선택 스타일로 변경 -->
+                  <!-- is-active 추가 시 드롭다운 활성화 -->
+                  <div class="my-download__group my-download__group--toggle is-select is-active" data-toggle-target="video-card-solt-1">
+                    <div class="my-download__group-header">
+                      <div class="my-download__group-left">
+                        <span class="icon icon--download-folder" aria-hidden="true"></span>
+                        <div class="my-download__group-title-wrap">
+                          <span class="my-download__group-title">오레오 영상 시리즈</span>
+                          <!-- is-active 추가 시 input 활성화 -->
+                          <input class="my-download__group-title-input is-active" type="text" value="오레오 영상 시리즈" />
+                        </div>
+                      </div>
+                      <div class="my-download__group-right">
+                        <span class="my-download__group-count">2개</span>
+                        <button class="my-download__group-btn" type="button" aria-label="토글 버튼" data-toggle-btn="video-card-solt-1">
+                          <span class="icon icon--arrow-top" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="video-section video-section--grid-6">
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-4">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                            <p class="video-card__category">종합</p>
+                            <div class="video-card__badge-list">
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device">PC</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device tag__device--red">MO</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test3">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test3" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-4">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                            <p class="video-card__category">종합</p>
+                            <div class="video-card__badge-list">
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device">PC</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device tag__device--red">MO</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test4">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test4" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- is-select 추가 시 그룹 선택 스타일로 변경 -->
+                  <!-- is-active 추가 시 드롭다운 활성화 -->
+                  <div class="my-download__group my-download__group--toggle is-select is-active" data-toggle-target="video-card-solt-2">
+                    <div class="my-download__group-header">
+                      <div class="my-download__group-left">
+                        <span class="icon icon--download-folder" aria-hidden="true"></span>
+                        <div class="my-download__group-title-wrap">
+                          <span class="my-download__group-title">오레오 영상 시리즈</span>
+                          <!-- is-active 추가 시 input 활성화 -->
+                          <input class="my-download__group-title-input" type="text" value="오레오 영상 시리즈" />
+                        </div>
+                      </div>
+                      <div class="my-download__group-right">
+                        <span class="my-download__group-count">2개</span>
+                        <button class="my-download__group-btn" type="button" aria-label="토글 버튼" data-toggle-btn="video-card-solt-2">
+                          <span class="icon icon--arrow-top" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="video-section video-section--grid-6">
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-4">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                            <p class="video-card__category">종합</p>
+                            <div class="video-card__badge-list">
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device">PC</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device tag__device--red">MO</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test5">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test5" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- is-select 추가 시 선택 스타일로 변경 -->
+                      <div class="video-card video-card--variant-4">
+                        <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                        <div class="video-card__img-cover">
+                          <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                        </div>
+                        <div class="video-card__meta">
+                          <div class="video-card__meta-box">
+                            <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                            <p class="video-card__category">종합</p>
+                            <div class="video-card__badge-list">
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device">PC</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                              <div class="video-card__badge-item">
+                                <span class="tag tag__device tag__device--red">MO</span>
+                                <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="dropdown" data-dropdown="video-test6">
+                            <button class="video-card__more" type="button" aria-label="더 보기" data-dropdown-btn data-dropdown-name="video-test6" data-dropdown-type="position-adjustment" data-select-box-name="video-menu">
+                              <span class="icon icon--video-more" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- is-active 추가 시 버튼 그룹 활성화 -->
+            <div class="btn-group" data-toggle-target="download-bulk-actions">
+              <button class="btn btn--default btn--size-l" type="button" data-popup-btn-on="delete-selected-downloads">삭제</button>
+              <button class="btn btn--default btn--size-l btn--red" type="button" data-popup-btn-on="confirm-download-unplayable-wifi">재생</button>
+            </div>
+            <!-- 공통 셀렉트 박스 -->
+            <div class="select-box" data-dropdown-select-box="video-menu" data-dropdown-scroll>
+              <ul class="select-box__list">
+                <li class="select-box__item">
+                  <button class="select-box__btn" type="button">제목 바꾸기</button>
+                </li>
+                <li class="select-box__item">
+                  <button class="select-box__btn" type="button" data-popup-btn-on="download-file-info">정보</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pagination">
+            <div class="pagination__inner">
+              <button class="pagination__btn pagination__btn--first" type="button" aria-label="첫 페이지">
+                <span class="icon icon--page-first" aria-hidden="true"></span>
+              </button>
+              <button class="pagination__btn pagination__btn--prev" type="button" aria-label="이전 페이지">
+                <span class="icon icon--page-prev" aria-hidden="true"></span>
+              </button>
+              <span class="pagination__info">
+                <strong class="pagination__current">1</strong>
+                <span class="pagination__divider">/</span>
+                <span class="pagination__total">5</span>
+              </span>
+              <button class="pagination__btn pagination__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--page-next" aria-hidden="true"></span>
+              </button>
+              <button class="pagination__btn pagination__btn--last" type="button" aria-label="마지막 페이지">
+                <span class="icon icon--page-last" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- bottom-nav -->
+        <nav class="bottom-nav">
+          <ul class="bottom-nav__list">
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./home.html">
+                <span class="icon icon--nav-home" aria-hidden="true"></span>
+                <span class="bottom-nav__text">홈</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./shorts.html">
+                <span class="icon icon--nav-shorts" aria-hidden="true"></span>
+                <span class="bottom-nav__text">쇼츠</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn is-active" href="./my-download.html" aria-label="다운로드">
+                <span class="icon icon--nav-ezdown" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./subscriptions.html">
+                <span class="icon icon--nav-subscriptions" aria-hidden="true"></span>
+                <span class="bottom-nav__text">구독</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./library.html">
+                <span class="icon icon--nav-library" aria-hidden="true"></span>
+                <span class="bottom-nav__text">보관함</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- popup -->
+    <!-- popup-root에 is-active 추가 및 특정 popup에 is-active 추가 시 팝업 활성화 -->
+    <div class="popup-root" data-popup-root>
+      <div class="overlay" data-popup-btn-off></div>
+      <!-- 선택한 항목 다운로드 진행 여부 확인 팝업 (Wi-Fi 연결) -->
+      <div class="popup popup--center" data-popup="confirm-download-unplayable-wifi">
+        <div class="popup__content">
+          <p class="popup__title">
+            현재 기기에서 재생할 수 없는 <br />
+            항목이 있습니다.<br />
+            다운로드를 진행하시겠습니까?
+          </p>
+          <div class="popup__list popup__list--dot-text">
+            <ul class="popup__list-inner">
+              <li class="popup__item">
+                <span class="popup__dot" aria-hidden="true"></span>
+                <span class="popup__message popup__message--secondary">다운로드 필요 항목: 3개(총 1.5GB)</span>
+              </li>
+              <li class="popup__item">
+                <span class="popup__dot" aria-hidden="true"></span>
+                <span class="popup__message popup__message--secondary"
+                  >Wi-Fi 전용 다운로드 설정 시, <br />
+                  Wi-Fi 연결 필요</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <a class="popup__btn popup__btn--half" href="./my-download-player.html">바로 재생</a>
+          <button class="popup__btn popup__btn--half popup__btn--disabled" type="button" data-popup-btn-on="confirm-download-unplayable">Wi-Fi 연결</button>
+        </div>
+      </div>
+      <!-- 선택한 항목 다운로드 진행 여부 확인 팝업 -->
+      <div class="popup popup--center" data-popup="confirm-download-unplayable">
+        <div class="popup__content">
+          <p class="popup__title">
+            현재 기기에서 재생할 수 없는 <br />
+            항목이 있습니다.<br />
+            다운로드를 진행하시겠습니까?
+          </p>
+          <div class="popup__list popup__list--dot-text">
+            <ul class="popup__list-inner">
+              <li class="popup__item">
+                <span class="popup__dot" aria-hidden="true"></span>
+                <span class="popup__message popup__message--secondary">다운로드 필요 항목: 3개(총 1.5GB)</span>
+              </li>
+              <li class="popup__item">
+                <span class="popup__dot" aria-hidden="true"></span>
+                <span class="popup__message popup__message--secondary"
+                  >Wi-Fi 전용 다운로드 설정 시, <br />
+                  Wi-Fi 연결 필요</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <a class="popup__btn popup__btn--half" href="./my-download-player.html">바로 재생</a>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="confirm-add-duplicate-playlist">확인</button>
+        </div>
+      </div>
+      <!-- 동일한 파일 재생목록 추가 여부 팝업 -->
+      <div class="popup popup--center" data-popup="confirm-add-duplicate-playlist">
+        <div class="popup__content">
+          <p class="popup__title">
+            동일한 파일이 재생목록에 있습니다. <br />
+            추가하시겠습니까?
+          </p>
+          <p class="popup__message popup__message--secondary">
+            취소시 동일한 리스트는 제외하고 <br />
+            재생목록에 추가됩니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 선택한 항목 다운로드 삭제 여부 팝업 -->
+      <div class="popup popup--center" data-popup="delete-selected-downloads">
+        <div class="popup__content">
+          <p class="popup__title">
+            선택한 2개 항목의<br />
+            다운로드를 삭제하시겠습니까?
+          </p>
+          <p class="popup__message popup__message--secondary">삭제 시 30일 동안 휴지통에 보관됩니다.</p>
+          <div class="popup__list popup__list--checkbox">
+            <ul class="popup__list-inner">
+              <li class="popup__item">
+                <input id="apply-other-devices" class="input" type="checkbox" checked />
+                <label class="popup__label" for="apply-other-devices">
+                  <span class="icon icon--checkbox" aria-hidden="true"></span>
+                  <span class="popup__label-desc">다른 기기에도 적용</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <p class="popup__message popup__message--secondary u-mt-20">다른 기기의 파일도 함께 삭제합니다</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>삭제</button>
+        </div>
+      </div>
+      <!-- 파일 정보 팝업 -->
+      <div class="popup popup--center" data-popup="download-file-info">
+        <div class="popup__header">
+          <p class="popup__title">정보</p>
+        </div>
+        <div class="popup__content">
+          <div class="popup__file-info">
+            <div class="popup__file-info-item popup__file-info-item--no-flex">
+              <p class="popup__file-info-title">파일명</p>
+              <input class="popup__file-info-input" type="text" value="[Playlist] 쌀쌀한 가을 아니면 겨울에 듣기 좋은" />
+            </div>
+            <div class="popup__file-info-item">
+              <p class="popup__file-info-title">원본파일명</p>
+              <p class="popup__file-info-desc">[Playlist] 쌀쌀한 가을 아니면 겨울에 듣기 좋은 노래</p>
+            </div>
+            <div class="popup__file-info-item">
+              <p class="popup__file-info-title">채널명</p>
+              <p class="popup__file-info-desc">종팝</p>
+            </div>
+            <div class="popup__file-info-item">
+              <p class="popup__file-info-title">크기</p>
+              <p class="popup__file-info-desc">1.6GB</p>
+            </div>
+            <div class="popup__file-info-item">
+              <p class="popup__file-info-title">다운로드 기기</p>
+              <p class="popup__file-info-desc">아이폰 14<br />2025년 12월 17일</p>
+            </div>
+            <div class="popup__file-info-item">
+              <p class="popup__file-info-title">다운로드 자막</p>
+              <p class="popup__file-info-desc">한국어 / English</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>수정</button>
+        </div>
+      </div>
+      <!-- 최근 삭제된 파일 비어있음(휴지통) 팝업 -->
+      <div class="popup popup--center" data-popup="trash-empty">
+        <div class="popup__header">
+          <p class="popup__title">최근 삭제된 파일</p>
+          <p class="popup__desc">30일 동안 보관되며 이후 자동 삭제됩니다</p>
+        </div>
+        <div class="popup__content">
+          <div class="popup__trash popup__trash--empty">
+            <span class="icon icon--trash-empty" aria-hidden="true"></span>
+            <p class="popup__trash-desc">삭제된 파일이 없습니다</p>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--accent" type="button" data-popup-btn-on="trash">확인</button>
+        </div>
+      </div>
+      <!-- 최근 삭제된 파일(휴지통) 팝업 -->
+      <div class="popup popup--center popup--trash" data-popup="trash">
+        <div class="popup__header">
+          <p class="popup__title">최근 삭제된 파일</p>
+          <p class="popup__desc">30일 동안 보관되며 이후 자동 삭제됩니다</p>
+          <div class="popup__controls">
+            <!-- is-active 추가 시 my-download__selection-info 활성화 -->
+            <button class="btn btn--chip" type="button">전체 선택</button>
+            <!-- is-active 추가 시 드롭다운 활성화 -->
+            <div class="dropdown" data-dropdown="trash-sort">
+              <button class="dropdown__btn" type="button" data-dropdown-btn data-dropdown-name="trash-sort">
+                <!-- is-active 추가 시 텍스트 스타일 변경 -->
+                <span class="dropdown__label">최근삭제순</span>
+                <span class="icon icon--arrow-bottom" aria-hidden="true"></span>
+              </button>
+              <div class="select-box">
+                <ul class="select-box__list">
+                  <li class="select-box__item">
+                    <button class="select-box__btn" type="button">제목순</button>
+                  </li>
+                  <li class="select-box__item">
+                    <button class="select-box__btn" type="button">PC만</button>
+                  </li>
+                  <li class="select-box__item">
+                    <button class="select-box__btn" type="button">Mobile만</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup__content">
+          <div class="popup__trash">
+            <div class="popup__scroll-box">
+              <div class="popup__scroll-contents">
+                <div class="popup__video-group">
+                  <div class="video-section video-section--grid-6">
+                    <!-- is-select 추가 시 선택 스타일로 변경 -->
+                    <div class="video-card video-card--variant-5 is-select">
+                      <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                      <div class="video-card__img-cover">
+                        <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="video-card__meta">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                          <p class="video-card__category">종합</p>
+                          <div class="video-card__badge-list">
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--size-s">PC</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--red tag__device--size-s">MO</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- is-select 추가 시 그룹 선택 스타일로 변경 -->
+                <!-- is-active 추가 시 드롭다운 활성화 -->
+                <div class="popup__video-group popup__video-group--toggle is-active" data-toggle-target="popup-video-card-solt-1">
+                  <div class="popup__video-group-header">
+                    <div class="popup__video-group-left">
+                      <span class="icon icon--download-folder" aria-hidden="true"></span>
+                      <div class="popup__video-group-title-wrap">
+                        <p class="popup__video-group-title">오레오 영상 시리즈</p>
+                        <div class="popup__video-group-badge-item">
+                          <span class="tag tag__device tag__device--size-s">PC</span>
+                          <span class="popup__video-group-info">다운로드 일시: 2025.12.15</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="popup__video-group-right">
+                      <button class="popup__video-group-btn" type="button" aria-label="토글 버튼" data-toggle-btn="popup-video-card-solt-1">
+                        <span class="icon icon--arrow-bottom" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="video-section video-section--grid-6">
+                    <!-- is-select 추가 시 선택 스타일로 변경 -->
+                    <div class="video-card video-card--variant-5 is-select">
+                      <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                      <div class="video-card__img-cover">
+                        <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="video-card__meta">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                          <p class="video-card__category">종합</p>
+                          <div class="video-card__badge-list">
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--size-s">PC</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--red tag__device--size-s">MO</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- is-select 추가 시 선택 스타일로 변경 -->
+                    <div class="video-card video-card--variant-5">
+                      <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                      <div class="video-card__img-cover">
+                        <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="video-card__meta">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                          <p class="video-card__category">종합</p>
+                          <div class="video-card__badge-list">
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--size-s">PC</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--red tag__device--size-s">MO</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- is-select 추가 시 선택 스타일로 변경 -->
+                    <div class="video-card video-card--variant-5">
+                      <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                      <div class="video-card__img-cover">
+                        <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="video-card__meta">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                          <p class="video-card__category">종합</p>
+                          <div class="video-card__badge-list">
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--size-s">PC</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--red tag__device--size-s">MO</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- is-select 추가 시 선택 스타일로 변경 -->
+                    <div class="video-card video-card--variant-5">
+                      <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                      <div class="video-card__img-cover">
+                        <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="video-card__meta">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                          <p class="video-card__category">종합</p>
+                          <div class="video-card__badge-list">
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--size-s">PC</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--red tag__device--size-s">MO</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- is-select 추가 시 선택 스타일로 변경 -->
+                    <div class="video-card video-card--variant-5">
+                      <button class="video-card__btn video-card__btn--select" type="button" aria-label="선택"></button>
+                      <div class="video-card__img-cover">
+                        <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      </div>
+                      <div class="video-card__meta">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래[Playlist] 아이유의 감성노래 모음 I 잔잔한 분위기 속 듣기 좋은 노래</p>
+                          <p class="video-card__category">종합</p>
+                          <div class="video-card__badge-list">
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--size-s">PC</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                            <div class="video-card__badge-item">
+                              <span class="tag tag__device tag__device--red tag__device--size-s">MO</span>
+                              <span class="video-card__info">다운로드 일시: 2025.12.15</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-on="confirm-trash-delete-permanent">영구 삭제</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="confirm-trash-restore-selected">복구</button>
+        </div>
+      </div>
+      <!-- 중복 항목 건너뛰고 다운로드 진행 여부 팝업 -->
+      <div class="popup popup--center" data-popup="confirm-download-duplicate-skip">
+        <div class="popup__content">
+          <p class="popup__message">
+            선택한 항목 중 일부는 <br />
+            이미 다운로드 되었습니다.<br />
+            중복 항목은 건너뛰고 <br />
+            다운로드를 진행하시겠습니까?
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>다운로드</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>건너뛰기</button>
+        </div>
+      </div>
+      <!-- 선택한 항목 다운로드 삭제 여부 팝업(휴지통) -->
+      <div class="popup popup--center" data-popup="confirm-trash-delete-permanent">
+        <div class="popup__content">
+          <p class="popup__title">
+            선택한 N개의 항목을<br />
+            영구삭제 하시겠습니까?
+          </p>
+          <p class="popup__message popup__message--secondary">기본값은 현재 기기에서만 적용됩니다.</p>
+          <div class="popup__list popup__list--checkbox">
+            <ul class="popup__list-inner">
+              <li class="popup__item">
+                <input id="apply-other-devices-1" class="input" type="checkbox" checked />
+                <label class="popup__label" for="apply-other-devices-1">
+                  <span class="icon icon--checkbox" aria-hidden="true"></span>
+                  <span class="popup__label-desc">다른 기기에도 적용</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <p class="popup__message popup__message--secondary u-mt-20">다른 기기의 파일도 함께 삭제합니다</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>삭제</button>
+        </div>
+      </div>
+      <!-- 선택한 항목 다운로드 복구 여부 팝업(휴지통) -->
+      <div class="popup popup--center" data-popup="confirm-trash-restore-selected">
+        <div class="popup__content">
+          <p class="popup__title">
+            선택한 N개의 항목을<br />
+            복구 하시겠습니까?
+          </p>
+          <p class="popup__message popup__message--secondary">기본값은 현재 기기에서만 적용됩니다.</p>
+          <div class="popup__list popup__list--checkbox">
+            <ul class="popup__list-inner">
+              <li class="popup__item">
+                <input id="apply-other-devices-2" class="input" type="checkbox" checked />
+                <label class="popup__label" for="apply-other-devices-2">
+                  <span class="icon icon--checkbox" aria-hidden="true"></span>
+                  <span class="popup__label-desc">다른 기기에도 적용</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <p class="popup__message popup__message--secondary u-mt-20">다른 기기의 파일도 함께 복구합니다</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="confirm-trash-restore-duplicate-skip">복구</button>
+        </div>
+      </div>
+      <!-- 중복 항목 건너뛰고 복구 여부 팝업(휴지통) -->
+      <div class="popup popup--center" data-popup="confirm-trash-restore-duplicate-skip">
+        <div class="popup__content">
+          <p class="popup__message">
+            선택한 항목 중 일부는 <br />
+            이미 다운로드되었습니다.<br />
+            중복 항목은 건너뛰고 <br />
+            복구를 진행하시겠습니까?
+          </p>
+          <div class="popup__list popup__list--checkbox">
+            <ul class="popup__list-inner">
+              <li class="popup__item">
+                <input id="apply-other-devices-3" class="input" type="checkbox" checked />
+                <label class="popup__label" for="apply-other-devices-3">
+                  <span class="icon icon--checkbox" aria-hidden="true"></span>
+                  <span class="popup__label-desc">다른 기기에도 적용</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <p class="popup__message popup__message--secondary u-mt-20">다른 기기의 파일도 함께 (대치/건너뛰기)합니다</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>대치하기</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="confirm-trash-restore-unavailable-skip">건너뛰기</button>
+        </div>
+      </div>
+      <!-- 복구 불가 항목 건너뛰고 복구 여부 팝업(휴지통) -->
+      <div class="popup popup--center" data-popup="confirm-trash-restore-unavailable-skip">
+        <div class="popup__content">
+          <p class="popup__message">
+            선택한 항목 중 일부는<br />
+            복구할 수 없습니다.<br />
+            (대상 기기가 없음/연결 불가)<br />
+            건너뛰고 복구를 진행하시겠습니까?
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>건너뛰기</button>
+        </div>
+      </div>
+    </div>
+    <!-- toast -->
+    <!-- 특정 toast에 is-active 추가 시 토스트 활성화 -->
+    <div class="toast-root">
+      <div class="toast is-active">
+        <p class="toast__text">
+          서버 통신 실패하여<br />
+          일부 항목이 표시되지 않을 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

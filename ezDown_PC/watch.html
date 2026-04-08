@@ -1,0 +1,819 @@
+<!doctype html>
+<!-- html에 dark 추가 시 다크모드 활성화 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/watch.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap wrap--sidebar" data-sidebar-layout>
+      <!-- app-nav -->
+      <nav class="app-nav app-nav--sub">
+        <div class="app-nav__container">
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-music" aria-hidden="true"></span>
+                  <span class="app-nav__text">음악</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./trending.html">
+                  <span class="icon icon--sidebar-hype" aria-hidden="true"></span>
+                  <span class="app-nav__text">인기 동영상</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-live" aria-hidden="true"></span>
+                  <span class="app-nav__text">라이브</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-game" aria-hidden="true"></span>
+                  <span class="app-nav__text">게임</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-sports" aria-hidden="true"></span>
+                  <span class="app-nav__text">스포츠</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-courses" aria-hidden="true"></span>
+                  <span class="app-nav__text">학습 프로그램</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-podcast" aria-hidden="true"></span>
+                  <span class="app-nav__text">팟캐스트</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-kids" aria-hidden="true"></span>
+                  <span class="app-nav__text">Kids</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">개인정보처리방침</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">서비스 약관</a>
+          </div>
+        </div>
+      </nav>
+      <nav class="app-nav" data-sidebar>
+        <div class="app-nav__overlay" data-sidebar-close></div>
+        <div class="app-nav__container">
+          <div class="app-nav__header">
+            <span class="logo logo--primary" aria-hidden="true"></span>
+            <button class="app-nav__btn app-nav__btn--header" type="button" aria-label="닫기" data-sidebar-close>
+              <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content is-active" type="button">
+                  <span class="icon icon--sidebar-music" aria-hidden="true"></span>
+                  <span class="app-nav__text">음악</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./trending.html">
+                  <span class="icon icon--sidebar-hype" aria-hidden="true"></span>
+                  <span class="app-nav__text">인기 동영상</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-live" aria-hidden="true"></span>
+                  <span class="app-nav__text">라이브</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-game" aria-hidden="true"></span>
+                  <span class="app-nav__text">게임</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-sports" aria-hidden="true"></span>
+                  <span class="app-nav__text">스포츠</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-courses" aria-hidden="true"></span>
+                  <span class="app-nav__text">학습 프로그램</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-podcast" aria-hidden="true"></span>
+                  <span class="app-nav__text">팟캐스트</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-kids" aria-hidden="true"></span>
+                  <span class="app-nav__text">Kids</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">개인정보처리방침</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">서비스 약관</a>
+          </div>
+        </div>
+      </nav>
+      <!-- watch -->
+      <div class="watch">
+        <!-- app-header -->
+        <header class="app-header">
+          <div class="app-header__container">
+            <div class="app-header__nav">
+              <button class="app-header__btn app-header__btn--back" type="button" aria-label="이전 페이지">
+                <span class="icon icon--arrow-back" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--arrow-next" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--reload" type="button" aria-label="새로고침">
+                <span class="icon icon--refresh" aria-hidden="true"></span>
+              </button>
+            </div>
+            <form class="app-header__search">
+              <input class="app-header__search-input" name="search" type="text" placeholder="다운로드 하고자하는 유튜브 URL 을 입력하세요." />
+              <button class="app-header__btn app-header__btn--down" type="submit" aria-label="다운로드">
+                <span class="icon icon--arrow-down-underline" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="app-header__actions">
+              <button class="app-header__btn app-header__btn--point" type="button">
+                <span class="icon icon--point" aria-hidden="true"></span>
+                <span class="app-header__point-info">12,450P</span>
+              </button>
+              <button class="app-header__btn app-header__btn--profile" type="button">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                <span class="app-header__profile-email">test@enliple.com</span>
+              </button>
+              <button class="app-header__btn app-header__btn--minimize" type="button" aria-label="최소화">
+                <span class="icon icon--minus-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--maximize" type="button" aria-label="최대화">
+                <span class="icon icon--square-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--close" type="button" aria-label="닫기">
+                <span class="icon icon--close-app" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- page-header -->
+        <header class="page-header">
+          <div class="page-header__container">
+            <div class="page-header__brand" data-sidebar-hide>
+              <button class="page-header__btn page-header__btn--menu" type="button" aria-label="네비게이션 열기" data-sidebar-open>
+                <span class="icon icon--more-left" aria-hidden="true"></span>
+              </button>
+              <a href="./home.html" aria-label="ezDown 홈">
+                <span class="logo logo--primary" aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="page-header__search">
+              <div class="page-header__search-wrap">
+                <!-- is-active 추가 시 검색 창 활성화 -->
+                <form class="page-header__search-form">
+                  <div class="page-header__search-box">
+                    <div class="page-header__search-field">
+                      <div class="page-header__search-input-wrap">
+                        <span class="icon icon--search" aria-hidden="true"></span>
+                        <input class="page-header__search-input input" name="search" type="text" placeholder="검색" />
+                        <button class="page-header__btn page-header__btn--delete" type="button" aria-label="삭제">
+                          <span class="icon icon--delete-search" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <a class="page-header__btn page-header__btn--search" href="./search.html" aria-label="검색하기">
+                        <span class="icon icon--search-secondary" aria-hidden="true"></span>
+                      </a>
+                    </div>
+                    <div class="page-header__search-panel">
+                      <!-- 검색 히스토리 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--history">
+                        <ul class="page-header__search-list">
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU concert</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- 예상 검색어 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--suggest">
+                        <ul class="page-header__search-list">
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU concert</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                        </ul>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline page-header__search-section-btn--right" type="button">예상 검색어 신고</button>
+                        </div>
+                      </div>
+                      <!-- 최근 검색어 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--recent">
+                        <div class="page-header__search-section-header">
+                          <p class="page-header__search-section-title">최근 검색어</p>
+                          <button class="page-header__search-section-btn page-header__search-section-btn--secondary" type="button" data-popup-btn-on="search-history-clear">전체삭제</button>
+                        </div>
+                        <ul class="page-header__search-list">
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU concert</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                        </ul>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline" type="button">검색 기록 중지</button>
+                        </div>
+                      </div>
+                      <!-- 검색어 없음 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--empty">
+                        <div class="page-header__search-section-content page-header__search-section-content--empty">
+                          <span class="icon icon--search-empty" aria-hidden="true"></span>
+                          <p class="page-header__search-section-desc page-header__search-section-desc--empty">최근 검색어가 없습니다.</p>
+                        </div>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline" type="button" data-popup-btn-on="search-history-disable">검색 기록 중지</button>
+                        </div>
+                      </div>
+                      <!-- 검색 기록 중지 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--paused">
+                        <div class="page-header__search-section-content page-header__search-section-content--empty">
+                          <span class="icon icon--search-empty-result" aria-hidden="true"></span>
+                          <p class="page-header__search-section-desc page-header__search-section-desc--empty">검색 기록이 중지된 상태입니다.</p>
+                        </div>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline" type="button" data-popup-btn-on="search-history-enable">검색 기록 시작</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <!-- is-active 추가 시 활성화 -->
+                <div class="page-header__voice" data-class-target="page-header__voice">
+                  <!-- 음성 검색 -->
+                  <div class="page-header__voice-content">
+                    <div class="page-header__voice-text-wrap">
+                      <p class="page-header__voice-text">대기 중···</p>
+                      <p class="page-header__voice-text">지금 듣고 있어요.</p>
+                    </div>
+                    <div class="page-header__voice-state-wrap page-header__voice-state-wrap--listening">
+                      <span class="page-header__voice-state-deco page-header__voice-state-deco--back" aria-hidden="true"></span>
+                      <span class="page-header__voice-state-deco page-header__voice-state-deco--front" aria-hidden="true"></span>
+                      <button class="page-header__voice-btn" type="button">
+                        <span class="page-header__voice-state page-header__voice-state--listening" aria-hidden="true">
+                          <span class="icon icon--mic"></span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- 음성 검색 중 / style="display: none" 제거 해주세요 -->
+                  <div class="page-header__voice-content" style="display: none">
+                    <div class="page-header__voice-text-wrap">
+                      <p class="page-header__voice-text">잠시만 기다려 주세요···</p>
+                    </div>
+                    <div class="page-header__voice-state-wrap page-header__voice-state-wrap--loading" aria-hidden="true">
+                      <span class="page-header__voice-state page-header__voice-state--loading"></span>
+                    </div>
+                  </div>
+                  <!-- 음성 검색 인식 실패 / style="display: none" 제거 해주세요 -->
+                  <div class="page-header__voice-content" style="display: none">
+                    <div class="page-header__voice-text-wrap">
+                      <p class="page-header__voice-text">다시 시도해주세요.</p>
+                    </div>
+                    <div class="page-header__voice-state-wrap page-header__voice-state-wrap--error">
+                      <button class="page-header__voice-btn" type="button">
+                        <span class="page-header__voice-state page-header__voice-state--error" aria-hidden="true">
+                          <span class="icon icon--mic-gray"></span>
+                        </span>
+                      </button>
+                      <p class="page-header__voice-state-text">다시 시도하려면 마이크를 탭하세요</p>
+                    </div>
+                  </div>
+                  <button class="page-header__voice-btn page-header__voice-btn--close" type="button" aria-label="닫기" data-class-btn="page-header__voice" data-class-action="close">
+                    <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <button class="page-header__btn page-header__btn--mic" type="button" aria-label="음성 검색하기" data-popup-btn-on="mic-permission">
+                <span class="icon icon--mic-secondary" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="page-header__actions">
+              <button class="page-header__btn page-header__btn--minimize-toggle" type="button" aria-label="스크린 사이즈 토글">
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <button class="page-header__btn page-header__btn--thema" type="button" aria-label="테마">
+                <span class="icon icon--thema" aria-hidden="true"></span>
+              </button>
+              <button class="page-header__btn page-header__btn--profile" type="button" aria-label="프로필">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- watch 영역 -->
+        <div class="watch__container">
+          <div class="main-content">
+            <div class="main-content__container">
+              <div class="watch__layout">
+                <div class="watch__main">
+                  <div class="watch__player" style="background: blue"></div>
+                  <div class="watch__btn-group">
+                    <button class="watch__btn watch__btn--download" data-popup-btn-on="download-option">
+                      <span class="icon icon--arrow-down-underline-white" aria-hidden="true"></span>
+                      <span class="watch__btn-text">다운로드</span>
+                    </button>
+                    <button class="watch__btn watch__btn--share" aria-label="동영상 공유" data-popup-btn-on="resume-playback-confirm">
+                      <span class="icon icon--video-share" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="watch__sidebar" style="max-width: 425px; padding-bottom: 1000px; background: green"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- bottom-nav -->
+        <nav class="bottom-nav">
+          <ul class="bottom-nav__list">
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn is-active" href="./home.html">
+                <span class="icon icon--nav-home" aria-hidden="true"></span>
+                <span class="bottom-nav__text">홈</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./shorts.html">
+                <span class="icon icon--nav-shorts" aria-hidden="true"></span>
+                <span class="bottom-nav__text">쇼츠</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./my-download.html" aria-label="다운로드">
+                <span class="icon icon--nav-ezdown" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./subscriptions.html">
+                <span class="icon icon--nav-subscriptions" aria-hidden="true"></span>
+                <span class="bottom-nav__text">구독</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./library.html">
+                <span class="icon icon--nav-library" aria-hidden="true"></span>
+                <span class="bottom-nav__text">보관함</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- popup -->
+    <!-- popup-root에 is-active 추가 및 특정 popup에 is-active 추가 시 팝업 활성화 -->
+    <div class="popup-root" data-popup-root>
+      <div class="overlay" data-popup-btn-off></div>
+      <!-- 마이크 접근 여부 팝업 -->
+      <div class="popup popup--center" data-popup="mic-permission">
+        <div class="popup__content">
+          <p class="popup__message">
+            ‘이지다운’이(가)<br />
+            마이크에 접근하려고 합니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off data-class-btn="page-header__voice" data-class-action="open">허용</button>
+        </div>
+      </div>
+      <!-- 검색 기록 삭제 여부 팝업 -->
+      <div class="popup popup--center" data-popup="search-history-clear">
+        <div class="popup__content">
+          <p class="popup__message">검색 기록을 모두 삭제할까요?</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 검색 기록 중지 여부 팝업 -->
+      <div class="popup popup--center" data-popup="search-history-disable">
+        <div class="popup__content">
+          <p class="popup__title">검색 기록을 중지할까요?</p>
+          <p class="popup__message popup__message--secondary">
+            이 설정은 <span class="popup__message-emphasis">기기설정</span>에서<br />
+            언제든지 변경할 수 있습니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 검색 기록 시작 여부 팝업 -->
+      <div class="popup popup--center" data-popup="search-history-enable">
+        <div class="popup__content">
+          <p class="popup__message">검색 기록을 시작할까요?</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 다운로드 유형 선택 팝업 -->
+      <div class="popup popup--center popup--dowonload-type" data-popup="download-option">
+        <div class="popup__header">
+          <p class="popup__title">다운로드 유형 선택</p>
+        </div>
+        <div class="popup__content">
+          <div class="popup__scroll-box">
+            <div class="popup__scroll-contents">
+              <div class="popup__scroll-section">
+                <div class="popup__item popup__item--checkbox">
+                  <input id="series-download" class="input" type="checkbox" checked />
+                  <label class="popup__label u-g-12 u-mb-7" for="series-download">
+                    <span class="icon icon--checkbox" aria-hidden="true"></span>
+                    <span class="input__title input__title--checkbox">시리즈 다운로드</span>
+                  </label>
+                  <p class="popup__input-desc">영상이 시리즈로 구성되었을 경우 시리즈 전체가 <br />폴더로 다운로드 됩니다.</p>
+                </div>
+              </div>
+              <div class="popup__scroll-section">
+                <p class="popup__scroll-section-title">동영상</p>
+                <ul class="popup__list popup__list--radio">
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-1" class="input" name="popup-video-radio1" type="radio" checked="" />
+                    <label for="popup-video-radio1-1">
+                      <span class="input__title input__title--radio">2160p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-2" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-2">
+                      <span class="input__title input__title--radio">1440p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-3" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-3">
+                      <span class="input__title input__title--radio">1080p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-4" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-4">
+                      <span class="input__title input__title--radio">720p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-5" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-5">
+                      <span class="input__title input__title--radio">480p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-6" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-6">
+                      <span class="input__title input__title--radio">360p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-7" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-7">
+                      <span class="input__title input__title--radio">240p</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio1-9" class="input" name="popup-video-radio1" type="radio" />
+                    <label for="popup-video-radio1-9">
+                      <span class="input__title input__title--radio">
+                        오디오만
+                        <span class="input__desc input__desc--radio">음성 파일로 저장됩니다</span>
+                      </span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="popup__scroll-section">
+                <p class="popup__scroll-section-title">자막</p>
+                <ul class="popup__list popup__list--radio">
+                  <li class="popup__item">
+                    <input id="popup-video-radio2-1" class="input" name="popup-video-radio2" type="radio" checked="" />
+                    <label for="popup-video-radio2-1">
+                      <span class="input__title input__title--radio">선택 안함</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio2-2" class="input" name="popup-video-radio2" type="radio" />
+                    <label for="popup-video-radio2-2">
+                      <span class="input__title input__title--radio">
+                        앱 설정 언어
+                        <span class="input__desc input__desc--radio">해당 언어 자막이 있을 때만 다운로드 됩니다</span>
+                      </span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio2-3" class="input" name="popup-video-radio2" type="radio" />
+                    <label for="popup-video-radio2-3">
+                      <span class="input__title input__title--radio">영상 내 자막 중 선택</span>
+                      <span class="icon icon--radio" aria-hidden="true"></span>
+                    </label>
+                  </li>
+                </ul>
+                <ul class="popup__list popup__list--sub-radio">
+                  <li class="popup__item">
+                    <input id="popup-video-radio3-1" class="input input--radio input--secondary" name="popup-video-radio3" type="radio" checked="" />
+                    <label class="popup__sub-label" for="popup-video-radio3-1">Korean</label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio3-2" class="input input--radio input--secondary" name="popup-video-radio3" type="radio" checked="" />
+                    <label class="popup__sub-label" for="popup-video-radio3-2">English</label>
+                  </li>
+                  <li class="popup__item">
+                    <input id="popup-video-radio3-3" class="input input--radio input--secondary" name="popup-video-radio3" type="radio" checked="" />
+                    <label class="popup__sub-label" for="popup-video-radio3-3">Japanese</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="subtitle-checking">확인</button>
+        </div>
+      </div>
+      <!-- 등록된 자막 목록 확인중 팝업 -->
+      <div class="popup popup--center" data-popup="subtitle-checking">
+        <div class="popup__content">
+          <div class="progress progress--size-l">
+            <div class="progress__fill" style="width: 50%"></div>
+          </div>
+          <p class="popup__message">등록된 자막 목록 확인중</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn" type="button" data-popup-btn-on="download-progress">취소</button>
+        </div>
+      </div>
+      <!-- 다운로드 진행중 팝업 -->
+      <div class="popup popup--center" data-popup="download-progress">
+        <div class="popup__content">
+          <div class="progress progress--size-l">
+            <div class="progress__fill" style="width: 50%"></div>
+          </div>
+          <p class="popup__message">다운로드 진행중</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn" type="button" data-popup-btn-on="subtitle-auto-confirm">취소</button>
+        </div>
+      </div>
+      <!-- 자동 생성 자막 다운로드 안내 팝업 -->
+      <div class="popup popup--center" data-popup="subtitle-auto-confirm">
+        <div class="popup__content">
+          <p class="popup__title">
+            설정된 언어의 자막이<br />
+            제공되지 않습니다.<br />
+            자동 생성된 자막을 다운로드 할까요?
+          </p>
+          <p class="popup__message popup__message--secondary">
+            '취소'를 선택 시 자막 없이<br />
+            다운로드가 진행됩니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="subtitle-none-confirm">확인</button>
+        </div>
+      </div>
+      <!-- 자막 없이 다운로드 진행 안내 팝업 -->
+      <div class="popup popup--center" data-popup="subtitle-none-confirm">
+        <div class="popup__content">
+          <p class="popup__message">
+            자막이 존재하지 않습니다.<br />
+            자막 없이 다운로드를 진행할까요?
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 다른 기기에서 이 지점부터 재생할까요? 팝업 -->
+      <div class="popup popup--center" data-popup="resume-playback-confirm">
+        <div class="popup__content">
+          <p class="popup__message">
+            다른 기기에서<br />
+            이 지점부터 재생할까요?
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="playback-share-qr">확인</button>
+        </div>
+      </div>
+      <!-- QR 스캔 팝업 -->
+      <div class="popup popup--center popup--qr" data-popup="playback-share-qr">
+        <div class="popup__content">
+          <p class="popup__title">
+            영상 재생 위치를 공유하려면<br />
+            QR코드를 스캔해 주세요.
+          </p>
+          <p class="popup__message popup__message--secondary">스캔 또는 코드 입력하기</p>
+          <div class="popup__qr">
+            <div class="popup__qr-inner">
+              <div class="popup__qr-img" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/250px-QR_code_for_mobile_English_Wikipedia.svg.png)"></div>
+            </div>
+          </div>
+          <p class="popup__desc popup__desc--center">휴대전화로 스캔하거나 다음 링크로 이동</p>
+          <div class="popup__qr-code">
+            <p class="popup__message popup__message--secondary">입력 코드</p>
+            <p class="popup__qr-code-text">NSW-LRB-XXX</p>
+            <button class="popup__btn popup__btn--variant-1">복사하기</button>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-on="playback-connect">확인</button>
+        </div>
+      </div>
+      <!-- QR 촬영 or 코드 입력 팝업 -->
+      <div class="popup popup--center popup--qr" data-popup="playback-connect">
+        <div class="popup__content">
+          <p class="popup__title">
+            영상 재생 위치를 공유하려면<br />
+            QR코드를 스캔해 주세요.
+          </p>
+          <p class="popup__message popup__message--secondary">스캔 또는 코드 입력하기</p>
+          <div class="popup__scanner">
+            <div class="popup__scanner-overlay"></div>
+            <video class="popup__scanner-camera" style="background-color: #fff"></video>
+            <div class="popup__scanner-frame">
+              <span class="popup__corner popup__corner--tl" aria-hidden="true"></span>
+              <span class="popup__corner popup__corner--tr" aria-hidden="true"></span>
+              <span class="popup__corner popup__corner--bl" aria-hidden="true"></span>
+              <span class="popup__corner popup__corner--br" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="popup__desc popup__desc--center">휴대전화로 스캔하거나 다음 링크로 이동</p>
+          <div class="popup__qr-code">
+            <p class="popup__message popup__message--secondary">코드 입력</p>
+            <input class="popup__input" type="text" placeholder="코드를 입력해주세요" />
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- toast -->
+    <!-- 특정 toast에 is-active 추가 시 토스트 활성화 -->
+    <div class="toast-root">
+      <div class="toast">
+        <span class="icon icon--arrow-down-underline-white" aria-hidden="true"></span>
+        <p class="toast__text">다운로드가 완료되었습니다.</p>
+      </div>
+    </div>
+  </body>
+</html>

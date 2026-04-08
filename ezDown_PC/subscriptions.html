@@ -1,0 +1,706 @@
+<!doctype html>
+<!-- html에 dark 추가 시 다크모드 활성화 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ezDown</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/pages/subscriptions.css" />
+    <!-- js -->
+    <script src="./assets/js/init.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap wrap--sidebar" data-sidebar-layout>
+      <!-- app-nav -->
+      <nav class="app-nav app-nav--sub">
+        <div class="app-nav__container">
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content is-active" type="button">
+                  <span class="icon icon--sidebar-music" aria-hidden="true"></span>
+                  <span class="app-nav__text">음악</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./trending.html">
+                  <span class="icon icon--sidebar-hype" aria-hidden="true"></span>
+                  <span class="app-nav__text">인기 동영상</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-live" aria-hidden="true"></span>
+                  <span class="app-nav__text">라이브</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-game" aria-hidden="true"></span>
+                  <span class="app-nav__text">게임</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-sports" aria-hidden="true"></span>
+                  <span class="app-nav__text">스포츠</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-courses" aria-hidden="true"></span>
+                  <span class="app-nav__text">학습 프로그램</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-podcast" aria-hidden="true"></span>
+                  <span class="app-nav__text">팟캐스트</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-kids" aria-hidden="true"></span>
+                  <span class="app-nav__text">Kids</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">개인정보처리방침</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">서비스 약관</a>
+          </div>
+        </div>
+      </nav>
+      <nav class="app-nav" data-sidebar>
+        <div class="app-nav__overlay" data-sidebar-close></div>
+        <div class="app-nav__container">
+          <div class="app-nav__header">
+            <span class="logo logo--primary" aria-hidden="true"></span>
+            <button class="app-nav__btn app-nav__btn--header" type="button" aria-label="닫기" data-sidebar-close>
+              <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="app-nav__content">
+            <ul class="app-nav__list">
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content is-active" type="button">
+                  <span class="icon icon--sidebar-music" aria-hidden="true"></span>
+                  <span class="app-nav__text">음악</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <a class="app-nav__btn app-nav__btn--content" href="./trending.html">
+                  <span class="icon icon--sidebar-hype" aria-hidden="true"></span>
+                  <span class="app-nav__text">인기 동영상</span>
+                </a>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-live" aria-hidden="true"></span>
+                  <span class="app-nav__text">라이브</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-game" aria-hidden="true"></span>
+                  <span class="app-nav__text">게임</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-sports" aria-hidden="true"></span>
+                  <span class="app-nav__text">스포츠</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-courses" aria-hidden="true"></span>
+                  <span class="app-nav__text">학습 프로그램</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-podcast" aria-hidden="true"></span>
+                  <span class="app-nav__text">팟캐스트</span>
+                </button>
+              </li>
+              <li class="app-nav__item">
+                <button class="app-nav__btn app-nav__btn--content" type="button">
+                  <span class="icon icon--sidebar-kids" aria-hidden="true"></span>
+                  <span class="app-nav__text">Kids</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="app-nav__footer">
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">개인정보처리방침</a>
+            <a class="app-nav__btn app-nav__btn--footer" href="javascript:void(0)">서비스 약관</a>
+          </div>
+        </div>
+      </nav>
+      <!-- subscriptions -->
+      <div class="subscriptions">
+        <!-- app-header -->
+        <header class="app-header">
+          <div class="app-header__container">
+            <div class="app-header__nav">
+              <button class="app-header__btn app-header__btn--back" type="button" aria-label="이전 페이지">
+                <span class="icon icon--arrow-back" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--next" type="button" aria-label="다음 페이지">
+                <span class="icon icon--arrow-next" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--reload" type="button" aria-label="새로고침">
+                <span class="icon icon--refresh" aria-hidden="true"></span>
+              </button>
+            </div>
+            <form class="app-header__search">
+              <input class="app-header__search-input" name="search" type="text" placeholder="다운로드 하고자하는 유튜브 URL 을 입력하세요." />
+              <button class="app-header__btn app-header__btn--down" type="submit" aria-label="다운로드">
+                <span class="icon icon--arrow-down-underline" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="app-header__actions">
+              <button class="app-header__btn app-header__btn--point" type="button">
+                <span class="icon icon--point" aria-hidden="true"></span>
+                <span class="app-header__point-info">12,450P</span>
+              </button>
+              <button class="app-header__btn app-header__btn--profile" type="button">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                <span class="app-header__profile-email">test@enliple.com</span>
+              </button>
+              <button class="app-header__btn app-header__btn--minimize" type="button" aria-label="최소화">
+                <span class="icon icon--minus-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--maximize" type="button" aria-label="최대화">
+                <span class="icon icon--square-app" aria-hidden="true"></span>
+              </button>
+              <button class="app-header__btn app-header__btn--close" type="button" aria-label="닫기">
+                <span class="icon icon--close-app" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- page-header -->
+        <header class="page-header">
+          <div class="page-header__container">
+            <div class="page-header__brand" data-sidebar-hide>
+              <button class="page-header__btn page-header__btn--menu" type="button" aria-label="네비게이션 열기" data-sidebar-open>
+                <span class="icon icon--more-left" aria-hidden="true"></span>
+              </button>
+              <a href="./home.html" aria-label="ezDown 홈">
+                <span class="logo logo--primary" aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="page-header__search">
+              <div class="page-header__search-wrap">
+                <!-- is-active 추가 시 검색 창 활성화 -->
+                <form class="page-header__search-form">
+                  <div class="page-header__search-box">
+                    <div class="page-header__search-field">
+                      <div class="page-header__search-input-wrap">
+                        <span class="icon icon--search" aria-hidden="true"></span>
+                        <input class="page-header__search-input input" name="search" type="text" placeholder="검색" />
+                        <button class="page-header__btn page-header__btn--delete" type="button" aria-label="삭제">
+                          <span class="icon icon--delete-search" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <a class="page-header__btn page-header__btn--search" href="./search-with-channel.html" aria-label="검색하기">
+                        <span class="icon icon--search-secondary" aria-hidden="true"></span>
+                      </a>
+                    </div>
+                    <div class="page-header__search-panel">
+                      <!-- 검색 히스토리 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--history">
+                        <ul class="page-header__search-list">
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU concert</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <span class="page-header__search-list-thumbnail" aria-hidden="true" style="background-image: url(./assets/images-test/video-test.jpg)"></span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- 예상 검색어 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--suggest">
+                        <ul class="page-header__search-list">
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU concert</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                        </ul>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline page-header__search-section-btn--right" type="button">예상 검색어 신고</button>
+                        </div>
+                      </div>
+                      <!-- 최근 검색어 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--recent">
+                        <div class="page-header__search-section-header">
+                          <p class="page-header__search-section-title">최근 검색어</p>
+                          <button class="page-header__search-section-btn page-header__search-section-btn--secondary" type="button" data-popup-btn-on="search-history-clear">전체삭제</button>
+                        </div>
+                        <ul class="page-header__search-list">
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU concert</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">IU love wins all</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                          <li class="page-header__search-list-item">
+                            <span class="icon icon--search-history" aria-hidden="true"></span>
+                            <span class="page-header__search-title">iudc</span>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--delete" type="button" aria-label="삭제">
+                              <span class="icon icon--close-search" aria-hidden="true"></span>
+                            </button>
+                            <button class="page-header__search-list-btn page-header__search-list-btn--link" type="button" aria-label="링크 이동"></button>
+                          </li>
+                        </ul>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline" type="button">검색 기록 중지</button>
+                        </div>
+                      </div>
+                      <!-- 검색어 없음 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--empty">
+                        <div class="page-header__search-section-content page-header__search-section-content--empty">
+                          <span class="icon icon--search-empty" aria-hidden="true"></span>
+                          <p class="page-header__search-section-desc page-header__search-section-desc--empty">최근 검색어가 없습니다.</p>
+                        </div>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline" type="button" data-popup-btn-on="search-history-disable">검색 기록 중지</button>
+                        </div>
+                      </div>
+                      <!-- 검색 기록 중지 영역 - is-active 추가 시 활성화 -->
+                      <div class="page-header__search-section page-header__search-section--paused">
+                        <div class="page-header__search-section-content page-header__search-section-content--empty">
+                          <span class="icon icon--search-empty-result" aria-hidden="true"></span>
+                          <p class="page-header__search-section-desc page-header__search-section-desc--empty">검색 기록이 중지된 상태입니다.</p>
+                        </div>
+                        <div class="page-header__search-section-footer">
+                          <button class="page-header__search-section-btn page-header__search-section-btn--underline" type="button" data-popup-btn-on="search-history-enable">검색 기록 시작</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <!-- is-active 추가 시 활성화 -->
+                <div class="page-header__voice" data-class-target="page-header__voice">
+                  <!-- 음성 검색 -->
+                  <div class="page-header__voice-content">
+                    <div class="page-header__voice-text-wrap">
+                      <p class="page-header__voice-text">대기 중···</p>
+                      <p class="page-header__voice-text">지금 듣고 있어요.</p>
+                    </div>
+                    <div class="page-header__voice-state-wrap page-header__voice-state-wrap--listening">
+                      <span class="page-header__voice-state-deco page-header__voice-state-deco--back" aria-hidden="true"></span>
+                      <span class="page-header__voice-state-deco page-header__voice-state-deco--front" aria-hidden="true"></span>
+                      <button class="page-header__voice-btn" type="button">
+                        <span class="page-header__voice-state page-header__voice-state--listening" aria-hidden="true">
+                          <span class="icon icon--mic"></span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- 음성 검색 중 / style="display: none" 제거 해주세요 -->
+                  <div class="page-header__voice-content" style="display: none">
+                    <div class="page-header__voice-text-wrap">
+                      <p class="page-header__voice-text">잠시만 기다려 주세요···</p>
+                    </div>
+                    <div class="page-header__voice-state-wrap page-header__voice-state-wrap--loading" aria-hidden="true">
+                      <span class="page-header__voice-state page-header__voice-state--loading"></span>
+                    </div>
+                  </div>
+                  <!-- 음성 검색 인식 실패 / style="display: none" 제거 해주세요 -->
+                  <div class="page-header__voice-content" style="display: none">
+                    <div class="page-header__voice-text-wrap">
+                      <p class="page-header__voice-text">다시 시도해주세요.</p>
+                    </div>
+                    <div class="page-header__voice-state-wrap page-header__voice-state-wrap--error">
+                      <button class="page-header__voice-btn" type="button">
+                        <span class="page-header__voice-state page-header__voice-state--error" aria-hidden="true">
+                          <span class="icon icon--mic-gray"></span>
+                        </span>
+                      </button>
+                      <p class="page-header__voice-state-text">다시 시도하려면 마이크를 탭하세요</p>
+                    </div>
+                  </div>
+                  <button class="page-header__voice-btn page-header__voice-btn--close" type="button" aria-label="닫기" data-class-btn="page-header__voice" data-class-action="close">
+                    <span class="icon icon--close-sidebar" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <button class="page-header__btn page-header__btn--mic" type="button" aria-label="음성 검색하기" data-popup-btn-on="mic-permission">
+                <span class="icon icon--mic-secondary" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="page-header__actions">
+              <button class="page-header__btn page-header__btn--minimize-toggle" type="button" aria-label="스크린 사이즈 토글">
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <button class="page-header__btn page-header__btn--thema" type="button" aria-label="테마">
+                <span class="icon icon--thema" aria-hidden="true"></span>
+              </button>
+              <button class="page-header__btn page-header__btn--profile" type="button" aria-label="프로필">
+                <span class="icon" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!-- subscriptions 영역 -->
+        <div class="subscriptions__container">
+          <div class="main-content">
+            <div class="main-content__container">
+              <div class="subscriptions__header">
+                <a class="subscriptions__manage-link" href="./channels.html">관리</a>
+                <div class="subscriptions__view-toggle">
+                  <!-- is-active 추가시 아이콘 변경 -->
+                  <button class="subscriptions__view-btn subscriptions__view-btn--grid is-active" type="button" aria-label="바둑판형 보기">
+                    <span class="icon icon--video-section-grid" aria-hidden="true"></span>
+                  </button>
+                  <!-- is-active 추가시 아이콘 변경 -->
+                  <button class="subscriptions__view-btn subscriptions__view-btn--list" type="button" aria-label="리스트형 보기">
+                    <span class="icon icon--video-section-list" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="subscriptions__video">
+                <a class="subscriptions__video-channel" href="javascript:void(0)">
+                  <span class="subscriptions__video-profile" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                  <span class="subscriptions__video-name">JTBC Entertainment</span>
+                </a>
+                <div class="video-section video-section--grid-5">
+                  <div class="video-card video-card--variant-3">
+                    <a class="video-card__link" href="./watch.html" aria-label="영상 보기"></a>
+                    <div class="video-card__img-cover">
+                      <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      <div class="tag tag--time">
+                        <div class="tag__badge-shape">
+                          <span class="tag__time">10:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-card__meta">
+                      <div class="video-card__meta-row">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</p>
+                          <p class="video-card__info">조회수 52만회 · 7일 전</p>
+                        </div>
+                        <button class="video-card__more" type="button" aria-label="더 보기"><span class="icon icon--video-more" aria-hidden="true"></span></button>
+                      </div>
+                      <p class="video-card__desc">아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,</p>
+                    </div>
+                  </div>
+                  <div class="video-card video-card--variant-3">
+                    <a class="video-card__link" href="./watch.html" aria-label="영상 보기"></a>
+                    <div class="video-card__img-cover">
+                      <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      <div class="tag tag--time">
+                        <div class="tag__badge-shape">
+                          <span class="tag__time">10:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-card__meta">
+                      <div class="video-card__meta-row">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</p>
+                          <p class="video-card__info">조회수 52만회 · 7일 전</p>
+                        </div>
+                        <button class="video-card__more" type="button" aria-label="더 보기"><span class="icon icon--video-more" aria-hidden="true"></span></button>
+                      </div>
+                      <p class="video-card__desc">아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="subscriptions__video">
+                <a class="subscriptions__video-channel" href="javascript:void(0)">
+                  <span class="subscriptions__video-profile" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                  <span class="subscriptions__video-name">JTBC Entertainment</span>
+                </a>
+                <!-- video-section + 모디파이 vertical 클래스 추가 시 바둑판형 레이아웃으로 변경 -->
+                <div class="video-section video-section--grid-5 video-section--vertical">
+                  <!-- video-card + 모디파이 vertical 클래스 추가 시 바둑판형 레이아웃으로 변경 -->
+                  <div class="video-card video-card--variant-3 video-card--vertical">
+                    <a class="video-card__link" href="./watch.html" aria-label="영상 보기"></a>
+                    <div class="video-card__img-cover">
+                      <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      <div class="tag tag--time">
+                        <div class="tag__badge-shape">
+                          <span class="tag__time">10:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-card__meta">
+                      <div class="video-card__meta-row">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</p>
+                          <p class="video-card__info">조회수 52만회 · 7일 전</p>
+                        </div>
+                        <button class="video-card__more" type="button" aria-label="더 보기"><span class="icon icon--video-more" aria-hidden="true"></span></button>
+                      </div>
+                      <p class="video-card__desc">아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,</p>
+                    </div>
+                  </div>
+                  <div class="video-card video-card--variant-3 video-card--vertical">
+                    <a class="video-card__link" href="./watch.html" aria-label="영상 보기"></a>
+                    <div class="video-card__img-cover">
+                      <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      <div class="tag tag--time">
+                        <div class="tag__badge-shape">
+                          <span class="tag__time">10:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-card__meta">
+                      <div class="video-card__meta-row">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</p>
+                          <p class="video-card__info">조회수 52만회 · 7일 전</p>
+                        </div>
+                        <button class="video-card__more" type="button" aria-label="더 보기"><span class="icon icon--video-more" aria-hidden="true"></span></button>
+                      </div>
+                      <p class="video-card__desc">아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="subscriptions__video">
+                <a class="subscriptions__video-channel" href="javascript:void(0)">
+                  <span class="subscriptions__video-profile" aria-hidden="true" style="background-image: url(./assets/icons-test/profile.svg)"></span>
+                  <span class="subscriptions__video-name">JTBC Entertainment</span>
+                </a>
+                <div class="video-section video-section--grid-5">
+                  <div class="video-card video-card--variant-3">
+                    <a class="video-card__link" href="./watch.html" aria-label="영상 보기"></a>
+                    <div class="video-card__img-cover">
+                      <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      <div class="tag tag--time">
+                        <div class="tag__badge-shape">
+                          <span class="tag__time">10:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-card__meta">
+                      <div class="video-card__meta-row">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</p>
+                          <p class="video-card__info">조회수 52만회 · 7일 전</p>
+                        </div>
+                        <button class="video-card__more" type="button" aria-label="더 보기"><span class="icon icon--video-more" aria-hidden="true"></span></button>
+                      </div>
+                      <p class="video-card__desc">아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,</p>
+                    </div>
+                  </div>
+                  <div class="video-card video-card--variant-3">
+                    <a class="video-card__link" href="./watch.html" aria-label="영상 보기"></a>
+                    <div class="video-card__img-cover">
+                      <img class="video-card__img" src="./assets/images-test/video-test.jpg" alt="냉장고를 부탁해" />
+                      <div class="tag tag--time">
+                        <div class="tag__badge-shape">
+                          <span class="tag__time">10:47</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-card__meta">
+                      <div class="video-card__meta-row">
+                        <div class="video-card__meta-box">
+                          <p class="video-card__title">[하이라이트] 역대급 냉장고(..) 등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이등장에 진땀 뻘뻘💦 없는 재료 영끌해 만드는 반끼 코스,이</p>
+                          <p class="video-card__info">조회수 52만회 · 7일 전</p>
+                        </div>
+                        <button class="video-card__more" type="button" aria-label="더 보기"><span class="icon icon--video-more" aria-hidden="true"></span></button>
+                      </div>
+                      <p class="video-card__desc">아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,아이유(IU)의 킬링보이스를 라이브로! 📍 딩고 공식 팬 커뮤니티 ‘with dingo’ 오픈 🎉 이제 딩고 콘텐츠,</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- bottom-nav -->
+        <nav class="bottom-nav">
+          <ul class="bottom-nav__list">
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./home.html">
+                <span class="icon icon--nav-home" aria-hidden="true"></span>
+                <span class="bottom-nav__text">홈</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./shorts.html">
+                <span class="icon icon--nav-shorts" aria-hidden="true"></span>
+                <span class="bottom-nav__text">쇼츠</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./my-download.html" aria-label="다운로드">
+                <span class="icon icon--nav-ezdown" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn is-active" href="./subscriptions.html">
+                <span class="icon icon--nav-subscriptions" aria-hidden="true"></span>
+                <span class="bottom-nav__text">구독</span>
+              </a>
+            </li>
+            <li class="bottom-nav__item">
+              <a class="bottom-nav__btn" href="./library.html">
+                <span class="icon icon--nav-library" aria-hidden="true"></span>
+                <span class="bottom-nav__text">보관함</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- popup -->
+    <!-- popup-root에 is-active 추가 및 특정 popup에 is-active 추가 시 팝업 활성화 -->
+    <div class="popup-root" data-popup-root>
+      <div class="overlay" data-popup-btn-off></div>
+      <!-- 마이크 접근 여부 팝업 -->
+      <div class="popup popup--center" data-popup="mic-permission">
+        <div class="popup__content">
+          <p class="popup__message">
+            ‘이지다운’이(가)<br />
+            마이크에 접근하려고 합니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off data-class-btn="page-header__voice" data-class-action="open">허용</button>
+        </div>
+      </div>
+      <!-- 검색 기록 삭제 여부 팝업 -->
+      <div class="popup popup--center" data-popup="search-history-clear">
+        <div class="popup__content">
+          <p class="popup__message">검색 기록을 모두 삭제할까요?</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 검색 기록 중지 여부 팝업 -->
+      <div class="popup popup--center" data-popup="search-history-disable">
+        <div class="popup__content">
+          <p class="popup__title">검색 기록을 중지할까요?</p>
+          <p class="popup__message popup__message--secondary">
+            이 설정은 <span class="popup__message-emphasis">기기설정</span>에서<br />
+            언제든지 변경할 수 있습니다.
+          </p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+      <!-- 검색 기록 시작 여부 팝업 -->
+      <div class="popup popup--center" data-popup="search-history-enable">
+        <div class="popup__content">
+          <p class="popup__message">검색 기록을 시작할까요?</p>
+        </div>
+        <div class="popup__footer">
+          <button class="popup__btn popup__btn--half" type="button" data-popup-btn-off>취소</button>
+          <button class="popup__btn popup__btn--half popup__btn--accent" type="button" data-popup-btn-off>확인</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
