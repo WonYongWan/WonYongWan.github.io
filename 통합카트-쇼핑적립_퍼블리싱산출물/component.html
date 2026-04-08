@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <title>쇼핑적립</title>
+  <title>컴포넌트</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   <!-- style -->
   <link rel="stylesheet" href="./css/reset.css">
@@ -18,6 +18,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0 20px 72px;
     }
 
     h2 {
@@ -48,7 +49,7 @@
   </style>
 </head>
 <body>
-  <div class="wrap ">
+  <div class="wrap">
     <h2>icon</h2>
     <div class="line">
       <button class="ico-arrow type1 top" type="button"></button>
@@ -69,9 +70,67 @@
       <button class="ico-exclamation" type="button"></button>
     </div>
 
+    <div class="line">
+      <div class="bottom-menu-wrap">
+        <a class="menu" href="javascript:void(0)"><span class="ico-cart">카트</span></a>
+        <a class="menu" href="javascript:void(0)"><span class="ico-save">적립</span></a>
+        <a class="menu" href="javascript:void(0)"><span class="ico-trend">트렌드</span></a>
+        <a class="menu" href="javascript:void(0)"><span class="ico-delivery">배송</span></a>
+        <a class="menu" href="javascript:void(0)"><span class="ico-breakDown">내역</span></a>
+      </div>
+    </div>
+
+    <h2>event popup</h2>
+    <div id="event-popup1" class="event-popup on">
+      <div class="event-cont">
+        <div class="logo" style="background-image: url(./images/test/지마켓.png);"></div>
+        <p>지마켓 수수료 2% 상향 이벤트<span>기간 : 10/1 ~ 10/30</span></p>
+      </div>
+      <a href="javascript:void(0)"></a>
+      <button class="close" onclick="eventPopupClose('#event-popup1')"></button>
+    </div>
+
+    <h2>history link</h2>
+    <div class="line">
+      <div class="history-link-wrap">
+        <div class="link point">
+          <div class="icon"></div>
+          <p>포인트</p>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="link candy">
+          <div class="icon"></div>
+          <p>포인트</p>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="link gift">
+          <div class="icon"></div>
+          <p>포인트</p>
+          <a href="javascript:void(0)"></a>
+        </div>
+      </div>
+    </div>
+
     <h2>list type1</h2>
     <div class="line">
-      <div class="list-wrap type1">
+      <div class="list-wrap type1" style="flex-wrap: wrap;">
+        <div class="list list0 type1">
+          <p class="title">쿠팡 검색 쇼핑하고 선물 받기</p>
+          <div class="info-wrap">
+            <a class="candy type1" href="javascript:void(0)">20개</a>
+            <div class="coupang-search-wrap">
+              <span class="logo">쿠팡</span>
+              <input type="text" placeholder="쿠팡에서 검색">
+              <a href="javascript:void(0)">검색</a>
+            </div>
+          </div>
+          <div class="link-wrap">
+            <div class="link-box"><a href="javascript:void(0)">당첨내역</a></div>
+            <div class="link-box"><a href="javascript:void(0)">행운의룰렛 GO</a></div>
+            <div class="link-box"><a href="javascript:void(0)">이벤트 안내</a></div>
+          </div>
+          <button class="ico-heart" type="button"></button>
+        </div>
         <div class="list list1">
           <p class="title"><span class="logo"></span>테무</p>
           <p class="percent"><span class="ico-point"></span>3.36%</p> 
@@ -106,7 +165,10 @@
             </div>
             <p class="text text2">+1,230</p>
           </div>
-          <p class="date">24.09.03</p>
+          <div class="info-box">
+            <p class="date">24.09.03</p>
+            <p class="state">쇼핑적립</p>
+          </div>
         </div>
         <div class="list list2 blue">
           <p class="title">쿠팡</p>
@@ -124,7 +186,10 @@
             </div>
             <p class="text text2">+1,230</p>
           </div>
-          <p class="date">24.09.03</p>
+          <div class="info-box">
+            <p class="date">24.09.03</p>
+            <p class="state">카트공유</p>
+          </div>
         </div>
         <div class="list list3 green">
           <p class="title">쿠팡</p>
@@ -138,7 +203,10 @@
             </div>
             <p class="text text2">+1,230</p>
           </div>
-          <p class="date">24.09.03</p>
+          <div class="info-box">
+            <p class="date">24.09.03</p>
+            <p class="state">배송조회</p>
+          </div>
         </div>
       </div>
     </div>
@@ -181,6 +249,512 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <h2>list type4</h2>
+    <div class="line" style="padding: 0 20px;">
+      <div class="list-wrap type4">
+        <div class="list list1">
+          <div class="logo" style="background-image: url(./images/test/홈플러스.png)">스타벅스</div>
+          <p class="title">스타벅스<span class="candy-info">20개</span></p>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list2">
+          <div class="logo" style="background-image: url(./images/test/홈플러스.png)">스타벅스</div>
+          <p class="title">스타벅스<span class="candy-info">20개</span></p>
+          <a href="javascript:void(0)"></a>
+        </div>
+      </div>
+    </div>
+
+    <h2>list type5</h2>
+    <div class="line">
+      <div class="list-wrap type5 type5-1">
+        <div class="list list1">
+          <div class="text-box text-box1">
+            <div class="text text1">
+              <p>곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+              <span>외 1건</span>
+            </div>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="text-box text-box2">
+            <p class="date">24.09.03</p>
+            <p class="state">2개</p>
+          </div>
+        </div>
+        <div class="list list1">
+          <div class="text-box text-box1">
+            <div class="text text1">
+              <p>곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+            </div>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="text-box text-box2">
+            <p class="date">24.09.03</p>
+            <p class="state">2개</p>
+          </div>
+        </div>
+      </div>
+      <div class="list-wrap type5 type5-2">
+        <div class="list list1">
+          <div class="text-box text-box1">
+            <div class="text text1">
+              <p>곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+              <span>외 1건</span>
+            </div>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="text-box text-box2">
+            <p class="date">24.09.03</p>
+            <div class="state-box">
+              <p class="state">2개</p>
+              <p class="state-info red">취소</p>
+            </div>
+          </div>
+        </div>
+        <div class="list list1">
+          <div class="text-box text-box1">
+            <div class="text text1">
+              <p>곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
+              <span>외 1건</span>
+            </div>
+            <p class="text text2">21,230원</p>
+          </div>
+          <div class="text-box text-box2">
+            <p class="date">24.09.03</p>
+            <div class="state-box">
+              <p class="state">2개</p>
+              <p class="state-info blue">사용</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>list type6</h2>
+    <div class="line">
+      <div class="list-wrap type6 type6-1">
+        <div class="list list1">
+          <div class="img-box" style="background-image: url(./images/test/스타벅스\ 상품.png);"></div>
+          <div class="text-box">
+            <div class="title-box">
+              <div class="logo-box">
+                <div class="logo" style="background-image: url(./images/test/스타벅스로고.png);"></div>
+                <p class="logo-title">스타벅스</p>
+              </div>
+              <p class="title">아이스 카페 아메리카노 T</p>
+            </div>
+            <div class="info-box">
+              <p class="date date1">당첨일자 (2024.08.15)</p>
+              <p class="date date2">유효기간 (2024.10.15)</p>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+      </div>
+      <div class="list-wrap type6 type6-2">
+        <div class="list list1">
+          <div class="img-box" style="background-image: url(./images/test/스타벅스\ 상품.png);"></div>
+          <div class="text-box">
+            <div class="title-box">
+              <div class="logo-box">
+                <div class="logo" style="background-image: url(./images/test/스타벅스로고.png);"></div>
+                <p class="logo-title">스타벅스</p>
+              </div>
+              <p class="title">아이스 카페 아메리카노 T</p>
+            </div>
+            <div class="info-box">
+              <p class="date date1">당첨일자 (2024.08.15)</p>
+              <p class="date date2">유효기간 (2024.10.15)</p>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div class="list-wrap type6 type6-3">
+        <div class="list list1">
+          <div class="img-box" style="background-image: url(./images/test/스타벅스\ 상품.png);"></div>
+          <div class="text-box">
+            <div class="title-box">
+              <div class="logo-box">
+                <div class="logo" style="background-image: url(./images/test/스타벅스로고.png);"></div>
+                <p class="logo-title">스타벅스</p>
+              </div>
+              <p class="title">아이스 카페 아메리카노 T</p>
+            </div>
+            <div class="info-box">
+              <p class="date date1">당첨일자 (2024.08.15)</p>
+              <p class="date date2">유효기간 (2024.10.15)</p>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <h2>cart list type1</h2>
+    <div class="line">
+      <div class="cart-list-wrap type1 three">
+        <div class="list list1">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+          <div class="check-box">
+            <div class="img-bg on">
+              <span class="check"></span>
+            </div>
+          </div>
+        </div>
+        <div class="list list2">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list3">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list4">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list5">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list6">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+      </div>
+      <div class="cart-list-wrap type1 two">
+        <div class="list list1">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list2">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list3">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list4">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list5">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list6">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+      </div>
+      <div class="cart-list-wrap type1 one">
+        <div class="list list1">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list2">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list3">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list4">
+          <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down down">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list5">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+        <div class="list list6">
+          <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+            <div class="lowest-price">최저가</div>
+            <button class="ico-heart" type="button"></button>
+            <button class="ico-alarm" type="button"></button>
+          </div>
+          <div class="text-box">
+            <div class="logo-box">
+              <div class="logo coupang"></div>
+              <p class="logo-title">쿠팡</p>
+            </div>
+            <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+            <div class="price-box">
+              <p class="price">26,550</p>
+              <div class="up-down up">24%</div>
+            </div>
+          </div>
+          <a href="javascript:void(0)"></a>
+        </div>
+      </div>
+    </div>
+
+    <h2>candy link</h2>
+    <div class="line">
+      <div class="candy-link-wrap">
+        <p class="title">내 막대사탕</p>
+        <p class="candy-count">17개</p>
+        <a href="javascript:void(0)"></a>
       </div>
     </div>
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>프로필</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- header -->
+    <header>
+      <h1>프로필</h1>
+      <div class="btn-list">
+        <a href="./sub-myPage1.html" class="ico-arrow type1 left">이전</a>
+      </div>
+    </header>
+    <!-- sub-myPage2 -->
+    <!-- hana class 추가 시 시그니처 컬러 변경 -->
+    <div class="sub sub-myPage2">
+      <div class="cont cont1">
+        <div class="box">
+          <i class="profile"></i>
+          <p class="name">손서현</p>
+        </div>
+      </div>
+      <div class="cont cont2">
+        <p class="title">기본정보</p>
+        <div class="box">
+          <p class="title">이름</p>
+          <p class="text">손서현</p>
+        </div>
+        <div class="box">
+          <p class="title">이메일</p>
+          <p class="text">shson@naver.com</p>
+        </div>
+        <div class="box">
+          <p class="title">휴대폰번호</p>
+          <p class="text">01012345678</p>
+        </div>
+        <div class="box">
+          <p class="title">가입경로</p>
+          <p class="text">네이버</p>
+        </div>
+        <div class="box">
+          <p class="title">추천인코드</p>
+          <input id="copy-text" class="text" type="text" value="SD234KNM" readonly>
+          <button type="button" onclick="copyText('#copy-text')">코드 복사</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/common.js"></script>
+</body>
+</html>

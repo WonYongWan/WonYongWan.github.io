@@ -4,235 +4,542 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <title>쇼핑적립 이용내역</title>
+  <title>스마트 카트</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   <!-- style -->
   <link rel="stylesheet" href="./css/style.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./css/swiper-min.css">
+  <script src="./js/swiper.js"></script>
 </head>
 <body>
   <div class="wrap">
     <!-- header -->
     <header>
-      <h1>쇼핑적립 이용내역</h1>
+      <h1>스마트 카트</h1>
       <div class="btn-list">
-        <a href="./index.html" class="ico-arrow type1 left">이전</a>
+        <a href="./" class="ico-arrow type1 left">이전</a>
+        <div>
+          <a href="./alarm.html" class="ico-head-alarm">알림</a>
+          <a href="./setting.html" class="ico-setting">설정</a>
+        </div>
       </div>
     </header>
-    <!-- main -->
-    <!-- hana 클래스 추가 시 시그니처 컬러 변경 -->
-    <div class="sub sub-1">
-      <div class="point-info-wrap">
-        <div class="point-info">
-          <div class="text-box">
-            <div>
-              <p class="title">총 적립 포인트</p>
-              <div class="tool-tip-box">
-                <button class="ico-question" type="button">툴팁</button>
-                <div class="tool-tip">쇼핑적립을 통해 적립이<br>완료된 총 포인트</div>
+    <!-- sub-1 -->
+    <!-- hana class 추가 시 시그니처 컬러 변경 -->
+    <div class="sub sub-1" onclick="toolTipsOff(event, '.tool-tip-line1')">
+      <div id="event-banner-wrap" class="swiper-wrap type1">
+        <div class="swiper event-banneer-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item item1 type1">
+                <i class="logo" style="background-image: url(./images/icon/gmarket-ico.png);"></i>
+                <div class="text-box">
+                  <p class="text">지마켓 수수료 2% 상향 이벤트<span>기간 : 10/1 ~ 10/30</span></p>
+                </div>
+                <div class="count"></div>
+                <a id="select-btn1" class="link-btn" href="./sub-1-3.html"></a>
+                <button class="close" onclick="swiperClose('#event-banner-wrap'), setTimeout(() => swiperOn('#event-banner-wrap'), timer())"></button>
               </div>
             </div>
-            <p class="point"><span class="ico-point"></span>21,230</p>
+            <div class="swiper-slide">
+              <div class="item item2 type2">
+                <i class="logo" style="background-image: url(./images/icon/event-popup-type1-logo.png);"></i>
+                <div class="text-box">
+                  <p class="text">시간당 2회, 카트에 상품을 추가하면 <span>100% 포인트를 적립</span>해 드려요.</p>
+                </div>
+                <div class="count"></div>
+                <a id="select-btn1" class="link-btn" href="./sub-1-3.html"></a>
+                <button class="close" onclick="swiperClose('#event-banner-wrap'), setTimeout(() => swiperOn('#event-banner-wrap'), timer())"></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item item3 type3">
+                <i class="logo" style="background-image: url(./images/icon/spbanner-ico.png);"></i>
+                <div class="text-box">
+                  <p class="text">포인트 적립을 확실하게 챙기는 가장 쉬운 방법!</p>
+                </div>
+                <div class="count"></div>
+                <a id="select-btn1" class="link-btn" href="./sub-1-3.html"></a>
+                <button class="close type2" onclick="swiperClose('#event-banner-wrap'), setTimeout(() => swiperOn('#event-banner-wrap'), timer())"></button>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="point-info-wrap">
+        <div class="mix-info">
           <div class="text-box">
-            <div>
-              <p class="title">적립 예정 포인트</p>
-              <div class="tool-tip-box">
-                <button class="ico-question" type="button">툴팁</button>
+            <div class="box box1">
+              <p class="title">총 적립현황</p>
+              <div id="tool-tip-box1" class="tool-tip-box type2 tool-tip-line1">
+                <button class="ico-question" type="button" onclick="toolTipOnOff('#tool-tip-box1', '.tool-tip-line1')">툴팁</button>
                 <div class="tool-tip">
-                  <p>쇼핑적립을 통해 적립 예정인 총 포인트</p>
-                  <ul>
-                    <li>* 쇼핑몰에 따라 최대 90일 소요</li>
-                    <li>* 해외 쇼핑몰 최대 6개월</li>
-                    <li>* 여행 최대 1년</li>
-                  </ul>
+                  카트와 적립 메뉴를 통해 제공되는<br>
+                  쇼핑몰을 누른 후 이동하여 상품 구매 후<br> 
+                  구매 확정이 되면 각각 쇼핑몰마다 정해준<br> 
+                  비율로 포인트가 적립 됩니다.<br> 
+                  (쿠팡은 포인트가 아닌 막대사탕으로 지급됩니다.)
                 </div>
               </div>
             </div>
-            <p class="point"><span class="ico-point"></span>5,230</p>
+            <div class="box box2">
+              <p class="point"><span class="ico-point"></span>1,230<span class="ico-arrow type2 right"></span></p>
+              <a href="javascript:void(0)"></a>
+            </div>
+          </div>
+          <div class="text-box">
+            <div class="box box1">
+              <p class="title">내 막대사탕</p>
+              <div id="tool-tip-box2" class="tool-tip-box type2 tool-tip-line1">
+                <button class="ico-question" type="button" onclick="toolTipOnOff('#tool-tip-box2', '.tool-tip-line1')">툴팁</button>
+                <div class="tool-tip">
+                  쿠팡에서 상품 구매시<br>
+                  1만원당 1개의 막대사탕이 적립되며,<br> 
+                  적립후 30일이 지나면 표시 됩니다.
+                </div>
+              </div>
+            </div>
+            <div class="box box2">
+              <p class="point"><span class="ico-candy"></span>17개<span class="ico-arrow type2 right"></span></p>
+              <a href="javascript:void(0)"></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="line line1">
-        <a href="./sub-3.html">유의사항 및 자주하는 질문<span class="ico-arrow type1 right"></span></a>
-        <p>*최근 12개월까지 구매/적립 내역 조회 가능 합니다.</p>
-      </div>
+      <!-- 카트 리스트 -->
       <div class="cont cont1">
-        <div class="line line2">
-          <p>적립 상세내역</p>
-          <div id="select-btn1" class="select-btn type2" onclick="selectListOn('#select-btn1', '#select-wrap', '#select-list1')">
-            <p class="value">2024년 9월</p>
-            <div class="ico-arrow type2 bottom"></div>
+        <div class="tab-box-wrap type2">
+          <div class="tab-box">
+            <div class="tab tab1 on"><a href="javascript:void(0)">전체보기</a></div>
+            <div class="tab tab2"><a href="javascript:void(0)">전자기기</a></div>
+            <div class="tab tab3"><a href="javascript:void(0)">과자</a></div>
+          </div>
+          <button id="select-btn2" class="folder" type="button" onclick="selectInputOn('#select-wrap', '#select-list2')">폴더</button>
+        </div>
+        <div class="cart-link-list">
+          <div class="top">
+            <p><span>지금</span> 구매하세요!</p>
+            <div id="top-down-btn1" class="select-btn type4" onclick="topDowmBoxOnOff('#top-down-btn1', '.cart-link-list > .bottom')">
+              <p class="value">2개</p>
+              <div class="ico-arrow type2 bottom"></div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="item">
+              <div class="text">
+                <span></span>
+                <p>드디어<br>할인 시작!</p>
+              </div>
+              <div class="img-box">
+                <div class="img img1" style="background-image: url(./images/test/상품1.png);"></div>
+                <div class="img img2" style="background-image: url(./images/test/상품1.png);"></div>
+                <p class="count">2</p>
+              </div>
+              <a href="./sub-1-1.html"></a>
+            </div>
           </div>
         </div>
-        <div class="tab-box-wrap">
-          <div class="tab-box">
-            <div class="tab tab1 on"><a href="javascript:void(0)">전체</a></div>
-            <div class="tab tab2"><a href="javascript:void(0)">예정</a></div>
-            <div class="tab tab3"><a href="javascript:void(0)">확정</a></div>
-            <div class="tab tab4"><a href="javascript:void(0)">취소</a></div>
+        <div class="stiky-wrap">
+          <div class="cart-set-list">
+            <div id="select-btn1" class="select-btn type3" onclick="selectListOn('#select-btn1', '#select-wrap', '#select-list1')">
+              <p class="value">최신순</p>
+              <div class="ico-arrow type2 bottom"></div>
+            </div>
+            <div class="set-list">
+              <button type="button" id="select-text1" class="select-text" onclick="cartListOrganizeOn('#select-text1', '.cart-list-wrap', '#bottom-cart-menu1', '#cart-alarm1', '#bottom-popup1')">선택</button>
+              <button type="button" class="ico-array one" onclick="cartListType('.cart-set-list .ico-array', '.cart-list-wrap')">정렬</button>
+              <button type="button" id="main-heart" class="ico-heart" onclick="onOff('.cart-set-list .ico-heart'), favoritesList('#main-heart', '#cart-list-wrap1')">즐겨찾기</button>
+            </div>
           </div>
         </div>
         <!-- 리스트 있을 경우 -->
-        <div class="list-wrap type2">
-          <div class="list list1 red">
-            <p class="title">쿠팡</p>
+        <div id="cart-list-wrap1" class="cart-list-wrap type1 one">
+          <div id="list1" class="list">
+            <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+              <div class="lowest-price">최저가</div>
+              <button class="ico-heart" type="button"></button>
+              <button class="ico-alarm" type="button"></button>
+            </div>
             <div class="text-box">
-              <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
-              <p class="text text2">21,230원</p>
-            </div>
-            <div class="point-box">
-              <div class="text text1">
-                <p>적립예정</p>
-                <div class="tool-tip-box">
-                  <button class="ico-question" type="button"></button>
-                  <div class="tool-tip">적립예정일: 구매 완료 3개월 이내</div>
-                </div>
+              <div class="logo-box">
+                <div class="logo coupang"></div>
+                <p class="logo-title">쿠팡</p>
               </div>
-              <p class="text text2">+1,230</p>
+              <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+              <div class="price-box">
+                <p class="price">26,550</p>
+                <div class="up-down up">24%</div>
+              </div>
             </div>
-            <p class="date">24.09.03</p>
+            <a href="./sub-1-2.html"></a>
+            <div 
+              class="check-box" 
+              onclick="
+                onOff('#list1 .check-box .img-bg', '#bottom-popup1'), 
+                cartListOrganizeCheck('#select-text1', '.cart-list-wrap'),
+                bottomCartAlarmChangeCheck('#cart-alarm1', '#cart-list-wrap1')
+              ">
+              <div class="img-bg">
+                <span class="check"></span>
+              </div>
+            </div>
           </div>
-          <div class="list list2 blue">
-            <p class="title">쿠팡</p>
+          <div id="list2" class="list">
+            <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+              <div class="lowest-price">최저가</div>
+              <button class="ico-heart" type="button"></button>
+              <button class="ico-alarm" type="button"></button>
+            </div>
             <div class="text-box">
-              <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
-              <p class="text text2">21,230원</p>
-            </div>
-            <div class="point-box">
-              <div class="text text1">
-                <p>적립확정</p>
-                <div class="tool-tip-box">
-                  <button class="ico-question" type="button"></button>
-                  <div class="tool-tip">적립예정일: 구매 완료 3개월 이내</div>
-                </div>
+              <div class="logo-box">
+                <div class="logo coupang"></div>
+                <p class="logo-title">쿠팡</p>
               </div>
-              <p class="text text2">+1,230</p>
+              <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+              <div class="price-box">
+                <p class="price">26,550</p>
+                <div class="up-down down">24%</div>
+              </div>
             </div>
-            <p class="date">24.09.03</p>
+            <a href="./sub-1-2.html"></a>
+            <div 
+              class="check-box" 
+              onclick="
+                onOff('#list2 .check-box .img-bg', '#bottom-popup1'), 
+                cartListOrganizeCheck('#select-text1', '.cart-list-wrap'),
+                bottomCartAlarmChangeCheck('#cart-alarm1', '#cart-list-wrap1')
+              ">
+              <div class="img-bg">
+                <span class="check"></span>
+              </div>
+            </div>
           </div>
-          <div class="list list3 green">
-            <p class="title">쿠팡</p>
+          <div id="list3" class="list">
+            <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+              <div class="lowest-price">최저가</div>
+              <button class="ico-heart" type="button"></button>
+              <button class="ico-alarm" type="button"></button>
+            </div>
             <div class="text-box">
-              <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
-              <p class="text text2">21,230원</p>
-            </div>
-            <div class="point-box">
-              <div class="text text1">
-                <p>적립취소</p>
+              <div class="logo-box">
+                <div class="logo coupang"></div>
+                <p class="logo-title">쿠팡</p>
               </div>
-              <p class="text text2">+1,230</p>
+              <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+              <div class="price-box">
+                <p class="price">26,550</p>
+                <div class="up-down up">24%</div>
+              </div>
             </div>
-            <p class="date">24.09.03</p>
+            <a href="./sub-1-2.html"></a>
+            <div 
+              class="check-box" 
+              onclick="
+                onOff('#list3 .check-box .img-bg', '#bottom-popup1'), 
+                cartListOrganizeCheck('#select-text1', '.cart-list-wrap'),
+                bottomCartAlarmChangeCheck('#cart-alarm1', '#cart-list-wrap1')
+              ">
+              <div class="img-bg">
+                <span class="check"></span>
+              </div>
+            </div>
           </div>
-          <div class="list list4 green">
-            <p class="title">쿠팡</p>
+          <div id="list4" class="list">
+            <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+              <div class="lowest-price">최저가</div>
+              <button class="ico-heart" type="button"></button>
+              <button class="ico-alarm" type="button"></button>
+            </div>
             <div class="text-box">
-              <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
-              <p class="text text2">21,230원</p>
-            </div>
-            <div class="point-box">
-              <div class="text text1">
-                <p>적립취소</p>
+              <div class="logo-box">
+                <div class="logo coupang"></div>
+                <p class="logo-title">쿠팡</p>
               </div>
-              <p class="text text2">+1,230</p>
+              <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+              <div class="price-box">
+                <p class="price">26,550</p>
+                <div class="up-down down">24%</div>
+              </div>
             </div>
-            <p class="date">24.09.03</p>
+            <a href="./sub-1-2.html"></a>
+            <div 
+              class="check-box" 
+              onclick="
+                onOff('#list4 .check-box .img-bg', '#bottom-popup1'), 
+                cartListOrganizeCheck('#select-text1', '.cart-list-wrap'),
+                bottomCartAlarmChangeCheck('#cart-alarm1', '#cart-list-wrap1')
+              ">
+              <div class="img-bg">
+                <span class="check"></span>
+              </div>
+            </div>
           </div>
-          <div class="list list5 red">
-            <p class="title">쿠팡</p>
+          <div id="list5" class="list">
+            <div class="img-box" style="background-image: url(./images/test/상품1.png);">
+              <div class="lowest-price">최저가</div>
+              <button class="ico-heart" type="button"></button>
+              <button class="ico-alarm" type="button"></button>
+            </div>
             <div class="text-box">
-              <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
-              <p class="text text2">21,230원</p>
-            </div>
-            <div class="point-box">
-              <div class="text text1">
-                <p>적립예정</p>
-                <div class="tool-tip-box">
-                  <button class="ico-question" type="button"></button>
-                  <div class="tool-tip">적립예정일: 구매 완료 3개월 이내</div>
-                </div>
+              <div class="logo-box">
+                <div class="logo coupang"></div>
+                <p class="logo-title">쿠팡</p>
               </div>
-              <p class="text text2">+1,230</p>
+              <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+              <div class="price-box">
+                <p class="price">26,550</p>
+                <div class="up-down up">24%</div>
+              </div>
             </div>
-            <p class="date">24.09.03</p>
+            <a href="./sub-1-2.html"></a>
+            <div 
+              class="check-box" 
+              onclick="
+                onOff('#list5 .check-box .img-bg', '#bottom-popup1'), 
+                cartListOrganizeCheck('#select-text1', '.cart-list-wrap'),
+                bottomCartAlarmChangeCheck('#cart-alarm1', '#cart-list-wrap1')
+              ">
+              <div class="img-bg">
+                <span class="check"></span>
+              </div>
+            </div>
           </div>
-          <div class="list list6 blue">
-            <p class="title">쿠팡</p>
+          <div id="list6" class="list">
+            <div class="img-box" style="background-image: url(./images/test/상품2.png);">
+              <div class="lowest-price">최저가</div>
+              <button class="ico-heart" type="button"></button>
+              <button class="ico-alarm" type="button"></button>
+            </div>
             <div class="text-box">
-              <p class="text text1">곡물그대로21 크리스피롤 1.5kg 오리지널곡물그대로21 크리스피롤 1.5kg 오리지널</p>
-              <p class="text text2">21,230원</p>
-            </div>
-            <div class="point-box">
-              <div class="text text1">
-                <p>적립확정</p>
-                <div class="tool-tip-box">
-                  <button class="ico-question" type="button"></button>
-                  <div class="tool-tip">적립예정일: 구매 완료 3개월 이내</div>
-                </div>
+              <div class="logo-box">
+                <div class="logo coupang"></div>
+                <p class="logo-title">쿠팡</p>
               </div>
-              <p class="text text2">+1,230</p>
+              <p class="title">더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU 더리얼 비타민D 5000IU, 180정,  더리얼 비타민D 5000IU</p>
+              <div class="price-box">
+                <p class="price">26,550</p>
+                <div class="up-down down">24%</div>
+              </div>
             </div>
-            <p class="date">24.09.03</p>
+            <a href="./sub-1-2.html"></a>
+            <div 
+              class="check-box" 
+              onclick="
+                onOff('#list6 .check-box .img-bg', '#bottom-popup1'), 
+                cartListOrganizeCheck('#select-text1', '.cart-list-wrap'),
+                bottomCartAlarmChangeCheck('#cart-alarm1', '#cart-list-wrap1')
+              ">
+              <div class="img-bg">
+                <span class="check"></span>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- 리스트 없을 경우 -->
-        <div class="list-none-box" >
-          <p><span class="ico-exclamation"></span>적립내역이 없습니다.</p>
+        <!-- 등록된 상품 없을 경우 -->
+        <div class="list-none-box">
+          <p><span class="ico-nonecart"></span>등록된 상품이 없습니다.</p>
+        </div>
+        <!-- 등록된 폴더 없을 경우 -->
+        <div class="list-none-box folder">
+          <div class="center">
+            <p><span class="ico-nonefolder"></span>[전자기기]<br>폴더가 비어있어요.</p>
+            <a href="./cart-use-guide.html#sub-1">사용법 보러가기</a>
+          </div>
         </div>
       </div>
+      <!-- 카트 상품추가 버튼 -->
+      <button class="ico-cart-add" type="button" onclick="selectBasicOn('#select-wrap', '#select-list3')">카트 상품추가</button>
+      <!-- 토스트 팝업 -->
+      <p id="tost1" class="tost-popup">폴더가 추가 되었습니다.</p>
+      <p id="tost2" class="tost-popup type2">알림 켜기가 설정 되었습니다.</p>
+      <p id="tost3" class="tost-popup type2">알림 끄기가 설정 되었습니다.</p>
+      <p id="tost4" class="tost-popup type2">즐겨찾기가 추가 되었습니다.</p>
+      <p id="tost5" class="tost-popup type2">상품이 삭제 되었습니다.</p>
     </div>
     <!-- 셀렉트 박스 -->
     <div id="select-wrap">
+      <!-- 정렬 방식 셀렉트 -->
       <div id="select-list1" class="select-list">
         <div class="select-head">
-          <p>조회 월 선택</p>
+          <p>정렬 방법을 선택해주세요</p>
           <button class="ico-close type1" type="button" onclick="selectListClose('#select-btn1', '#select-wrap', '#select-list1')">닫기</button>
         </div>
         <ul class="select-cont">
           <li class="list list1 on">
-            <p class="value">2024년 9월</p>
+            <p class="value">최신순</p>
             <div class="ico-check on"></div>
           </li>
           <li class="list list2">
-            <p class="value">2024년 8월</p>
+            <p class="value">할인율순</p>
             <div class="ico-check on"></div>
           </li>
           <li class="list list3">
-            <p class="value">2024년 7월</p>
+            <p class="value">오래된순</p>
             <div class="ico-check on"></div>
           </li>
           <li class="list list4">
-            <p class="value">2024년 6월</p>
+            <p class="value">즐겨찾기순</p>
             <div class="ico-check on"></div>
           </li>
           <li class="list list5">
-            <p class="value">2024년 5월</p>
-            <div class="ico-check on"></div>
-          </li>
-          <li class="list list6">
-            <p class="value">2024년 4월</p>
-            <div class="ico-check on"></div>
-          </li>
-          <li class="list list7">
-            <p class="value">2024년 3월</p>
-            <div class="ico-check on"></div>
-          </li>
-          <li class="list list8">
-            <p class="value">2024년 2월</p>
-            <div class="ico-check on"></div>
-          </li>
-          <li class="list list9">
-            <p class="value">2024년 1월</p>
-            <div class="ico-check on"></div>
-          </li>
-          <li class="list list10">
-            <p class="value">2023년 12월</p>
+            <p class="value">이름순</p>
             <div class="ico-check on"></div>
           </li>
         </ul>
       </div>
+      <div id="select-list2" class="select-list type2">
+        <div class="select-head">
+          <p>폴더 추가</p>
+          <button class="ico-close type1" type="button" onclick="selectInputClose('#select-wrap', '#select-list2')">닫기</button>
+        </div>
+        <ul class="select-cont">
+          <input type="text" placeholder="폴더명을 입력해주세요" oninput="inputValueCheck('#select-list2 .select-cont input', '#select-list2 .select-cont .folder-btn')">
+          <button 
+            class="folder-btn" 
+            type="button" 
+            onclick="addFolderList(
+              '#select-list2 .select-cont input', 
+              '.tab-box', 
+              '#select-wrap', 
+              '#select-list2', 
+              '#select-list2 .select-cont .folder-btn',
+              '#tost1'
+              )">
+            확인
+          </button>
+        </ul>
+      </div>
+      <div id="select-list3" class="select-list type6">
+        <div class="select-head">
+          <p>리스트에 <span>상품</span>을 추가해보세요</p>
+          <button class="ico-close type1" type="button" onclick="selectBasicClose('#select-wrap', '#select-list3')">닫기</button>
+        </div>
+        <div class="select-sub">
+          <p class="sub-title">1시간마다 2번 적립 가능해요</p>
+          <div class="info-box type1">
+            <p class="text">적립 <span>2회</span> 가능해요</p>
+          </div>
+          <div class="info-box type2">
+            <p class="text text1">00:46:00 이후 적립 가능해요</p>
+            <p class="text text2">상품 추가는 계속 할 수 있어요</p>
+          </div>
+        </div>
+        <ul class="select-cont">
+          <div class="link">
+            <div class="text-box">
+              <p class="title">쿠팡에서 상품추가 GO!</p>
+              <p class="text">구매금액 1만원 마다 막대사탕을 적립해드려요. 막대사탕으로 100% 당첨 행운의 룰렛 GO GO!!</p>
+            </div>
+            <a href="https://www.coupang.com/"></a>
+          </div>
+          <div class="link">
+            <div class="text-box">
+              <p class="title">다른쇼핑몰에서 상품추가 GO!</p>
+              <p class="text">구매금액의 일정 요율을 포인트로 적립해드려요. [적립]메뉴에서 확인하실 수 있어요 :)</p>
+            </div>
+            <a href="javascript:void(0)" onclick="popupChange('#select-list3', '#select-list4')"></a>
+          </div>
+          <div class="link">
+            <div class="text-box">
+              <p class="title">링크로 상품추가 GO!</p>
+              <p class="text">쇼핑몰 공유에서 URL 복사 후 붙여넣어주세요.</p>
+            </div>
+            <a href="javascript:void(0)" onclick="popupChange('#select-list3', '#select-list5')"></a>
+          </div>
+          <a class="btn" href="./cart-use-guide.html#sub-1">사용방법 보러가기</a>
+        </ul>
+      </div>
+      <div id="select-list4" class="select-list type3">
+        <div class="select-head">
+          <p>다른 쇼핑몰에서 상품추가</p>
+          <button class="ico-close type1" type="button" onclick="selectBasicClose('#select-wrap', '#select-list4')">닫기</button>
+        </div>
+        <ul class="select-cont">
+          <div class="text-box type1">
+            <span class="ico-preparing"></span>
+            <p>조금만 기다려주세요.<br>준비중입니다.</p>
+          </div>
+          <button class="btn" type="button" onclick="selectBasicClose('#select-wrap', '#select-list4')">확인</button>
+        </ul>
+      </div>
+      <div id="select-list5" class="select-list type2">
+        <div class="select-head">
+          <p>링크로 상품추가</p>
+          <button class="ico-close type1" type="button" onclick="selectInputClose('#select-wrap', '#select-list5')">닫기</button>
+        </div>
+        <ul class="select-cont">
+          <input type="text" placeholder="상품공유 클릭 후 복사한 링크를 붙여넣어주세요" oninput="inputValueCheck('#select-list5 .select-cont input', '#select-list5 .select-cont .folder-btn')">
+          <button class="folder-btn" type="button">확인</button>
+        </ul>
+      </div>
+    </div>
+    <!-- popup-wrap -->
+    <div id="popup-wrap">
+      <!-- popup1 -->
+      <div id="tutorial-popup" class="popup type4">
+        <div class="box">
+          <p class="title">카트 기본 설정 완료!</p>
+          <p class="text">설정한 정보는 언제든지 화면 우측 상단<br>해당 버튼을 눌러 변경하실 수 있어요!</p>
+          <img src="./images/tutorial-set-btn.png" alt="설정한 정보 변경 버튼 위치 이미지">
+          <div class="btn-box">
+            <button class="popup-btn" type="button" onclick="popupClose('#popup-wrap', '#tutorial-popup')">카트 이용 시작!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-menu-wrap">
+      <a class="menu on" href="./sub-1.html"><span class="ico-cart">카트</span></a>
+      <a class="menu" href="./index.html"><span class="ico-save">적립</span></a>
+      <!-- <a class="menu" href="./sub-3.html"><span class="ico-ranking">랭킹</span></a> -->
+      <a class="menu" href="./sub-5.html"><span class="ico-breakDown">내역</span></a>
+      <a class="menu" href="./sub-store1.html"><span class="ico-store">상점</span></a>
+      <a class="menu" href="./sub-myPage1.html"><span class="ico-myPage">MY</span></a>
+    </div>
+    <div id="bottom-cart-menu1" class="bottom-cart-menu-wrap type1">
+      <button type="button" onclick="bottomCartCancel('#bottom-cart-menu1', '#cart-list-wrap1', '#select-text1', '#cart-alarm1')"><span class="ico-b-cart-cancel"></span>취소</button>
+      <button id="cart-alarm1" type="button" onclick="bottomCartAlarm('#cart-alarm1', '#cart-list-wrap1', '#select-text1', '#tost2', '#tost3')"><span class="ico-b-cart-alarm on"></span>알림 켜기</button>
+      <button type="button" onclick="bottomCartFavorites('#cart-list-wrap1', '#select-text1', '#tost4')"><span class="ico-b-cart-heart"></span>즐겨찾기 설정</button>
+      <button type="button" onclick="bottomPopupOn('#bottom-popup1', '#cart-list-wrap1')"><span class="ico-b-cart-remove"></span>삭제</button>
+    </div>
+    <div id="bottom-popup1" class="bottom-popup type1">
+      <div class="head">
+        <p></p>
+        <button class="ico-close type1" type="button" onclick="onOff('#bottom-popup1')">닫기</button>
+      </div>
+      <div class="btn-box">
+        <button type="button" class="gray" onclick="onOff('#bottom-popup1')">취소</button>
+        <button type="button" class="blue" onclick="bottomCartRemove('#cart-list-wrap1', '#bottom-popup1', '#bottom-cart-menu1', '#select-text1', '#tost5')">확인</button>
+      </div>
     </div>
   </div>
+  <script>
+    if(document.querySelectorAll('.event-banneer-swiper .item').length > 1) {
+      let swiper = new Swiper(".event-banneer-swiper", {
+        slidesPerView : 1,
+        loop: true,
+        speed: 800,
+        autoplay:{
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        observer: true,
+        observeParents: true,
+        on: {
+          init() {
+            let counts = document.querySelectorAll('.event-banneer-swiper .count');
+            let length = counts.length;
+
+            counts.forEach((elm, idx) => {
+              elm.innerText = `${idx + 1}/${length}`;
+            });
+          }
+        },
+      });
+    } else {
+      document.querySelector('.event-banneer-swiper .item .count').style.display = 'none';
+    }
+  </script>
   <script src="./js/common.js"></script>
   <script src="./js/page.js"></script>
 </body>

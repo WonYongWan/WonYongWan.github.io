@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>튜토리얼</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./css/swiper-min.css">
+  <script src="./js/swiper.js"></script>
+</head>
+<body>
+  <div class="wrap wrap-tutorial">
+    <!-- tutorial  -->
+    <div class="page-tutorial">
+      <div id="prev-cont" class="cont cont1 on">
+        <p class="title"><span>쇼핑적립 카트</span> 서비스에<br>오신걸 환영합니다!</p>
+        <p class="text">쇼핑몰에서 원하는 상품을 카트에 추가하고<br>추가한 상품의 가격이 내려가면<br>알림을 보내주는 서비스에요</p>
+        <div class="text-box">
+          <p class="text">옆으로 넘겨 사용법을 확인해주세요</p>
+        </div>
+        <div class="swiper tutorial-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item item1">
+                <div class="img-box">
+                  <div class="img"></div>
+                  <p class="text">1. 메인페이지 우측 하단 ‘+’ 버튼을 눌러주세요.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item item2">
+                <div class="img-box">
+                  <div class="img"></div>
+                  <p class="text">2. ‘상품추가 GO!’ 버튼을 눌러주세요.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item item3">
+                <div class="img-box">
+                  <div class="img"></div>
+                  <p class="text">3. 접속한 쇼핑몰 페이지에서 추가하고 싶은 상품의 ‘공유하기’ <i class="ico"></i>버튼을 눌러주세요.</p>
+                </div>       
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item item4">
+                <div class="img-box">
+                  <div class="img"></div>
+                  <p class="text">4. 공유하기 화면에서 쇼핑적립이 있던 APP으로 공유해주시면 카트 추가 완료!</p>
+                </div>       
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item item5">
+                <div class="img-box">
+                  <div class="img"></div>
+                  <p class="text">4-1. 공유할 APP이 보이지 않는다면 오른쪽으로 스와이프 한 뒤 ‘더보기’ 버튼을 눌러주시면 원하시는 APP을 찾을 수 있어요.</p>
+                </div>       
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item item6">
+                <div class="img-box">
+                  <div class="img"></div>
+                  <p class="text">5. 등록된 상품은 가격이 떨어지면 알림메시지를 보내서 알려드려요.</p>
+                </div>       
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="btn-box">
+          <button 
+            id="swiper-btn" 
+            class="btn blue" 
+            type="button" 
+            onclick="document.querySelector('#next-cont').classList.add('on'); document.querySelector('#prev-cont').classList.remove('on');"
+          >이해했어요!</button>
+        </div>
+      </div>
+      <div id="next-cont" class="cont cont2">
+        <p class="title"><i>⚙️</i>이용전 마지막으로 몇가지만<br>더 <span>설정</span>해주세요!</p>
+        <div class="box">
+          <p class="title">쿠팡 와우회원 이신가요?</p>
+          <p class="text">설정 시 와우 멤버 기준으로 가격 정보를 제공해요.</p>
+          <div class="radio-box">
+            <div>
+              <input type="radio" id="chk01-1" name="check" checked />
+              <label for="chk01-1">네</label>
+            </div>
+            <div>
+              <input type="radio" id="chk01-2" name="check" />
+              <label for="chk01-2">아니오</label>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <p class="title">사용하는 카드를 모두 선택해주세요</p>
+          <p class="text">선택하신 카드 할인이 있을 경우 알려줘요.</p>
+          <div class="card-list">
+            <div id="card-item1" class="item" onclick="onOff('#card-item1')">
+              <span class="shinhan"></span>
+              <p>신한카드</p>
+            </div>
+            <div id="card-item2" class="item" onclick="onOff('#card-item2')">
+              <span class="kb"></span>
+              <p>국민카드</p>
+            </div>
+            <div id="card-item3" class="item" onclick="onOff('#card-item3')">
+              <span class="woori"></span>
+              <p>우리카드</p>
+            </div>
+            <div id="card-item4" class="item" onclick="onOff('#card-item4')">
+              <span class="lotte"></span>
+              <p>롯데카드</p>
+            </div>
+            <div id="card-item5" class="item" onclick="onOff('#card-item5')">
+              <span class="citi"></span>
+              <p>시티카드</p>
+            </div>
+            <div id="card-item6" class="item" onclick="onOff('#card-item6')">
+              <span class="samsung"></span>
+              <p>삼성카드</p>
+            </div>
+            <div id="card-item7" class="item" onclick="onOff('#card-item7')">
+              <span class="hyundai"></span>
+              <p>현대카드</p>
+            </div>
+            <div id="card-item8" class="item" onclick="onOff('#card-item8')">
+              <span class="nh"></span>
+              <p>농협카드</p>
+            </div>
+            <div id="card-item9" class="item" onclick="onOff('#card-item9')">
+              <span class="hana"></span>
+              <p>하나카드</p>
+            </div>
+            <div id="card-item10" class="item" onclick="onOff('#card-item10')">
+              <span class="bc"></span>
+              <p>BC카드</p>
+            </div>
+            <div id="card-item11" class="item type2" onclick="onOff('#card-item11')">
+              <p>보유 카드 없음</p>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <p class="title">쿠팡 쇼핑 혜택에 동의하시겠어요?</p>
+          <p class="text">포인트 및 막대사탕 증정을 위해 서비스 이용에 동의해주세요.</p>
+          <div class="input-box gray">
+            <input type="checkbox" id="check_1">
+            <label for="check_1">
+              <i class="ico-check"></i>
+              <i class="ico-check on"></i>
+              전체동의
+            </label>
+          </div>
+          <div class="input-box">
+            <input type="checkbox" id="check_2">
+            <label for="check_2">
+              <i class="ico-check"></i>
+              <i class="ico-check on"></i>
+              (필수)서비스 이용 동의
+            </label>
+            <button id="select-btn1" type="button" onclick="selectInputOn('#select-wrap', '#select-list1')">자세히보기</button>
+          </div>
+          <div class="input-box">
+            <input type="checkbox" id="check_3">
+            <label for="check_3">
+              <i class="ico-check"></i>
+              <i class="ico-check on"></i>
+              (필수)개인정보 수집, 이용 동의
+            </label>
+            <button id="select-btn2" type="button" onclick="selectInputOn('#select-wrap', '#select-list2')">자세히보기</button>
+          </div>
+        </div>
+        <div class="btn-box">
+          <!-- 버튼 비활성화는 blue 클래스 제거하면 됩니다. -->
+          <a class="btn blue" href="./sub-1.html#tutorial">설정 완료</a>
+        </div>
+      </div>
+    </div>
+    <!-- select-wrap -->
+    <div id="select-wrap">
+      <!-- 정렬 방식 셀렉트 -->
+      <div id="select-list1" class="select-list type4">
+        <div class="select-head">
+          <p>(필수)서비스 이용 동의</p>
+          <button class="ico-close type1" type="button" onclick="selectListClose('#select-btn1', '#select-wrap', '#select-list1')">닫기</button>
+        </div>
+        <div class="select-cont">
+          <div class="gray-box mb53">
+            <ul>
+              <li>본 서비스는 개인을 특정할 수 있는 정보는 받지 않습니다.</li>
+              <li>다만 혜택을 드리기 위해 필요한 쿠팡 구매 내역에 대한 제공 동의를 필요로 합니다.</li>
+              <li>쿠팡 구매 내역은 개인정보와는 관련 없는 임의의 숫자로 구매한 상품을 분류하여 구매한 상품 정보만 활용하게 됩니다.</li>
+              <li>상품 정보 : 주문번호, 상품명, 구매(취소) 일자, 주문상태 (구매, 취소), 구매(취소) 수량, 구매(취소) 금액 등을 활용 합니다.</li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <button class="btn" type="button" onclick="selectListClose('#select-btn1', '#select-wrap', '#select-list1')">확인</button>
+          </div>
+        </div>
+      </div>
+      <div id="select-list2" class="select-list type4 fix">
+        <div class="select-head">
+          <p>(필수)개인정보 수집, 이용 동의</p>
+          <button class="ico-close type1" type="button" onclick="selectListClose('#select-btn2', '#select-wrap', '#select-list2')">닫기</button>
+        </div>
+        <div class="select-cont">
+          <p class="text">“개인정보 보호법” 에 따라 아래와 같이 수집하는 개인정보의 항목, 수집 및 이용 목적, 보유 및 이용 기간을 안내드리고 동의를 받고자 합니다.</p>
+          <div class="gray-box mb20">
+            <ul>
+              <li>구분 : (선택) 쿠팡 쇼핑 혜택</li>
+              <li>처리 목적 : 쿠팡 쇼핑 혜택 서비스 제공, 서비스 이용 내역 제공, 서비스 환경의 유지, 관리 및 개선</li>
+              <li>수집 항목 : 구매내역 (주문번호, 상품명, 주문상태(구매, 취소), 구매(취소) 일자, 구매(취소) 수량, 구매(취소) 금액, ADID 또는 IDFA</li>
+              <li>보유 및 이용기간 : 회원 탈퇴일로부터 1년</li>
+            </ul>
+          </div>
+          <p class="text">정보주체는 위와 같이 선택목적을 위해 앱 내 설정 페이지에서 개인정보를 처리하는 것에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 쿠팡 쇼핑 서비스 이용이 제한될 수 있습니다.</p>
+          <p class="text">이에 본인은 위와 같이 개인정보를 수집 및 이용하는데 동의 합니다.</p>
+          <div class="btn-box fix">
+            <button class="btn" type="button" onclick="selectListClose('#select-btn2', '#select-wrap', '#select-list2')">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let swiper = new Swiper(".tutorial-swiper", {
+      slidesPerView : 1,
+      speed: 700,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      resistanceRatio: 0,
+      on: {
+        slideChangeTransitionEnd() {
+          var isLastSlide = swiper.slides.length === (swiper.activeIndex + 1 );
+          if(isLastSlide){
+            document.querySelector('#swiper-btn').classList.add('on');
+          }
+        }
+      },
+    });
+  </script>
+  <script src="./js/common.js"></script>
+  <script src="./js/page.js"></script>
+</body>
+</html>

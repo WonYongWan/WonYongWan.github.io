@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>상점</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- header -->
+    <header>
+      <h1>상점</h1>
+    </header>
+    <!-- sub-store1 -->
+    <!-- hana class 추가 시 시그니처 컬러 변경 -->
+    <div class="sub sub-store1" onclick="toolTipsOff(event, '.tool-tip-line1')">
+      <div class="point-info-wrap">
+        <div class="mix-info single">
+          <div class="text-box">
+            <div class="box box1">
+              <p class="title">사용 가능 포인트</p>
+              <div id="tool-tip-box1" class="tool-tip-box type2 tool-tip-line1">
+                <button class="ico-question" type="button" onclick="toolTipOnOff('#tool-tip-box1', '.tool-tip-line1')">툴팁</button>
+                <div class="tool-tip type2">
+                  카트 추가, 친구 추천 등<br>
+                  이벤트로 적립된 포인트는<br>
+                  적립 후 7일이 지난 시점부터<br>
+                  사용 가능합니다
+                </div>
+              </div>
+            </div>
+            <div class="box box2">
+              <p class="point"><span class="ico-point"></span>1,230</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-box-wrap">
+        <div class="tab-box">
+          <div class="tab depth1 n-pay on"><a href="javascript:void(0)" onclick="tabMenuOnOff('.tab.n-pay', '.cont-box.n-pay', '.tab.depth1', '.cont-box.depth1')">네이버페이</a></div>
+          <div class="tab depth1 gifticon"><a href="javascript:void(0)" onclick="tabMenuOnOff('.tab.gifticon', '.cont-box.gifticon', '.tab.depth1', '.cont-box.depth1')">커피/음료</a></div>
+          <div class="tab"><a href="javascript:void(0)">편의점</a></div>
+          <div class="tab"><a href="javascript:void(0)">피자</a></div>
+          <div class="tab"><a href="javascript:void(0)">치킨</a></div>
+          <div class="tab"><a href="javascript:void(0)">버거</a></div>
+        </div>
+      </div>
+      <div class="input-box">
+        <div id="select-btn1" class="select-btn type3" onclick="selectListOn('#select-btn1', '#select-wrap', '#select-list1')">
+          <p class="value">교환처(전체)</p>
+          <div class="ico-arrow type2 bottom"></div>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="검색어를 입력해주세요">
+          <button type="button">검색</button>
+        </div>
+      </div>
+      <div class="cont-box depth1 n-pay on">
+        <p class="count">전체 10건</p>
+        <div class="list-wrap type10">
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+          <div class="list">
+            <i class="n-pay"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">네이버페이 포인트쿠폰</p>
+                <p class="text">네이버페이 포인트 3,000원</p>
+              </div>
+              <p class="price">3,900P</p>
+            </div>
+            <a href="./sub-store2.html"></a>
+          </div>
+        </div>
+      </div>
+      <div class="cont-box depth1 gifticon">
+        <p class="count">전체 1,234건</p>
+        <div class="list-wrap type10">
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test1.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">솜사탕 딸기 밀크쉐이크</p>
+              </div>
+              <p class="price">5,460P</p>
+            </div>
+            <a href="javascript:void(0)" onclick="popupOn('#popup-wrap', '#popup1')"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test2.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">딸기라떼</p>
+              </div>
+              <p class="price">6,460P</p>
+            </div>
+            <a href="javascript:void(0)" onclick="popupOn('#popup-wrap', '#popup2')"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test3.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">뱅쇼</p>
+              </div>
+              <p class="price">5,460P</p>
+            </div>
+            <a href="javascript:void(0)"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test4.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">멜론소다</p>
+              </div>
+              <p class="price">6,510P</p>
+            </div>
+            <a href="javascript:void(0)"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test1.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">솜사탕 딸기 밀크쉐이크</p>
+              </div>
+              <p class="price">5,460P</p>
+            </div>
+            <a href="javascript:void(0)"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test2.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">딸기라떼</p>
+              </div>
+              <p class="price">6,460P</p>
+            </div>
+            <a href="javascript:void(0)"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test3.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">뱅쇼</p>
+              </div>
+              <p class="price">5,460P</p>
+            </div>
+            <a href="javascript:void(0)"></a>
+          </div>
+          <div class="list">
+            <i style="background-image: url(./images/test/store-test4.png);"></i>
+            <div class="box">
+              <div class="text-box">
+                <p class="title">빽다방</p>
+                <p class="text">멜론소다</p>
+              </div>
+              <p class="price">6,510P</p>
+            </div>
+            <a href="javascript:void(0)"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 셀렉트 박스 -->
+    <div id="select-wrap">
+      <!-- 교환처 선택 -->
+      <div id="select-list1" class="select-list type8">
+        <div class="select-head">
+          <p>교환처를 선택해주세요</p>
+          <button class="ico-close type1" type="button" onclick="selectListClose('#select-btn1', '#select-wrap', '#select-list1')">닫기</button>
+        </div>
+        <ul class="select-cont">
+          <li class="list list1 on">
+            <p class="value">커피/음료</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list2">
+            <p class="value">편의점</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list3">
+            <p class="value">피자</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list4">
+            <p class="value">치킨</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list5">
+            <p class="value">버거</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list6">
+            <p class="value">베이커리/도넛</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list7">
+            <p class="value">문화생활</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list8">
+            <p class="value">백화점/마트</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list9">
+            <p class="value">통신</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list10">
+            <p class="value">3사 통합데이터 상품</p>
+            <div class="ico-check on"></div>
+          </li>
+          <li class="list list11">
+            <p class="value">기타 상품권</p>
+            <div class="ico-check on"></div>
+          </li>
+        </ul>
+      </div>
+      <!-- 쿠폰 구매 완료 -->
+      <div id="select-list2" class="select-list type9">
+        <div class="select-cont type1">
+          <p class="title">쿠폰 구매가 완료되었어요!</p>
+          <div class="item item1">
+            <div class="img" style="background-image: url(./images/test/store-test1.png);"></div>
+            <div class="title-box">
+              <p class="title">빽다방</p>
+              <p class="text">솜사탕 딸기 밀크쉐이크 솜사탕 딸기 밀크쉐이크</p>
+            </div>
+          </div>
+          <div class="item item2">
+            <div class="info-box">
+              <p class="title">구매일</p>
+              <p class="text">2025.01.23</p>
+            </div>
+            <div class="info-box">
+              <p class="title">유효 기간</p>
+              <p class="text">2025.02.23</p>
+            </div>
+            <div class="info-box">
+              <p class="title">사용 포인트</p>
+              <p class="text">13,000P</p>
+            </div>
+            <div class="info-box">
+              <p class="title">잔여 포인트</p>
+              <p class="text blue">3,000P</p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <button class="btn gray" type="button" onclick="selectBasicClose('#select-wrap', '#select-list2')">메인으로 가기</button>
+          <button class="btn" type="button">쿠폰 내역 보기</button>
+        </div>
+      </div>
+    </div>
+    <!-- popup-wrap -->
+    <div id="popup-wrap">
+      <!-- 쿠폰을 구매하시겠어요? 팝업 -->
+      <div id="popup1" class="popup type5 type5-1">
+        <div class="box">
+          <p class="text type2">쿠폰을 구매하시겠어요?</p>
+          <div class="btn-box">
+            <button class="popup-btn" type="button" onclick="popupClose('#popup-wrap', '#popup1'), selectBasicOn('#select-wrap', '#select-list2')">네</button>
+            <button class="popup-btn gray" type="button" onclick="popupClose('#popup-wrap', '#popup1')">아니요</button>
+          </div>
+        </div>
+      </div>
+      <!-- 포인트가 부족해요 팝업 -->
+      <div id="popup2" class="popup type5 type5-1">
+        <div class="box">
+          <p class="text type2">포인트가 부족해요</p>
+          <div class="btn-box">
+            <button class="popup-btn" type="button" onclick="popupClose('#popup-wrap', '#popup2')">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-menu-wrap">
+      <a class="menu" href="./sub-1.html"><span class="ico-cart">카트</span></a>
+      <a class="menu" href="./index.html"><span class="ico-save">적립</span></a>
+      <!-- <a class="menu" href="./sub-3.html"><span class="ico-ranking">랭킹</span></a> -->
+      <a class="menu" href="./sub-5.html"><span class="ico-breakDown">내역</span></a>
+      <a class="menu on" href="./sub-store1.html"><span class="ico-store">상점</span></a>
+      <a class="menu" href="./sub-myPage1.html"><span class="ico-myPage">MY</span></a>
+    </div>
+  </div>
+  <script src="./js/common.js"></script>
+</body>
+</html>

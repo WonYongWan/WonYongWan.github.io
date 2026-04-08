@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>이미지 팝업</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./css/swiper-min.css">
+  <script src="./js/swiper.js"></script>
+</head>
+<body class="scrollNone">
+  <div class="wrap">
+    <!-- select-wrap -->
+    <div id="select-wrap" class="on">
+      <!-- 정렬 방식 셀렉트 -->
+      <div id="image-popup-wrap" class="swiper-wrap type2 on">
+        <div class="swiper image-popup-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item" style="background-image: url(./images/test/image-popup-swiper-test1.png);">
+                <div class="count"></div>
+                <a class="link-btn" href="javascript:void(0)"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <button class="close" onclick="popupClose('#select-wrap', '#image-popup-wrap')">하루동안 보지 않기</button>
+          <button class="close" onclick="popupClose('#select-wrap', '#image-popup-wrap')">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const $popupSwiper = document.querySelector('.image-popup-swiper');
+    let counts = document.querySelectorAll('.image-popup-swiper .count');
+    let length = counts.length;
+
+    if(document.querySelectorAll('.image-popup-swiper .item').length > 1) {
+      $popupSwiper.style.width = `${310 * length}px`;
+
+      let swiper = new Swiper(".image-popup-swiper", {
+        slidesPerView : length,
+        spaceBetween: 10,
+        centeredSlides: true,
+        speed: 800,
+        autoplay:{
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        observer: true,
+        observeParents: true,
+        on: {
+          init() {
+            counts.forEach((elm, idx) => {
+              elm.innerText = `${idx + 1}/${length}`;
+            });
+          }
+        },
+      });
+    } else {
+      $popupSwiper.childNodes[1].style.justifyContent = 'center';
+      document.querySelector('.image-popup-swiper .item .count').style.display = 'none';
+    }
+  </script>
+  <script src="./js/common.js"></script>
+</body>
+</html>

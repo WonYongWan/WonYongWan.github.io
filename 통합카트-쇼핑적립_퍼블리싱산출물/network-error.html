@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>네트워크 오류</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="scrollNone">
+  <div class="wrap">
+    <!-- network error -->
+    <div class="page-network-error">
+      <i class="ico-network-error"></i>
+      <p class="title">Wi-fi 또는 데이터 네트워크<br>상태를 확인해주세요</p>
+      <p class="text">인터넷이 끊겨 쇼핑적립 서비스가<br>제대로 제공되지 못하고 있어요<br>인터넷을 다시 연결해주세요!</p>
+      <div class="btn-box">
+        <button class="btn blue" type="button">다시시도</button>
+        <button class="btn gray" type="button">네트워크 확인</button>
+      </div>
+    </div>
+    <!-- 셀렉트 박스 -->
+    <div id="select-wrap" class="on">
+      <!-- 정렬 방식 셀렉트 -->
+      <div id="error-box1" class="error-box on">
+        <div class="error-cont">
+          <i class="ico-network-error"></i>
+          <p class="title">네트워크 연결 상태가<br>불안정합니다.</p>
+          <p class="text">Wi-fi 또는 데이터 네트워크<br>상태를 확인해주세요</p>
+          <button class="btn blue" type="button" onclick="selectBasicClose('#select-wrap', '#error-box1')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/common.js"></script>
+</body>
+</html>
